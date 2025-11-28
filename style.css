@@ -178,6 +178,20 @@ a {
   line-height: 1.5;
 }
 
+.social-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: #d0d5dc;
+  margin: 0 0 16px;
+}
+
+.social-inline a {
+  font-weight: 600;
+  color: #ffffff;
+}
+
 .cta-row {
   display: inline-flex;
   align-items: center;
@@ -309,6 +323,104 @@ a {
   border-radius: 50%;
 }
 
+.section-head {
+  max-width: 1100px;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-head h3 {
+  margin: 4px 0 0;
+  font-size: clamp(28px, 4vw, 38px);
+}
+
+.timeline {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.timeline-item {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+}
+
+.timeline-item summary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.timeline-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.timeline-item p {
+  margin: 0;
+  padding: 0 16px 14px;
+  color: var(--muted-dark);
+  line-height: 1.5;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1b1f24;
+  box-shadow: 0 0 0 6px rgba(27, 31, 36, 0.08);
+}
+
+.pill-link {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  color: #1b1f24;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.updates {
+  background: #f2eee7;
+}
+
+.updates-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.update-card {
+  padding: 18px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow);
+}
+
+.update-card h4 {
+  margin: 8px 0 10px;
+  font-size: 18px;
+}
+
+.update-card p {
+  margin: 0 0 10px;
+  color: var(--muted-dark);
+}
+
 .bio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -396,6 +508,19 @@ a {
   margin-top: 6px;
 }
 
+.footer-inner.secondary {
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.footer-inner.secondary p {
+  margin: 4px 0;
+}
+
+.footer-inner.secondary .link {
+  border-bottom: none;
+}
+
 @media (max-width: 900px) {
   .topbar {
     flex-wrap: wrap;
@@ -426,5 +551,14 @@ a {
   .btn {
     width: 100%;
     text-align: center;
+  }
+  .timeline-item summary {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "dot text"
+      "dot pill";
+  }
+  .pill-link {
+    justify-self: start;
   }
 }
