@@ -1,11 +1,6 @@
 node_modules
 .next
-.npm-cache
-.vercel
+dist
+out
 .DS_Store
 *.log
-.env
-.env.*
-out
-dist
-coverage
