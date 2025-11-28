@@ -3,44 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todd Enkhbat — Test Site</title>
-  <meta name="description" content="Test landing page for Todd Enkhbat." />
+  <title>Todd Enkhbat — Astropreneur</title>
+  <meta name="description" content="Personal site draft for Todd Enkhbat, astropreneur and Columbia astrophysics student." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <p class="eyebrow">Test Launch</p>
-      <h1>Todd Enkhbat</h1>
-      <p class="lede">Quick demo page to verify deploy & domain wiring.</p>
-      <div class="cta-row">
-        <a class="btn primary" href="mailto:tsogt.e@columbia.com">Email Todd</a>
-        <a class="btn ghost" href="https://github.com/todd-enkhbat" target="_blank" rel="noreferrer">GitHub</a>
+  <header class="topbar">
+    <div class="logo">TODD</div>
+    <nav class="nav">
+      <a href="#hero">Hero</a>
+      <a href="#flagships">Flagships</a>
+      <a href="#research">Research</a>
+      <a href="#bio">Bio</a>
+    </nav>
+    <a class="btn ghost" href="#contact">Collaborate</a>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-media"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Astropreneur</p>
+        <h1>Building the bridge between space science and venture.</h1>
+        <p class="lede">Mongolian-born Columbia astrophysics student and founder. From black hole imaging to rocketry and edtech, Todd blends research with execution to make humanity multi-planetary.</p>
+        <div class="cta-row">
+          <a class="btn solid" href="#flagships">View flagships</a>
+          <a class="btn ghost dark" href="#contact">Get in touch</a>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main class="grid">
-      <section class="card">
-        <h2>About</h2>
-        <p>Founder, researcher, and writer exploring space systems, philosophy, and frontier tech.</p>
-      </section>
-      <section class="card">
-        <h2>Current Focus</h2>
-        <ul>
-          <li>Imaging black holes</li>
-          <li>Propulsion R&amp;D</li>
-          <li>Editorial experiments</li>
-        </ul>
-      </section>
-      <section class="card">
-        <h2>Status</h2>
-        <p>Building. Available for collaborations.</p>
-      </section>
-    </main>
+    <section class="statement" id="statement">
+      <div class="statement-inner">
+        <h2>Developing systems that make long-term living and thriving in space inevitable.</h2>
+        <a class="btn outline" href="#research">See active research</a>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <p>© 2024 Todd Enkhbat — Test deploy</p>
-    </footer>
-  </div>
+    <section class="panel" id="flagships">
+      <div class="panel-grid">
+        <div class="panel-copy">
+          <p class="eyebrow dark">T-REX · Founding team</p>
+          <h3>Capturing the first real-time video of a black hole</h3>
+          <p>Co-authoring a NASA NIAC-funded mission with Brown, Princeton, MIT, and JAXA partners. Designing VLBI satellites and quantum comms to stream Sagittarius A* in motion.</p>
+          <ul class="bullets">
+            <li>$200K NASA NIAC Phase I grant</li>
+            <li>Two-satellite VLBI architecture for ~35 μas resolution</li>
+            <li>Consortium spanning Ivy labs and industry advisors</li>
+          </ul>
+          <a class="link" href="https://www.t-rexsat.org" target="_blank" rel="noreferrer">Mission site</a>
+        </div>
+        <div class="panel-visual visual-a">
+          <div class="orbital"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel light" id="research">
+      <div class="panel-grid reverse">
+        <div class="panel-copy">
+          <p class="eyebrow dark">Columbia Rocketry · Propulsion</p>
+          <h3>Hybrid engine R&D and thermal protection</h3>
+          <p>Engineered ablative liners, DAQ workflows, and nozzle interfaces for a collegiate hybrid engine. Improved reliability to withstand 500 psi and pass static fires.</p>
+          <ul class="bullets">
+            <li>Thermal liners and resin mixes for chamber protection</li>
+            <li>DAQ with thermocouples for real-time erosion data</li>
+            <li>Competition-ready hybrid engine platform</li>
+          </ul>
+          <a class="link" href="#contact">Collaborate</a>
+        </div>
+        <div class="panel-visual visual-b">
+          <div class="orbital ring"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="bio">
+      <div class="bio-grid">
+        <div class="bio-copy">
+          <p class="eyebrow dark">Bio snapshot</p>
+          <h3>Mongolian-born astropreneur at Columbia</h3>
+          <p>John Jay Scholar (top 0.03%), astrophysics major, philosophy + business focus. Built $800K+ in teen ventures, raised $5.8M for a Mars analog, and runs an edtech platform uplifting Mongolian students.</p>
+          <div class="pill-row">
+            <span class="pill">Astrophysics</span>
+            <span class="pill">Space systems</span>
+            <span class="pill">Startups</span>
+            <span class="pill">Philosophy</span>
+          </div>
+        </div>
+        <div class="bio-list">
+          <div class="bio-item">
+            <h4>Research</h4>
+            <p>Binary black hole dynamics at Columbia; exoplanet detection at Harvard-Smithsonian; lunar eclipse studies in Mongolia.</p>
+          </div>
+          <div class="bio-item">
+            <h4>Ventures</h4>
+            <p>T-REX (black hole video mission), HUR. EdTech (reach platform), Trend Mart ($800K revenue youth venture), Starry Tours (astro-tourism).</p>
+          </div>
+          <div class="bio-item">
+            <h4>Awards</h4>
+            <p>NASA NIAC team award, John Jay Scholar, Harvard SSP Excellence, AI Hackathon honorable mention.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div>
+        <p class="eyebrow dark">Contact</p>
+        <h4>Ready to collaborate?</h4>
+        <p>te2346@columbia.edu</p>
+        <p class="muted">LinkedIn: linkedin.com/in/tsogt-enkhbat</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn solid" href="mailto:te2346@columbia.edu">Email Todd</a>
+        <a class="btn ghost dark" href="#demo">Back to top</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
