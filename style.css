@@ -125,13 +125,13 @@ a {
 .hero-media {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15, 18, 23, 0.15), rgba(15, 18, 23, 0.65)),
+  background:
+    linear-gradient(180deg, rgba(15, 18, 23, 0.25), rgba(15, 18, 23, 0.7)),
     linear-gradient(120deg, rgba(40, 70, 120, 0.35), rgba(10, 10, 10, 0.6)),
-    radial-gradient(circle at 20% 20%, rgba(88, 125, 255, 0.2), transparent 35%),
-    radial-gradient(circle at 80% 10%, rgba(255, 143, 67, 0.2), transparent 30%),
+    url("images/hero-person.jpg") center center / cover no-repeat,
     #0f1217;
-  background-blend-mode: screen, multiply, normal, normal, normal;
-  filter: saturate(1.05);
+  background-blend-mode: screen, multiply, normal, normal;
+  filter: saturate(1.08);
 }
 
 .hero-overlay {
@@ -296,6 +296,18 @@ a {
 .panel.light .panel-visual {
   background: radial-gradient(circle at 50% 45%, rgba(80, 100, 150, 0.15), transparent 50%),
     #fefbf5;
+}
+
+.panel-visual.visual-a {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+    url("images/panel-a.jpg") center center / cover no-repeat;
+}
+
+.panel-visual.visual-b {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url("images/panel-b.gif") center center / cover no-repeat;
 }
 
 .orbital,
