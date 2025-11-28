@@ -128,7 +128,7 @@ a {
   background:
     linear-gradient(180deg, rgba(15, 18, 23, 0.25), rgba(15, 18, 23, 0.7)),
     linear-gradient(120deg, rgba(40, 70, 120, 0.35), rgba(10, 10, 10, 0.6)),
-    url("images/hero-person.jpg") center center / cover no-repeat,
+    url("images/hero-Person.png") center center / cover no-repeat,
     #0f1217;
   background-blend-mode: screen, multiply, normal, normal;
   filter: saturate(1.08);
