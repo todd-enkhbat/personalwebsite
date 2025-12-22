@@ -4,286 +4,462 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Todd Enkhbat — Astropreneur</title>
-  <meta name="description" content="Personal site draft for Todd Enkhbat, astropreneur and Columbia astrophysics student." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Personal site for Todd Enkhbat, astropreneur and Columbia astrophysics student. Building the bridge between space science and venture." />
+  <link rel="stylesheet" href="space.css" />
 </head>
-<body>
-  <header class="topbar">
-    <div class="logo">TODD</div>
-    <nav class="nav">
-      <a href="#hero">Hero</a>
-      <a href="#flagships">Flagships</a>
-      <a href="#research">Research</a>
+<body class="loading">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-logo">Todd Enkhbat</a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#updates">Updates</a>
-      <a href="#heritage">Heritage</a>
-      <a href="#bio">Bio</a>
+      <a href="#about">About</a>
       <a href="philosophy.html">Philosophy</a>
-    </nav>
-    <a class="btn ghost" href="#contact">Collaborate</a>
-  </header>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-  <main>
+  <main id="main-content">
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
     <section class="hero" id="hero">
-      <div class="hero-media"></div>
-      <div class="hero-overlay"></div>
+      <div class="hero-bg">
+        <img src="images/hero-Person.png" alt="" aria-hidden="true" />
+      </div>
       <div class="hero-content">
-        <p class="eyebrow">Astropreneur</p>
-        <h1>Building the bridge between space science and venture.</h1>
-        <p class="lede">Mongolian-born Columbia astrophysics student and founder. From black hole imaging to rocketry and edtech, Todd blends research with execution to make humanity multi-planetary.</p>
-        <div class="social-inline">
-          <a href="https://x.com/the_tallerpoppy" target="_blank" rel="noreferrer">X</a>
-          <span>•</span>
-          <a href="https://www.instagram.com/tsokue___/?hl=en" target="_blank" rel="noreferrer">Instagram</a>
-          <span>•</span>
-          <a href="https://www.threads.com/@tsokue___" target="_blank" rel="noreferrer">Threads</a>
-          <span>•</span>
-          <a href="https://www.goodreads.com/user/show/189398350-tsogt-enkhbat" target="_blank" rel="noreferrer">Goodreads</a>
+        <p class="hero-eyebrow">Astropreneur</p>
+        <h1 class="hero-title">Building the bridge between space science and venture.</h1>
+        <p class="hero-subtitle">Mongolian-born Columbia astrophysics student and founder. From black hole imaging to rocketry and edtech, blending research with execution to make humanity multi-planetary.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
-        <div class="cta-row">
-          <a class="btn solid" href="#flagships">View flagships</a>
-          <a class="btn ghost dark" href="#contact">Get in touch</a>
-          <a class="btn outline" href="/resume.pdf" target="_blank" rel="noreferrer">CV / Resume</a>
-        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
       </div>
     </section>
 
-    <section class="statement" id="statement">
-      <div class="statement-inner">
-        <h2>Developing systems that make long-term living and thriving in space inevitable.</h2>
-        <a class="btn outline" href="#research">See active research</a>
-      </div>
+    <!-- ============================================
+         MISSION STATEMENT
+         ============================================ -->
+    <section class="mission-section">
+      <p class="mission-text">
+        <strong>Developing systems that make long-term living and thriving in space inevitable.</strong>
+      </p>
     </section>
 
-    <section class="panel" id="flagships">
-      <div class="panel-grid">
-        <div class="panel-copy">
-          <p class="eyebrow dark">T-REX · Founding team</p>
-          <h3>Capturing the first real-time video of a black hole</h3>
-          <p>Co-authoring a NASA NIAC-funded mission with Brown, Princeton, MIT, and JAXA partners. Designing VLBI satellites and quantum comms to stream Sagittarius A* in motion.</p>
-          <ul class="bullets">
-            <li>$200K NASA NIAC Phase I grant</li>
-            <li>Two-satellite VLBI architecture for ~35 μas resolution</li>
-            <li>Consortium spanning Ivy labs and industry advisors</li>
-          </ul>
-          <a class="link" href="https://www.t-rexsat.org" target="_blank" rel="noreferrer">Mission site</a>
-        </div>
-        <div class="panel-visual visual-a">
-          <div class="orbital"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel light" id="research">
-      <div class="panel-grid reverse">
-        <div class="panel-copy">
-          <p class="eyebrow dark">Columbia Rocketry · Propulsion</p>
-          <h3>Hybrid engine R&D and thermal protection</h3>
-          <p>Engineered ablative liners, DAQ workflows, and nozzle interfaces for a collegiate hybrid engine. Improved reliability to withstand 500 psi and pass static fires.</p>
-          <ul class="bullets">
-            <li>Thermal liners and resin mixes for chamber protection</li>
-            <li>DAQ with thermocouples for real-time erosion data</li>
-            <li>Competition-ready hybrid engine platform</li>
-          </ul>
-          <a class="link" href="#contact">Collaborate</a>
-        </div>
-        <div class="panel-visual visual-b">
-          <div class="orbital ring"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel light" id="experience">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow dark">Experience</p>
-          <h3>Unfolding through time</h3>
-        </div>
-        <a class="btn solid" href="/resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
-      </div>
-      <div class="timeline">
-        <details open class="timeline-item">
-          <summary>
-            <span class="dot"></span>
-            <div>
-              <p class="eyebrow dark">2025 · ONDO Space</p>
-              <h4>Engineering Intern — Satellite Systems</h4>
-            </div>
-            <a class="pill-link" href="https://ondo-space.com" target="_blank" rel="noreferrer">Visit</a>
-          </summary>
-          <p>Supported low-cost satellite bus development; proposed AI + ArcGIS network planner to cut ground link costs, co-pitched to investors.</p>
-        </details>
-        <details class="timeline-item">
-          <summary>
-            <span class="dot"></span>
-            <div>
-              <p class="eyebrow dark">2025 · Columbia Rocketry</p>
-              <h4>Propulsion/Mechanical Engineer</h4>
-            </div>
-            <a class="pill-link" href="#research">See work</a>
-          </summary>
-          <p>Built ablative liners, DAQ, and nozzle interface for hybrid engine static fires; qualified for competition.</p>
-        </details>
-        <details class="timeline-item">
-          <summary>
-            <span class="dot"></span>
-            <div>
-              <p class="eyebrow dark">2024 · MARS-V</p>
-              <h4>Design & Engineering Officer</h4>
-            </div>
-            <a class="pill-link" href="https://mdrs.marssociety.org" target="_blank" rel="noreferrer">MDRS</a>
-          </summary>
-          <p>Raised $5.8M commitments for a Mars analog; led EVA suit prototype tested at MDRS with UCCS collaborators.</p>
-        </details>
-        <details class="timeline-item">
-          <summary>
-            <span class="dot"></span>
-            <div>
-              <p class="eyebrow dark">2024 · HUR. EdTech</p>
-              <h4>Founder & CEO</h4>
-            </div>
-            <a class="pill-link" href="https://all-hur.com" target="_blank" rel="noreferrer">Platform</a>
-          </summary>
-          <p>Launched in 2 weeks; $30K/mo revenue in first quarter; provides mentorship and funding for Mongolian students.</p>
-        </details>
-        <details class="timeline-item">
-          <summary>
-            <span class="dot"></span>
-            <div>
-              <p class="eyebrow dark">2018–2024 · Trend Mart</p>
-              <h4>Founder</h4>
-            </div>
-            <span class="pill-link">Youth venture</span>
-          </summary>
-          <p>Scaled teen-run retail/e-commerce to $800K+ revenue, 3 locations, 40+ employees; funded schooling and future projects.</p>
-        </details>
-        <details class="timeline-item">
-          <summary>
-            <span class="dot"></span>
-            <div>
-              <p class="eyebrow dark">Always · Piano & Beyond The Music</p>
-              <h4>Performer & Organizer</h4>
-            </div>
-            <span class="pill-link">Music</span>
-          </summary>
-          <p>Performs piano; involved with Beyond the Music Festival to merge art and technology.</p>
-        </details>
-      </div>
-    </section>
-
-    <section class="panel updates" id="updates">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow dark">Updates & Publications</p>
-          <h3>Latest moves</h3>
-        </div>
-        <a class="link" href="#contact">Share an opportunity</a>
-      </div>
-      <div class="updates-grid">
-        <article class="update-card">
-          <p class="eyebrow dark">Nov 2025 · Essay</p>
-          <h4>Elon Musk & Genghis Khan in HR Execution</h4>
-          <p>Parallels between meritocratic leadership across centuries; coined the “Genghis Khan of tech” note.</p>
-          <a class="link" href="https://www.linkedin.com/in/tsogt-enkhbat" target="_blank" rel="noreferrer">Read</a>
-        </article>
-        <article class="update-card">
-          <p class="eyebrow dark">Sept 2025 · Research</p>
-          <h4>T-REX Proposal (NASA NIAC)</h4>
-          <p>Co-authored black hole video mission proposal; simulations for VLBI baselines and quantum comms.</p>
-          <a class="link" href="https://www.t-rexsat.org" target="_blank" rel="noreferrer">Mission site</a>
-        </article>
-        <article class="update-card">
-          <p class="eyebrow dark">Aug 2025 · Media</p>
-          <h4>MICC Spotlight</h4>
-          <p>Featured by Mongolia International Capital Corp. after internship on valuation and market insights.</p>
-          <a class="link" href="https://www.facebook.com/profile.php?id=61580637770769" target="_blank" rel="noreferrer">See post</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="panel" id="bio">
-      <div class="bio-grid">
-        <div class="bio-copy">
-          <p class="eyebrow dark">Bio snapshot</p>
-          <h3>Mongolian-born astropreneur at Columbia</h3>
-          <p>John Jay Scholar (top 0.03%), astrophysics major, philosophy + business focus. Built $800K+ in teen ventures, raised $5.8M for a Mars analog, and runs an edtech platform uplifting Mongolian students.</p>
-          <div class="pill-row">
-            <span class="pill">Astrophysics</span>
-            <span class="pill">Space systems</span>
-            <span class="pill">Startups</span>
-            <span class="pill">Philosophy</span>
+    <!-- ============================================
+         KEY STATS
+         ============================================ -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="stats-grid" data-animate>
+          <div class="stat-item">
+            <div class="stat-number">$200K</div>
+            <div class="stat-label">NASA NIAC Grant</div>
           </div>
-        </div>
-        <div class="bio-list">
-          <div class="bio-item">
-            <h4>Research</h4>
-            <p>Binary black hole dynamics at Columbia; exoplanet detection at Harvard-Smithsonian; lunar eclipse studies in Mongolia.</p>
+          <div class="stat-item">
+            <div class="stat-number">$5.8M</div>
+            <div class="stat-label">Mars Analog Raised</div>
           </div>
-          <div class="bio-item">
-            <h4>Ventures</h4>
-            <p>T-REX (black hole video mission), HUR. EdTech (reach platform), Trend Mart ($800K revenue youth venture), Starry Tours (astro-tourism).</p>
+          <div class="stat-item">
+            <div class="stat-number">$800K+</div>
+            <div class="stat-label">Venture Revenue</div>
           </div>
-          <div class="bio-item">
-            <h4>Awards</h4>
-            <p>NASA NIAC team award, John Jay Scholar, Harvard SSP Excellence, AI Hackathon honorable mention.</p>
+          <div class="stat-item">
+            <div class="stat-number">0.03%</div>
+            <div class="stat-label">John Jay Scholar</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="heritage" id="heritage">
-      <div class="heritage-media">
-        <img src="images/heritage.jpg" alt="Mongolian herder guiding horses with terrain overlays" />
-        <div class="heritage-overlay"></div>
+    <div class="divider"></div>
+
+    <!-- ============================================
+         FLAGSHIP PROJECTS
+         ============================================ -->
+    <section class="section section-dark" id="projects">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-eyebrow">Flagship Projects</p>
+          <h2 class="section-title">Making Space Accessible</h2>
+          <p class="section-subtitle">From capturing the first real-time black hole video to engineering hybrid rocket propulsion systems.</p>
+        </header>
+
+        <div class="projects-grid">
+          <!-- T-REX Project -->
+          <article class="project-card" data-animate>
+            <div class="project-image">
+              <img src="images/panel-a.jpg" alt="T-REX Black Hole Mission visualization" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <p class="project-eyebrow">Founding Team · NASA NIAC</p>
+              <h3 class="project-title">T-REX · Black Hole Video Mission</h3>
+              <p class="project-description">Co-authoring a NASA NIAC-funded mission with Brown, Princeton, MIT, and JAXA partners. Designing VLBI satellites and quantum comms to stream Sagittarius A* in motion.</p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <div class="project-stat-value">$200K</div>
+                  <div class="project-stat-label">Phase I Grant</div>
+                </div>
+                <div class="project-stat">
+                  <div class="project-stat-value">35 μas</div>
+                  <div class="project-stat-label">Resolution</div>
+                </div>
+                <div class="project-stat">
+                  <div class="project-stat-value">2</div>
+                  <div class="project-stat-label">VLBI Satellites</div>
+                </div>
+              </div>
+              <a href="https://www.t-rexsat.org" target="_blank" rel="noreferrer" class="project-link">Visit Mission Site</a>
+            </div>
+          </article>
+
+          <!-- Columbia Rocketry -->
+          <article class="project-card" data-animate>
+            <div class="project-image">
+              <img src="images/panel-b.gif" alt="Columbia Rocketry hybrid engine test" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <p class="project-eyebrow">Propulsion Engineer</p>
+              <h3 class="project-title">Columbia Rocketry · Propulsion R&D</h3>
+              <p class="project-description">Engineered ablative liners, DAQ workflows, and nozzle interfaces for a collegiate hybrid engine. Improved reliability to withstand 500 psi and pass static fires.</p>
+              <div class="project-stats">
+                <div class="project-stat">
+                  <div class="project-stat-value">500</div>
+                  <div class="project-stat-label">PSI Rating</div>
+                </div>
+                <div class="project-stat">
+                  <div class="project-stat-value">Real-time</div>
+                  <div class="project-stat-label">DAQ System</div>
+                </div>
+              </div>
+              <a href="#contact" class="project-link">Inquire About Research</a>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="heritage-content">
-        <p class="eyebrow">Mongolian advantage</p>
-        <h3>Beating giants with a nomad’s playbook.</h3>
-        <p class="lede">
-          Mongolia’s legacy: conquer the impossible with minimal resources. I carry that bias into startups—small teams, ruthless focus,
-          constant learning, and terrain-aware strategy. The same instincts that guide herders across harsh landscapes guide my approach
-          to space tech and venture.
+    </section>
+
+    <!-- ============================================
+         HERITAGE SECTION
+         ============================================ -->
+    <section class="heritage-section">
+      <div class="heritage-bg">
+        <img src="images/heritage.jpg" alt="" aria-hidden="true" />
+      </div>
+      <div class="heritage-content" data-animate>
+        <p class="heritage-eyebrow">Mongolian Advantage</p>
+        <h2 class="heritage-title">Beating giants with a nomad's playbook.</h2>
+        <p class="heritage-text">Mongolia's legacy: conquer the impossible with minimal resources. I carry that bias into startups—small teams, ruthless focus, constant learning, and terrain-aware strategy.</p>
+        <p class="heritage-text">The same instincts that guide herders across harsh landscapes guide my approach to space tech and venture.</p>
+        <div class="tags">
+          <span class="tag">Adaptability</span>
+          <span class="tag">Resourcefulness</span>
+          <span class="tag">Strategic Risk</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         EXPERIENCE TIMELINE
+         ============================================ -->
+    <section class="section section-darker" id="experience">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-eyebrow">Experience</p>
+          <h2 class="section-title">Career Timeline</h2>
+        </header>
+
+        <div class="timeline" data-animate>
+          <article class="timeline-item">
+            <p class="timeline-year">2025</p>
+            <h3 class="timeline-title">Engineering Intern — Satellite Systems</h3>
+            <p class="timeline-org">ONDO Space</p>
+            <p class="timeline-description">Supported low-cost satellite bus development; proposed AI + ArcGIS network planner to cut ground link costs, co-pitched to investors.</p>
+            <a href="https://ondo-space.com" target="_blank" rel="noreferrer" class="timeline-link">Visit ONDO Space →</a>
+          </article>
+
+          <article class="timeline-item">
+            <p class="timeline-year">2025</p>
+            <h3 class="timeline-title">Propulsion/Mechanical Engineer</h3>
+            <p class="timeline-org">Columbia Rocketry</p>
+            <p class="timeline-description">Built ablative liners, DAQ, and nozzle interface for hybrid engine static fires; qualified for competition.</p>
+            <a href="#projects" class="timeline-link">See Flagship Work →</a>
+          </article>
+
+          <article class="timeline-item">
+            <p class="timeline-year">2024</p>
+            <h3 class="timeline-title">Design & Engineering Officer</h3>
+            <p class="timeline-org">MARS-V</p>
+            <p class="timeline-description">Raised $5.8M commitments for a Mars analog; led EVA suit prototype tested at MDRS with UCCS collaborators.</p>
+            <a href="https://mdrs.marssociety.org" target="_blank" rel="noreferrer" class="timeline-link">MDRS Project →</a>
+          </article>
+
+          <article class="timeline-item">
+            <p class="timeline-year">2024</p>
+            <h3 class="timeline-title">Founder & CEO</h3>
+            <p class="timeline-org">HUR. EdTech</p>
+            <p class="timeline-description">Launched in 2 weeks; $30K/mo revenue in first quarter; provides mentorship and funding for Mongolian students.</p>
+            <a href="https://all-hur.com" target="_blank" rel="noreferrer" class="timeline-link">Visit Platform →</a>
+          </article>
+
+          <article class="timeline-item">
+            <p class="timeline-year">2018 – 2024</p>
+            <h3 class="timeline-title">Founder</h3>
+            <p class="timeline-org">Trend Mart</p>
+            <p class="timeline-description">Scaled teen-run retail/e-commerce to $800K+ revenue, 3 locations, 40+ employees; funded schooling and future projects.</p>
+          </article>
+
+          <article class="timeline-item">
+            <p class="timeline-year">Ongoing</p>
+            <h3 class="timeline-title">Performer & Organizer</h3>
+            <p class="timeline-org">Piano & Beyond The Music</p>
+            <p class="timeline-description">Performs piano; involved with Beyond the Music Festival to merge art and technology.</p>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" class="btn btn-outline">Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============================================
+         UPDATES / NEWS
+         ============================================ -->
+    <section class="section section-dark" id="updates">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-eyebrow">Latest</p>
+          <h2 class="section-title">Updates & Publications</h2>
+        </header>
+
+        <div class="updates-grid" data-animate>
+          <article class="update-card">
+            <p class="update-date">November 2025 · Essay</p>
+            <h3 class="update-title">Elon Musk & Genghis Khan in HR Execution</h3>
+            <p class="update-excerpt">Parallels between meritocratic leadership across centuries; coined the "Genghis Khan of tech" note.</p>
+            <a href="https://www.linkedin.com/in/tsogt-enkhbat" target="_blank" rel="noreferrer" class="update-link">Read Essay →</a>
+          </article>
+
+          <article class="update-card">
+            <p class="update-date">September 2025 · Research</p>
+            <h3 class="update-title">T-REX Proposal (NASA NIAC)</h3>
+            <p class="update-excerpt">Co-authored black hole video mission proposal; simulations for VLBI baselines and quantum communications.</p>
+            <a href="https://www.t-rexsat.org" target="_blank" rel="noreferrer" class="update-link">Mission Site →</a>
+          </article>
+
+          <article class="update-card">
+            <p class="update-date">August 2025 · Media</p>
+            <h3 class="update-title">MICC Spotlight</h3>
+            <p class="update-excerpt">Featured by Mongolia International Capital Corp. after internship on valuation and market insights.</p>
+            <a href="https://www.facebook.com/profile.php?id=61580637770769" target="_blank" rel="noreferrer" class="update-link">See Post →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT / BIO
+         ============================================ -->
+    <section class="section section-darker" id="about">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-eyebrow">About</p>
+          <h2 class="section-title">Mongolian-born Astropreneur at Columbia</h2>
+          <p class="section-subtitle">John Jay Scholar (top 0.03%), astrophysics major, philosophy + business focus. Built $800K+ in teen ventures, raised $5.8M for a Mars analog, and runs an edtech platform uplifting Mongolian students.</p>
+        </header>
+
+        <div class="tags" style="margin-bottom: 48px;" data-animate>
+          <span class="tag">Astrophysics</span>
+          <span class="tag">Space Systems</span>
+          <span class="tag">Startups</span>
+          <span class="tag">Philosophy</span>
+        </div>
+
+        <div class="bio-grid" data-animate>
+          <div class="bio-card">
+            <h3 class="bio-card-title">Research</h3>
+            <p class="bio-card-content">Binary black hole dynamics at Columbia; exoplanet detection at Harvard-Smithsonian; lunar eclipse studies in Mongolia.</p>
+          </div>
+          <div class="bio-card">
+            <h3 class="bio-card-title">Ventures</h3>
+            <p class="bio-card-content">T-REX (black hole video mission), HUR. EdTech (reach platform), Trend Mart ($800K revenue youth venture), Starry Tours (astro-tourism).</p>
+          </div>
+          <div class="bio-card">
+            <h3 class="bio-card-title">Awards</h3>
+            <p class="bio-card-content">NASA NIAC team award, John Jay Scholar, Harvard SSP Excellence, AI Hackathon honorable mention.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT / FOOTER
+         ============================================ -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="contact-title">Ready to Collaborate?</h2>
+        <p class="contact-subtitle">For research inquiries, venture opportunities, or just to connect.</p>
+
+        <p class="contact-email">
+          <a href="mailto:te2346@columbia.edu">te2346@columbia.edu</a>
         </p>
-        <div class="pill-row">
-          <span class="pill">Adaptability</span>
-          <span class="pill">Resourcefulness</span>
-          <span class="pill">Strategic risk</span>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/tsogt-enkhbat" target="_blank" rel="noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://x.com/the_tallerpoppy" target="_blank" rel="noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.4-8M20 4l-6.4 8"/>
+            </svg>
+            X / Twitter
+          </a>
+          <a href="https://www.instagram.com/tsokue___/?hl=en" target="_blank" rel="noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="18" cy="6" r="1.5" fill="currentColor"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://www.threads.com/@tsokue___" target="_blank" rel="noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+              <path d="M12 6c-2.21 0-4 1.79-4 4v4c0 2.21 1.79 4 4 4s4-1.79 4-4"/>
+            </svg>
+            Threads
+          </a>
+          <a href="https://www.goodreads.com/user/show/189398350-tsogt-enkhbat" target="_blank" rel="noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            Goodreads
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61580637770769" target="_blank" rel="noreferrer" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+
+        <div style="margin-bottom: 48px;">
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" class="btn btn-primary">Download CV / Resume</a>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="footer-logo">Todd Enkhbat</p>
+      <p class="footer-text">Astropreneur · Columbia University · Building the future of space</p>
+      <nav class="footer-nav">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="philosophy.html">Philosophy</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </footer>
+
   </main>
 
-  <footer class="footer" id="contact">
-    <div class="footer-inner">
-      <div>
-        <p class="eyebrow dark">Contact</p>
-        <h4>Ready to collaborate?</h4>
-        <p>te2346@columbia.edu</p>
-        <p class="muted">LinkedIn: linkedin.com/in/tsogt-enkhbat</p>
-      </div>
-      <div class="cta-row">
-        <a class="btn solid" href="mailto:te2346@columbia.edu">Email Todd</a>
-        <a class="btn ghost dark" href="#hero">Back to top</a>
-      </div>
-    </div>
-    <div class="footer-inner secondary">
-      <div>
-        <p class="eyebrow dark">Social</p>
-        <p>Instagram: <a class="link" href="https://www.instagram.com/tsokue___/?hl=en" target="_blank" rel="noreferrer">@tsokue___</a></p>
-        <p>Facebook: <a class="link" href="https://www.facebook.com/profile.php?id=61580637770769" target="_blank" rel="noreferrer">Profile</a></p>
-        <p>X: <a class="link" href="https://x.com/the_tallerpoppy" target="_blank" rel="noreferrer">@the_tallerpoppy</a></p>
-        <p>Threads: <a class="link" href="https://www.threads.com/@tsokue___" target="_blank" rel="noreferrer">@tsokue___</a></p>
-        <p>Goodreads: <a class="link" href="https://www.goodreads.com/user/show/189398350-tsogt-enkhbat" target="_blank" rel="noreferrer">Profile</a></p>
-        <p>Email (social): <a class="link" href="mailto:todd.enkhbat@gmail.com">todd.enkhbat@gmail.com</a></p>
-      </div>
-      <div>
-        <p class="eyebrow dark">Academia & Career</p>
-        <p>Publications & essays: see Updates above</p>
-        <p>LinkedIn: <a class="link" href="https://www.linkedin.com/in/tsogt-enkhbat" target="_blank" rel="noreferrer">linkedin.com/in/tsogt-enkhbat</a></p>
-        <p>Email (academic): <a class="link" href="mailto:tsogt.e@columbia.edu">tsogt.e@columbia.edu</a></p>
-        <p>Resume: <a class="link" href="/resume.pdf" target="_blank" rel="noreferrer">Download</a></p>
-      </div>
-    </div>
-  </footer>
+  <!-- Scripts -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Remove loading class
+      window.addEventListener('load', () => {
+        document.body.classList.remove('loading');
+        document.body.classList.add('loaded');
+      });
+
+      // Check for reduced motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Navbar scroll effect
+      const navbar = document.getElementById('navbar');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+
+        lastScroll = currentScroll;
+      }, { passive: true });
+
+      // Scroll animations
+      if (!prefersReducedMotion) {
+        const animateElements = document.querySelectorAll('[data-animate]');
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        animateElements.forEach(el => observer.observe(el));
+      } else {
+        // Show all elements immediately if reduced motion
+        document.querySelectorAll('[data-animate]').forEach(el => {
+          el.classList.add('visible');
+        });
+      }
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+              behavior: prefersReducedMotion ? 'auto' : 'smooth',
+              block: 'start'
+            });
+
+            // Update focus for accessibility
+            target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
+          }
+        });
+      });
+
+    })();
+  </script>
+
 </body>
 </html>
