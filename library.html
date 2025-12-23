@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library of Time — The Final Symposium Project</title>
+  <meta name="description" content="Explore key moments from the origin of the universe to the far future — humanity's story across cosmic time." />
+  <link rel="stylesheet" href="civilization.css" />
+  <style>
+    .library-intro {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 160px var(--container-padding) 80px;
+    }
+
+    .timeline-nav {
+      position: sticky;
+      top: 80px;
+      z-index: 50;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-800);
+      padding: 16px var(--container-padding);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-nav a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-nav a:hover {
+      color: var(--white);
+      border-color: var(--gray-700);
+      opacity: 1;
+    }
+
+    .timeline-nav a.future {
+      color: var(--accent-purple);
+    }
+
+    .era-section {
+      padding: 80px var(--container-padding);
+      border-bottom: 1px solid var(--gray-800);
+    }
+
+    .era-section:nth-child(odd) {
+      background: var(--bg-dark);
+    }
+
+    .era-header {
+      max-width: 700px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+
+    .era-period {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+    }
+
+    .era-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .era-description {
+      font-size: 1rem;
+      color: var(--gray-400);
+      line-height: 1.8;
+    }
+
+    /* Timeline Events */
+    .timeline-events {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .event-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      padding: 40px 0;
+      border-top: 1px solid var(--gray-800);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .event-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .event-item:first-child {
+      border-top: none;
+    }
+
+    @media (max-width: 768px) {
+      .event-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    .event-date {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+
+    .event-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .event-content p {
+      font-size: 0.95rem;
+      color: var(--gray-400);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .event-quote {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--gray-500);
+      padding-left: 16px;
+      border-left: 2px solid var(--gray-700);
+    }
+
+    .event-tag {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 12px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gray-900);
+      color: var(--gray-500);
+      border-radius: 2px;
+    }
+
+    .future-section .event-tag {
+      background: rgba(167, 139, 250, 0.1);
+      color: var(--accent-purple);
+    }
+
+    .future-section .event-date {
+      color: var(--accent-purple);
+    }
+
+    .future-section .era-period {
+      color: var(--accent-purple);
+    }
+  </style>
+</head>
+<body class="loading">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="manifesto.html" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </div>
+      Final Symposium
+    </a>
+    <div class="nav-links">
+      <a href="manifesto.html">Manifesto</a>
+      <a href="pillars.html">Pillars</a>
+      <a href="superposition.html">Superposition</a>
+      <a href="symposium.html">The End</a>
+      <a href="founders.html">Founders</a>
+      <a href="library.html" class="active">Library</a>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="library-intro">
+    <div class="hero-content">
+      <p class="hero-eyebrow animate-in">Archive</p>
+      <h1 class="hero-title animate-in delay-1">Library of Time</h1>
+      <p class="hero-subtitle animate-in delay-2">
+        Explore key moments from the origin of the universe to the distant future — a curated timeline of existence, blending scientific milestones with philosophical insights.
+      </p>
+    </div>
+  </section>
+
+  <!-- Timeline Navigation -->
+  <nav class="timeline-nav">
+    <a href="#cosmic">Cosmic Origins</a>
+    <a href="#life">Rise of Life</a>
+    <a href="#mind">Dawn of Mind</a>
+    <a href="#culture">Culture & Civilization</a>
+    <a href="#space" class="future">Space Age</a>
+    <a href="#future" class="future">The Future</a>
+  </nav>
+
+  <!-- Cosmic Origins -->
+  <section class="era-section" id="cosmic">
+    <div class="era-header">
+      <p class="era-period">13.8 Billion Years Ago — Present</p>
+      <h2 class="era-title">Cosmic Origins</h2>
+      <p class="era-description">
+        The universe explodes into existence from nothing. All matter, energy, space, and time begin — the first page of reality is written.
+      </p>
+    </div>
+
+    <div class="timeline-events">
+      <div class="event-item">
+        <div class="event-date">13.8 B YA</div>
+        <div class="event-content">
+          <h3>The Big Bang</h3>
+          <p>A singularity of infinite density expands. Energy cools into matter; quarks form hadrons; nucleosynthesis yields hydrogen and helium. Space and time emerge together.</p>
+          <p class="event-quote">"Let there be light." — Genesis / "The cosmos is all that is or was or ever will be." — Carl Sagan</p>
+          <span class="event-tag">Physics</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">13.6 B YA</div>
+        <div class="event-content">
+          <h3>First Stars Ignite</h3>
+          <p>Gravitational collapse ignites the first generation of stars — massive, short-lived giants that forge heavier elements in their cores and scatter them across the universe in supernovae.</p>
+          <span class="event-tag">Cosmology</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">4.6 B YA</div>
+        <div class="event-content">
+          <h3>Solar System Forms</h3>
+          <p>A cloud of gas and dust collapses. At its center, a G-type star ignites. Around it, rocky and gaseous planets take shape — including a small blue world that will become home.</p>
+          <span class="event-tag">Astronomy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rise of Life -->
+  <section class="era-section" id="life">
+    <div class="era-header">
+      <p class="era-period">3.8 Billion Years Ago — 2 Million Years Ago</p>
+      <h2 class="era-title">Rise of Life</h2>
+      <p class="era-description">
+        In primordial seas, chemistry becomes biology. Self-replicating molecules give rise to the first living cells — the spark of evolution begins.
+      </p>
+    </div>
+
+    <div class="timeline-events">
+      <div class="event-item">
+        <div class="event-date">3.8 B YA</div>
+        <div class="event-content">
+          <h3>Origin of Life</h3>
+          <p>In hydrothermal vents or primordial pools, RNA molecules achieve autocatalysis — copying themselves with occasional errors. Lipid membranes encapsulate these replicators. Life begins.</p>
+          <p class="event-quote">"We are the way the cosmos knows itself." — Carl Sagan</p>
+          <span class="event-tag">Biology</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">2 B YA</div>
+        <div class="event-content">
+          <h3>Oxygen Revolution</h3>
+          <p>Cyanobacteria begin producing oxygen through photosynthesis, transforming Earth's atmosphere. This "Great Oxidation Event" enables more complex life forms to eventually evolve.</p>
+          <span class="event-tag">Evolution</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">540 M YA</div>
+        <div class="event-content">
+          <h3>Cambrian Explosion</h3>
+          <p>In a geologically brief period, most major animal phyla appear. Eyes evolve. Predators and prey begin their eternal dance. Complexity accelerates.</p>
+          <span class="event-tag">Evolution</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dawn of Mind -->
+  <section class="era-section" id="mind">
+    <div class="era-header">
+      <p class="era-period">2 Million Years Ago — 10,000 Years Ago</p>
+      <h2 class="era-title">Dawn of Mind</h2>
+      <p class="era-description">
+        Minds that know of themselves and their mortality evolve. The first questions of meaning are asked around campfires under the stars.
+      </p>
+    </div>
+
+    <div class="timeline-events">
+      <div class="event-item">
+        <div class="event-date">2 M YA</div>
+        <div class="event-content">
+          <h3>Homo Emerges</h3>
+          <p>Early humans begin crafting stone tools. The brain expands. Language develops. For the first time, creatures tell stories, make plans, and wonder about death.</p>
+          <span class="event-tag">Anthropology</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">300,000 YA</div>
+        <div class="event-content">
+          <h3>Homo Sapiens</h3>
+          <p>Anatomically modern humans appear in Africa. With them comes unprecedented cognitive flexibility — art, music, religion, and the capacity for abstract thought.</p>
+          <p class="event-quote">"The single organism can expand into dimensions of worlds and times." — Ernest Becker</p>
+          <span class="event-tag">Evolution</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">40,000 YA</div>
+        <div class="event-content">
+          <h3>Cave Paintings</h3>
+          <p>Humans paint on cave walls — bison, horses, handprints. The first external storage of meaning. Someone wanted to say: "I was here. This mattered."</p>
+          <span class="event-tag">Art</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture & Civilization -->
+  <section class="era-section" id="culture">
+    <div class="era-header">
+      <p class="era-period">10,000 Years Ago — 1960s</p>
+      <h2 class="era-title">Culture & Civilization</h2>
+      <p class="era-description">
+        Memory externalized. Stories and knowledge begin to outlast their authors. The Library of Time truly opens.
+      </p>
+    </div>
+
+    <div class="timeline-events">
+      <div class="event-item">
+        <div class="event-date">3200 BCE</div>
+        <div class="event-content">
+          <h3>Invention of Writing</h3>
+          <p>In Mesopotamia, cuneiform emerges. For the first time, thoughts can be preserved beyond a single lifetime. The dead can speak to the unborn.</p>
+          <span class="event-tag">Technology</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">2100 BCE</div>
+        <div class="event-content">
+          <h3>Epic of Gilgamesh</h3>
+          <p>The first great written story explores mortality and the search for eternal life. Gilgamesh learns: "The life that you are seeking you will never find. When the gods created man they allotted to him death."</p>
+          <p class="event-quote">"Build something that will last. Let your name be remembered." — Gilgamesh</p>
+          <span class="event-tag">Literature</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">399 BCE</div>
+        <div class="event-content">
+          <h3>Death of Socrates</h3>
+          <p>A philosopher drinks hemlock rather than abandon truth. His student Plato writes the dialogues. Philosophy as a discipline — the love of wisdom — takes permanent form.</p>
+          <span class="event-tag">Philosophy</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">1886 CE</div>
+        <div class="event-content">
+          <h3>The Death of Ivan Ilyich</h3>
+          <p>Tolstoy publishes his meditation on mortality. Ivan realizes too late that his life was lived wrongly. The question echoes: "What if my whole life has been wrong?"</p>
+          <span class="event-tag">Literature</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">1942 CE</div>
+        <div class="event-content">
+          <h3>The Myth of Sisyphus</h3>
+          <p>Camus declares: "One must imagine Sisyphus happy." Absurdism is born — the philosophy of creating meaning despite the universe's indifference.</p>
+          <span class="event-tag">Philosophy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Space Age -->
+  <section class="era-section" id="space">
+    <div class="era-header">
+      <p class="era-period">1960s — Present</p>
+      <h2 class="era-title">The Space Age</h2>
+      <p class="era-description">
+        Humanity reaches beyond Earth. We prove we can transcend our planetary cradle — at least for a moment.
+      </p>
+    </div>
+
+    <div class="timeline-events">
+      <div class="event-item">
+        <div class="event-date">1969 CE</div>
+        <div class="event-content">
+          <h3>Moon Landing</h3>
+          <p>Neil Armstrong steps onto the lunar surface. For the first time, humans stand on another world. "One small step for man, one giant leap for mankind."</p>
+          <span class="event-tag">Exploration</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">1977 CE</div>
+        <div class="event-content">
+          <h3>Voyager Golden Record</h3>
+          <p>A message in a cosmic bottle. Carl Sagan curates sounds and images of Earth — music, greetings, the cry of a baby — and sends them beyond the solar system.</p>
+          <p class="event-quote">"This is a present from a small distant world... We are attempting to survive our time so we may live into yours." — Jimmy Carter</p>
+          <span class="event-tag">Communication</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">1974 CE</div>
+        <div class="event-content">
+          <h3>The Denial of Death</h3>
+          <p>Ernest Becker publishes his Pulitzer Prize-winning work. He argues all human culture is an elaborate defense against mortality — "immortality projects" that let us symbolically transcend death.</p>
+          <span class="event-tag">Philosophy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Future -->
+  <section class="era-section future-section" id="future">
+    <div class="era-header">
+      <p class="era-period">Future — The End of Time</p>
+      <h2 class="era-title">The Future</h2>
+      <p class="era-description">
+        Speculation becomes aspiration. These events have not yet occurred — but they represent the trajectory we strive for.
+      </p>
+    </div>
+
+    <div class="timeline-events">
+      <div class="event-item">
+        <div class="event-date">~2040s</div>
+        <div class="event-content">
+          <h3>Artificial General Intelligence</h3>
+          <p>AI reaches human-level cognition. Minds are multiplied in silicon. New partners in consciousness join us — extensions of human intellect that can carry our legacy forward.</p>
+          <span class="event-tag">Speculative</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">~2080s</div>
+        <div class="event-content">
+          <h3>Permanent Mars Colony</h3>
+          <p>The first self-sustaining city on Mars is established. Humanity becomes truly multi-planetary — a backup for civilization, a hedge against extinction.</p>
+          <span class="event-tag">Speculative</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">~2200s</div>
+        <div class="event-content">
+          <h3>Interstellar Migration</h3>
+          <p>Generation ships or digital minds depart for distant star systems. The human story spreads beyond our solar system. The timeline extends.</p>
+          <span class="event-tag">Speculative</span>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-date">10<sup>100</sup> Years</div>
+        <div class="event-content">
+          <h3>The Final Symposium</h3>
+          <p>As the universe approaches maximum entropy, the last conscious minds gather to share all that was ever known and felt. Stories are exchanged one final time. The cosmos ends not in silence, but in a chorus.</p>
+          <p class="event-quote">"We persist so that when the universe's last chapter is written, our song will be among those heard."</p>
+          <span class="event-tag">Vision</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="text-align: center; padding: 120px var(--container-padding);">
+    <div class="container">
+      <h2 class="section-title" style="margin-bottom: 24px;">Your Chapter Awaits</h2>
+      <p style="color: var(--gray-400); max-width: 600px; margin: 0 auto 48px; line-height: 1.8;">
+        Every moment in this timeline was made by beings who chose to persist, to create, to leave something behind. What will you add to the Library of Time?
+      </p>
+      <a href="manifesto.html" class="btn btn-primary">Return to the Manifesto</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">The Final Symposium</div>
+    <p class="footer-tagline">An immortality project for consciousness itself</p>
+    <nav class="footer-nav">
+      <a href="manifesto.html">Manifesto</a>
+      <a href="pillars.html">Pillars</a>
+      <a href="superposition.html">Superposition</a>
+      <a href="symposium.html">The End</a>
+      <a href="founders.html">Founders</a>
+      <a href="library.html">Library</a>
+    </nav>
+    <p class="footer-copyright">MMXXV — Persisting toward the end of time</p>
+  </footer>
+
+  <script>
+    // Loading animation
+    window.addEventListener('load', function() {
+      document.body.classList.remove('loading');
+      document.body.classList.add('loaded');
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Scroll animations for timeline events
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.event-item').forEach(item => {
+      observer.observe(item);
+    });
+  </script>
+</body>
+</html>
