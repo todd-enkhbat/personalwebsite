@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Superposition — The Final Symposium Project</title>
+  <meta name="description" content="Experience the universe in dual vision — toggle between scientific and humanistic perspectives." />
+  <link rel="stylesheet" href="civilization.css" />
+  <style>
+    .superposition-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 120px var(--container-padding) 80px;
+      text-align: center;
+    }
+
+    .duality-visual {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 48px auto;
+    }
+
+    .duality-circle {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      opacity: 0.6;
+      mix-blend-mode: screen;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .duality-circle.science {
+      left: 20px;
+      top: 40px;
+      background: radial-gradient(circle, var(--accent-cyan), transparent 70%);
+      animation-delay: 0s;
+    }
+
+    .duality-circle.humanity {
+      right: 20px;
+      top: 40px;
+      background: radial-gradient(circle, var(--accent-gold), transparent 70%);
+      animation-delay: 2s;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    .experience-section {
+      padding: var(--section-padding) var(--container-padding);
+      background: var(--bg-dark);
+      border-top: 1px solid var(--gray-800);
+    }
+
+    .toggle-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+    }
+
+    .perspective-wrapper {
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .perspective-scientific {
+      font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+      color: var(--accent-cyan);
+      letter-spacing: 0.02em;
+    }
+
+    .perspective-humanistic {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+
+    .scenarios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 80px;
+    }
+
+    .scenario-card {
+      padding: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--gray-800);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .scenario-card:hover {
+      border-color: var(--gray-700);
+      transform: translateY(-4px);
+    }
+
+    .scenario-card.active {
+      border-color: var(--accent-purple);
+    }
+
+    .scenario-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .scenario-subtitle {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+  </style>
+</head>
+<body class="loading">
+  <!-- Particle Background -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="manifesto.html" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </div>
+      Final Symposium
+    </a>
+    <div class="nav-links">
+      <a href="manifesto.html">Manifesto</a>
+      <a href="pillars.html">Pillars</a>
+      <a href="superposition.html" class="active">Superposition</a>
+      <a href="symposium.html">The End</a>
+      <a href="founders.html">Founders</a>
+      <a href="library.html">Library</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="superposition-hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow animate-in">Blending Perspectives</p>
+      <h1 class="hero-title animate-in delay-1">Superposition</h1>
+      <p class="hero-subtitle animate-in delay-2">
+        Just as a quantum particle exists in multiple states until observed, humanity's story can be viewed through multiple lenses — scientific and poetic — simultaneously.
+      </p>
+
+      <div class="duality-visual animate-in delay-3">
+        <div class="duality-circle science"></div>
+        <div class="duality-circle humanity"></div>
+      </div>
+
+      <p style="color: var(--gray-500); font-size: 0.9rem; max-width: 500px; margin: 0 auto; line-height: 1.8;" class="animate-in delay-4">
+        Only by blending the reductionist, humanist, philosophical, and cosmological accounts can we grasp meaning in an impermanent universe.
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience-section" id="experience">
+    <div class="superposition-container">
+      <p class="toggle-label">Toggle Perspective</p>
+
+      <!-- Toggle Switch -->
+      <div class="toggle-wrapper">
+        <div class="toggle-switch">
+          <button class="toggle-option active" data-perspective="scientific" onclick="switchPerspective('scientific')">
+            Science
+          </button>
+          <button class="toggle-option" data-perspective="humanistic" onclick="switchPerspective('humanistic')">
+            Story
+          </button>
+        </div>
+      </div>
+
+      <!-- Perspective Content -->
+      <div class="perspective-wrapper">
+        <div class="perspective-content">
+          <div class="perspective-text active perspective-scientific" data-perspective="scientific">
+            <p id="scientific-text">
+              In the beginning, a singularity of infinite density expanded — energy cooling into matter, quarks forming hadrons, nucleosynthesis yielding hydrogen and helium. Across 13.8 billion years, gravitational collapse ignited stars, whose supernovae scattered heavier elements. On a rocky planet orbiting a G-type star, autocatalytic chemistry became self-replicating molecules, and evolution's algorithm iterated toward consciousness.
+            </p>
+          </div>
+          <div class="perspective-text perspective-humanistic" data-perspective="humanistic">
+            <p id="humanistic-text">
+              In the beginning, there was darkness — until a burst of light set the cosmos ablaze. From that first dawn, the universe dreamed itself into being: stars were born and died like fireflies in an infinite night. On a small blue world, something miraculous stirred in the waters — life reached toward the light, and after eons of striving, looked up at the stars that made it and asked: "Why?"
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario Selection -->
+      <div class="scenarios-grid">
+        <div class="scenario-card active" onclick="loadScenario('origin')">
+          <h3 class="scenario-title">The Origin</h3>
+          <p class="scenario-subtitle">How existence began</p>
+        </div>
+        <div class="scenario-card" onclick="loadScenario('life')">
+          <h3 class="scenario-title">The Spark of Life</h3>
+          <p class="scenario-subtitle">Chemistry becomes biology</p>
+        </div>
+        <div class="scenario-card" onclick="loadScenario('consciousness')">
+          <h3 class="scenario-title">The Awakening</h3>
+          <p class="scenario-subtitle">Mind emerges from matter</p>
+        </div>
+        <div class="scenario-card" onclick="loadScenario('end')">
+          <h3 class="scenario-title">The Final Hour</h3>
+          <p class="scenario-subtitle">Heat death approaches</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meaning Section -->
+  <section class="section" style="text-align: center;">
+    <div class="container">
+      <div class="manifesto-quote" style="max-width: 800px; margin: 0 auto; text-align: left;">
+        <blockquote>
+          "The collision of two perspectives — the subjective meaning we feel versus the objective insignificance we observe — is what Thomas Nagel called the Absurd. But in that collision, we find something profound: the capacity to hold both truths at once."
+        </blockquote>
+        <cite>— On Meaning and Cosmos</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="text-align: center; padding-bottom: 120px;">
+    <div class="container">
+      <h2 class="section-title" style="margin-bottom: 24px;">The View from Both Sides</h2>
+      <p style="color: var(--gray-400); max-width: 600px; margin: 0 auto 48px; line-height: 1.8;">
+        Neither perspective alone tells the complete story. Like Borges' Garden of Forking Paths, all narratives occur simultaneously until we choose to observe one.
+      </p>
+      <a href="symposium.html" class="btn btn-primary">Continue to The End</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">The Final Symposium</div>
+    <p class="footer-tagline">An immortality project for consciousness itself</p>
+    <nav class="footer-nav">
+      <a href="manifesto.html">Manifesto</a>
+      <a href="pillars.html">Pillars</a>
+      <a href="superposition.html">Superposition</a>
+      <a href="symposium.html">The End</a>
+      <a href="founders.html">Founders</a>
+      <a href="library.html">Library</a>
+    </nav>
+    <p class="footer-copyright">MMXXV — Persisting toward the end of time</p>
+  </footer>
+
+  <script>
+    // Scenario content
+    const scenarios = {
+      origin: {
+        scientific: "In the beginning, a singularity of infinite density expanded — energy cooling into matter, quarks forming hadrons, nucleosynthesis yielding hydrogen and helium. Across 13.8 billion years, gravitational collapse ignited stars, whose supernovae scattered heavier elements. On a rocky planet orbiting a G-type star, autocatalytic chemistry became self-replicating molecules, and evolution's algorithm iterated toward consciousness.",
+        humanistic: "In the beginning, there was darkness — until a burst of light set the cosmos ablaze. From that first dawn, the universe dreamed itself into being: stars were born and died like fireflies in an infinite night. On a small blue world, something miraculous stirred in the waters — life reached toward the light, and after eons of striving, looked up at the stars that made it and asked: \"Why?\""
+      },
+      life: {
+        scientific: "Approximately 3.8 billion years ago, in hydrothermal vents or primordial pools, RNA molecules achieved autocatalysis — copying themselves with occasional errors that natural selection could act upon. Lipid membranes encapsulated these replicators, creating the first cells. Through horizontal gene transfer and vertical inheritance, complexity increased: mitochondrial endosymbiosis, multicellularity, the Cambrian explosion of body plans.",
+        humanistic: "In warm shallow seas, something impossible happened — the dead began to live. Molecules that had drifted aimlessly for eons suddenly learned to remember, to copy themselves, to persist. This was the first rebellion against entropy: chemistry refusing to stay still. And from that defiance, an unbroken thread stretches to you, reading these words now."
+      },
+      consciousness: {
+        scientific: "Neural networks of increasing complexity evolved to model the environment. Somewhere in this process — through recurrent connections, integrated information, or emergent dynamics still not fully understood — subjective experience arose. The brain began modeling not just the world, but itself modeling the world. Meta-cognition emerged: minds aware of their own existence, capable of contemplating their eventual termination.",
+        humanistic: "After billions of years of dreamless existence, the universe opened its eyes. In creatures swimming, crawling, climbing, a new light flickered on — the light of awareness. For the first time, matter could feel, could wonder, could love, could fear its own ending. The cosmos had finally found a way to know itself, and with that knowledge came the terrible, beautiful burden of meaning."
+      },
+      end: {
+        scientific: "In approximately 10^100 years, the last black holes will evaporate via Hawking radiation. Before that, proton decay (if it occurs) will have dissolved all matter. The universe will approach maximum entropy — a cold, dark expanse of isolated photons, a bath of radiation at temperatures asymptotically approaching absolute zero. No work can be extracted; no information can be processed; no observers can exist.",
+        humanistic: "In the last days of light, when the stars are memories and warmth is a legend, the final minds will gather their stories. Everything that was ever loved, every sunrise witnessed, every hand held in the dark — all of it distilled into one last telling. And in that telling, in that final sharing of what it meant to exist, the universe will have found its answer: we were here, and it mattered."
+      }
+    };
+
+    let currentPerspective = 'scientific';
+    let currentScenario = 'origin';
+
+    function switchPerspective(perspective) {
+      currentPerspective = perspective;
+
+      // Update toggle buttons
+      document.querySelectorAll('.toggle-option').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.perspective === perspective) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Update perspective text
+      document.querySelectorAll('.perspective-text').forEach(text => {
+        text.classList.remove('active');
+        if (text.dataset.perspective === perspective) {
+          text.classList.add('active');
+        }
+      });
+    }
+
+    function loadScenario(scenario) {
+      currentScenario = scenario;
+
+      // Update scenario cards
+      document.querySelectorAll('.scenario-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      event.currentTarget.classList.add('active');
+
+      // Update text content
+      document.getElementById('scientific-text').textContent = scenarios[scenario].scientific;
+      document.getElementById('humanistic-text').textContent = scenarios[scenario].humanistic;
+    }
+
+    // Loading animation
+    window.addEventListener('load', function() {
+      document.body.classList.remove('loading');
+      document.body.classList.add('loaded');
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

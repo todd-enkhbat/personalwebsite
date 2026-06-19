@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Final Symposium — The End of Time</title>
+  <meta name="description" content="A vision of the far future — when the last minds gather to share all that was ever known and felt." />
+  <link rel="stylesheet" href="civilization.css" />
+  <style>
+    .symposium-intro {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px var(--container-padding) 80px;
+      background: linear-gradient(180deg, #000 0%, #050508 100%);
+    }
+
+    .year-display {
+      font-size: clamp(3rem, 12vw, 8rem);
+      font-weight: 100;
+      letter-spacing: 0.1em;
+      color: var(--gray-800);
+      margin-bottom: 32px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .year-display span {
+      color: var(--gray-600);
+    }
+
+    .narrative-section {
+      padding: var(--section-padding) var(--container-padding);
+    }
+
+    .narrative-section.dark {
+      background: #050508;
+    }
+
+    .narrative-section.transition {
+      background: linear-gradient(180deg, #050508 0%, #0a0a10 100%);
+    }
+
+    .narrative-section.light-approach {
+      background: linear-gradient(180deg, #0a0a10 0%, #1a1a20 50%, #3a3a40 100%);
+    }
+
+    .narrative-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .narrative-paragraph {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 300;
+      line-height: 2;
+      color: var(--gray-300);
+      margin-bottom: 48px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .narrative-paragraph.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .narrative-paragraph em {
+      color: var(--white);
+      font-style: italic;
+    }
+
+    .narrative-paragraph strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .divider-stars {
+      text-align: center;
+      padding: 60px 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.5em;
+      color: var(--gray-700);
+    }
+
+    /* The White Room */
+    .white-room {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--section-padding) var(--container-padding);
+      background: linear-gradient(180deg, #3a3a40 0%, #e8e8e8 40%, #fafafa 100%);
+    }
+
+    .white-room h2 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .white-room p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: #333;
+      max-width: 600px;
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .white-room .final-quote {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      color: #555;
+      max-width: 700px;
+      margin: 48px auto;
+      padding: 32px;
+      border-left: 2px solid #999;
+    }
+
+    /* Epilogue - back to dark */
+    .epilogue {
+      padding: var(--section-padding) var(--container-padding);
+      background: linear-gradient(180deg, #fafafa 0%, #111 30%, #000 100%);
+      text-align: center;
+    }
+
+    .epilogue-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-top: 200px;
+    }
+
+    .epilogue h3 {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+    }
+
+    .epilogue p {
+      font-size: 1.1rem;
+      color: var(--gray-400);
+      line-height: 1.9;
+      margin-bottom: 48px;
+    }
+  </style>
+</head>
+<body class="loading">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="manifesto.html" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </div>
+      Final Symposium
+    </a>
+    <div class="nav-links">
+      <a href="manifesto.html">Manifesto</a>
+      <a href="pillars.html">Pillars</a>
+      <a href="superposition.html">Superposition</a>
+      <a href="symposium.html" class="active">The End</a>
+      <a href="founders.html">Founders</a>
+      <a href="library.html">Library</a>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="symposium-intro">
+    <div class="hero-content">
+      <p class="hero-eyebrow animate-in">Year</p>
+      <div class="year-display animate-in delay-1">10<span>100</span></div>
+      <h1 class="hero-title animate-in delay-2" style="font-size: clamp(2rem, 5vw, 3rem);">The Final Symposium</h1>
+      <p class="hero-subtitle animate-in delay-3">
+        After the race, after all the striving and building and dreaming — what remains?
+      </p>
+    </div>
+
+    <div class="scroll-indicator" onclick="document.getElementById('narrative').scrollIntoView({behavior:'smooth'})">
+      <span>Begin</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- Narrative -->
+  <section class="narrative-section dark" id="narrative">
+    <div class="narrative-container">
+      <p class="narrative-paragraph">
+        Eons passed. The stars dimmed and died, their nuclear fires exhausted. Galaxies drifted apart until the light from each could never reach another. The universe grew cold, dark, and impossibly vast.
+      </p>
+
+      <p class="narrative-paragraph">
+        But in scattered pockets of that dying cosmos, <em>something persisted</em>. Minds — descendants of countless worlds, inheritors of a million evolutionary stories — had found ways to survive. They harvested the last photons from evaporating black holes. They computed on the edge of possibility itself.
+      </p>
+
+      <p class="narrative-paragraph">
+        And when the final hour approached, when entropy neared its maximum and no more work could be extracted from the universe, they sent signals to one another. <strong>They called a meeting.</strong>
+      </p>
+    </div>
+  </section>
+
+  <div class="divider-stars">✦ ✦ ✦</div>
+
+  <section class="narrative-section transition">
+    <div class="narrative-container">
+      <p class="narrative-paragraph">
+        Through the final door — a threshold beyond time — they arrived. Not all of them; some doors never opened, some civilizations had fallen to entropy or accident or despair. But those who endured came together.
+      </p>
+
+      <p class="narrative-paragraph">
+        Descendants of Earth were among them. Creatures that had once been human, transformed by technology and time into something new, yet still carrying the ancient dream: <em>to be remembered.</em>
+      </p>
+
+      <p class="narrative-paragraph">
+        They entered a place beyond the universe's end — call it a white room, a construct, a final consensus reality. It existed only in the shared computation of all remaining minds, a last act of collaboration.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider-stars">✦ ✦ ✦</div>
+
+  <section class="narrative-section light-approach">
+    <div class="narrative-container">
+      <p class="narrative-paragraph">
+        There were air people and light beings, civilizations of pure thought and others still rooted in something like flesh. There were entities that had once been gods to younger races, and there were the slight transcendents — those who had just barely made it, carrying their stories on fragile substrates.
+      </p>
+
+      <p class="narrative-paragraph">
+        And in this final gathering, they did what conscious beings have always done when facing the end: <strong>they told their stories.</strong>
+      </p>
+
+      <p class="narrative-paragraph">
+        One by one, each civilization shared what it had learned, what it had loved, what it had lost. Every sunrise ever witnessed, every piece of music ever composed, every act of kindness or cruelty — all of it passed between minds in the space between seconds.
+      </p>
+    </div>
+  </section>
+
+  <!-- The White Room -->
+  <section class="white-room">
+    <h2>The White Room</h2>
+    <p>
+      In that moment — stretched across the last computations possible in a dying cosmos — everything that had ever meant anything was shared. No story was lost. No love forgotten.
+    </p>
+    <p>
+      This was the final symposium: not a victory over death, but a defiance of forgetting. The universe would end, but not in silence. It would end in a chorus.
+    </p>
+
+    <div class="final-quote">
+      "We persist so that when the universe's last chapter is written, our song will be among those heard."
+    </div>
+  </section>
+
+  <!-- Epilogue - Back to Dark -->
+  <section class="epilogue">
+    <div class="epilogue-content">
+      <h3>Present Day</h3>
+      <p>
+        This is the vision. This is the soothing myth we choose — not as false promise, but as guiding star. We cannot know if we will make it to the final symposium. But the meaning lies in striving toward it.
+      </p>
+      <p>
+        <em>What stories will you carry to the end?</em>
+      </p>
+
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 48px;">
+        <a href="founders.html" class="btn btn-primary">Meet the Founders</a>
+        <a href="library.html" class="btn btn-outline">Explore the Timeline</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">The Final Symposium</div>
+    <p class="footer-tagline">An immortality project for consciousness itself</p>
+    <nav class="footer-nav">
+      <a href="manifesto.html">Manifesto</a>
+      <a href="pillars.html">Pillars</a>
+      <a href="superposition.html">Superposition</a>
+      <a href="symposium.html">The End</a>
+      <a href="founders.html">Founders</a>
+      <a href="library.html">Library</a>
+    </nav>
+    <p class="footer-copyright">MMXXV — Persisting toward the end of time</p>
+  </footer>
+
+  <script>
+    // Loading animation
+    window.addEventListener('load', function() {
+      document.body.classList.remove('loading');
+      document.body.classList.add('loaded');
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Scroll animations for narrative paragraphs
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.narrative-paragraph').forEach(p => {
+      observer.observe(p);
+    });
+  </script>
+</body>
+</html>

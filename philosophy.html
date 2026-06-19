@@ -5,127 +5,317 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Origins and Meaning — Todd Enkhbat</title>
   <meta name="description" content="Mapping the wild and entirely baffling existence that we share." />
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="philosophy.css" />
 </head>
-<body class="philosophy-body">
-  <header class="topbar">
-    <div class="logo">TODD</div>
-    <nav class="nav">
+<body class="loading">
+  <!-- Particle Background -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">TODD</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#topics">Topics</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero - Floating Bottle -->
+  <section class="hero-bottle" id="origins">
+    <div class="bottle-container" onclick="document.getElementById('topics').scrollIntoView({behavior: 'smooth'})">
+      <div class="bottle-wrapper">
+        <img src="images/bottle.png" alt="Message in a Bottle" class="bottle-image" />
+      </div>
+      <div class="click-instruction">
+        <span class="click-text">Click Here</span>
+        <div class="click-arrow"></div>
+      </div>
+      <div class="submission-box">
+        <div class="submission-label">Final Submission</div>
+        <div class="submission-title">Origins and Meaning</div>
+      </div>
+    </div>
+    <div class="scroll-down">
+      Scroll
+    </div>
+  </section>
+
+  <!-- Section Intro -->
+  <section class="section-intro">
+    <p class="section-eyebrow">Philosophy</p>
+    <h1 class="section-title">Origins and Meaning</h1>
+    <p class="section-description">This page is dedicated to the will of mapping the wild and entirely baffling existence that we share. A journey through the fundamental questions that define our understanding of reality.</p>
+  </section>
+
+  <!-- Topics Grid -->
+  <section class="topics-section" id="topics">
+    <div class="topics-grid">
+      <!-- Topic 01 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">01</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">Explanation, Truth, Inevitability</h2>
+        <p class="topic-description">Exploring the foundations of understanding and the immutable laws that govern reality. What makes something true, and why certain things must be as they are.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Epistemology</span>
+          <a class="topic-link" href="#explanation">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 02 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">02</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">Entropy and Time</h2>
+        <p class="topic-description">The arrow of time and the inexorable march toward disorder in our universe. Why does time flow in one direction, and what does entropy reveal about our fate?</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Physics</span>
+          <a class="topic-link" href="#entropy">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 03 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">03</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">Time, Space, and Einstein</h2>
+        <p class="topic-description">The fabric of spacetime and the revolutionary insights that reshaped our understanding. How relativity warps our intuitions about the cosmos.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Relativity</span>
+          <a class="topic-link" href="#einstein">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 04 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">04</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">The Origin of the Universe</h2>
+        <p class="topic-description">From the first moments of the Big Bang to the cosmic structures we observe today. The story of how everything came to be from nothing.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Cosmology</span>
+          <a class="topic-link" href="#origin">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 05 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">05</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">The Quantum Revolution</h2>
+        <p class="topic-description">Uncertainty, probability, and the fundamental nature of reality at the smallest scales. How quantum mechanics shattered classical determinism.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Quantum</span>
+          <a class="topic-link" href="#quantum">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 06 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">06</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">Evolution and Life</h2>
+        <p class="topic-description">The emergence of complexity and the unfolding story of life across billions of years. How natural selection sculpts order from chaos.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Biology</span>
+          <a class="topic-link" href="#evolution">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 07 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">07</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">The Origin of Mind</h2>
+        <p class="topic-description">Consciousness, awareness, and the mysterious emergence of subjective experience. The hard problem of explaining why there is something it is like to be.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Consciousness</span>
+          <a class="topic-link" href="#mind">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 08 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">08</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">Language and Story</h2>
+        <p class="topic-description">The tools we use to construct meaning and share the narratives that shape civilization. How symbols become worlds.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Linguistics</span>
+          <a class="topic-link" href="#language">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 09 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">09</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">Brains and Belief</h2>
+        <p class="topic-description">The neural architecture of conviction and the cognitive structures underlying faith. Why we believe what we believe.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Neuroscience</span>
+          <a class="topic-link" href="#belief">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 10 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">10</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">Art and Transcendence</h2>
+        <p class="topic-description">The human impulse to create beauty and reach beyond the boundaries of the known. Art as a window to the infinite.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Aesthetics</span>
+          <a class="topic-link" href="#art">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 11 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">11</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">The Future</h2>
+        <p class="topic-description">Possibility, uncertainty, and the vast landscape of what may yet come to be. The horizons of human potential and cosmic destiny.</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Futurism</span>
+          <a class="topic-link" href="#future">Explore</a>
+        </div>
+      </article>
+
+      <!-- Topic 12 -->
+      <article class="topic-card">
+        <div class="topic-header">
+          <div class="topic-number">12</div>
+          <div class="topic-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="topic-title">In Search of Meaning</h2>
+        <p class="topic-description">The fundamental question of purpose in a universe governed by physical law. What does it all mean, and does it need to mean anything?</p>
+        <div class="topic-footer">
+          <span class="topic-tag">Existentialism</span>
+          <a class="topic-link" href="#meaning">Explore</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote-section">
+    <blockquote class="quote-text">
+      The most beautiful experience we can have is the mysterious. It is the fundamental emotion that stands at the cradle of true art and true science.
+    </blockquote>
+    <cite class="quote-author">— Albert Einstein</cite>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">TODD ENKHBAT</div>
+    <p class="footer-text">Mapping the wild and entirely baffling existence that we share</p>
+    <nav class="footer-nav">
       <a href="index.html">Home</a>
       <a href="#origins">Origins</a>
       <a href="#topics">Topics</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
-    <a class="btn ghost" href="index.html#contact">Collaborate</a>
-  </header>
-
-  <main class="philosophy-main">
-    <section class="cosmos-hero" id="origins">
-      <div class="stars-bg"></div>
-      <div class="cosmos-content">
-        <h1>Origins and Meaning</h1>
-        <p class="cosmos-intro">This page is dedicated to the will of mapping the wild and entirely baffling existence that we share.</p>
-      </div>
-    </section>
-
-    <section class="topics-grid" id="topics">
-      <article class="topic-card">
-        <div class="topic-number">01</div>
-        <h2>Explanation, Truth, Inevitability</h2>
-        <p>Exploring the foundations of understanding and the immutable laws that govern reality.</p>
-        <a class="topic-link" href="#explanation">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">02</div>
-        <h2>Entropy and Time</h2>
-        <p>The arrow of time and the inexorable march toward disorder in our universe.</p>
-        <a class="topic-link" href="#entropy">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">03</div>
-        <h2>Time, Space, and Einstein</h2>
-        <p>The fabric of spacetime and the revolutionary insights that reshaped our understanding.</p>
-        <a class="topic-link" href="#einstein">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">04</div>
-        <h2>The Origin of the Universe</h2>
-        <p>From the first moments of the Big Bang to the cosmic structures we observe today.</p>
-        <a class="topic-link" href="#origin">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">05</div>
-        <h2>The Quantum Revolution and the Nature of the Future</h2>
-        <p>Uncertainty, probability, and the fundamental nature of reality at the smallest scales.</p>
-        <a class="topic-link" href="#quantum">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">06</div>
-        <h2>Evolution and Life</h2>
-        <p>The emergence of complexity and the unfolding story of life across billions of years.</p>
-        <a class="topic-link" href="#evolution">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">07</div>
-        <h2>The Origin of Mind</h2>
-        <p>Consciousness, awareness, and the mysterious emergence of subjective experience.</p>
-        <a class="topic-link" href="#mind">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">08</div>
-        <h2>Language and Story</h2>
-        <p>The tools we use to construct meaning and share the narratives that shape civilization.</p>
-        <a class="topic-link" href="#language">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">09</div>
-        <h2>Brains and Belief</h2>
-        <p>The neural architecture of conviction and the cognitive structures underlying faith.</p>
-        <a class="topic-link" href="#belief">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">10</div>
-        <h2>Art and Transcendence</h2>
-        <p>The human impulse to create beauty and reach beyond the boundaries of the known.</p>
-        <a class="topic-link" href="#art">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">11</div>
-        <h2>The Future</h2>
-        <p>Possibility, uncertainty, and the vast landscape of what may yet come to be.</p>
-        <a class="topic-link" href="#future">Explore →</a>
-      </article>
-
-      <article class="topic-card">
-        <div class="topic-number">12</div>
-        <h2>In Search of Meaning</h2>
-        <p>The fundamental question of purpose in a universe governed by physical law.</p>
-        <a class="topic-link" href="#meaning">Explore →</a>
-      </article>
-    </section>
-  </main>
-
-  <footer class="footer cosmos-footer">
-    <div class="footer-inner">
-      <div>
-        <p class="eyebrow dark">Navigation</p>
-        <p><a class="link" href="index.html">Return to main site</a></p>
-        <p><a class="link" href="index.html#contact">Contact</a></p>
-      </div>
-      <div class="cta-row">
-        <a class="btn ghost dark" href="#origins">Back to top</a>
-      </div>
-    </div>
   </footer>
+
+  <script>
+    // Loading animation
+    window.addEventListener('load', function() {
+      document.body.classList.remove('loading');
+      document.body.classList.add('loaded');
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
