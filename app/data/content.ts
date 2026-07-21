@@ -70,7 +70,7 @@ export const projects: Project[] = [
       "Enabled data-driven iteration for competition qualification"
     ],
     media: "Propulsion chamber diagnostics",
-    image: "/images/editorial-reference-grid.png"
+    image: "/images/panel-b.gif"
   },
   {
     id: "hur",
@@ -146,7 +146,7 @@ export const projects: Project[] = [
       "Clearer prioritization during mission-critical periods"
     ],
     media: "Execution model and decision loops",
-    image: "/images/editorial-reference-grid.png"
+    image: "/images/panel-a.jpg"
   }
 ];
 

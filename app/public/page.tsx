@@ -24,7 +24,7 @@ export default function PublicPage() {
     <main className="page-shell">
       <section className="hero-dark mb-4 p-3">
         <div className="relative aspect-[18/5] w-full overflow-hidden border border-[var(--line)]">
-          <Image src="/images/editorial-reference-grid.png" alt="Public profile visual" fill sizes="90vw" className="object-cover" />
+          <Image src="/images/nyse.jpg" alt="Public profile visual" fill sizes="90vw" className="object-cover" />
         </div>
       </section>
       <section className="grid gap-3 md:grid-cols-3">

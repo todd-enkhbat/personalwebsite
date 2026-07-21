@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { AnimatedBackground } from "./components/AnimatedBackground";
+import { CursorGlow } from "./components/CursorGlow";
+import { NavLinks } from "./components/NavLinks";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -11,28 +14,26 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Tsogt Enkhbat | Space Systems Portfolio",
-  description: "Interactive portfolio focused on aerospace systems, product design, and research execution."
+  description:
+    "Interactive portfolio focused on aerospace systems, product design, and research execution."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={montserrat.variable}>
+        <AnimatedBackground />
+        <CursorGlow />
         <header className="site-header">
           <div className="site-inner">
             <Link href="/" className="brand">
+              <span className="brand-dot" aria-hidden />
               Tsogt Enkhbat
             </Link>
-            <nav className="site-nav">
-              <Link href="/projects">Recent Projects</Link>
-              <Link href="/about">About</Link>
-              <Link href="/public">Public</Link>
-              <Link href="/writing">Writing</Link>
-              <Link href="/philosophy">Philosophy</Link>
-            </nav>
+            <NavLinks />
           </div>
         </header>
-        {children}
+        <div className="page-frame">{children}</div>
       </body>
     </html>
   );
