@@ -1,77 +1,71 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { about, writings } from "./data/content";
+import { linkedReferences, person, sections } from "./data/content";
 
-export default function HomePage() {
+export default function MainPage() {
   return (
     <main className="page-shell">
-      <section className="hero-dark grid gap-8 p-6 md:grid-cols-[1fr_0.65fr]">
-        <div>
-          <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="ui-mono text-[11px] uppercase tracking-[0.2em] text-[var(--accent-strong)]">
-            Building next-generation systems
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08 }}
-            className="mt-4 max-w-2xl text-3xl leading-[1.14] text-[var(--ink)] md:text-5xl"
-          >
-            Engineering progress for missions, products, and ideas.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.16 }}
-            className="mt-5 max-w-xl text-sm leading-relaxed text-[var(--ink-muted)]"
-          >
-            {about.intro}
-          </motion.p>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }} className="mt-7 grid gap-2 sm:grid-cols-2">
-            {[
-              ["Recent Projects", "/projects"],
-              ["About", "/about"],
-              ["Public", "/public"],
-              ["Writing", "/writing"],
-              ["Philosophy", "/philosophy"]
-            ].map(([label, href]) => (
-              <Link key={href} href={href} className="ui-sans border border-[var(--line)] bg-[var(--surface-2)] px-3 py-2 text-xs uppercase tracking-[0.14em] text-[var(--ink)] transition hover:border-[var(--accent)]">
-                {label}
-              </Link>
-            ))}
-          </motion.div>
+      <section className="hero-plane animate-rise">
+        <Image
+          src="/images/headshot-editorial.png"
+          alt={`${person.formalName} portrait`}
+          fill
+          priority
+          sizes="100vw"
+          className="opacity-90"
+        />
+        <div className="hero-plane-copy">
+          <p className="kicker">{person.location}</p>
+          <h1 className="display mt-3 max-w-3xl text-4xl md:text-6xl">{person.name}</h1>
+          <p className="mt-4 max-w-xl font-[family-name:var(--font-ui)] text-sm tracking-[0.04em] text-[#d7ddd8]">
+            {person.tagline}
+          </p>
         </div>
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12 }} className="hard-card p-2">
-          <div className="relative aspect-[4/5] w-full max-h-[440px]">
-            <Image src="/images/headshot-editorial.png" alt="Portrait of Tsogt Enkhbat" fill priority sizes="(max-width: 768px) 90vw, 40vw" className="object-cover" />
-          </div>
-        </motion.div>
       </section>
 
-      <section className="mt-5 grid gap-3 md:grid-cols-[1.7fr_0.9fr]">
-        <div className="hard-card p-2">
-          <div className="relative aspect-[16/7] w-full overflow-hidden border border-[var(--line)]">
-            <Image src="/images/project-scroll-reference.png" alt="Mission progress panel" fill sizes="70vw" className="object-cover" />
-          </div>
-          <div className="mt-3 flex items-start justify-between gap-3 px-1">
-            <p className="ui-mono text-[10px] uppercase tracking-[0.16em] text-[var(--ink-muted)]">Haven-style progress layout adapted for portfolio updates.</p>
-            <Link href="/projects" className="ui-sans text-xs uppercase tracking-[0.14em] text-[var(--accent-strong)]">
-              Find out more
-            </Link>
-          </div>
-        </div>
-        <div className="hard-card p-4">
-          <p className="ui-mono text-[11px] uppercase tracking-[0.2em] text-[var(--accent-strong)]">Updates</p>
-          <div className="mt-3 grid gap-3">
-            {writings.slice(0, 3).map((item) => (
-              <a key={item.title} href={item.href} target="_blank" rel="noreferrer" className="border border-[var(--line)] bg-[var(--surface-2)] p-3">
-                <p className="ui-mono text-[10px] uppercase tracking-[0.12em] text-[var(--ink-muted)]">{item.date}</p>
-                <p className="mt-1 text-sm text-[var(--ink)]">{item.title}</p>
-              </a>
+      <section className="letter-sheet mt-6 animate-rise animate-rise-delay-1">
+        <p className="kicker">Main</p>
+        <h2 className="display mt-4 max-w-3xl text-3xl md:text-5xl">
+          {person.opener}{" "}
+          <Link href="/nomos" className="underline decoration-[var(--accent)]">
+            {person.openerEmphasis}
+          </Link>{" "}
+          {person.openerTail}
+        </h2>
+        <hr className="rule animate-rule my-7" />
+        <p className="body-copy max-w-3xl animate-rise animate-rise-delay-2">{person.letter}</p>
+
+        <div className="mt-8 animate-rise animate-rise-delay-3">
+          <p className="ui-label">Linked</p>
+          <div className="link-row mt-3">
+            {linkedReferences.map((item, index) => (
+              <span key={item.label} className="inline-flex items-center gap-2">
+                <a href={item.href} target="_blank" rel="noreferrer">
+                  {item.label}
+                </a>
+                {index < linkedReferences.length - 1 ? (
+                  <span className="text-[var(--ink-faint)]">·</span>
+                ) : null}
+              </span>
             ))}
           </div>
+        </div>
+
+        <div className="mt-8">
+          <p className="ui-label">Education</p>
+          <p className="body-copy mt-2 max-w-3xl">{person.education}</p>
+        </div>
+      </section>
+
+      <section className="letter-sheet mt-6 animate-rise animate-rise-delay-3">
+        <p className="ui-label">Open a section — each is its own page</p>
+        <div className="section-index mt-4">
+          {sections.map((item) => (
+            <Link key={item.href} href={item.href}>
+              <span className="title">{item.label}</span>
+              <span className="hint">Open page →</span>
+            </Link>
+          ))}
         </div>
       </section>
     </main>
