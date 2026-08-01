@@ -1,0 +1,210 @@
+[
+  {
+    "slug": "republic",
+    "ok": true,
+    "bytes": 18493,
+    "cover_i": 14418448,
+    "found": "\u03c0\u03bf\u03bb\u03b9\u03c4\u03b5\u03af\u03b1",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/republic.jpg"
+  },
+  {
+    "slug": "nicomachean-ethics",
+    "ok": true,
+    "bytes": 48055,
+    "cover_i": 12593945,
+    "found": "Nicomachean Ethics",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/nicomachean-ethics.jpg"
+  },
+  {
+    "slug": "politics",
+    "ok": true,
+    "bytes": 19136,
+    "cover_i": 1277085,
+    "found": "\u03a0\u03bf\u03bb\u03b9\u03c4\u03b9\u03ba\u03ac (Politik\u00e1)",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/politics.jpg"
+  },
+  {
+    "slug": "meditations",
+    "ok": true,
+    "bytes": 39002,
+    "cover_i": 211529,
+    "found": "Meditations",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/meditations.jpg"
+  },
+  {
+    "slug": "city-of-god",
+    "ok": true,
+    "bytes": 17722,
+    "cover_i": 5621122,
+    "found": "De civitate Dei",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/city-of-god.jpg"
+  },
+  {
+    "slug": "quran",
+    "ok": true,
+    "bytes": 57150,
+    "cover_i": 717634,
+    "found": "The Holy Qur'an",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/quran.jpg"
+  },
+  {
+    "slug": "muqaddimah",
+    "ok": true,
+    "bytes": 48010,
+    "cover_i": 440215,
+    "found": "The Muqaddimah, an introduction to history",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/muqaddimah.jpg"
+  },
+  {
+    "slug": "prince",
+    "ok": true,
+    "bytes": 36260,
+    "cover_i": 12726168,
+    "found": "The Prince",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/prince.jpg"
+  },
+  {
+    "slug": "leviathan",
+    "ok": true,
+    "bytes": 45672,
+    "cover_i": 6525465,
+    "found": "Leviathan",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/leviathan.jpg"
+  },
+  {
+    "slug": "second-treatise",
+    "ok": true,
+    "bytes": 52003,
+    "cover_i": 8210287,
+    "found": "Two Treatises on Government",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/second-treatise.jpg"
+  },
+  {
+    "slug": "social-contract",
+    "ok": true,
+    "bytes": 30510,
+    "cover_i": 2292601,
+    "found": "The Social Contract and Discourses",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/social-contract.jpg"
+  },
+  {
+    "slug": "city-of-ladies",
+    "ok": true,
+    "bytes": 48021,
+    "cover_i": 104214,
+    "found": "The Book of the City of Ladies",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/city-of-ladies.jpg"
+  },
+  {
+    "slug": "discourse-on-method",
+    "ok": true,
+    "bytes": 56255,
+    "cover_i": 8236442,
+    "found": "Discours de la m\u00e9thode",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/discourse-on-method.jpg"
+  },
+  {
+    "slug": "wealth-of-nations",
+    "ok": true,
+    "bytes": 33272,
+    "cover_i": 12816911,
+    "found": "The Wealth of Nations",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/wealth-of-nations.jpg"
+  },
+  {
+    "slug": "groundwork",
+    "ok": true,
+    "bytes": 32918,
+    "cover_i": 6360245,
+    "found": "Grundlegung zur Metaphysik der Sitten",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/groundwork.jpg"
+  },
+  {
+    "slug": "vindication",
+    "ok": true,
+    "bytes": 22205,
+    "cover_i": 675852,
+    "found": "A Vindication of Rights of Woman",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/vindication.jpg"
+  },
+  {
+    "slug": "democracy-in-america",
+    "ok": true,
+    "bytes": 34292,
+    "cover_i": 45979,
+    "found": "De la d\u00e9mocratie en Am\u00e9rique",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/democracy-in-america.jpg"
+  },
+  {
+    "slug": "on-liberty",
+    "ok": true,
+    "bytes": 17195,
+    "cover_i": 966821,
+    "found": "On Liberty",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/on-liberty.jpg"
+  },
+  {
+    "slug": "marx-engels-reader",
+    "ok": true,
+    "bytes": 28980,
+    "cover_i": 248210,
+    "found": "The Marx-Engels reader",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/marx-engels-reader.jpg"
+  },
+  {
+    "slug": "genealogy-of-morals",
+    "ok": true,
+    "bytes": 36105,
+    "cover_i": 119371,
+    "found": "Zur Genealogie der Moral",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/genealogy-of-morals.jpg"
+  },
+  {
+    "slug": "civilization-and-its-discontents",
+    "ok": true,
+    "bytes": 33102,
+    "cover_i": 6458773,
+    "found": "Unbehagen in der Kultur",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/civilization-and-its-discontents.jpg"
+  },
+  {
+    "slug": "souls-of-black-folk",
+    "ok": true,
+    "bytes": 27007,
+    "cover_i": 6564090,
+    "found": "The Souls of Black Folk",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/souls-of-black-folk.jpg"
+  },
+  {
+    "slug": "second-sex",
+    "ok": true,
+    "bytes": 11898,
+    "cover_i": 78169,
+    "found": "Le Deuxi\u00e8me Sexe",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/second-sex.jpg"
+  },
+  {
+    "slug": "wretched-of-the-earth",
+    "ok": true,
+    "bytes": 24178,
+    "cover_i": 14325884,
+    "found": "Les damne\u0301s de la terre",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/wretched-of-the-earth.jpg"
+  },
+  {
+    "slug": "human-condition",
+    "ok": true,
+    "bytes": 22690,
+    "cover_i": 5746840,
+    "found": "The Human Condition",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/human-condition.jpg"
+  },
+  {
+    "slug": "discipline-and-punish",
+    "ok": true,
+    "bytes": 4925,
+    "cover_i": 5539160,
+    "found": "Discipline and Punish",
+    "path": "/Users/kintekente-mac/Documents/GitHub/personalwebsite/public/paper-assets/books/discipline-and-punish.jpg"
+  }
+]

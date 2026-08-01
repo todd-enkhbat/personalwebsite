@@ -1,38 +1,38 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Montserrat } from "next/font/google";
+import { EB_Garamond, IBM_Plex_Mono } from "next/font/google";
+import { AmbientScore } from "./components/AmbientScore";
+import { person } from "./data/content";
 import "./globals.css";
 
-const montserrat = Montserrat({
+const garamond = EB_Garamond({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["300", "400", "500", "600", "700"]
+  variable: "--font-garamond",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"]
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-plex-mono",
+  weight: ["400", "500"]
 });
 
 export const metadata: Metadata = {
-  title: "Tsogt Enkhbat | Space Systems Portfolio",
-  description: "Interactive portfolio focused on aerospace systems, product design, and research execution."
+  title: `${person.name} — ${person.tagline}`,
+  description: person.letter,
+  openGraph: {
+    title: person.name,
+    description: `${person.location} — ${person.tagline}`,
+    type: "website"
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={montserrat.variable}>
-        <header className="site-header">
-          <div className="site-inner">
-            <Link href="/" className="brand">
-              Tsogt Enkhbat
-            </Link>
-            <nav className="site-nav">
-              <Link href="/projects">Recent Projects</Link>
-              <Link href="/about">About</Link>
-              <Link href="/public">Public</Link>
-              <Link href="/writing">Writing</Link>
-              <Link href="/philosophy">Philosophy</Link>
-            </nav>
-          </div>
-        </header>
+      <body className={`${garamond.variable} ${plexMono.variable} ${garamond.className}`}>
         {children}
+        <AmbientScore />
       </body>
     </html>
   );

@@ -1,79 +1,94 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { about, writings } from "./data/content";
+import { LetterShell } from "./components/LetterShell";
+import { linkedReferences, person, trainings } from "./data/content";
 
-export default function HomePage() {
+export default function MainPage() {
   return (
-    <main className="page-shell">
-      <section className="hero-dark grid gap-8 p-6 md:grid-cols-[1fr_0.65fr]">
-        <div>
-          <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="ui-mono text-[11px] uppercase tracking-[0.2em] text-[var(--accent-strong)]">
-            Building next-generation systems
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08 }}
-            className="mt-4 max-w-2xl text-3xl leading-[1.14] text-[var(--ink)] md:text-5xl"
-          >
-            Engineering progress for missions, products, and ideas.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.16 }}
-            className="mt-5 max-w-xl text-sm leading-relaxed text-[var(--ink-muted)]"
-          >
-            {about.intro}
-          </motion.p>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }} className="mt-7 grid gap-2 sm:grid-cols-2">
-            {[
-              ["Recent Projects", "/projects"],
-              ["About", "/about"],
-              ["Public", "/public"],
-              ["Writing", "/writing"],
-              ["Philosophy", "/philosophy"]
-            ].map(([label, href]) => (
-              <Link key={href} href={href} className="ui-sans border border-[var(--line)] bg-[var(--surface-2)] px-3 py-2 text-xs uppercase tracking-[0.14em] text-[var(--ink)] transition hover:border-[var(--accent)]">
-                {label}
-              </Link>
-            ))}
-          </motion.div>
-        </div>
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12 }} className="hard-card p-2">
-          <div className="relative aspect-[4/5] w-full max-h-[440px]">
-            <Image src="/images/headshot-editorial.png" alt="Portrait of Tsogt Enkhbat" fill priority sizes="(max-width: 768px) 90vw, 40vw" className="object-cover" />
-          </div>
-        </motion.div>
-      </section>
-
-      <section className="mt-5 grid gap-3 md:grid-cols-[1.7fr_0.9fr]">
-        <div className="hard-card p-2">
-          <div className="relative aspect-[16/7] w-full overflow-hidden border border-[var(--line)]">
-            <Image src="/images/project-scroll-reference.png" alt="Mission progress panel" fill sizes="70vw" className="object-cover" />
-          </div>
-          <div className="mt-3 flex items-start justify-between gap-3 px-1">
-            <p className="ui-mono text-[10px] uppercase tracking-[0.16em] text-[var(--ink-muted)]">Haven-style progress layout adapted for portfolio updates.</p>
-            <Link href="/projects" className="ui-sans text-xs uppercase tracking-[0.14em] text-[var(--accent-strong)]">
-              Find out more
+    <LetterShell>
+      <div className="main-split">
+        <div className="main-copy">
+          <p className="kicker">Main</p>
+          <h1 className="headline-inline">
+            <span>{person.opener}&nbsp;</span>
+            <Link href="/nomos" className="accent-link">
+              {person.openerEmphasis}
             </Link>
+            <span>&nbsp;{person.openerTail}</span>
+          </h1>
+          <p className="body-copy" style={{ width: "100%", maxWidth: 720 }}>
+            {person.letter}
+          </p>
+          <div className="linked-block">
+            <p className="ui-label">Linked</p>
+            <p className="linked-line">
+              {linkedReferences.map((item, index) => (
+                <span key={item.label}>
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    {item.label}
+                  </a>
+                  {" → "}
+                  {item.href.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                  {index < linkedReferences.length - 1 ? " · " : ""}
+                </span>
+              ))}
+            </p>
+          </div>
+          <p className="education-line">{person.education}</p>
+        </div>
+
+        <div className="portrait-stack" aria-label="Portrait composition">
+          <div className="portrait-stack__statue">
+            <Image
+              src="/paper-assets/main-statue.png"
+              alt=""
+              width={332}
+              height={430}
+              priority
+              unoptimized
+            />
+          </div>
+          <div className="portrait-stack__person">
+            <Image
+              src="/paper-assets/portrait-suit.png"
+              alt={`${person.formalName} portrait`}
+              width={279}
+              height={332}
+              priority
+              unoptimized
+            />
           </div>
         </div>
-        <div className="hard-card p-4">
-          <p className="ui-mono text-[11px] uppercase tracking-[0.2em] text-[var(--accent-strong)]">Updates</p>
-          <div className="mt-3 grid gap-3">
-            {writings.slice(0, 3).map((item) => (
-              <a key={item.title} href={item.href} target="_blank" rel="noreferrer" className="border border-[var(--line)] bg-[var(--surface-2)] p-3">
-                <p className="ui-mono text-[10px] uppercase tracking-[0.12em] text-[var(--ink-muted)]">{item.date}</p>
-                <p className="mt-1 text-sm text-[var(--ink)]">{item.title}</p>
-              </a>
-            ))}
-          </div>
+      </div>
+
+      <section className="trainings" aria-label="Trainings">
+        <div className="trainings-rule" aria-hidden />
+        <div className="trainings-columns">
+          {trainings.map((column) => (
+            <article key={column.id} className="training-column">
+              <header className="training-header">
+                <span className="training-accent" aria-hidden />
+                <h2>{column.title}</h2>
+              </header>
+              <div className="training-body">
+                <div className="training-icon">
+                  <Image
+                    src={column.image}
+                    alt=""
+                    width={168}
+                    height={240}
+                    unoptimized
+                  />
+                </div>
+                <div className="training-copy">
+                  <h3>{column.subtitle}</h3>
+                  <p>{column.body}</p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
-    </main>
+    </LetterShell>
   );
 }
