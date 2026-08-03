@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LetterShell } from "./components/LetterShell";
-import { linkedReferences, person, trainings } from "./data/content";
+import { linkedReferences, meetInvite, person, trainings } from "./data/content";
 
 export default function MainPage() {
   return (
@@ -19,6 +19,22 @@ export default function MainPage() {
           <p className="body-copy" style={{ width: "100%", maxWidth: 720 }}>
             {person.letter}
           </p>
+
+          <section className="meet-invite meet-invite--main" aria-label="Open to meeting">
+            <div className="meet-invite__copy">
+              <p className="ui-label">{meetInvite.eyebrow}</p>
+              <h2 className="meet-invite__headline">{meetInvite.headline}</h2>
+              <p className="meet-invite__body">{meetInvite.body}</p>
+              <p className="meet-invite__window">{meetInvite.window}</p>
+            </div>
+            <Link href={meetInvite.ctaHref} className="meet-button">
+              <span className="meet-button__label">{meetInvite.cta}</span>
+              <span className="meet-button__arrow" aria-hidden>
+                →
+              </span>
+            </Link>
+          </section>
+
           <div className="linked-block">
             <p className="ui-label">Linked</p>
             <p className="linked-line">

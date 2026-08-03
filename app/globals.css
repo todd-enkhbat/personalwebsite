@@ -42,7 +42,13 @@ body {
 body {
   font-family: var(--font);
   color: var(--ink);
-  background: var(--paper);
+  background-color: #f4f3ef;
+  background-image: url("/paper-assets/paper-texture.jpg");
+  background-repeat: repeat;
+  /* Source is 682×1024 — keep that ratio when tiling so grain stays sharp. */
+  background-size: 420px auto;
+  background-position: 0 0;
+  background-attachment: scroll;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-size: 12px;
@@ -65,28 +71,22 @@ a {
   width: 100%;
   max-width: var(--max);
   margin: 0 auto;
-  background: var(--paper);
+  background: transparent;
   overflow: hidden;
 }
 
 .letter-page--explorer {
-  background: var(--explorer-bg);
+  background: transparent;
   max-width: none;
 }
 
+/* Grain lives on body so every route stays sharp and consistent — no stretched cover. */
 .paper-texture {
-  position: absolute;
-  inset: 0;
-  background-image: url("/paper-assets/paper-texture.png");
-  background-position: 50%;
-  background-size: cover;
-  opacity: 0.75;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 .letter-page--explorer .paper-texture {
-  background-image: url("/paper-assets/paper-texture-warm.png");
+  display: none;
 }
 
 .letter-sheet {
@@ -653,8 +653,14 @@ a {
 
 .work-featured-media {
   width: min(480px, 100%);
-  height: 300px;
+  height: auto;
   flex-shrink: 0;
+}
+
+.work-featured-media img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .work-featured-copy {
@@ -981,13 +987,16 @@ a {
 .case-hero {
   border-top: 1px solid var(--rule-soft);
   border-bottom: 1px solid var(--rule-soft);
+  background: transparent;
 }
 
 .case-hero img {
   display: block;
-  width: 100%;
-  height: clamp(280px, 32vw, 440px);
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(70vh, 560px);
+  margin-inline: auto;
 }
 
 .case-hero figcaption {
@@ -1053,14 +1062,15 @@ a {
 
 .case-plate img {
   display: block;
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  background: var(--slot);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  background: transparent;
 }
 
 .case-evidence-row--3 .case-plate img {
-  height: 180px;
+  max-width: 100%;
 }
 
 .case-plate figcaption {
@@ -1160,7 +1170,7 @@ a {
 }
 
 .case-editorial .case-hero img {
-  height: clamp(220px, 28vw, 360px);
+  max-height: min(68vh, 520px);
 }
 
 .case-body {
@@ -1206,6 +1216,41 @@ a {
   line-height: 28px;
 }
 
+.case-video {
+  margin: 8px 0 0;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--ink);
+  border: 1px solid var(--rule-soft);
+}
+
+.case-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.case-video-fallback {
+  margin: 10px 0 0 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+}
+
+.case-video-fallback a {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.case-video-fallback a:hover,
+.case-video-fallback a:focus-visible {
+  color: var(--ink);
+}
+
 .case-gallery {
   display: flex;
   flex-direction: column;
@@ -1223,11 +1268,11 @@ a {
 
 .case-gallery .case-plate img,
 .case-gallery-pair .case-plate img {
-  height: clamp(180px, 24vw, 280px);
+  max-height: min(48vh, 420px);
 }
 
 .case-gallery > .case-plate img {
-  height: clamp(220px, 30vw, 360px);
+  max-height: min(56vh, 480px);
 }
 
 .trex-hero {
@@ -1238,9 +1283,11 @@ a {
 
 .trex-hero img {
   display: block;
-  width: 100%;
-  height: clamp(280px, 36vw, 440px);
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(70vh, 560px);
+  margin-inline: auto;
 }
 
 .trex-hero figcaption,
@@ -1280,10 +1327,11 @@ a {
 
 .trex-plate-grid img {
   display: block;
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  background: var(--slot);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  background: transparent;
 }
 
 .glance {
@@ -1362,9 +1410,311 @@ a {
 .calendar-visual {
   margin-top: 28px;
   width: min(494px, 100%);
-  height: 280px;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Meet invite + soft round CTA */
+.meet-invite {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px 40px;
+  width: 100%;
+  padding: 28px 0;
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.meet-invite--main {
+  margin: 28px 0 8px;
+  max-width: 720px;
+}
+
+.meet-invite--calendar {
+  margin: 0 0 40px;
+}
+
+.meet-invite__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 520px;
+}
+
+.meet-invite__headline {
+  color: var(--ink);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.meet-invite__body {
+  color: var(--ink-body);
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.meet-invite__window {
+  color: var(--accent);
+  font-size: 14px;
+  line-height: 20px;
+  font-style: italic;
+  margin: 4px 0 0;
+}
+
+.meet-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+  min-height: 52px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset, 0 10px 24px rgba(139, 41, 66, 0.18);
+  transform: translateZ(0);
+  transition:
+    transform 180ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+  will-change: transform;
+}
+
+.meet-button__arrow {
+  display: inline-block;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.meet-button:hover {
+  background: #7a2339;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 14px 28px rgba(139, 41, 66, 0.22);
+  transform: translateY(-1px);
+}
+
+.meet-button:hover .meet-button__arrow {
+  transform: translateX(3px);
+}
+
+.meet-button:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 6px 14px rgba(139, 41, 66, 0.16);
+  transition-duration: 80ms;
+}
+
+.meet-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meet-button,
+  .meet-button__arrow {
+    transition: none;
+  }
+
+  .meet-button:hover,
+  .meet-button:active {
+    transform: none;
+  }
+}
+
+/* Calendar itinerary */
+.calendar-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.calendar-stop {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 20px;
+  min-height: 0;
+}
+
+.calendar-stop__rail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.calendar-stop__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(139, 41, 66, 0.12);
+  flex-shrink: 0;
+}
+
+.calendar-stop--dashed .calendar-stop__dot {
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  box-shadow: none;
+}
+
+.calendar-stop__line {
+  flex: 1;
+  width: 1px;
+  margin-top: 8px;
+  background: linear-gradient(to bottom, var(--rule), transparent);
+  min-height: 28px;
+}
+
+.calendar-stop__body {
+  padding: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calendar-stop__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.calendar-stop__dates {
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.calendar-stop__note {
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 640px;
+  margin: 0;
+}
+
+.calendar-stop__open {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 6px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.calendar-stop--solid .calendar-stop__body {
+  background: var(--slot-warm);
+  border: 1px solid var(--rule-soft);
+  padding: 20px 24px 22px;
+  margin-bottom: 28px;
+}
+
+/* Featured conference */
+.calendar-event {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 28px 36px;
+  width: 100%;
+  margin-bottom: 48px;
+  padding: 8px 0 8px;
+  border-top: 1px solid var(--rule);
+}
+
+.calendar-event__media {
+  overflow: hidden;
+  background: #0a0a0c;
+  min-height: 240px;
+}
+
+.calendar-event__image {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  background: #fbfaf5;
+}
+
+.calendar-event__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.calendar-event__logo {
+  width: 119px;
+  height: auto;
+}
+
+.calendar-event__note {
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 24px;
+  margin: 12px 0 0;
+  max-width: 420px;
+}
+
+.calendar-event__venue {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 14px 0 0;
+}
+
+.calendar-event__link {
+  margin-top: 18px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 500;
+  width: fit-content;
+  transition: opacity 160ms ease;
+}
+
+.calendar-event__link:hover {
+  opacity: 0.75;
+}
+
+/* Schedule placeholder for future Google Calendar embed */
+.calendar-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.calendar-schedule__slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 280px;
+  border: 1px dashed var(--slot-border);
+  background: linear-gradient(180deg, rgba(243, 243, 241, 0.65), rgba(247, 247, 245, 0.35));
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .contact-list {
@@ -1405,8 +1755,8 @@ a {
 }
 
 .pub-rail {
-  width: 32%;
-  min-width: 240px;
+  width: 36%;
+  min-width: 260px;
   border-right: 1px solid var(--rule);
   padding: 20px 24px 20px 0;
   display: flex;
@@ -1430,9 +1780,9 @@ a {
 
 .pub-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
-  padding: 14px 0;
+  padding: 16px 8px 16px 0;
   border-top: 1px solid var(--rule-soft);
   cursor: pointer;
   text-align: left;
@@ -1459,6 +1809,7 @@ a {
   overflow: hidden;
   background: var(--slot);
   border: 1px solid var(--slot-border);
+  margin-top: 2px;
 }
 
 .pub-thumb img {
@@ -1467,11 +1818,25 @@ a {
   object-fit: cover;
 }
 
+.pub-item-copy {
+  min-width: 0;
+  flex: 1;
+}
+
 .pub-item-title {
   margin: 0;
   color: var(--ink);
-  font-size: 18px;
+  font-size: 17px;
   line-height: 20px;
+}
+
+.pub-item-summary {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 18px;
+  padding-top: 6px;
+  max-width: 28em;
 }
 
 .pub-item-meta {
@@ -1481,7 +1846,7 @@ a {
   font-size: 11px;
   letter-spacing: 0.06em;
   line-height: 16px;
-  padding-top: 6px;
+  padding-top: 8px;
   text-transform: uppercase;
 }
 
@@ -1494,7 +1859,7 @@ a {
 }
 
 .pub-feature {
-  width: 68%;
+  width: 64%;
   padding: 20px 0 24px 28px;
   display: flex;
   flex-direction: column;
@@ -1509,18 +1874,34 @@ a {
 }
 
 .pub-feature-image {
-  width: 280px;
-  height: 360px;
+  width: min(320px, 100%);
+  height: auto;
   flex-shrink: 0;
   overflow: hidden;
-  background: var(--slot);
+  background: transparent;
   border: 1px solid var(--slot-border);
 }
 
 .pub-feature-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pub-feature-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #0a0a0a;
+  border: 1px solid var(--slot-border);
+}
+
+.pub-feature-video iframe {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border: 0;
 }
 
 .pub-feature-copy {
@@ -1575,13 +1956,61 @@ a {
   text-underline-offset: 3px;
 }
 
-.pub-feature-blurb {
+.pub-feature-intro {
   margin: 0;
   color: var(--ink-soft);
   font-size: 17px;
   line-height: 26px;
-  padding-bottom: 16px;
-  max-width: 34em;
+  max-width: 36em;
+}
+
+.pub-feature-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 4px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.pub-feature-body {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 26px;
+  max-width: 42em;
+  padding-top: 16px;
+}
+
+.pub-related {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 4px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.pub-related-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pub-related-list a {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.pub-related-list a:hover,
+.pub-related-list a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .pub-tags {
@@ -1601,13 +2030,17 @@ a {
   text-transform: uppercase;
 }
 
-/* Layout A — portrait inset (default sizes above) */
+/* Layout A — portrait inset (width capped; height follows the file) */
 .pub-feature.layout-inset .pub-feature-image {
-  width: 260px;
-  height: 340px;
+  width: min(280px, 42%);
+  height: auto;
 }
 
-/* Layout B — title/copy first, thin letterbox strip */
+.pub-feature.layout-inset .pub-feature-video {
+  width: min(420px, 100%);
+}
+
+/* Layout B — title/copy first, full-width media that keeps its ratio */
 .pub-feature.layout-letterbox .pub-feature-main {
   flex-direction: column;
   gap: 22px;
@@ -1615,8 +2048,13 @@ a {
 
 .pub-feature.layout-letterbox .pub-feature-image {
   order: 1;
+  width: min(100%, 720px);
+  height: auto;
+}
+
+.pub-feature.layout-letterbox .pub-feature-video {
+  order: -1;
   width: 100%;
-  height: 180px;
 }
 
 .pub-feature.layout-letterbox .pub-feature-copy {
@@ -1632,7 +2070,7 @@ a {
 }
 
 .pub-feature.layout-letterbox .pub-feature-secondary {
-  width: min(260px, 36%);
+  width: min(300px, 40%);
   flex-shrink: 0;
 }
 
@@ -1640,15 +2078,19 @@ a {
   font-size: clamp(30px, 3.6vw, 44px);
 }
 
-/* Layout C — square plate mirrored */
+/* Layout C — mirrored plate; width capped, native ratio */
 .pub-feature.layout-square .pub-feature-main {
   flex-direction: row-reverse;
   gap: 32px;
 }
 
 .pub-feature.layout-square .pub-feature-image {
-  width: 280px;
-  height: 280px;
+  width: min(300px, 46%);
+  height: auto;
+}
+
+.pub-feature.layout-square .pub-feature-video {
+  width: min(360px, 100%);
 }
 
 .pub-print {
@@ -1661,19 +2103,19 @@ a {
 }
 
 .pub-print-image {
-  width: 220px;
+  width: min(260px, 42%);
   flex-shrink: 0;
-  background: var(--slot);
+  background: transparent;
   border: 1px solid var(--slot-border);
   overflow: hidden;
 }
 
 .pub-print-image img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  object-fit: cover;
-  object-position: 50% 8%;
+  object-fit: contain;
+  object-position: 50% 50%;
 }
 
 .pub-print-copy {
@@ -2107,10 +2549,21 @@ a {
   .detail-grid,
   .two-col,
   .calendar-lanes,
+  .calendar-event,
+  .meet-invite,
   .explorer-stage,
   .pub-stage,
   .pub-feature-main,
   .shelf-row {
+    flex-direction: column;
+  }
+
+  .meet-invite {
+    align-items: flex-start;
+  }
+
+  .calendar-event {
+    display: flex;
     flex-direction: column;
   }
 
@@ -2141,17 +2594,22 @@ a {
 
   .pub-feature.layout-inset .pub-feature-image,
   .pub-feature.layout-square .pub-feature-image {
-    width: min(260px, 72%);
+    width: min(280px, 78%);
     height: auto;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: auto;
   }
 
   .pub-feature.layout-square .pub-feature-image {
-    aspect-ratio: 1 / 1;
+    width: min(300px, 82%);
   }
 
   .pub-feature.layout-letterbox .pub-feature-image {
-    height: 140px;
+    width: 100%;
+    height: auto;
+  }
+
+  .pub-feature.layout-letterbox .pub-feature-video {
+    width: 100%;
   }
 
   .pub-feature.layout-letterbox .pub-feature-copy,
@@ -2161,6 +2619,10 @@ a {
 
   .pub-feature.layout-letterbox .pub-feature-secondary {
     width: 100%;
+  }
+
+  .pub-item-summary {
+    max-width: none;
   }
 
   .explorer-feature.layout-inset .explorer-feature-image,
@@ -2343,6 +2805,15 @@ a {
 
   .calendar-lanes {
     flex-direction: column;
+  }
+
+  .meet-invite__headline {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .calendar-schedule__slot {
+    min-height: 200px;
   }
 
   .portfolio-cards {

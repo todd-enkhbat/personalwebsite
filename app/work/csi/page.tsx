@@ -79,10 +79,6 @@ export default function CsiPage() {
               <figcaption>Field campaign</figcaption>
             </figure>
           </div>
-          <figure className="case-plate">
-            <img src="/paper-assets/csi-mission.jpg" alt="" />
-            <figcaption>Mission / program surface</figcaption>
-          </figure>
         </div>
       </article>
     </LetterShell>

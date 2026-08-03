@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { LetterShell } from "../components/LetterShell";
 import { publications, type PublicationFeatureLayout } from "../data/content";
 
-const sortedPublications = publications;
+const sortedPublications = [...publications].sort((a, b) => b.date.localeCompare(a.date));
 
 function featureLayoutFor(index: number, explicit?: PublicationFeatureLayout): PublicationFeatureLayout {
   if (explicit) return explicit;
@@ -36,8 +36,8 @@ export default function PublicationsPage() {
         Writing, films, lectures, and conversations.
       </h1>
       <p className="body-copy" style={{ maxWidth: 640, marginBottom: 36 }}>
-        Select a piece from the index. The featured panel updates with a plate, context, and a
-        direct link — each piece keeps its own orientation so soft covers stay readable.
+        Select a piece from the index. The featured panel opens with a short lead, then a fuller
+        grounding for anyone who wants more — plus a direct link out.
       </p>
 
       <div className="pub-stage">
@@ -57,12 +57,13 @@ export default function PublicationsPage() {
                 <div className="pub-thumb">
                   <Image src={item.image} alt="" width={74} height={58} />
                 </div>
-                <div>
+                <div className="pub-item-copy">
                   <p className="pub-item-title" style={{ whiteSpace: "pre-wrap" }}>
                     {(item.titleLines ?? [item.title]).join("\n")}
                   </p>
+                  <p className="pub-item-summary">{item.summary}</p>
                   <p className="pub-item-meta">
-                    {item.year} / {item.category}
+                    {item.month} {item.year} / {item.category}
                   </p>
                 </div>
               </button>
@@ -82,14 +83,27 @@ export default function PublicationsPage() {
           </div>
 
           <div className="pub-feature-main">
-            <div className="pub-feature-image">
-              <Image
-                src={active.image}
-                alt={active.title}
-                width={layout === "letterbox" ? 1280 : layout === "square" ? 720 : 640}
-                height={layout === "letterbox" ? 280 : layout === "square" ? 720 : 800}
-              />
-            </div>
+            {active.videoEmbed ? (
+              <div className="pub-feature-video">
+                <iframe
+                  src={active.videoEmbed}
+                  title={active.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+            ) : (
+              <div className="pub-feature-image">
+                <Image
+                  src={active.image}
+                  alt={active.title}
+                  width={layout === "letterbox" ? 1280 : layout === "square" ? 720 : 640}
+                  height={layout === "letterbox" ? 280 : layout === "square" ? 720 : 800}
+                />
+              </div>
+            )}
             <div className="pub-feature-copy">
               <div className="pub-feature-primary">
                 <h2 className="pub-feature-title" style={{ whiteSpace: "pre-wrap" }}>
@@ -108,34 +122,55 @@ export default function PublicationsPage() {
                 </div>
               </div>
               <div className="pub-feature-secondary">
-                <p className="pub-feature-blurb">{active.blurb}</p>
-                <div className="pub-tags">
-                  {active.tags.map((tag) => (
-                    <span key={tag} className="pub-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <p className="pub-feature-intro">{active.intro}</p>
               </div>
             </div>
           </div>
 
-          {active.printImage ? (
-            <figure className="pub-print">
-              <div className="pub-print-image">
-                <Image
-                  src={active.printImage}
-                  alt={`${active.title} printed edition`}
-                  width={280}
-                  height={374}
-                />
-              </div>
-              <figcaption className="pub-print-copy">
-                <p className="kicker">Figure · Printed edition</p>
-                <p className="body-copy">{active.printCaption}</p>
-              </figcaption>
-            </figure>
+          <div className="pub-feature-detail">
+            <p className="pub-feature-body">{active.body}</p>
+            <div className="pub-tags">
+              {active.tags.map((tag) => (
+                <span key={tag} className="pub-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {active.relatedLinks && active.relatedLinks.length > 0 ? (
+            <div className="pub-related">
+              <p className="kicker">Further reading</p>
+              <ul className="pub-related-list">
+                {active.relatedLinks.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} target="_blank" rel="noreferrer">
+                      {link.label} ↗
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ) : null}
+
+          {active.figures && active.figures.length > 0
+            ? active.figures.map((figure) => (
+                <figure key={figure.image} className="pub-print">
+                  <div className="pub-print-image">
+                    <Image
+                      src={figure.image}
+                      alt={`${active.title} figure`}
+                      width={280}
+                      height={374}
+                    />
+                  </div>
+                  <figcaption className="pub-print-copy">
+                    <p className="kicker">{figure.kicker ?? "Figure"}</p>
+                    <p className="body-copy">{figure.caption}</p>
+                  </figcaption>
+                </figure>
+              ))
+            : null}
         </section>
       </div>
     </LetterShell>

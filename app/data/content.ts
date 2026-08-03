@@ -38,22 +38,42 @@ export type PortfolioRow = {
 
 export type PublicationFeatureLayout = "inset" | "letterbox" | "square";
 
+export type PublicationRelatedLink = {
+  label: string;
+  href: string;
+};
+
+export type PublicationFigure = {
+  image: string;
+  caption: string;
+  kicker?: string;
+};
+
 export type PublicationPiece = {
   id: string;
   title: string;
   titleLines?: string[];
   date: string;
+  /** Display month for the rail, e.g. "MAY". */
+  month: string;
   year: string;
   category: string;
   meta: string;
-  blurb: string;
+  /** Short left-rail line under the title. */
+  summary: string;
+  /** Two–three sentence lead for the feature panel. */
+  intro: string;
+  /** Longer grounding paragraph for readers who want more context. */
+  body: string;
   tags: string[];
   image: string;
   href?: string;
   linkLabel?: string;
   reach?: string;
-  printImage?: string;
-  printCaption?: string;
+  /** Optional in-panel video embed URL (YouTube, etc.). */
+  videoEmbed?: string;
+  relatedLinks?: PublicationRelatedLink[];
+  figures?: PublicationFigure[];
   /** Featured spotlight orientation — varies so soft images are never forced full-bleed. */
   featureLayout?: PublicationFeatureLayout;
 };
@@ -83,7 +103,22 @@ export type CalendarLane = {
   label: string;
   title: string;
   note: string;
-  tone: "solid" | "dashed";
+  tone: "solid" | "dashed" | "event";
+  dates?: string;
+  open?: boolean;
+  href?: string;
+  logo?: string;
+  image?: string;
+  org?: string;
+};
+
+export const meetInvite = {
+  eyebrow: "Open door",
+  headline: "Very open to meeting new people.",
+  body: "If you're nearby — conversation, coffee, a walk, whatever feels natural — say hello. I'm easy to reach and glad to make time.",
+  window: "Especially free in New York from Aug 2–8, before I head west.",
+  cta: "Let's grab coffee",
+  ctaHref: "/contact"
 };
 
 export const person = {
@@ -350,6 +385,43 @@ export const work: WorkItem[] = [
     externalHref: "https://www.mars-v.com"
   },
   {
+    id: "balloon-summit",
+    title: "International Space Balloon Summit",
+    role: "Organizer",
+    place: "Ulaanbaatar, Mongolia",
+    dates: "March 21–22, 2024",
+    featured: true,
+    blurb:
+      "Two-day summit under presidential patronage — public balloon launch + scientific conference",
+    summary:
+      "The Mongolian Space Research and Science Agency organized the International Space Balloon Summit on March 21–22, 2024, under the patronage of the President of Mongolia. Co-organized with the Ministry of Digital Development, Innovation, and Communications, Koosen Technology College of MUST, New Mongol Technology College, Mongol Koosen, and partner institutions. Day 1: public space balloon launch at the 360 Archery Range of the National Park (10AM, March 21). Day 2: Space Balloon Scientific Conference.",
+    achievements: [
+      "Summit under patronage of the President of Mongolia",
+      "Co-organized with Ministry of Digital Development, Innovation, and Communications and academic partners",
+      "Public Day-1 balloon launch at National Park; Day-2 scientific conference"
+    ],
+    tags: ["Balloon", "Outreach", "Conference", "Mongolia"],
+    href: "/work/balloon-summit",
+    externalHref: "https://www.facebook.com/marsapage/videos/646521701496242/"
+  },
+  {
+    id: "starry-tours",
+    title: "Starry Tours Mongolia",
+    role: "Founder",
+    place: "Mongolia",
+    dates: "2023–2024",
+    blurb: "First establishment of astro-tourism in Mongolia — dark skies, telescopes, nomadic sky culture",
+    summary:
+      "Founded Starry Tours Mongolia — the country’s first dedicated astro-tourism project — to bring astronomy engagement and unconventional night-sky experiences to travelers and local audiences under some of Asia’s darkest skies.",
+    achievements: [
+      "Established Mongolia’s first dedicated astro-tourism offering",
+      "Designed experiences around dark-sky viewing, astronomy engagement, and nomadic sky culture",
+      "Connected public outreach with observational astronomy in steppe and desert settings"
+    ],
+    tags: ["Astro-tourism", "Outreach", "Dark skies", "Mongolia"],
+    href: "/work/starry-tours"
+  },
+  {
     id: "kublai",
     title: "Kublai Institute of Astrophysics",
     role: "Astrophysics Research Intern",
@@ -428,7 +500,7 @@ export const work: WorkItem[] = [
 
 export const portfolioRows: PortfolioRow[] = [
   {
-    year: "2025–",
+    year: "2026",
     cards: [
       {
         id: "nomos",
@@ -461,14 +533,14 @@ export const portfolioRows: PortfolioRow[] = [
         href: "/work/halo"
       },
       {
-        id: "ares",
-        title: "NASA Martian Habitat Mission Design",
-        role: "NASA RASC-AL",
-        label: "ARES",
+        id: "csi",
+        title: "CSI Rocketry, Ablative Liners",
+        role: "Mechanical Eng.",
+        label: "CSI",
         description:
-          "Columbia ARES — autonomous Martian habitat for 2037: ISRU, AERODOME, site selection, mass/power budgets under Starship limits.",
-        image: "/paper-assets/ares-dome.png",
-        href: "/work/ares"
+          "Ablative pipeline for 6-inch hybrid — phenolic liners, regression rigs, TC heat-flux DAQ, CC–nozzle interface.",
+        image: "/paper-assets/csi-hero.jpg",
+        href: "/work/csi"
       }
     ]
   },
@@ -506,20 +578,40 @@ export const portfolioRows: PortfolioRow[] = [
         href: "/work/micc"
       },
       {
-        id: "csi",
-        title: "CSI Rocketry, Ablative Liners",
-        role: "Mechanical Eng.",
-        label: "CSI",
+        id: "ares",
+        title: "NASA Martian Habitat Mission Design",
+        role: "NASA RASC-AL",
+        label: "ARES",
         description:
-          "Ablative pipeline for 6-inch hybrid — phenolic liners, regression rigs, TC heat-flux DAQ, CC–nozzle interface.",
-        image: "/paper-assets/csi-hero.jpg",
-        href: "/work/csi"
+          "Columbia ARES — autonomous Martian habitat for 2037: ISRU, AERODOME, site selection, mass/power budgets under Starship limits.",
+        image: "/paper-assets/ares-dome.png",
+        href: "/work/ares"
       }
     ]
   },
   {
-    year: "2022–",
+    year: "2024",
     cards: [
+      {
+        id: "balloon-summit",
+        title: "International Space Balloon Summit",
+        role: "Organizer",
+        label: "Balloon Summit",
+        description:
+          "March 21–22, 2024 — presidential patronage; public balloon launch at National Park + scientific conference with ministry and university co-organizers.",
+        image: "/paper-assets/balloon-summit-launch.jpg",
+        href: "/work/balloon-summit"
+      },
+      {
+        id: "hur",
+        title: "HUR. EdTech",
+        role: "Founder & COO",
+        label: "HUR.",
+        description:
+          "Secured $46k funding; built a team of 22; networked 120+ colleges for student research, mentorship, and real-world projects.",
+        image: "/paper-assets/hur-hero.jpg",
+        href: "/work/hur"
+      },
       {
         id: "mars-v",
         title: "MARS-V",
@@ -529,6 +621,22 @@ export const portfolioRows: PortfolioRow[] = [
           "Led EVA suit engineering for Utah’s MDRS analog station; raised $5.8M via investment proposal and 8,000 km of in-person campaigns.",
         image: "/paper-assets/marsv-hero.png",
         href: "/work/mars-v"
+      }
+    ]
+  },
+  {
+    year: "2023",
+    cards: [
+      {
+        id: "starry-tours",
+        title: "Starry Tours Mongolia",
+        role: "Founder · Astro-Tourism",
+        label: "Starry Tours",
+        description:
+          "First dedicated astro-tourism project in Mongolia — dark-sky experiences, astronomy engagement, and nomadic sky culture.",
+        image: "/paper-assets/starry-tours-hero.jpg",
+        imagePosition: "center 40%",
+        href: "/work/starry-tours"
       },
       {
         id: "kublai",
@@ -539,7 +647,12 @@ export const portfolioRows: PortfolioRow[] = [
           "Sole intern — penumbral lunar eclipses and planetarium work under cosmonaut Gurragchaa.",
         image: "/paper-assets/kublai-stars.jpg",
         href: "/work/kublai"
-      },
+      }
+    ]
+  },
+  {
+    year: "2022",
+    cards: [
       {
         id: "cfa",
         title: "Harvard & Smithsonian CfA, Exoplanet Research",
@@ -553,18 +666,8 @@ export const portfolioRows: PortfolioRow[] = [
     ]
   },
   {
-    year: "2018–",
+    year: "2018",
     cards: [
-      {
-        id: "hur",
-        title: "HUR. EdTech",
-        role: "Founder & COO",
-        label: "HUR.",
-        description:
-          "Secured $46k funding; built a team of 22; networked 120+ colleges for student research, mentorship, and real-world projects.",
-        image: "/paper-assets/hur-hero.jpg",
-        href: "/work/hur"
-      },
       {
         id: "trend-mart",
         title: "Trend Mart Group",
@@ -654,110 +757,192 @@ export const publications: PublicationPiece[] = [
     title: "NOVA X Tour #2: Columbia",
     titleLines: ["NOVA X Tour #2:", "Columbia Campus"],
     date: "2026-05-23",
+    month: "MAY",
     year: "2026",
     category: "YOUTUBE",
     meta: "May 2026 school tour and interview.\nNOVA X SPACE · Columbia University.",
-    blurb:
-      "A campus walkthrough of Columbia for a Mongolian audience: quads, dining halls, culture, and the quieter corners most tours skip. Also a candid account of how US applications were built and what actually matters for schools at this level.",
+    summary: "A Mongolian-language campus walkthrough of Columbia — and what US admissions actually weighs.",
+    intro:
+      "NOVA X SPACE invited me onto campus for a tour built for a Mongolian audience: the quads most people photograph, the dining halls and late libraries that actually set the pace of a week, and the quieter corners official tours skip. The conversation then turns to how a US application gets built — essays, recommendations, and the signals schools at this level quietly care about.",
+    body:
+      "The piece is less a glossy brochure than a working map. I walk through Columbia as it is lived day to day, then unpack the admissions path that got me there without pretending there is a single hack. Viewers get orientation for life on campus and a candid read on what matters when you are applying from abroad — useful whether you are a student, a parent, or someone still deciding if this kind of school is worth the climb.",
     tags: ["YOUTUBE", "INTERVIEW"],
     image: "/paper-assets/pub-nova-columbia.png",
     href: "https://youtu.be/_CKEw4vLGpM",
     linkLabel: "WATCH ON YOUTUBE ↗",
     reach: "~5K VIEWS",
-    featureLayout: "inset"
-  },
-  {
-    id: "johnathan-bi",
-    title: "Johnathan Bi: Machiavelli Lecture",
-    titleLines: ["Johnathan Bi:", "Machiavelli Lecture"],
-    date: "2024-10-01",
-    year: "2024",
-    category: "PHILOSOPHY",
-    meta: "2024 lecture dialogue.\nPolitical philosophy and the history of ideas.",
-    blurb:
-      "A philosophical exchange on stability and expansion: Spartan institutional stasis, Roman perpetual growth, and Machiavelli’s use of calculated disorder.",
-    tags: ["PHILOSOPHY", "LECTURE"],
-    image: "/paper-assets/pub-1.png",
-    linkLabel: "WATCH ON YOUTUBE ↗",
-    featureLayout: "square"
+    featureLayout: "letterbox"
   },
   {
     id: "unread-journal",
     title: "UNREAD Journal",
     date: "2026-03-17",
+    month: "MARCH",
     year: "2026",
     category: "PRESS",
     meta: "March 2026 profile.\nUNREAD Today · national print and digital.",
-    blurb:
-      "Mongolia’s leading newsroom put me in Journal, the profile slot reserved for people shaping the country’s next chapter. The feature follows a day in New York as a Columbia Physics student and T-REX teammate working toward the first recording of the Milky Way’s black hole, Sgr A*, with partners such as NASA, MIT, and Princeton.",
+    summary: "National profile in Mongolia’s leading newsroom — Columbia Physics, T-REX, and Sgr A*.",
+    intro:
+      "UNREAD Today placed me in Journal, the profile slot reserved for people shaping Mongolia’s next chapter. The feature follows a day in New York as a Columbia Physics student and T-REX teammate working toward the first recording of the Milky Way’s black hole, Sagittarius A*.",
+    body:
+      "The piece sits at the intersection of national press and hard science: how a Mongolian student ends up on a collaboration that touches NASA, MIT, Princeton, and a generation of black-hole imaging work. It ran in newsprint across the country and online for a much wider audience — a rare look at frontier astrophysics told through a day, not a press release. For readers who only know the headlines, it is the grounded version of how that work actually feels.",
     tags: ["PRESS", "JOURNAL"],
     image: "/paper-assets/pub-unread-source.png",
     href: "https://unread.today/c/journal-tsogt",
     linkLabel: "READ ON UNREAD ↗",
     reach: "10K PRINT · ~100K VIEWS",
-    printImage: "/paper-assets/pub-unread-print.png",
-    printCaption: "Ran in newsprint — 10,000 copies nationwide.",
+    figures: [
+      {
+        image: "/paper-assets/pub-unread-print.png",
+        kicker: "Figure · Printed edition",
+        caption: "Ran in newsprint — 10,000 copies nationwide."
+      }
+    ],
     featureLayout: "letterbox"
   },
   {
-    id: "gergrid",
-    title: "GERGRID",
-    date: "2025-06-01",
+    id: "deeptech-decoded",
+    title: "Deeptech Decoded",
+    titleLines: ["Deeptech", "Decoded"],
+    date: "2026-01-01",
+    month: "JANUARY",
+    year: "2026",
+    category: "PODCAST",
+    meta: "Founding member · ongoing series.\nStartup and frontier intelligence network.",
+    summary: "Startup and frontier intelligence network — kitchen-table talks at the deeptech edge.",
+    intro:
+      "Deeptech Decoded is a founding project I help run: a startup and frontier intelligence network that turns long, honest conversations with builders into a usable reasoning layer. We sit with founders, researchers, and operators who are building what does not yet have a manual — quantum, orbital infrastructure, AGI, and product taste at the frontier.",
+    body:
+      "The series lives as podcast, newsletter, and video on purpose. Short clips travel; the long form is where the actual judgment sits. Guests are not booked for hype cycles — they are people shipping hard technical work, and the point of the room is to cancel noise between what sounds exciting and what is actually true. If you want the surface-level version of deeptech, this is the wrong feed. If you want the kitchen-table version of how frontier teams think, it is built for that.",
+    tags: ["PODCAST", "NEWSLETTER", "FOUNDING"],
+    image: "/paper-assets/pub-deeptech-decoded.png",
+    href: "https://deeptech-decoded.com/",
+    linkLabel: "VISIT DEEPTECH DECODED ↗",
+    featureLayout: "letterbox"
+  },
+  {
+    id: "johnathan-bi",
+    title: "Johnathan Bi: Machiavelli Lecture",
+    titleLines: ["Johnathan Bi:", "Machiavelli Lecture"],
+    date: "2025-10-01",
+    month: "OCTOBER",
     year: "2025",
-    category: "PRODUCT",
-    meta: "2025 · ONDO Space Telecommunications.\nNetwork propagation tools for engineers.",
-    blurb:
-      "GERGRID is the engineering surface we built at ONDO Space for radio planning and network propagation — collapsing Atoll, Google Earth, GlobalMapper, and ArcGIS into one 3D environment with ray tracing, link budgets, and an AI assistant for coverage work.",
-    tags: ["PRODUCT", "TELECOM"],
-    image: "/paper-assets/pub-gergrid-cover.png",
-    href: "https://ondospace.com",
-    linkLabel: "VISIT ONDO SPACE ↗",
-    printImage: "/paper-assets/pub-gergrid-ui.png",
-    printCaption: "Point-to-point calculator with 3D ray tracing — LoS, reflection, and diffraction in one view.",
-    featureLayout: "inset"
+    category: "PHILOSOPHY",
+    meta: "October 2025 lecture dialogue.\nPolitical philosophy and the history of ideas.",
+    summary: "A dialogue on Machiavelli, stability, and the politics of expansion.",
+    intro:
+      "A lecture dialogue with Johnathan Bi on Machiavelli and the history of political thought — less a book report than a live argument about how states hold together. We move through Spartan institutional stasis, Roman perpetual growth, and Machiavelli’s willingness to use calculated disorder as a tool of rule.",
+    body:
+      "The conversation is about the trade-offs every political order eventually faces: conserve what works and risk stagnation, or expand and risk tearing the fabric that made expansion possible. Machiavelli sits in the middle of that tension, and the lecture treats him as a strategist of institutions rather than a cartoon of ruthlessness. It is philosophy for people who care about power as it is practiced — and about what kind of disorder a republic can survive.",
+    tags: ["PHILOSOPHY", "LECTURE"],
+    image: "/paper-assets/pub-1.png",
+    linkLabel: "WATCH ON YOUTUBE ↗",
+    featureLayout: "letterbox"
   },
   {
     id: "coolppl",
     title: "Coolppldoingcoolthings",
-    date: "2024-08-01",
-    year: "2024",
+    date: "2025-08-01",
+    month: "AUGUST",
+    year: "2025",
     category: "INTERVIEWS",
-    meta: "2024 interview series.\nColumbia Entrepreneurship media.",
-    blurb:
-      "An interview series that films builders in motion. Long conversations about future plans, projects, and the rhythm of space-tech work are edited into something a social audience will actually watch.",
+    meta: "August 2025 interview series.\nColumbia Entrepreneurship media.",
+    summary: "Columbia Entrepreneurship series filming builders in motion.",
+    intro:
+      "Coolppldoingcoolthings is Columbia Entrepreneurship’s interview series for builders who are mid-flight — not polished after the fact. Long conversations about projects, timelines, and the rhythm of space-tech work get cut into something a social audience will actually finish.",
+    body:
+      "The format is deliberate: enough length to hear how someone actually thinks, enough edit to survive Instagram. My segment sits inside that larger series — future plans, the work on the table, and the less glamorous cadence of shipping under uncertainty. It is less a highlight reel than a working portrait of how early builders talk when the camera is rolling and the next milestone is still unearned.",
     tags: ["INTERVIEWS", "ENTREPRENEURSHIP"],
     image: "/paper-assets/pub-2.png",
     href: "https://www.instagram.com/reel/DWfFiXGChkw",
     linkLabel: "VIEW ON INSTAGRAM ↗",
     reach: "~20K TOTAL VIEWS",
-    featureLayout: "square"
+    featureLayout: "letterbox"
+  },
+  {
+    id: "ondo-space",
+    title: "ONDO Space on CNN",
+    titleLines: ["ONDO Space", "on CNN"],
+    date: "2025-02-03",
+    month: "FEBRUARY",
+    year: "2025",
+    category: "CNN",
+    meta: "February 2025 · CNN World.\nMongolia’s first commercial space startup.",
+    summary: "CNN on Mongolia’s first commercial space startup — satellites for the steppe.",
+    intro:
+      "CNN’s World desk featured ONDO Space — Mongolia’s first commercial space startup — and the bet that CubeSats can bring real connectivity to herders across the steppe. The segment follows the company from cleanroom to orbit: Mongolia’s flag on signed flight hardware, partners on Transporter rideshares, and a system meant for livestock tracking where terrestrial networks simply end.",
+    body:
+      "ONDO Space is building affordable satellite connectivity out of Ulaanbaatar with operations that already reach the US and Japan. The company put Mongolia’s first commercial satellites on a SpaceX Falcon 9 in March 2024 and is working toward a much larger constellation — the CNN piece is the public face of that arc. Around the headline sit the partnerships that make the hardware real: Exolaunch and Spire on the launch path, plus strategic MOUs with New Space Intelligence on integrated space data and connectivity, and with ispace on future lunar collaboration from Mongolia. The materials below are for anyone who wants the press cut, the partner announcements, or the launch footage beyond the CNN frame.",
+    tags: ["CNN", "SPACE", "MONGOLIA"],
+    image: "/paper-assets/pub-ondo-flag.jpg",
+    href: "https://edition.cnn.com/2025/02/03/world/video/mongolia-ondo-space-satellite-spc-hnk",
+    linkLabel: "WATCH ON CNN ↗",
+    // CNN’s player is not iframe-embeddable; launch footage plays on-page, CNN is the headline link.
+    videoEmbed: "https://www.youtube.com/embed/XYtd6zP3DHQ",
+    figures: [
+      {
+        image: "/paper-assets/pub-ondo-cleanroom.jpg",
+        kicker: "Figure · Cleanroom",
+        caption:
+          "Cleanroom integration ahead of a Transporter rideshare — ONDO CubeSats on the bench with Exolaunch and Spire."
+      },
+      {
+        image: "/paper-assets/pub-ondo-satellite.jpg",
+        kicker: "Figure · Flight hardware",
+        caption:
+          "ONDO CubeSat chassis — the commercial hardware behind Mongolia’s first private satellites."
+      }
+    ],
+    relatedLinks: [
+      {
+        label: "New Space Intelligence × ONDO MoU",
+        href: "https://www.newspaceint.com/post/ondospace"
+      },
+      {
+        label: "ispace × ONDO lunar collaboration",
+        href: "https://www.ispace-inc.com/2024/12/04/ispace-signs-memorandum-of-understanding-with-ondo-space-to-strategically-collaborate-for-future-lunar-programs-in-mongolia/"
+      },
+      {
+        label: "ONDO satellite launch footage",
+        href: "https://youtu.be/XYtd6zP3DHQ?si=X_RpIeefF3VtgNfz"
+      }
+    ],
+    featureLayout: "letterbox"
   },
   {
     id: "mars-v-spot",
     title: "MARS V SPOT",
     date: "2024-06-01",
+    month: "JUNE",
     year: "2024",
     category: "LECTURE",
-    meta: "2024 public lecture.\nGovernment of Mongolia collaboration.",
-    blurb:
-      "A public scientific lecture connecting scientific work to humanity’s ambition to reach Mars. Delivered to an official audience of more than 1,000 people and carried further by Mongolian National Television.",
+    meta: "June 2024 public lecture.\nGovernment of Mongolia collaboration.",
+    summary: "Public science lecture on Mars ambition — 1,000+ in the room, national TV after.",
+    intro:
+      "MARS V SPOT was a public scientific lecture tying research work to humanity’s longer bet on Mars. Delivered with the Government of Mongolia to an official audience of more than a thousand people, then carried further by Mongolian National Television.",
+    body:
+      "The talk was built for a room that was not already inside the aerospace bubble: why analog programs matter, what a national audience should take from Mars as more than a slogan, and how scientific work on Earth connects to that horizon. Speaking to a thousand people under government partnership, then watching the same material travel on national broadcast, is a different kind of publication than a paper — it is science as public argument.",
     tags: ["LECTURE", "MARS"],
     image: "/paper-assets/pub-4.png",
     href: "https://www.mars-v.com",
     linkLabel: "VISIT MARS-V ↗",
     reach: "1,000+ ATTENDEES",
-    featureLayout: "letterbox"
+    featureLayout: "inset"
   },
   {
     id: "mars-is-not-far",
     title: "Mars is not far II",
     titleLines: ["Mars is", "not far II"],
     date: "2024-04-01",
+    month: "APRIL",
     year: "2024",
     category: "DOCUMENTARY",
     meta: "April 2024 documentary.\nNational broadcast on 13 TV outlets.",
-    blurb:
-      "A documentary on the MARS-V analog program and the people trying to turn Mars from a headline into a lived frontier. The film aired nationally across thirteen television outlets.",
+    summary: "Documentary on the MARS-V analog program — aired on thirteen national outlets.",
+    intro:
+      "Mars is not far II follows the MARS-V analog program and the people trying to turn Mars from a headline into something you can train for. The film treats the desert as a rehearsal space — logistics, stress, and the human texture of a frontier that is still mostly imagination.",
+    body:
+      "Rather than a tech demo, the documentary stays with the crew and the country around them: why Mongolia hosts this kind of work, what an analog mission asks of people, and how a national audience meets space when it arrives as television instead of a TED talk. It aired across thirteen outlets — a wide net for a story that is usually locked inside specialist circles.",
     tags: ["DOCUMENTARY", "MONGOLIA"],
     image: "/paper-assets/pub-3.png",
     linkLabel: "WATCH DOCUMENTARY ↗",
@@ -1049,21 +1234,47 @@ export const mindShelves: MindShelf[] = [
 export const calendarLanes: CalendarLane[] = [
   {
     label: "Now",
+    dates: "Aug 2 – 8",
     title: "New York, NY",
-    note: "Columbia · T-REX · Plasma Lab · Rocketry · Thrive",
-    tone: "solid"
+    note: "Around Columbia. Very open to coffee, walks, and first conversations before the West Coast trip.",
+    tone: "solid",
+    open: true
   },
   {
     label: "Next",
-    title: "GLOBES — Cambridge",
-    note: "Summer 2026 · Corpus Christi · AI & climate behavior",
-    tone: "dashed"
+    dates: "Aug 8 – 20",
+    title: "San Francisco, CA",
+    note: "In the Bay — happy to meet founders, researchers, and curious people while I'm there.",
+    tone: "dashed",
+    open: true
+  },
+  {
+    label: "Then",
+    dates: "Aug 20 – 26",
+    title: "Los Angeles, CA",
+    note: "Down in LA. Reach out if you're around — conversation or coffee welcome.",
+    tone: "dashed",
+    open: true
+  },
+  {
+    label: "After",
+    dates: "Aug 26 – Sep 1",
+    title: "Seattle · Redmond · Washington",
+    note: "Pacific Northwest stretch across Seattle, Redmond, and the broader Washington area.",
+    tone: "dashed",
+    open: true
   },
   {
     label: "Later",
-    title: "Open slot",
-    note: "Conference, launch, or quiet month",
-    tone: "dashed"
+    dates: "Sep 23 – 24",
+    title: "Off World — Houston",
+    note: "I'll be at Payload's Off World summit at NASA's Space Center Houston — the annual gathering on the businesses of the space frontier (lunar economy, cislunar infrastructure, and what's next beyond Earth).",
+    tone: "event",
+    open: true,
+    org: "Payload",
+    href: "https://payloadspace.com/event/off-world/",
+    logo: "/paper-assets/events/payload-logo-pro.svg",
+    image: "/paper-assets/events/off-world-summit.jpg"
   }
 ];
 

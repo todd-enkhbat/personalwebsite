@@ -85,8 +85,8 @@ export default function MiccPage() {
             </figure>
           </div>
           <figure className="case-plate">
-            <img src="/paper-assets/micc-skyline.jpg" alt="" />
-            <figcaption>Capital towers</figcaption>
+            <img src="/paper-assets/micc-nyse.jpg" alt="" />
+            <figcaption>NYSE Space Summit</figcaption>
           </figure>
         </div>
       </article>

@@ -6,3 +6,5 @@ out
 *.log
 tsconfig.tsbuildinfo
 .tmp-2x/
+.vercel
+.env*
