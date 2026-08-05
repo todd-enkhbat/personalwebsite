@@ -10,7 +10,7 @@ export default function KublaiPage() {
       <article className="case-editorial">
         <header className="case-header">
           <div className="case-header-top">
-            <p className="case-kicker">Kublai Institute of Astrophysics · 2023–2024</p>
+            <p className="case-kicker">Kublai Institute of Astrophysics · 2023-2024</p>
             <Link href="/work" className="open-arrow">
               ← Portfolio
             </Link>
@@ -23,7 +23,7 @@ export default function KublaiPage() {
         </p>
 
         <p className="case-deck">
-          Observational science and public commentary at the country’s astronomy observatory — one intern, one mentor,
+          Observational science and public commentary at the country’s astronomy observatory: one intern, one mentor,
           work that had to stand up in both the data and the dome.
         </p>
         <p className="case-dateline">Gurragchaa · time-series · planetarium commentary · observatory</p>
@@ -41,7 +41,7 @@ export default function KublaiPage() {
             <h2>Research</h2>
             <p>
               I was the only research intern at Mongolia’s astronomy observatory under the guidance of Mr. Gurragchaa,
-              the first cosmonaut from Mongolia. The scientific thread was penumbral lunar eclipses — observational
+              the first cosmonaut from Mongolia. The scientific thread was penumbral lunar eclipses, observational
               studies and time-series analysis that demanded patience with instruments and honesty with incomplete
               nights.
             </p>
@@ -52,7 +52,7 @@ export default function KublaiPage() {
             <p>
               The other half of the role was translation: research assistant and planetarium commentator, turning
               orbital geometry into something a public audience could feel without lying about the physics. That dual
-              posture — measure carefully, speak clearly — is the institute’s real product.
+              posture: measure carefully, speak clearly, is the institute’s real product.
             </p>
           </section>
         </div>

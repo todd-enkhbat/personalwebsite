@@ -135,7 +135,7 @@ function ShelfRow({ shelf, defaultIndex = 0 }: { shelf: MindShelf; defaultIndex?
     <section className="shelf-block" aria-labelledby={`shelf-${shelf.id}-label`}>
       <div className="shelf-row-label">
         <span id={`shelf-${shelf.id}-label`}>
-          {shelf.label} — {shelf.code}
+          {shelf.label} / {shelf.code}
         </span>
         <span className="shelf-row-rule" aria-hidden />
         <span>
@@ -314,8 +314,7 @@ export function DualShelf({ shelves, links }: DualShelfProps) {
   return (
     <div className="shelf-experience">
       <div className="shelf-intro">
-        <p className="shelf-kicker">Feeding the Mind · Columbia Core</p>
-        <h1 className="shelf-headline">Contemporary Civilization, two shelves.</h1>
+        <h1 className="shelf-headline">All that led to the constitution of Nomos.</h1>
       </div>
 
       {shelves.map((shelf) => (

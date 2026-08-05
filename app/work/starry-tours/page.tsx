@@ -47,7 +47,7 @@ export default function StarryToursPage() {
             <p>
               Mongolia’s high elevation, thin air, and sparse light pollution make it one of the
               best natural planetariums on Earth. Starry Tours was built as the country’s first
-              dedicated astro-tourism project — not a generic desert overnight, but a structured way
+              dedicated astro-tourism project: not a generic desert overnight, but a structured way
               to put telescopes, guided sky reading, and unconventional night experiences in front of
               travelers and local audiences.
             </p>
@@ -58,7 +58,7 @@ export default function StarryToursPage() {
             <p>
               The program treated the night sky as both product and heritage: nomadic cultures have
               long used stars for navigation, weather, and time. The work was to translate that into
-              contemporary engagement — dark-sky viewing sessions, astronomy outreach, and tourism
+              contemporary engagement, dark-sky viewing sessions, astronomy outreach, and tourism
               that felt like discovery rather than spectacle.
             </p>
           </section>

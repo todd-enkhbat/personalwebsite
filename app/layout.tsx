@@ -18,11 +18,11 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${person.name} — ${person.tagline}`,
+  title: `${person.name} -- ${person.tagline}`,
   description: person.letter,
   openGraph: {
     title: person.name,
-    description: `${person.location} — ${person.tagline}`,
+    description: `${person.location}, ${person.tagline}`,
     type: "website"
   }
 };

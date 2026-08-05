@@ -35,7 +35,7 @@ export default function AresPage() {
           <div>
             <p className="case-kicker">Mission</p>
             <p>
-              Fully autonomous Martian habitat deployable by 2037 — two-phase architecture, ice-rich site selection,
+              Fully autonomous Martian habitat deployable by 2037: two-phase architecture, ice-rich site selection,
               ISRU, and pressurized construction under the AERODOME.
             </p>
           </div>

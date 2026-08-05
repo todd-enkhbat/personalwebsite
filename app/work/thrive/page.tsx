@@ -10,7 +10,7 @@ export default function ThrivePage() {
       <article className="case-editorial">
         <header className="case-header">
           <div className="case-header-top">
-            <p className="case-kicker">Thrive Agritech · YC S15 · Oct–Dec 2025</p>
+            <p className="case-kicker">Thrive Agritech · YC S15 · Oct-Dec 2025</p>
             <Link href="/work" className="open-arrow">
               ← Portfolio
             </Link>
@@ -26,7 +26,7 @@ export default function ThrivePage() {
         </p>
 
         <p className="case-deck">
-          Thrive had product-market fit in the US. The question was whether — and how — to enter Leamington, the
+          Thrive had product-market fit in the US. The question was whether, and how, to enter Leamington, the
           largest greenhouse cluster in North America, without burning cycles on outreach that the network would never
           answer.
         </p>
@@ -46,7 +46,7 @@ export default function ThrivePage() {
             <p>
               I led market intelligence and GTM strategy for a hardware startup’s expansion into a new geography at a
               critical inflection point. Through more than one hundred calls, primary research, and an expert interview,
-              I mapped Leamington from scratch — not as a TAM slide, but as a concentrated power structure with specific
+              I mapped Leamington from scratch, not as a TAM slide, but as a concentrated power structure with specific
               gatekeepers (OGVG, BioPhi), trust networks, and decision-making patterns that structurally block
               conventional cold outreach.
             </p>
@@ -58,7 +58,7 @@ export default function ThrivePage() {
               The strategic reframe: Thrive should sell as greenhouse power infrastructure, not as another lighting
               vendor lined up against Philips. That positioning sits underneath the incumbent rather than competing
               head-on on fixture brand. From there, a lighthouse path: land two or three credible installs, use
-              validators to de-risk the category, then scale through local partners — how B2B enterprise sales actually
+              validators to de-risk the category, then scale through local partners, how B2B enterprise sales actually
               compounds when relationships gate the door.
             </p>
             <p className="case-pull">

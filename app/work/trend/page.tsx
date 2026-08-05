@@ -10,12 +10,12 @@ export default function TrendPage() {
       <article className="case-editorial">
         <header className="case-header">
           <div className="case-header-top">
-            <p className="case-kicker">Trend Mart Group · 2017–2024</p>
+            <p className="case-kicker">Trend Mart Group · 2017-2024</p>
             <Link href="/work" className="open-arrow">
               ← Portfolio
             </Link>
           </div>
-          <h1>A retail empire built at twelve — wound down on purpose</h1>
+          <h1>A retail empire built at twelve, wound down on purpose</h1>
         </header>
 
         <p className="case-byline">
@@ -23,7 +23,7 @@ export default function TrendPage() {
         </p>
 
         <p className="case-deck">
-          From a single-product online operation to Mongolia’s largest toy seller in a calendar year — then a
+          From a single-product online operation to Mongolia’s largest toy seller in a calendar year, then a
           deliberate exit for Columbia, not a collapse.
         </p>
         <p className="case-dateline">
@@ -44,7 +44,7 @@ export default function TrendPage() {
             <p>
               Mongolia’s GDP per capita sits around four to five thousand US dollars. Consumer purchasing power is a
               fraction of the American market. Adjusted for local PPP, a million-plus in Mongolian consumer revenue is
-              several million in US-equivalent spending — extracted from a constrained, competitive landscape where
+              several million in US-equivalent spending, extracted from a constrained, competitive landscape where
               every dollar is harder to earn.
             </p>
           </section>
@@ -52,16 +52,16 @@ export default function TrendPage() {
           <section>
             <h2>The group</h2>
             <p>
-              Trend Mart Group ran three verticals. Trend Mart was the flagship toy brand — sixty-plus SKUs, curated and
-              developed through original work, white-labeling, and supplier relationships — and at peak the country’s
+              Trend Mart Group ran three verticals. Trend Mart was the flagship toy brand, sixty-plus SKUs, curated and
+              developed through original work, white-labeling, and supplier relationships, and at peak the country’s
               single largest toy retailer by annual volume. Smart Kids was an English-literacy bookstore for young
               families. Home Essentials diversified into home and lifestyle appliances so revenue was not hostage to one
               category.
             </p>
             <p>
               Four storefronts sat in Ulaanbaatar’s highest-traffic hubs: Shangrilla Mall, Hunnu Mall, the Urgoo 2 Cinema
-              district, and Sukhbaatar Square. Online and in-person channels shifted with the pandemic — heavier in-store
-              before, online and Facebook Live commerce after — live-selling before live-commerce was a global cliché.
+              district, and Sukhbaatar Square. Online and in-person channels shifted with the pandemic, heavier in-store
+              before, online and Facebook Live commerce after, live-selling before live-commerce was a global cliché.
             </p>
           </section>
 
@@ -69,7 +69,7 @@ export default function TrendPage() {
             <h2>China without Chinese</h2>
             <p>
               Sourcing was not a catalog click. As a Mongolian founder who did not speak Chinese, I traveled to China to
-              work manufacturers and retailers directly — terms, products, supplier relationships — learning culture and
+              work manufacturers and retailers directly, terms, products, supplier relationships, learning culture and
               logistics in real time. That on-the-ground pipeline is where the SKU portfolio was built.
             </p>
           </section>
@@ -79,7 +79,7 @@ export default function TrendPage() {
             <p>
               Early on there was no co-founder to absorb functions. Product, logistics (including deliveries), marketing,
               Live selling, hiring up to fifteen people, and unit economics at roughly fifty percent gross margin all
-              sat on one desk. In 2024 the company was strategically wound down as I moved to Columbia — an exit on my
+              sat on one desk. In 2024 the company was strategically wound down as I moved to Columbia, an exit on my
               own terms, reallocating focus rather than abandoning a failed bet.
             </p>
           </section>

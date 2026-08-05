@@ -28,7 +28,7 @@ export function AmbientScore() {
         <iframe
           className="ambient-score-frame"
           src={SPOTIFY_SRC}
-          title="Prokofiev — Montagues and Capulets"
+          title="Prokofiev: Montagues and Capulets"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         />

@@ -15,7 +15,7 @@ export default function OndoPage() {
               ← Portfolio
             </Link>
           </div>
-          <h1>Inside ONDO — and the making of GerGrid</h1>
+          <h1>Inside ONDO and the making of GerGrid</h1>
         </header>
 
         <p className="case-byline">
@@ -26,7 +26,7 @@ export default function OndoPage() {
         </p>
 
         <p className="case-deck">
-          A summer spent at the elbow of a deep-tech CEO: negotiations, pivots, and pitches — while helping build
+          A summer spent at the elbow of a deep-tech CEO: negotiations, pivots, and pitches, while helping build
           GerGrid, an AI network-planning surface meant to replace slow manual RF workflows.
         </p>
         <p className="case-dateline">
@@ -34,7 +34,7 @@ export default function OndoPage() {
         </p>
 
         <figure className="case-hero">
-          <img src="/paper-assets/gergrid-hero.jpg" alt="Earth at night — networked city lights from orbit" />
+          <img src="/paper-assets/gergrid-hero.jpg" alt="Earth at night, networked city lights from orbit" />
           <figcaption>
             <span>Connectivity at planetary scale</span>
             <span>GerGrid · coverage thinking</span>
@@ -45,7 +45,7 @@ export default function OndoPage() {
           <section>
             <h2>Shadowing the CEO</h2>
             <p>
-              I worked directly under CEO Nami Bold — in the room for strategic negotiations, partner discussions, and
+              I worked directly under CEO Nami Bold, in the room for strategic negotiations, partner discussions, and
               internal decision-making. The job was not observation alone. I represented ONDO in early-stage startup
               evaluation and pivot planning, contributed research and design validation, and helped write the technical
               documentation that made geospatial product choices defensible to partners and investors.
@@ -57,7 +57,7 @@ export default function OndoPage() {
               the engineering.
             </p>
             <p className="case-pull">
-              “The hardest thing to do as a CEO is to motivate and encourage your team. Humans are dynamic.” — Nami
+              “The hardest thing to do as a CEO is to motivate and encourage your team. Humans are dynamic.” -- Nami
               Bold
             </p>
           </section>
@@ -66,7 +66,7 @@ export default function OndoPage() {
             <h2>Teaching the stack</h2>
             <p>
               ONDO’s builders needed a shared language across space industry, satellite coverage, and RF. I ran team
-              education on those fundamentals — enough that product and ops could reason about infrastructure without
+              education on those fundamentals, enough that product and ops could reason about infrastructure without
               waiting for a specialist translation every time.
             </p>
           </section>
@@ -76,7 +76,7 @@ export default function OndoPage() {
             <p>
               GerGrid is an AI-driven telecom network-planning platform. It fuses ArcGIS terrain models (DEM/DSM),
               land-use layers, satellite imagery, population density, and usage data to propose tower placement and
-              coverage simulations in minutes — not the multi-week grind of stitching Atoll, GlobalMapper, and ArcGIS by
+              coverage simulations in minutes, not the multi-week grind of stitching Atoll, GlobalMapper, and ArcGIS by
               hand.
             </p>
             <p>
@@ -90,7 +90,7 @@ export default function OndoPage() {
           <section>
             <h2>What stayed with me</h2>
             <p>
-              Pitch style has to innovate — not conform to a template. A resume has to show obvious transfer and growth.
+              Pitch style has to innovate, not conform to a template. A resume has to show obvious transfer and growth.
               And the useful shape of a builder is T-shaped: deep vertical craft (programming, engineering, design) and
               horizontal literacy across domains so you can speak product, business, and RF in the same sentence.
             </p>

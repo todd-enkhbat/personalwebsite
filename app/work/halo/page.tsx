@@ -21,15 +21,15 @@ export default function HaloPage() {
         <p className="case-byline">{halo.role} · CubeSat solar pointing · rapid prototyping</p>
 
         <p className="case-deck">
-          Tip, tilt, and heave from one compact parallel platform — designed in Onshape, printed in PLA, wired on the
+          Tip, tilt, and heave from one compact parallel platform, designed in Onshape, printed in PLA, wired on the
           bench, stopped short of powered actuation by firmware.
         </p>
-        <p className="case-dateline">3× NEMA 17 · A4988 · LDR quad-array · ~600–800 g phase 1 · &lt;400 g phase 2 target</p>
+        <p className="case-dateline">3× NEMA 17 · A4988 · LDR quad-array · ~600-800 g phase 1 · &lt;400 g phase 2 target</p>
 
         <figure className="case-hero">
           <img src="/paper-assets/halo-hero.jpg" alt="HALO 3-DOF parallel solar pointing platform" />
           <figcaption>
-            <span>SPACE GIMBAL V1 — assembled</span>
+            <span>SPACE GIMBAL V1, assembled</span>
             <span>Parallel kinematics</span>
           </figcaption>
         </figure>
@@ -38,7 +38,7 @@ export default function HaloPage() {
           <section>
             <h2>Mechanism</h2>
             <p>
-              The brief was to point a CubeSat solar array across tip, tilt, and heave from base-mounted steppers —
+              The brief was to point a CubeSat solar array across tip, tilt, and heave from base-mounted steppers, 
               without stacking serial gimbals. I designed a three-arm parallel pointing platform, iterated the CAD in
               Onshape, printed and assembled the PLA frame, and mounted an LDR quad-array for sensing.
             </p>

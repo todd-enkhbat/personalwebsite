@@ -1,7 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { LetterShell } from "./components/LetterShell";
-import { linkedReferences, meetInvite, person, trainings } from "./data/content";
+import { linkedReferences, person, trainings, type LinkItem } from "./data/content";
+
+function linkifyText(text: string, links: LinkItem[]): ReactNode[] {
+  const sorted = [...links].sort((a, b) => b.label.length - a.label.length);
+  const pattern = sorted
+    .map((item) => item.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|");
+
+  if (!pattern) return [text];
+
+  const regex = new RegExp(`(${pattern})`, "g");
+  const parts = text.split(regex);
+  const byLabel = new Map(sorted.map((item) => [item.label, item]));
+
+  return parts.map((part, index) => {
+    const link = byLabel.get(part);
+    if (!link) return <span key={`t-${index}`}>{part}</span>;
+
+    return (
+      <a
+        key={`l-${index}-${link.label}`}
+        href={link.href}
+        className="inline-ref"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {link.label}
+      </a>
+    );
+  });
+}
 
 export default function MainPage() {
   return (
@@ -17,39 +48,8 @@ export default function MainPage() {
             <span>&nbsp;{person.openerTail}</span>
           </h1>
           <p className="body-copy" style={{ width: "100%", maxWidth: 720 }}>
-            {person.letter}
+            {linkifyText(person.letter, linkedReferences)}
           </p>
-
-          <section className="meet-invite meet-invite--main" aria-label="Open to meeting">
-            <div className="meet-invite__copy">
-              <p className="ui-label">{meetInvite.eyebrow}</p>
-              <h2 className="meet-invite__headline">{meetInvite.headline}</h2>
-              <p className="meet-invite__body">{meetInvite.body}</p>
-              <p className="meet-invite__window">{meetInvite.window}</p>
-            </div>
-            <Link href={meetInvite.ctaHref} className="meet-button">
-              <span className="meet-button__label">{meetInvite.cta}</span>
-              <span className="meet-button__arrow" aria-hidden>
-                →
-              </span>
-            </Link>
-          </section>
-
-          <div className="linked-block">
-            <p className="ui-label">Linked</p>
-            <p className="linked-line">
-              {linkedReferences.map((item, index) => (
-                <span key={item.label}>
-                  <a href={item.href} target="_blank" rel="noreferrer">
-                    {item.label}
-                  </a>
-                  {" → "}
-                  {item.href.replace(/^https?:\/\//, "").replace(/\/$/, "")}
-                  {index < linkedReferences.length - 1 ? " · " : ""}
-                </span>
-              ))}
-            </p>
-          </div>
           <p className="education-line">{person.education}</p>
         </div>
 

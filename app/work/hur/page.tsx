@@ -10,7 +10,7 @@ export default function HurPage() {
       <article className="case-editorial">
         <header className="case-header">
           <div className="case-header-top">
-            <p className="case-kicker">HUR. EdTech · 2024–2025</p>
+            <p className="case-kicker">HUR. EdTech · 2024-2025</p>
             <Link href="/work" className="open-arrow">
               ← Portfolio
             </Link>
@@ -26,7 +26,7 @@ export default function HurPage() {
         </p>
 
         <p className="case-deck">
-          Mentorship, funding access, and peer collaboration across colleges — built as a company, not a club
+          Mentorship, funding access, and peer collaboration across colleges, built as a company, not a club
           newsletter.
         </p>
         <p className="case-dateline">$46,000 funding · 22 staff · 120+ colleges · 1,100 students lectured</p>
@@ -45,7 +45,7 @@ export default function HurPage() {
             <p>
               Mongolian students aiming at competitive colleges lacked a centralized place for mentorship, funding
               pathways, and collaboration with peers who had already crossed those gates. HUR. was founded to close that
-              gap — education technology as infrastructure for ambition, not content for its own sake.
+              gap, education technology as infrastructure for ambition, not content for its own sake.
             </p>
           </section>
 
@@ -58,7 +58,7 @@ export default function HurPage() {
               could turn advice into projects with real stakes.
             </p>
             <p>
-              The public face of that work shows up in admissions stories — Duke Kunshan, Washington, Pace, Syracuse —
+              The public face of that work shows up in admissions stories: Duke Kunshan, Washington, Pace, Syracuse, 
               and in the testimonials of students who could not have mapped those applications alone.
             </p>
           </section>

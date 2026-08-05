@@ -1,9 +1,9 @@
 # Book covers (Columbia Contemporary Civilization)
 
-Fetched automatically from [Open Library Covers](https://openlibrary.org/dev/docs/api/covers) — no manual uploads.
+Fetched automatically from [Open Library Covers](https://openlibrary.org/dev/docs/api/covers). No manual uploads.
 
-- `*.jpg` — cover images for Fall (CC1101) and Spring (CC1102) shelves
-- `index.json` — path map for site use (`/paper-assets/books/<slug>.jpg`)
+- `*.jpg`, cover images for Fall (CC1101) and Spring (CC1102) shelves
+- `index.json`, path map for site use (`/paper-assets/books/<slug>.jpg`)
 
 To refresh:
 

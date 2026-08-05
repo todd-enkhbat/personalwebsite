@@ -12,6 +12,15 @@ type SiteHeaderProps = {
   stamp?: string;
 };
 
+function stampFromPath(pathname: string): string {
+  const match = nav.find((item) =>
+    item.href === "/"
+      ? pathname === "/"
+      : pathname === item.href || pathname.startsWith(`${item.href}/`)
+  );
+  return (match?.label ?? "Main").toLowerCase();
+}
+
 export function SiteHeader({
   showLogo = true,
   variant = "letter",
@@ -20,6 +29,7 @@ export function SiteHeader({
 }: SiteHeaderProps) {
   const pathname = usePathname();
   const metaLine = meta ?? `${person.emails.academic} | New York, NY`;
+  const stampLabel = stamp ?? stampFromPath(pathname);
 
   return (
     <>
@@ -36,14 +46,16 @@ export function SiteHeader({
               <Image
                 src="/paper-assets/crest-archer.png"
                 alt=""
-                width={105}
-                height={115}
+                width={84}
+                height={92}
                 priority
                 unoptimized
               />
             </div>
-          ) : null}
-          {stamp ? <p className="letterhead-stamp">{stamp}</p> : <span className="letterhead-spacer" />}
+          ) : (
+            <span className="letterhead-crest letterhead-crest--empty" aria-hidden />
+          )}
+          <p className="letterhead-stamp">{stampLabel}</p>
         </div>
       ) : null}
 

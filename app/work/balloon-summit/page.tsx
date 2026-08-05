@@ -32,11 +32,10 @@ export default function BalloonSummitPage() {
         </p>
 
         <p className="case-deck">
-          Two days linking a field launch the public could attend with a scientific conference —
-          co-organized across government, universities, and Mongolia’s space research community.
+          Two days linking a field launch the public could attend with a scientific conference, co-organized across government, universities, and Mongolia’s space research community.
         </p>
         <p className="case-dateline">
-          Mar 21–22, 2024 · National Park launch · Scientific conference · Presidential patronage
+          Mar 21-22, 2024 · National Park launch · Scientific conference · Presidential patronage
         </p>
 
         <figure className="case-hero">
@@ -55,7 +54,7 @@ export default function BalloonSummitPage() {
             <h2>The summit</h2>
             <p>
               The Mongolian Space Research and Science Agency organized the International Space
-              Balloon Summit on March 21–22, 2024, under the patronage of the President of Mongolia.
+              Balloon Summit on March 21-22, 2024, under the patronage of the President of Mongolia.
               Co-organizers included the Ministry of Digital Development, Innovation, and
               Communications; the Koosen Technology College of the Mongolian University of Science
               and Technology (MUST); New Mongol Technology College; Mongol Koosen; and partner
@@ -67,19 +66,19 @@ export default function BalloonSummitPage() {
             <h2>Two days</h2>
             <p>
               Day 1 put a space balloon in the air at 10AM on March 21 at the 360 Archery Range of
-              the National Park — open to the public. Day 2 shifted indoors for the Space Balloon
+              the National Park, open to the public. Day 2 shifted indoors for the Space Balloon
               Scientific Conference: papers, partners, and the technical thread behind high-altitude
               platforms. Field ops and symposium, same weekend.
             </p>
             <p className="case-pull">
-              Launch at 10AM · March 21, 2024 · National Park — cordially open to the public.
+              Launch at 10AM · March 21, 2024 · National Park, cordially open to the public.
             </p>
           </section>
 
           <section>
             <h2>Launch film</h2>
             <p>
-              Field footage from the summit launch — balloon inflation, payload prep, and ascent
+              Field footage from the summit launch, balloon inflation, payload prep, and ascent
               against the Ulaanbaatar horizon.
             </p>
             <div className="case-video">

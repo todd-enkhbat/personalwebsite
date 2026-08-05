@@ -10,12 +10,12 @@ export default function TrexPage() {
       <article className="case-editorial">
         <header className="case-header">
           <div className="case-header-top">
-            <p className="case-kicker">T-REX · NASA NIAC · 2025–Present</p>
+            <p className="case-kicker">T-REX · NASA NIAC · 2025-Present</p>
             <Link href="/work" className="open-arrow">
               ← Portfolio
             </Link>
           </div>
-          <h1>Video of a black hole — from low Earth orbit</h1>
+          <h1>Video of a black hole from low Earth orbit</h1>
         </header>
 
         <p className="case-byline">
@@ -47,7 +47,7 @@ export default function TrexPage() {
             <p>
               T-REX targets ≤10% spin and mass constraints on Sagittarius A* via roughly twenty-two-minute temporal
               resolution at 86 GHz. The collaboration spans NASA JPL, Princeton Space Physics, MIT Lincoln Lab, Brown,
-              Columbia, and Utah State — a distributed engineering problem as much as an astrophysics one.
+              Columbia, and Utah State, a distributed engineering problem as much as an astrophysics one.
             </p>
           </section>
 

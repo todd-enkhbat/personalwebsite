@@ -92,7 +92,7 @@ export default function NomosPage() {
           <h2>We are not trying to defeat impermanence. We are designing for continuity through it.</h2>
           <div className="nomos-requirements__copy">
             <h3>That changes the engineering question.</h3>
-            <p className="nomos-body">The objective is not permanence. It is to prevent a break in the chain of context—from one person to another, one machine to another, and eventually one world to another.</p>
+            <p className="nomos-body">The objective is not permanence. It is to prevent a break in the chain of context -- from one person to another, one machine to another, and eventually one world to another.</p>
           </div>
         </div>
         <div className="nomos-requirements__list">
