@@ -1,21 +1,12 @@
-import Image from "next/image";
 import { LetterShell } from "../components/LetterShell";
+import { ContactEmblem } from "../components/ContactEmblem";
 import { contactMap } from "../data/content";
 
 export default function ContactPage() {
   return (
     <LetterShell>
       <div className="contact-map" aria-label="Contact channels">
-        <div className="contact-map__emblem">
-          <Image
-            src="/paper-assets/contact-emblem.png"
-            alt=""
-            width={497}
-            height={507}
-            priority
-            unoptimized
-          />
-        </div>
+        <ContactEmblem />
 
         <svg
           className="contact-map__lines contact-map__lines--left"

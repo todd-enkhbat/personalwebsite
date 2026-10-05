@@ -73,6 +73,8 @@ export type PublicationPiece = {
   reach?: string;
   /** Optional in-panel video embed URL (YouTube, etc.). */
   videoEmbed?: string;
+  /** Optional full-width site preview (article, program site, etc.). */
+  websiteEmbed?: string;
   relatedLinks?: PublicationRelatedLink[];
   figures?: PublicationFigure[];
   /** Featured spotlight orientation; varies so soft images are never forced full-bleed. */
@@ -146,7 +148,7 @@ export const person = {
     instagramPersonal: "https://www.instagram.com/tsokue___/?hl=en",
     instagramPro: "https://www.instagram.com/todd.enk/",
     goodreads: "https://www.goodreads.com/user/show/189398350-tsogt-enkhbat",
-    letterboxd: "https://letterboxd.com/",
+    letterboxd: "https://boxd.it/m92mb",
     nomos: "https://nomosorbital.com"
   }
 };
@@ -808,6 +810,7 @@ export const publications: PublicationPiece[] = [
     tags: ["YOUTUBE", "INTERVIEW"],
     image: "/paper-assets/pub-nova-columbia.png",
     href: "https://youtu.be/_CKEw4vLGpM",
+    videoEmbed: "https://www.youtube.com/embed/_CKEw4vLGpM",
     linkLabel: "WATCH ON YOUTUBE ↗",
     reach: "~5K VIEWS",
     featureLayout: "letterbox"
@@ -828,6 +831,7 @@ export const publications: PublicationPiece[] = [
     tags: ["PRESS", "JOURNAL"],
     image: "/paper-assets/pub-unread-source.png",
     href: "https://unread.today/c/journal-tsogt",
+    websiteEmbed: "https://unread.today/c/journal-tsogt",
     linkLabel: "READ ON UNREAD ↗",
     reach: "10K PRINT · ~100K VIEWS",
     figures: [
@@ -856,7 +860,19 @@ export const publications: PublicationPiece[] = [
     tags: ["PODCAST", "NEWSLETTER", "FOUNDING"],
     image: "/paper-assets/pub-deeptech-decoded.png",
     href: "https://deeptech-decoded.com/",
+    websiteEmbed: "https://deeptech-decoded.com/",
+    videoEmbed: "https://www.youtube.com/embed/QA14lpyDOuE",
     linkLabel: "VISIT DEEPTECH DECODED ↗",
+    relatedLinks: [
+      {
+        label: "Latest episode on YouTube",
+        href: "https://www.youtube.com/@deeptechdecodedai/videos"
+      },
+      {
+        label: "Episodes & newsletter",
+        href: "https://deeptech-decoded.com/episodes"
+      }
+    ],
     featureLayout: "letterbox"
   },
   {
@@ -875,6 +891,8 @@ export const publications: PublicationPiece[] = [
       "The conversation is about the trade-offs every political order eventually faces: conserve what works and risk stagnation, or expand and risk tearing the fabric that made expansion possible. Machiavelli sits in the middle of that tension, and the lecture treats him as a strategist of institutions rather than a cartoon of ruthlessness. It is philosophy for people who care about power as it is practiced, and about what kind of disorder a republic can survive.",
     tags: ["PHILOSOPHY", "LECTURE"],
     image: "/paper-assets/pub-1.png",
+    href: "https://www.youtube.com/watch?v=VKNrm1rvy0M",
+    videoEmbed: "https://www.youtube.com/embed/VKNrm1rvy0M",
     linkLabel: "WATCH ON YOUTUBE ↗",
     featureLayout: "letterbox"
   },
@@ -964,8 +982,15 @@ export const publications: PublicationPiece[] = [
     tags: ["LECTURE", "MARS"],
     image: "/paper-assets/pub-4.png",
     href: "https://www.mars-v.com",
+    videoEmbed: "https://www.youtube.com/embed/4SY2ag4kLbM",
     linkLabel: "VISIT MARS-V ↗",
     reach: "1,000+ ATTENDEES",
+    relatedLinks: [
+      {
+        label: "MARSA × Mars Society convention talk",
+        href: "https://www.youtube.com/watch?v=4SY2ag4kLbM"
+      }
+    ],
     figures: [
       {
         image: "/paper-assets/marsv-hero.png",
@@ -991,8 +1016,15 @@ export const publications: PublicationPiece[] = [
       "Rather than a tech demo, the documentary stays with the crew and the country around them: why Mongolia hosts this kind of work, what an analog mission asks of people, and how a national audience meets space when it arrives as television instead of a TED talk. It aired across thirteen outlets, a wide net for a story that is usually locked inside specialist circles.",
     tags: ["DOCUMENTARY", "MONGOLIA"],
     image: "/paper-assets/pub-3.png",
-    linkLabel: "WATCH DOCUMENTARY ↗",
+    href: "https://www.youtube.com/watch?v=4SY2ag4kLbM",
+    videoEmbed: "https://www.youtube.com/embed/4SY2ag4kLbM",
+    linkLabel: "WATCH PROGRAM FOOTAGE ↗",
     figures: [
+      {
+        image: "/paper-assets/pub-marsv-source.png",
+        kicker: "Figure · Broadcast",
+        caption: "National documentary coverage of the MARS-V analog program."
+      },
       {
         image: "/paper-assets/marsv-hero.png",
         kicker: "Figure · Analog horizon",
@@ -1203,7 +1235,7 @@ export const mindShelves: MindShelf[] = [
         id: "on-liberty",
         title: "On Liberty",
         author: "John Stuart Mill",
-        cover: "/paper-assets/books/on-liberty.jpg"
+        cover: "/paper-assets/books/on-liberty-penguin.png"
       },
       {
         id: "marx-engels-reader",
@@ -1387,7 +1419,7 @@ export const contactChannels: LinkItem[] = [
   {
     label: "Letterboxd",
     note: "Film diary",
-    href: "https://letterboxd.com/",
+    href: "https://boxd.it/m92mb",
     external: true
   }
 ];
@@ -1449,7 +1481,7 @@ export const contactMap: { left: ContactMapItem[]; right: ContactMapItem[] } = {
     {
       label: "Letterboxd",
       note: "Film diary",
-      href: "https://letterboxd.com/",
+      href: "https://boxd.it/m92mb",
       external: true,
       glyph: "LB"
     }
