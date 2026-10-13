@@ -20,6 +20,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: `${person.name} -- ${person.tagline}`,
   description: person.letter,
+  icons: { icon: "/icon.png", apple: "/apple-icon.png" },
   openGraph: {
     title: person.name,
     description: `${person.location}, ${person.tagline}`,

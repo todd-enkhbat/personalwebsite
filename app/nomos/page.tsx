@@ -31,6 +31,15 @@ export default function NomosPage() {
         </div>
       </section>
 
+      <section className="nomos-proof" aria-label="Nomos project numbers">
+        <div className="nomos-proof__intro"><p className="nomos-label">What exists now</p><h2>A working planner, with a clear boundary between planning and execution.</h2></div>
+        <div className="nomos-proof__facts">
+          <details><summary><strong>$25k</strong><span>Grant funding secured</span></summary><p>Funding supports the solo-founder research and product work.</p></details>
+          <details><summary><strong>30 pages</strong><span>Research and technology review</span></summary><p>The Columbia review set the capability boundary before product claims.</p></details>
+          <details><summary><strong>1 MVP</strong><span>Full-stack mission planner</span></summary><p>FastAPI, Next.js, Python SDK, PostGIS and SGP4/Skyfield contact windows. Provider execution remains labeled until integrated.</p></details>
+        </div>
+      </section>
+
       <section id="continuity" className="nomos-section nomos-continuity">
         <div className="nomos-intro">
           <p className="nomos-label">{nomos.continuity.label}</p>

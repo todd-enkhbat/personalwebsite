@@ -154,6 +154,18 @@ a {
   display: block;
 }
 
+.letterhead-crest .site-icon { width: 72px; height: 72px; object-fit: contain; }
+.nomos-proof { background: #f6f3ed; color: #221c1b; padding: clamp(35px, 6vw, 88px) var(--pad-x); display: grid; grid-template-columns: minmax(240px, 1fr) minmax(350px, 1.5fr); gap: 55px; }
+.nomos-proof h2 { font-size: clamp(32px, 4vw, 58px); line-height: 1.02; font-weight: 400; letter-spacing: -.04em; max-width: 610px; }
+.nomos-proof__facts { display: grid; gap: 0; }
+.nomos-proof__facts details { border-top: 1px solid #b7aaa0; padding: 19px 0; }
+.nomos-proof__facts summary { cursor: pointer; display: flex; align-items: baseline; gap: 22px; list-style: none; }
+.nomos-proof__facts summary::-webkit-details-marker { display: none; }
+.nomos-proof__facts summary strong { font-size: clamp(42px, 4vw, 62px); line-height: 1; font-weight: 400; min-width: 150px; color: #7d2338; }
+.nomos-proof__facts summary span { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; }
+.nomos-proof__facts details p { margin: 13px 0 0 172px; max-width: 430px; font-size: 17px; line-height: 1.35; }
+@media (max-width: 700px) { .nomos-proof { grid-template-columns: 1fr; gap: 20px; } .nomos-proof__facts details p { margin-left: 0; } }
+
 .letterhead-stamp {
   margin: 0;
   justify-self: end;

@@ -42,16 +42,17 @@ export function SiteHeader({
             <span className="brand-meta">{metaLine}</span>
           </div>
           {showLogo ? (
-            <div className="letterhead-crest" aria-hidden>
+            <Link href="/" className="letterhead-crest" aria-label="Home">
               <Image
-                src="/paper-assets/crest-archer.png"
-                alt=""
-                width={84}
-                height={92}
+                src="/ink-mark.png"
+                alt="Todd Enkhbat ink-burst mark"
+                width={72}
+                height={72}
+                className="site-icon"
                 priority
                 unoptimized
               />
-            </div>
+            </Link>
           ) : (
             <span className="letterhead-crest letterhead-crest--empty" aria-hidden />
           )}
