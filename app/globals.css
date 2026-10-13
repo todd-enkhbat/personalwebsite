@@ -3256,6 +3256,15 @@ a.calendar-block--event:hover {
   border-radius: 0;
 }
 
+.ambient-score-panel { height: 0; overflow: hidden; visibility: hidden; }
+.ambient-score.is-open .ambient-score-panel { height: auto; visibility: visible; }
+.ambient-score-frame iframe { display: block; width: 100%; height: 80px; border: 0; }
+.ambient-score-controls { display: flex; align-items: stretch; }
+.ambient-score-details { width: 30px; border: 1px solid var(--rule-soft); border-left: 0; background: rgba(255,255,255,.82); color: var(--accent); cursor: pointer; }
+.ambient-score-details:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ambient-score-toggle:disabled { cursor: wait; opacity: .7; }
+.ambient-score-panel > a { display: block; padding: 10px; background: var(--paper); font-size: 14px; }
+
 .ambient-score-toggle {
   display: flex;
   flex-direction: column;
