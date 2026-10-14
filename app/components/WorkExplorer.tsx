@@ -28,7 +28,10 @@ export function WorkExplorer() {
   return <main className="portfolio-collection">
     <header className="collection-intro">
       <div><p className="portfolio-kicker">Tsogt (Todd) Enkhbat</p><h1>Selected <em>work.</em></h1></div>
-      <p>I’m a founder and engineer at Columbia. I’ve built a retail business in Mongolia, developed space systems, and started a mission-planning company. Here’s the work behind those experiences.</p>
+      <div className="collection-biography">
+        <p>I won an international piano Grand Prix at <strong>7</strong>, started my first business at <strong>12</strong>, and reached <strong>$1 million in revenue by 17</strong>. After <strong>five years in the space industry</strong>, my focus is now <a href="https://nomosorbital.com/" target="_blank" rel="noopener noreferrer">Nomos ↗</a>.</p>
+        <p className="collection-nomos-note"><span lang="el">νόμος</span> <em>(nómos)</em> is Greek for “law” or “custom.” The name reflects what I’m building: a framework for bringing order to space mission planning.</p>
+      </div>
     </header>
     <div className="collection-navigation">
       <div className="collection-filters" role="group" aria-label="Filter projects">{filters.map(item => <button key={item} aria-pressed={filter === item} onClick={() => setFilter(item)}>{item}</button>)}</div>

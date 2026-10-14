@@ -2,14 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const TRACK_URI = "spotify:track:23fR7o0T2efsRlcnXLaSot";
 const TRACK_URL = "https://open.spotify.com/track/23fR7o0T2efsRlcnXLaSot";
 const START_SECONDS = 10;
 const PAUSED_KEY = "ambient-score-paused";
 
-type PlaybackEvent = { data: { isPaused: boolean; position: number } };
+type PlaybackEvent = { data: { isPaused?: boolean; position?: number; duration?: number } };
 type SpotifyController = {
-  loadEntity: (uri: string, preferVideo: boolean, startAt: number) => void;
   play: () => void;
   pause: () => void;
   resume: () => void;
@@ -20,7 +18,7 @@ type SpotifyController = {
   };
 };
 type SpotifyAPI = {
-  createController: (element: HTMLElement, options: { uri: string; width: string; height: number }, callback: (controller: SpotifyController) => void) => void;
+  createController: (element: HTMLElement, options: { url: string; width: string; height: number }, callback: (controller: SpotifyController) => void) => void;
 };
 
 let spotifyAPI: Promise<SpotifyAPI> | undefined;
@@ -79,7 +77,9 @@ export function AmbientScore() {
 
     loadSpotifyAPI().then(api => {
       if (disposed) return;
-      api.createController(mount, { uri: TRACK_URI, width: "100%", height: 80 }, embed => {
+      // The API preserves URL parameters. Set the offset on the first load:
+      // reloading the same URI is a no-op in Spotify's controller.
+      api.createController(mount, { url: `${TRACK_URL}?t=${START_SECONDS}&theme=0`, width: "100%", height: 80 }, embed => {
         if (disposed) { embed.destroy(); return; }
         controller.current = embed;
         embed.addListener("ready", () => {
@@ -87,8 +87,6 @@ export function AmbientScore() {
           ready = true;
           window.clearTimeout(timeout);
           setStatus("ready");
-          // Spotify receives the requested track offset before any playback request.
-          embed.loadEntity(TRACK_URI, false, START_SECONDS);
           play();
         });
         embed.addListener("playback_started", () => {
@@ -100,6 +98,8 @@ export function AmbientScore() {
         });
         embed.addListener("playback_update", event => {
           if (disposed) return;
+          // Some preview events omit pause state; do not interpret that as playing.
+          if (typeof event.data.isPaused !== "boolean") return;
           playing.current = !event.data.isPaused;
           if (playing.current) {
             started.current = true;
@@ -126,7 +126,11 @@ export function AmbientScore() {
     if (status === "unavailable") { setOpen(true); return; }
     optedOut.current = status === "playing";
     try { sessionStorage.setItem(PAUSED_KEY, optedOut.current ? "1" : "0"); } catch { /* Playback works without storage. */ }
-    if (optedOut.current) controller.current?.pause();
+    if (optedOut.current) {
+      controller.current?.pause();
+      playing.current = false;
+      setStatus("ready");
+    }
     else requestPlay.current();
   }
 

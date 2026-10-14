@@ -235,7 +235,7 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
 
       </section>
 
-      <section className="reading-archive" aria-labelledby="reading-archive-title">
+      <section className="reading-archive reading-library" aria-labelledby="reading-archive-title">
         <div className="reading-archive-heading">
           <div>
             <p className="kicker">The rest of the shelf</p>
@@ -271,6 +271,7 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
           </div>
           <div className="reading-archive-ledge" aria-hidden="true" />
         </div>
+        <p className="reading-library-credit"><a href="https://commons.wikimedia.org/wiki/File:Strahov_Monastery_philosophical_room.jpg" target="_blank" rel="noreferrer">Strahov Library, Prague · HutheMeow</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> · resized, with a shaded overlay</p>
 
         {picked ? (
           <div className="reading-archive-picked" aria-live="polite">
