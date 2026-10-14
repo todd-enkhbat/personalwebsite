@@ -575,15 +575,32 @@ a {
   pointer-events: none;
 }
 
-.contact-map__emblem img {
+.contact-map__vortex {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50.4%;
+  width: 40%;
+  height: auto;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #050505;
+}
+
+.contact-map__emblem-ring {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  animation: contact-emblem-turn 13s linear infinite;
+}
+
+.contact-map__emblem-ring img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
-}
-
-.contact-map__emblem.is-entered img {
-  animation: contact-emblem-turn 1.4s cubic-bezier(0.2, 0.7, 0.25, 1) both;
 }
 
 @keyframes contact-emblem-turn {
@@ -596,7 +613,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .contact-map__emblem.is-entered img {
+  .contact-map__emblem-ring {
     animation: none;
   }
 }
@@ -2929,9 +2946,19 @@ a.calendar-block--event:hover {
     max-width: none;
   }
 
-  .contact-map__emblem,
   .contact-map__lines {
     display: none;
+  }
+
+  .contact-map__emblem {
+    position: relative;
+    display: block;
+    left: auto;
+    top: auto;
+    width: min(76vw, 360px);
+    height: auto;
+    aspect-ratio: 497 / 507;
+    margin: 8px auto 32px;
   }
 
   .contact-map__col {
