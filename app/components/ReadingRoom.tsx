@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { AnimatePresence, motion, useIsPresent, useReducedMotion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
+import selectedEditions from "../data/bookEditions.json";
 import { bookDescriptions } from "../data/bookDescriptions";
 import { readingPhotoRows } from "../data/readingPhotos";
 import type { ShelfBook } from "../data/content";
@@ -14,11 +15,109 @@ type ReadingRoomProps = {
   links: { label: string; href: string }[];
 };
 
+type BookEdition = {
+  cover: string;
+  width: number;
+  height: number;
+  isbn: string;
+  publisher: string;
+  binding: string;
+  editionTitle: string;
+  editionNote: string;
+  source: string;
+  finish: string;
+  palette: string[];
+};
+const bookEditions: Record<string, BookEdition | undefined> = selectedEditions;
+
+function bookProportions(id: string): CSSProperties {
+  const edition = bookEditions[id];
+  return edition ? { "--cover-ratio": edition.height / edition.width } as CSSProperties : {};
+}
+
+function bookEditionHref(book: ShelfBook) {
+  return bookEditions[book.id]?.source ?? `https://www.goodreads.com/search?q=${encodeURIComponent(`${book.title} ${book.author}`.trim())}`;
+}
+
 // Finishes are rendering treatments; the original edition artwork stays intact.
 function bookFinish(id: string) {
+  if (bookEditions[id]) return bookEditions[id]!.finish;
   if (["nomos-of-the-earth", "groundwork", "wealth-of-nations", "city-of-god"].includes(id)) return "cloth";
   if (["human-condition", "time-and-chance", "quran", "meditations"].includes(id)) return "satin";
   return "laminated";
+}
+
+// The mark is the original transparent header asset, used as an alpha mask.
+// Palettes belong to this personal library treatment, not the publishers' editions.
+const libraryPalettes = [
+  ["#203f42", "#ead6a2", "#9cbbaf"],
+  ["#242927", "#e4d1a5", "#8c9482"],
+  ["#6a3447", "#f0d6b9", "#b78691"],
+  ["#b76135", "#352819", "#e5aa75"],
+  ["#26394e", "#dfd5bb", "#8397ad"],
+  ["#5a342b", "#edc997", "#b78363"]
+];
+function bookPalette(id: string): CSSProperties {
+  const featured: Record<string, number> = { dispossessed: 0, "nomos-of-the-earth": 1, "human-condition": 2, "time-and-chance": 3 };
+  const index = featured[id] ?? [...id].reduce((sum, char) => sum + char.charCodeAt(0), 0) % libraryPalettes.length;
+  const [base, foil, accent] = bookEditions[id]?.palette ?? libraryPalettes[index];
+  return { "--spine-color": base, "--spine-ink": foil, "--book-foil": foil, "--back-accent": accent } as CSSProperties;
+}
+
+type BookSide = "front" | "back";
+
+// Continuous dragging updates CSS directly; React only tracks a change of face.
+function useBookTurntable() {
+  const modelRef = useRef<HTMLDivElement>(null);
+  const rotation = useRef({ x: -8, y: 24 });
+  const drag = useRef<{ x: number; y: number; rx: number; ry: number } | null>(null);
+  const sideRef = useRef<BookSide>("front");
+  const [side, setSide] = useState<BookSide>("front");
+  function rotate(x: number, y: number) {
+    rotation.current = { x: Math.max(-35, Math.min(35, x)), y };
+    modelRef.current?.style.setProperty("--inspect-x", `${rotation.current.x}deg`);
+    modelRef.current?.style.setProperty("--inspect-y", `${y}deg`);
+    modelRef.current?.style.setProperty("--light-position", `${50 + Math.sin(y * Math.PI / 180) * 38}%`);
+    const nextSide = Math.cos(y * Math.PI / 180) < 0 ? "back" : "front";
+    if (sideRef.current !== nextSide) { sideRef.current = nextSide; setSide(nextSide); }
+  }
+  function view(nextSide: BookSide) {
+    const target = nextSide === "back" ? 204 : 24;
+    rotate(-8, target + Math.round((rotation.current.y - target) / 360) * 360);
+  }
+  const events = {
+    onPointerDown(event: PointerEvent<HTMLDivElement>) {
+      if (event.button !== 0) return;
+      drag.current = { x: event.clientX, y: event.clientY, rx: rotation.current.x, ry: rotation.current.y };
+      event.currentTarget.setPointerCapture(event.pointerId);
+      event.currentTarget.dataset.dragging = "true";
+    },
+    onPointerMove(event: PointerEvent<HTMLDivElement>) {
+      if (!drag.current) return;
+      rotate(drag.current.rx - (event.clientY - drag.current.y) * .25, drag.current.ry + (event.clientX - drag.current.x) * .6);
+    },
+    onPointerUp(event: PointerEvent<HTMLDivElement>) {
+      drag.current = null;
+      delete event.currentTarget.dataset.dragging;
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    },
+    onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+      if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      if (event.key === "Home" || event.key === "End") { view(event.key === "Home" ? "front" : "back"); return; }
+      rotate(rotation.current.x + (event.key === "ArrowUp" ? -10 : event.key === "ArrowDown" ? 10 : 0),
+        rotation.current.y + (event.key === "ArrowLeft" ? -25 : event.key === "ArrowRight" ? 25 : 0));
+    }
+  };
+  return { modelRef, rotation, side, rotate, view, events: { ...events, onPointerCancel: events.onPointerUp } };
+}
+
+function BookFaceControls({ side, onView }: { side: BookSide; onView: (side: BookSide) => void }) {
+  return <div className="reading-book-faces" role="group" aria-label="Book view">
+    <button type="button" aria-pressed={side === "front"} onClick={() => onView("front")}>Front cover</button>
+    <button type="button" aria-pressed={side === "back"} onClick={() => onView("back")}>Back cover</button>
+  </div>;
 }
 
 const NOTES_KEY = "feeding-the-mind-notes-v1";
@@ -34,8 +133,15 @@ const readingThemes = [
 
 function BookObject({ book, open = false }: { book: ShelfBook; open?: boolean }) {
   return (
-    <span className={`reading-volume-object${open ? " is-open" : ""}`} data-finish={bookFinish(book.id)} aria-hidden="true">
-      <span className="reading-volume-back"><span>{book.title}</span></span>
+    <span className={`reading-volume-object${open ? " is-open" : ""}`} data-finish={bookFinish(book.id)} style={bookPalette(book.id)} aria-hidden="true">
+      <span className="reading-volume-back">
+        <span className="reading-back-art" />
+        <span className="reading-back-grain" />
+        <span className="reading-back-seal"><span className="reading-back-seal-ink" /><span className="reading-back-seal-light" /></span>
+        <span className="reading-back-colophon"><strong>{book.title}</strong><em>{book.author}</em></span>
+        <span className="reading-back-light" />
+        <span className="reading-back-board" />
+      </span>
       <span className="reading-volume-spine"><span>{book.spineLabel ?? book.title}</span></span>
       <span className="reading-volume-pages" />
       <span className="reading-volume-top" />
@@ -44,7 +150,7 @@ function BookObject({ book, open = false }: { book: ShelfBook; open?: boolean })
         <span className="reading-page-label">From the reading shelf</span>
         <strong>{book.title}</strong>
         <em>{book.author}</em>
-        <span className="reading-page-ornament">✦</span>
+        <span className="reading-page-ornament reading-ex-libris-mark" />
         <small>Tsogt Enkhbat</small>
       </span>
       <span className="reading-turning-page reading-turning-page--one" />
@@ -58,7 +164,7 @@ function BookObject({ book, open = false }: { book: ShelfBook; open?: boolean })
           <span className="reading-volume-binding" />
         </span>
         <span className="reading-cover-inside">
-          <span>Ex libris</span><strong>T. E.</strong>
+          <span>Ex libris</span><span className="reading-endpaper-mark" /><small>Tsogt Enkhbat</small>
         </span>
       </span>
     </span>
@@ -80,7 +186,7 @@ function BookVolume({ book, active, onSelect }: { book: ShelfBook; active: boole
   }
   return (
     <button type="button" className={`reading-volume reading-volume--${book.id}${active ? " is-active" : ""}`}
-      aria-label={`Open ${book.title} by ${book.author}`} aria-haspopup="dialog"
+      style={bookProportions(book.id)} aria-label={`Open ${book.title} by ${book.author}`} aria-haspopup="dialog"
       onClick={(event) => onSelect(event.currentTarget)} onPointerMove={onPointerMove} onPointerLeave={onPointerLeave}>
       <span className="reading-volume-shadow" aria-hidden="true" />
       <BookObject book={book} />
@@ -92,9 +198,7 @@ function BookInspector({ book, note, onNote, email, onClose }: {
   book: ShelfBook; note: string; onNote: (value: string) => void; email: string; onClose: () => void;
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const modelRef = useRef<HTMLDivElement>(null);
-  const rotation = useRef({ x: -8, y: 24 });
-  const drag = useRef<{ x: number; y: number; rx: number; ry: number } | null>(null);
+  const { modelRef, rotation, side, rotate, view, events } = useBookTurntable();
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
   const reduceMotion = useReducedMotion();
@@ -103,7 +207,7 @@ function BookInspector({ book, note, onNote, email, onClose }: {
   function returnBook() {
     if (closing) return;
     setOpen(false);
-    rotate(-8, 24);
+    view("front");
     setClosing(true);
     closeTimer.current = setTimeout(onClose, reduceMotion ? 0 : 740);
   }
@@ -113,42 +217,23 @@ function BookInspector({ book, note, onNote, email, onClose }: {
     dialog?.showModal();
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const timer = window.setTimeout(() => { if (!closeTimer.current) setOpen(true); }, 650);
+    const timer = window.setTimeout(() => {
+      if (!closeTimer.current && Math.cos(rotation.current.y * Math.PI / 180) > 0) setOpen(true);
+    }, 650);
     return () => {
       window.clearTimeout(timer);
       if (closeTimer.current) clearTimeout(closeTimer.current);
       dialog?.close();
       document.body.style.overflow = previousOverflow;
     };
-  }, []);
+  }, [rotation]);
 
-  function rotate(x: number, y: number) {
-    rotation.current = { x: Math.max(-35, Math.min(35, x)), y };
-    modelRef.current?.style.setProperty("--inspect-x", `${rotation.current.x}deg`);
-    modelRef.current?.style.setProperty("--inspect-y", `${rotation.current.y}deg`);
-    modelRef.current?.style.setProperty("--light-position", `${Math.max(10, Math.min(90, 50 + y * .55))}%`);
+  function showFace(nextSide: BookSide) {
+    setOpen(false);
+    view(nextSide);
   }
-  function onPointerDown(event: PointerEvent<HTMLDivElement>) {
-    if (event.button !== 0) return;
-    drag.current = { x: event.clientX, y: event.clientY, rx: rotation.current.x, ry: rotation.current.y };
-    event.currentTarget.setPointerCapture(event.pointerId);
-    event.currentTarget.dataset.dragging = "true";
-  }
-  function onPointerMove(event: PointerEvent<HTMLDivElement>) {
-    if (!drag.current) return;
-    rotate(drag.current.rx - (event.clientY - drag.current.y) * 0.25, drag.current.ry + (event.clientX - drag.current.x) * 0.6);
-  }
-  function onPointerUp(event: PointerEvent<HTMLDivElement>) {
-    drag.current = null;
-    delete event.currentTarget.dataset.dragging;
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
-  }
-  function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
-    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) return;
-    event.preventDefault();
-    rotate(rotation.current.x + (event.key === "ArrowUp" ? -10 : event.key === "ArrowDown" ? 10 : 0),
-      rotation.current.y + (event.key === "ArrowLeft" ? -25 : event.key === "ArrowRight" ? 25 : 0));
-  }
+  useEffect(() => { if (side === "back") setOpen(false); }, [side]);
+
   const body = `Hi Todd,\n\nI'd like to discuss ${book.title} by ${book.author}.` + (note.trim() ? `\n\n${note.trim()}` : "");
   const discussHref = `mailto:${email}?subject=${encodeURIComponent(`Discuss ${book.title}`)}&body=${encodeURIComponent(body)}`;
 
@@ -159,18 +244,19 @@ function BookInspector({ book, note, onNote, email, onClose }: {
         <button className="book-inspector-close" type="button" onClick={returnBook} disabled={closing} aria-label="Return book to shelf">×</button>
         <div className="book-inspector-display">
           <p className="book-inspector-eyebrow">On the reading table</p>
-          <div className="book-inspector-stage" role="group" tabIndex={0}
+          <div className="book-inspector-stage reading-book-turntable" role="group" tabIndex={0}
             aria-label="3D book. Drag to rotate, or use the arrow keys."
-            onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onKeyDown={onKeyDown}>
-            <div className={`book-inspector-model reading-volume--${book.id}${open ? " is-open" : ""}`} ref={modelRef}>
+            {...events}>
+            <div className={`book-inspector-model reading-volume--${book.id}${open ? " is-open" : ""}`} style={bookProportions(book.id)} ref={modelRef}>
               <BookObject book={book} open={open} />
             </div>
             <span className="book-inspector-shadow" aria-hidden="true" />
           </div>
           <p className="book-inspector-hint">Drag to turn the book</p>
+          <BookFaceControls side={side} onView={showFace} />
           <div className="book-inspector-controls">
             <button type="button" aria-label="Rotate book left" onClick={() => rotate(rotation.current.x, rotation.current.y - 35)}>←</button>
-            <button type="button" className="book-cover-toggle" aria-pressed={open} onClick={() => setOpen((value) => !value)}>{open ? "Close the cover" : "Open the cover"}</button>
+            <button type="button" className="book-cover-toggle" aria-pressed={open} onClick={() => { view("front"); setOpen((value) => !value); }}>{open ? "Close the cover" : "Open the cover"}</button>
             <button type="button" aria-label="Rotate book right" onClick={() => rotate(rotation.current.x, rotation.current.y + 35)}>→</button>
           </div>
         </div>
@@ -193,6 +279,8 @@ function LibraryBookDetail({ book, index, total, trigger, onClose, onBrowse }: {
   book: ShelfBook; index: number; total: number; trigger: HTMLButtonElement | null;
   onClose: () => void; onBrowse: (offset: number) => void;
 }) {
+  const edition = bookEditions[book.id];
+  const { modelRef, side, view, events } = useBookTurntable();
   const reduceMotion = useReducedMotion();
   const isPresent = useIsPresent();
   const coverRef = useRef<HTMLDivElement>(null);
@@ -245,19 +333,24 @@ function LibraryBookDetail({ book, index, total, trigger, onClose, onBrowse }: {
         </div>
       </motion.div>
       <div className="library-detail-body">
-        <div className="library-detail-stage">
-          <div className="library-detail-cover" ref={coverRef}>
-            {origin ? <motion.div className="library-detail-flight"
-              initial={reduceMotion ? false : origin}
-              animate={{ x: 0, y: 0, scale: 1, rotateY: 0, opacity: 1 }}
-              exit={reduceMotion ? { opacity: 0 } : { ...origin, opacity: [1, 1, 0] }}
-              transition={{ duration, ease: [0.22, 1, 0.36, 1] }}>
-              <BookObject book={book} />
-            </motion.div> : null}
+        <div className="library-detail-presentation">
+          <div className="library-detail-stage">
+            <div className="library-detail-cover reading-book-turntable" style={bookProportions(book.id)} ref={coverRef} role="group" tabIndex={0}
+              aria-label="3D book. Drag to rotate, or use arrow keys. Home shows front, End shows back." {...events}>
+              {origin ? <motion.div className="library-detail-flight"
+                initial={reduceMotion ? false : origin}
+                animate={{ x: 0, y: 0, scale: 1, rotateY: 0, opacity: 1 }}
+                exit={reduceMotion ? { opacity: 0 } : { ...origin, opacity: [1, 1, 0] }}
+                transition={{ duration, ease: [0.22, 1, 0.36, 1] }}>
+                <div className="library-detail-model" ref={modelRef}><BookObject book={book} /></div>
+              </motion.div> : null}
+            </div>
+            <motion.span className="library-detail-shadow" aria-hidden="true"
+              initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
+              transition={{ duration }} />
           </div>
-          <motion.span className="library-detail-shadow" aria-hidden="true"
-            initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
-            transition={{ duration }} />
+          <BookFaceControls side={side} onView={view} />
+          <p className="library-detail-turn-hint">Drag to turn the book</p>
         </div>
         <motion.div className="library-detail-copy"
           initial={reduceMotion ? false : { opacity: 0, y: 18 }}
@@ -265,10 +358,12 @@ function LibraryBookDetail({ book, index, total, trigger, onClose, onBrowse }: {
           transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.12 }}>
           <h3 id="library-detail-title">{book.title}</h3>
           {book.author ? <p className="library-detail-author">{book.author}</p> : null}
+          {edition ? <p className="library-detail-edition">{edition.publisher} <span aria-hidden="true">·</span> {edition.binding}</p> : null}
           <span className="library-detail-rule" aria-hidden="true" />
           <p className="library-detail-description" id="library-detail-description">{bookDescriptions[book.id]}</p>
-          <a className="library-detail-link" href={`https://www.goodreads.com/search?q=${encodeURIComponent(`${book.title} ${book.author}`.trim())}`} target="_blank" rel="noreferrer">
-            Find this book <span aria-hidden="true">↗</span>
+          {edition?.editionNote ? <p className="library-detail-edition-note">{edition.editionNote}</p> : null}
+          <a className="library-detail-link" href={bookEditionHref(book)} target="_blank" rel="noreferrer">
+            {edition ? "View this edition" : "Find this book"} <span aria-hidden="true">↗</span>
           </a>
         </motion.div>
       </div>
@@ -443,7 +538,7 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
                   onClick={(event) => {
                     archiveOpenerRef.current = event.currentTarget;
                     event.currentTarget.closest(".reading-library")?.scrollIntoView({
-                      block: "nearest", behavior: "instant"
+                      block: "center", behavior: "instant"
                     });
                     setHiddenArchiveIds([book.id]);
                     setArchiveId(book.id);
@@ -491,7 +586,7 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
                     const book = archive.find((entry) => entry.id === id);
                     if (!book) return null;
                     return <li key={id}>
-                      <a href={`https://www.goodreads.com/search?q=${encodeURIComponent(`${book.title} ${book.author}`.trim())}`} target="_blank" rel="noreferrer">
+                      <a href={bookEditionHref(book)} target="_blank" rel="noreferrer">
                         <span>{book.author ? <><span className="reading-list-author">{book.author}</span>, </> : null}<em>{book.title}</em></span>
                         <span className="reading-list-arrow" aria-hidden="true">↗</span>
                       </a>

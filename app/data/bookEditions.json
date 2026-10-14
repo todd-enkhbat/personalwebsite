@@ -1,0 +1,597 @@
+{
+  "republic": {
+    "cover": "/paper-assets/books/curated/republic-9781857150988.webp",
+    "width": 1133,
+    "height": 1800,
+    "isbn": "9781857150988",
+    "publisher": "Everyman’s Library",
+    "binding": "Hardcover",
+    "editionTitle": "The Republic",
+    "editionNote": "",
+    "source": "https://www.penguin.co.uk/books/372917/the-republic-by-plato/9781857150988",
+    "finish": "cloth",
+    "palette": [
+      "#ddd4b9",
+      "#5e4931",
+      "#b6a17b"
+    ]
+  },
+  "nicomachean-ethics": {
+    "cover": "/paper-assets/books/curated/nicomachean-ethics-9781647922795.webp",
+    "width": 1200,
+    "height": 1800,
+    "isbn": "9781647922795",
+    "publisher": "Hackett Signature Editions",
+    "binding": "Hardcover",
+    "editionTitle": "Nicomachean Ethics",
+    "editionNote": "",
+    "source": "https://hackettpublishing.com/philosophy/ancient-philosophy/nicomachean-ethics-reeve-hackett-signature-second-edition",
+    "finish": "cloth",
+    "palette": [
+      "#121336",
+      "#cfb74d",
+      "#4b4f85"
+    ]
+  },
+  "politics": {
+    "cover": "/paper-assets/books/curated/politics-9780674992917.webp",
+    "width": 659,
+    "height": 1000,
+    "isbn": "9780674992917",
+    "publisher": "Harvard University Press / Loeb Classical Library",
+    "binding": "Hardcover",
+    "editionTitle": "Politics",
+    "editionNote": "",
+    "source": "https://www.harvard.com/book/9780674992917",
+    "finish": "cloth",
+    "palette": [
+      "#286b52",
+      "#eee1a8",
+      "#6a9a7c"
+    ]
+  },
+  "letter-to-menoeceus": {
+    "cover": "/paper-assets/books/curated/letter-to-menoeceus-9780143107217.webp",
+    "width": 1176,
+    "height": 1800,
+    "isbn": "9780143107217",
+    "publisher": "Penguin Classics",
+    "binding": "Paperback",
+    "editionTitle": "The Art of Happiness",
+    "editionNote": "Includes Letter to Menoeceus.",
+    "source": "https://www.penguinrandomhouse.com/books/313205/the-art-of-happiness-by-epicurus-translated-with-an-introduction-and-commentary-by-george-k-strodach-foreword-by-daniel-klein/9780143107217/",
+    "finish": "laminated",
+    "palette": [
+      "#284c3b",
+      "#e9d9ac",
+      "#7ca28a"
+    ]
+  },
+  "handbook": {
+    "cover": "/paper-assets/books/curated/handbook-9780241764060.webp",
+    "width": 1055,
+    "height": 1800,
+    "isbn": "9780241764060",
+    "publisher": "Penguin Clothbound Classics",
+    "binding": "Hardcover",
+    "editionTitle": "Discourses and Selected Writings",
+    "editionNote": "Includes the complete Handbook (Enchiridion).",
+    "source": "https://www.penguinrandomhouse.com/books/304102/discourses-and-selected-writings-by-epictetus-translated-and-edited-with-an-introduction-and-notes-by-robert-dobbin-cover-illustrated-by-coralie-bickford-smith/9780241764060/",
+    "finish": "cloth",
+    "palette": [
+      "#679d90",
+      "#f2ead7",
+      "#bdd2b6"
+    ]
+  },
+  "meditations": {
+    "cover": "/paper-assets/books/curated/meditations-9780141395869.webp",
+    "width": 1040,
+    "height": 1800,
+    "isbn": "9780141395869",
+    "publisher": "Penguin Pocket Hardbacks",
+    "binding": "Hardcover",
+    "editionTitle": "Meditations",
+    "editionNote": "",
+    "source": "https://www.penguin.com.au/books/meditations-9780141395869",
+    "finish": "cloth",
+    "palette": [
+      "#147e9b",
+      "#e7ede0",
+      "#6bb5bf"
+    ]
+  },
+  "city-of-god": {
+    "cover": "/paper-assets/books/curated/city-of-god-9780679600879.webp",
+    "width": 1205,
+    "height": 1800,
+    "isbn": "9780679600879",
+    "publisher": "Modern Library",
+    "binding": "Hardcover",
+    "editionTitle": "City of God",
+    "editionNote": "",
+    "source": "https://prhcomics.com/book/?isbn=9780679600879",
+    "finish": "satin",
+    "palette": [
+      "#53635d",
+      "#eee3c7",
+      "#b6b99c"
+    ]
+  },
+  "quran": {
+    "cover": "/paper-assets/books/curated/quran-9780061125867.webp",
+    "width": 1200,
+    "height": 1800,
+    "isbn": "9780061125867",
+    "publisher": "HarperOne",
+    "binding": "Hardcover",
+    "editionTitle": "The Study Quran",
+    "editionNote": "Complete English translation with commentary.",
+    "source": "https://elmi.hbku.edu.qa/en/publications/the-study-quran-a-new-translation-with-notes-and-commentary/",
+    "finish": "satin",
+    "palette": [
+      "#1b3459",
+      "#dec783",
+      "#8298ac"
+    ]
+  },
+  "hayy-ibn-yaqzan": {
+    "cover": "/paper-assets/books/curated/hayy-ibn-yaqzan-9780226303093.webp",
+    "width": 1162,
+    "height": 1800,
+    "isbn": "9780226303093",
+    "publisher": "University of Chicago Press",
+    "binding": "Hardcover",
+    "editionTitle": "Hayy Ibn Yaqzan",
+    "editionNote": "",
+    "source": "https://www.bibliovault.org/BV.book.epl?ISBN=9780226303109",
+    "finish": "satin",
+    "palette": [
+      "#60454f",
+      "#e8d99e",
+      "#bba075"
+    ]
+  },
+  "rescuer-from-error": {
+    "cover": "/paper-assets/books/curated/rescuer-from-error-9781887752275.webp",
+    "width": 318,
+    "height": 500,
+    "isbn": "9781887752275",
+    "publisher": "Fons Vitae",
+    "binding": "Paperback",
+    "editionTitle": "Deliverance from Error",
+    "editionNote": "Also translated as The Rescuer from Error.",
+    "source": "https://www.meccabooks.com/products/deliverance-from-error",
+    "finish": "laminated",
+    "palette": [
+      "#2b3029",
+      "#e7d3a8",
+      "#aa9b73"
+    ]
+  },
+  "muqaddimah": {
+    "cover": "/paper-assets/books/curated/muqaddimah-9780691166285.webp",
+    "width": 1165,
+    "height": 1800,
+    "isbn": "9780691166285",
+    "publisher": "Princeton Classics",
+    "binding": "Paperback",
+    "editionTitle": "The Muqaddimah: An Introduction to History",
+    "editionNote": "Rosenthal translation, abridged by N. J. Dawood.",
+    "source": "https://assets.press.princeton.edu/catalogs/S15Seasonal.pdf",
+    "finish": "laminated",
+    "palette": [
+      "#76634c",
+      "#e8d8af",
+      "#baa57e"
+    ]
+  },
+  "city-of-ladies": {
+    "cover": "/paper-assets/books/curated/city-of-ladies-9780892552306.webp",
+    "width": 430,
+    "height": 648,
+    "isbn": "9780892552306",
+    "publisher": "Persea Books",
+    "binding": "Paperback",
+    "editionTitle": "The Book of the City of Ladies",
+    "editionNote": "",
+    "source": "https://www.perseabooks.com/the-book-of-the-city-of-ladies",
+    "finish": "laminated",
+    "palette": [
+      "#ba9a6d",
+      "#392d23",
+      "#e4d4b4"
+    ]
+  },
+  "prince": {
+    "cover": "/paper-assets/books/curated/prince-9780141395876.webp",
+    "width": 1040,
+    "height": 1800,
+    "isbn": "9780141395876",
+    "publisher": "Penguin Pocket Hardbacks",
+    "binding": "Hardcover",
+    "editionTitle": "The Prince",
+    "editionNote": "",
+    "source": "https://www.penguinrandomhouse.com/books/305834/the-prince-by-niccolo-machiavelli-translated-with-an-introduction-by-tim-parks/",
+    "finish": "cloth",
+    "palette": [
+      "#31223c",
+      "#e0cc50",
+      "#797149"
+    ]
+  },
+  "discourse-on-method": {
+    "cover": "/paper-assets/books/curated/discourse-on-method-9780140446999.webp",
+    "width": 1173,
+    "height": 1800,
+    "isbn": "9780140446999",
+    "publisher": "Penguin Classics",
+    "binding": "Paperback",
+    "editionTitle": "Discourse on Method",
+    "editionNote": "",
+    "source": "https://penguinrandomhousehighereducation.com/book/?isbn=9780140446999",
+    "finish": "laminated",
+    "palette": [
+      "#313c3b",
+      "#e6d6a4",
+      "#9d8c6a"
+    ]
+  },
+  "leviathan": {
+    "cover": "/paper-assets/books/curated/leviathan-9780141395098.webp",
+    "width": 1173,
+    "height": 1800,
+    "isbn": "9780141395098",
+    "publisher": "Penguin Classics",
+    "binding": "Paperback",
+    "editionTitle": "Leviathan",
+    "editionNote": "",
+    "source": "https://www.penguinrandomhouse.com/books/540919/leviathan-by-thomas-hobbes-introduction-and-notes-by-christopher-brooke/",
+    "finish": "laminated",
+    "palette": [
+      "#373b48",
+      "#ead9b1",
+      "#8494ac"
+    ]
+  },
+  "second-treatise": {
+    "cover": "/paper-assets/books/curated/second-treatise-9780393428926.webp",
+    "width": 328,
+    "height": 500,
+    "isbn": "9780393428926",
+    "publisher": "Norton Library",
+    "binding": "Paperback",
+    "editionTitle": "Second Treatise of Government",
+    "editionNote": "",
+    "source": "https://wwnorton.co.uk/books/9780393428926-second-treatise-of-government",
+    "finish": "laminated",
+    "palette": [
+      "#405a5b",
+      "#e7dec3",
+      "#94a99a"
+    ]
+  },
+  "discourse-on-inequality": {
+    "cover": "/paper-assets/books/curated/discourse-on-inequality-9780140444391.webp",
+    "width": 1173,
+    "height": 1800,
+    "isbn": "9780140444391",
+    "publisher": "Penguin Classics",
+    "binding": "Paperback",
+    "editionTitle": "Discourse on Inequality",
+    "editionNote": "",
+    "source": "https://www.penguinrandomhouse.com/books/322673/a-discourse-on-inequality-by-jean-jacques-rousseau/",
+    "finish": "laminated",
+    "palette": [
+      "#67664c",
+      "#eee0b7",
+      "#b1a582"
+    ]
+  },
+  "social-contract": {
+    "cover": "/paper-assets/books/curated/social-contract-9781857151626.webp",
+    "width": 1061,
+    "height": 1800,
+    "isbn": "9781857151626",
+    "publisher": "Everyman’s Library",
+    "binding": "Hardcover",
+    "editionTitle": "The Social Contract and the Discourses",
+    "editionNote": "Includes the complete Social Contract.",
+    "source": "https://wp.penguin.co.uk/wp-content/uploads/2025/02/EML-2023-2024.pdf",
+    "finish": "cloth",
+    "palette": [
+      "#dcd5b9",
+      "#3d5b4c",
+      "#9ba58c"
+    ]
+  },
+  "wealth-of-nations": {
+    "cover": "/paper-assets/books/curated/wealth-of-nations-9780679424734.webp",
+    "width": 1239,
+    "height": 1800,
+    "isbn": "9780679424734",
+    "publisher": "Modern Library",
+    "binding": "Hardcover",
+    "editionTitle": "The Wealth of Nations",
+    "editionNote": "",
+    "source": "https://penguinrandomhousehighereducation.com/book/?isbn=9780679424734",
+    "finish": "satin",
+    "palette": [
+      "#4f5d51",
+      "#e6d9b8",
+      "#9caa8d"
+    ]
+  },
+  "groundwork": {
+    "cover": "/paper-assets/books/curated/groundwork-9781107008519.webp",
+    "width": 650,
+    "height": 975,
+    "isbn": "9781107008519",
+    "publisher": "Cambridge University Press",
+    "binding": "Hardcover",
+    "editionTitle": "Groundwork of the Metaphysics of Morals",
+    "editionNote": "",
+    "source": "https://www.cambridge.org/highereducation/books/kant-groundwork-of-the-metaphysics-of-morals/3C27822145D94F9E2F27362C1089810C",
+    "finish": "satin",
+    "palette": [
+      "#076c65",
+      "#ddc688",
+      "#529e88"
+    ]
+  },
+  "what-is-enlightenment": {
+    "cover": "/paper-assets/books/curated/what-is-enlightenment-9780141043883.webp",
+    "width": 1104,
+    "height": 1800,
+    "isbn": "9780141043883",
+    "publisher": "Penguin Great Ideas",
+    "binding": "Paperback",
+    "editionTitle": "What is Enlightenment?",
+    "editionNote": "",
+    "source": "https://www.penguin.co.uk/books/175584/an-answer-to-the-question-what-is-enlightenment-by-immanuel-kant/9780141043883",
+    "finish": "laminated",
+    "palette": [
+      "#d8d0b9",
+      "#4f3b55",
+      "#b4a592"
+    ]
+  },
+  "vindication": {
+    "cover": "/paper-assets/books/curated/vindication-9781857150865.webp",
+    "width": 1101,
+    "height": 1800,
+    "isbn": "9781857150865",
+    "publisher": "Everyman’s Library",
+    "binding": "Hardcover",
+    "editionTitle": "A Vindication of the Rights of Woman",
+    "editionNote": "",
+    "source": "https://www.penguin.co.nz/books/a-vindication-of-the-rights-of-woman-9781857150865",
+    "finish": "cloth",
+    "palette": [
+      "#d9d5c0",
+      "#463e32",
+      "#9d8c75"
+    ]
+  },
+  "democracy-in-america": {
+    "cover": "/paper-assets/books/curated/democracy-in-america-9781931082549.webp",
+    "width": 1104,
+    "height": 1800,
+    "isbn": "9781931082549",
+    "publisher": "Library of America",
+    "binding": "Hardcover",
+    "editionTitle": "Democracy in America",
+    "editionNote": "",
+    "source": "https://www.penguinrandomhouse.com/books/469600/alexis-de-tocqueville-democracy-in-america-loa-147-by-alexis-de-tocqueville/",
+    "finish": "satin",
+    "palette": [
+      "#183329",
+      "#e6d9ae",
+      "#5e8a6a"
+    ]
+  },
+  "narrative-douglass": {
+    "cover": "/paper-assets/books/curated/narrative-douglass-9781529040302.webp",
+    "width": 617,
+    "height": 1000,
+    "isbn": "9781529040302",
+    "publisher": "Macmillan Collector’s Library",
+    "binding": "Hardcover",
+    "editionTitle": "Narrative of the Life of Frederick Douglass",
+    "editionNote": "",
+    "source": "https://www.panmacmillan.com/authors/frederick-douglass/narrative-of-the-life-of-frederick-douglass/9781529040302",
+    "finish": "cloth",
+    "palette": [
+      "#89b2a4",
+      "#2a3b30",
+      "#d7dbc1"
+    ]
+  },
+  "on-liberty": {
+    "cover": "/paper-assets/books/curated/on-liberty-9780141441474.webp",
+    "width": 1173,
+    "height": 1800,
+    "isbn": "9780141441474",
+    "publisher": "Penguin Classics",
+    "binding": "Paperback",
+    "editionTitle": "On Liberty and the Subjection of Women",
+    "editionNote": "Includes the complete On Liberty.",
+    "source": "https://www.penguinrandomhouse.com/books/300343/on-liberty-and-the-subjection-of-women-by-john-stuart-mill/",
+    "finish": "laminated",
+    "palette": [
+      "#1c3840",
+      "#e8d7b2",
+      "#8c9f9a"
+    ]
+  },
+  "marx-engels-reader": {
+    "cover": "/paper-assets/books/curated/marx-engels-reader-9780393090406.webp",
+    "width": 554,
+    "height": 900,
+    "isbn": "9780393090406",
+    "publisher": "W. W. Norton",
+    "binding": "Paperback",
+    "editionTitle": "The Marx-Engels Reader",
+    "editionNote": "",
+    "source": "https://wwnorton.co.uk/books/9780393090406-the-marx-engels-reader",
+    "finish": "laminated",
+    "palette": [
+      "#a72c26",
+      "#efcc78",
+      "#e47956"
+    ]
+  },
+  "genealogy-of-morals": {
+    "cover": "/paper-assets/books/curated/genealogy-of-morals-9781647922818.webp",
+    "width": 1200,
+    "height": 1800,
+    "isbn": "9781647922818",
+    "publisher": "Hackett Signature Editions",
+    "binding": "Hardcover",
+    "editionTitle": "On the Genealogy of Morality",
+    "editionNote": "",
+    "source": "https://hackettpublishing.com/philosophy/on-the-genealogy-of-morality-hackett-signature-edition",
+    "finish": "cloth",
+    "palette": [
+      "#101331",
+      "#c36845",
+      "#5b5c82"
+    ]
+  },
+  "civilization-and-its-discontents": {
+    "cover": "/paper-assets/books/curated/civilization-and-its-discontents-9780141018997.webp",
+    "width": 657,
+    "height": 1074,
+    "isbn": "9780141018997",
+    "publisher": "Penguin Great Ideas",
+    "binding": "Paperback",
+    "editionTitle": "Civilization and Its Discontents",
+    "editionNote": "",
+    "source": "https://www.penguin.co.uk/books/55115/civilization-and-its-discontents-by-sigmund-freud/9780141018997",
+    "finish": "laminated",
+    "palette": [
+      "#d7cbb4",
+      "#573c2f",
+      "#a48661"
+    ]
+  },
+  "souls-of-black-folk": {
+    "cover": "/paper-assets/books/curated/souls-of-black-folk-9780143134435.webp",
+    "width": 1181,
+    "height": 1800,
+    "isbn": "9780143134435",
+    "publisher": "Penguin Vitae",
+    "binding": "Hardcover",
+    "editionTitle": "The Souls of Black Folk",
+    "editionNote": "",
+    "source": "https://www.penguinrandomhouse.com/books/292303/the-souls-of-black-folk-by-w-e-b-du-bois-introduction-by-ibram-x-kendi-notes-by-monica-e-elbert/",
+    "finish": "satin",
+    "palette": [
+      "#8f3024",
+      "#dba54d",
+      "#bd6544"
+    ]
+  },
+  "annihilation-of-caste": {
+    "cover": "/paper-assets/books/curated/annihilation-of-caste-9781781688311.webp",
+    "width": 1243,
+    "height": 1800,
+    "isbn": "9781781688311",
+    "publisher": "Verso",
+    "binding": "Hardcover",
+    "editionTitle": "Annihilation of Caste",
+    "editionNote": "",
+    "source": "https://www.penguinrandomhouse.com/books/246239/annihilation-of-caste-by-br-ambedkar-introduction-by-arundhati-roy-edited-by-s-anand/9781781688311/",
+    "finish": "satin",
+    "palette": [
+      "#0785a2",
+      "#f4e3b7",
+      "#6cb8c2"
+    ]
+  },
+  "hind-swaraj": {
+    "cover": "/paper-assets/books/curated/hind-swaraj-9780521197038.webp",
+    "width": 600,
+    "height": 906,
+    "isbn": "9780521197038",
+    "publisher": "Cambridge University Press",
+    "binding": "Hardcover",
+    "editionTitle": "Hind Swaraj and Other Writings",
+    "editionNote": "English centenary edition, edited by Anthony J. Parel.",
+    "source": "https://www.cambridge.org/core/books/gandhi-hind-swaraj-and-other-writings/79AA4643B302279F6B57AE5CF6493F02",
+    "finish": "satin",
+    "palette": [
+      "#4a405e",
+      "#e9dbc0",
+      "#a89caf"
+    ]
+  },
+  "second-sex": {
+    "cover": "/paper-assets/books/curated/second-sex-9780099595731.webp",
+    "width": 1173,
+    "height": 1800,
+    "isbn": "9780099595731",
+    "publisher": "Vintage Classics",
+    "binding": "Paperback",
+    "editionTitle": "The Second Sex",
+    "editionNote": "",
+    "source": "https://www.penguin.co.uk/books/360348/the-second-sex-by-simone-de-beauvoir/9780099595731",
+    "finish": "laminated",
+    "palette": [
+      "#382e44",
+      "#e6c2c6",
+      "#aa728b"
+    ]
+  },
+  "wretched-of-the-earth": {
+    "cover": "/paper-assets/books/curated/wretched-of-the-earth-9780802158635.webp",
+    "width": 768,
+    "height": 1200,
+    "isbn": "9780802158635",
+    "publisher": "Grove Press",
+    "binding": "Paperback",
+    "editionTitle": "The Wretched of the Earth",
+    "editionNote": "",
+    "source": "https://groveatlantic.com/book/the-wretched-of-the-earth/",
+    "finish": "laminated",
+    "palette": [
+      "#b74531",
+      "#f1d17e",
+      "#db9363"
+    ]
+  },
+  "letter-birmingham": {
+    "cover": "/paper-assets/books/curated/letter-birmingham-9780063425811.webp",
+    "width": 842,
+    "height": 1200,
+    "isbn": "9780063425811",
+    "publisher": "HarperOne",
+    "binding": "Hardcover",
+    "editionTitle": "Letter from Birmingham Jail",
+    "editionNote": "",
+    "source": "https://www.harvard.com/book/9780063425811",
+    "finish": "satin",
+    "palette": [
+      "#6a6254",
+      "#f0deab",
+      "#b59a78"
+    ]
+  },
+  "discipline-and-punish": {
+    "cover": "/paper-assets/books/curated/discipline-and-punish-9780241386019.webp",
+    "width": 1173,
+    "height": 1800,
+    "isbn": "9780241386019",
+    "publisher": "Penguin Modern Classics",
+    "binding": "Paperback",
+    "editionTitle": "Discipline and Punish",
+    "editionNote": "",
+    "source": "https://www.penguin.co.uk/books/13651/discipline-and-punish-by-michel-foucault-trans-alan-sheridan/9780241386019",
+    "finish": "laminated",
+    "palette": [
+      "#546759",
+      "#e9dfc4",
+      "#aeb392"
+    ]
+  }
+}

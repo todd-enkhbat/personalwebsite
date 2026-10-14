@@ -1074,118 +1074,118 @@ export const mindShelves: MindShelf[] = [
         id: "republic",
         title: "Republic",
         author: "Plato",
-        cover: "/paper-assets/books/republic.jpg"
+        cover: "/paper-assets/books/curated/republic-9781857150988.webp"
       },
       {
         id: "nicomachean-ethics",
         title: "Nicomachean Ethics",
         author: "Aristotle",
-        cover: "/paper-assets/books/nicomachean-ethics.jpg"
+        cover: "/paper-assets/books/curated/nicomachean-ethics-9781647922795.webp"
       },
       {
         id: "politics",
         title: "Politics",
         author: "Aristotle",
-        cover: "/paper-assets/books/politics.jpg"
+        cover: "/paper-assets/books/curated/politics-9780674992917.webp"
       },
       {
         id: "letter-to-menoeceus",
         title: "Letter to Menoeceus",
         author: "Epicurus",
-        cover: "/paper-assets/books/letter-to-menoeceus.jpg",
+        cover: "/paper-assets/books/curated/letter-to-menoeceus-9780143107217.webp",
         spineLabel: "Menoeceus"
       },
       {
         id: "handbook",
         title: "Handbook",
         author: "Epictetus",
-        cover: "/paper-assets/books/handbook.jpg"
+        cover: "/paper-assets/books/curated/handbook-9780241764060.webp"
       },
       {
         id: "meditations",
         title: "Meditations",
         author: "Marcus Aurelius",
-        cover: "/paper-assets/books/meditations.jpg"
+        cover: "/paper-assets/books/curated/meditations-9780141395869.webp"
       },
       {
         id: "city-of-god",
         title: "City of God",
         author: "Augustine",
-        cover: "/paper-assets/books/city-of-god.jpg"
+        cover: "/paper-assets/books/curated/city-of-god-9780679600879.webp"
       },
       {
         id: "quran",
         title: "The Qur'an",
         author: "",
-        cover: "/paper-assets/books/quran.jpg",
+        cover: "/paper-assets/books/curated/quran-9780061125867.webp",
         spineLabel: "The Qur'an"
       },
       {
         id: "hayy-ibn-yaqzan",
         title: "Hayy Ibn Yaqzan",
         author: "Ibn Tufayl",
-        cover: "/paper-assets/books/hayy-ibn-yaqzan.jpg",
+        cover: "/paper-assets/books/curated/hayy-ibn-yaqzan-9780226303093.webp",
         spineLabel: "Hayy Ibn Yaqzan"
       },
       {
         id: "rescuer-from-error",
         title: "The Rescuer from Error",
         author: "Al-Ghazali",
-        cover: "/paper-assets/books/rescuer-from-error.jpg",
+        cover: "/paper-assets/books/curated/rescuer-from-error-9781887752275.webp",
         spineLabel: "Rescuer from Error"
       },
       {
         id: "muqaddimah",
         title: "Muqaddimah",
         author: "Ibn Khaldun",
-        cover: "/paper-assets/books/muqaddimah.jpg"
+        cover: "/paper-assets/books/curated/muqaddimah-9780691166285.webp"
       },
       {
         id: "city-of-ladies",
         title: "The Book of the City of Ladies",
         author: "Christine de Pizan",
-        cover: "/paper-assets/books/city-of-ladies.jpg",
+        cover: "/paper-assets/books/curated/city-of-ladies-9780892552306.webp",
         spineLabel: "City of Ladies"
       },
       {
         id: "prince",
         title: "The Prince",
         author: "Machiavelli",
-        cover: "/paper-assets/books/prince.jpg",
+        cover: "/paper-assets/books/curated/prince-9780141395876.webp",
         spineLabel: "The Prince"
       },
       {
         id: "discourse-on-method",
         title: "Discourse on Method",
         author: "Descartes",
-        cover: "/paper-assets/books/discourse-on-method-penguin.jpg",
+        cover: "/paper-assets/books/curated/discourse-on-method-9780140446999.webp",
         spineLabel: "Discourse"
       },
       {
         id: "leviathan",
         title: "Leviathan",
         author: "Hobbes",
-        cover: "/paper-assets/books/leviathan.jpg"
+        cover: "/paper-assets/books/curated/leviathan-9780141395098.webp"
       },
       {
         id: "second-treatise",
         title: "Second Treatise of Government",
         author: "Locke",
-        cover: "/paper-assets/books/second-treatise.jpg",
+        cover: "/paper-assets/books/curated/second-treatise-9780393428926.webp",
         spineLabel: "Second Treatise"
       },
       {
         id: "discourse-on-inequality",
         title: "Discourse on Inequality",
         author: "Rousseau",
-        cover: "/paper-assets/books/discourse-on-inequality.jpg",
+        cover: "/paper-assets/books/curated/discourse-on-inequality-9780140444391.webp",
         spineLabel: "Inequality"
       },
       {
         id: "social-contract",
         title: "The Social Contract",
         author: "Rousseau",
-        cover: "/paper-assets/books/social-contract.jpg",
+        cover: "/paper-assets/books/curated/social-contract-9781857151626.webp",
         spineLabel: "Social Contract"
       }
     ]
@@ -1200,102 +1200,102 @@ export const mindShelves: MindShelf[] = [
         id: "wealth-of-nations",
         title: "The Wealth of Nations",
         author: "Adam Smith",
-        cover: "/paper-assets/books/wealth-of-nations.jpg",
+        cover: "/paper-assets/books/curated/wealth-of-nations-9780679424734.webp",
         spineLabel: "Wealth of Nations"
       },
       {
         id: "groundwork",
         title: "Groundwork of the Metaphysics of Morals",
         author: "Immanuel Kant",
-        cover: "/paper-assets/books/groundwork-kant.jpg",
+        cover: "/paper-assets/books/curated/groundwork-9781107008519.webp",
         spineLabel: "Groundwork"
       },
       {
         id: "what-is-enlightenment",
         title: "What is Enlightenment?",
         author: "Immanuel Kant",
-        cover: "/paper-assets/books/what-is-enlightenment-penguin.jpg",
+        cover: "/paper-assets/books/curated/what-is-enlightenment-9780141043883.webp",
         spineLabel: "Enlightenment"
       },
       {
         id: "vindication",
         title: "A Vindication of the Rights of Woman",
         author: "Mary Wollstonecraft",
-        cover: "/paper-assets/books/vindication.jpg",
+        cover: "/paper-assets/books/curated/vindication-9781857150865.webp",
         spineLabel: "Vindication"
       },
       {
         id: "democracy-in-america",
         title: "Democracy in America",
         author: "Alexis de Tocqueville",
-        cover: "/paper-assets/books/democracy-in-america.jpg",
+        cover: "/paper-assets/books/curated/democracy-in-america-9781931082549.webp",
         spineLabel: "Democracy"
       },
       {
         id: "narrative-douglass",
         title: "Narrative of the Life of Frederick Douglass",
         author: "Frederick Douglass",
-        cover: "/paper-assets/books/narrative-douglass.jpg",
+        cover: "/paper-assets/books/curated/narrative-douglass-9781529040302.webp",
         spineLabel: "Douglass"
       },
       {
         id: "on-liberty",
         title: "On Liberty",
         author: "John Stuart Mill",
-        cover: "/paper-assets/books/on-liberty-penguin.png"
+        cover: "/paper-assets/books/curated/on-liberty-9780141441474.webp"
       },
       {
         id: "marx-engels-reader",
         title: "The Marx-Engels Reader",
         author: "Karl Marx & Friedrich Engels",
-        cover: "/paper-assets/books/marx-engels-reader.jpg",
+        cover: "/paper-assets/books/curated/marx-engels-reader-9780393090406.webp",
         spineLabel: "Marx-Engels"
       },
       {
         id: "genealogy-of-morals",
         title: "On the Genealogy of Morals",
         author: "Friedrich Nietzsche",
-        cover: "/paper-assets/books/genealogy-of-morals-penguin.jpg",
+        cover: "/paper-assets/books/curated/genealogy-of-morals-9781647922818.webp",
         spineLabel: "Genealogy"
       },
       {
         id: "civilization-and-its-discontents",
         title: "Civilization and Its Discontents",
         author: "Sigmund Freud",
-        cover: "/paper-assets/books/civilization-and-its-discontents.jpg",
+        cover: "/paper-assets/books/curated/civilization-and-its-discontents-9780141018997.webp",
         spineLabel: "Civilization"
       },
       {
         id: "souls-of-black-folk",
         title: "The Souls of Black Folk",
         author: "W.E.B. Du Bois",
-        cover: "/paper-assets/books/souls-of-black-folk.jpg"
+        cover: "/paper-assets/books/curated/souls-of-black-folk-9780143134435.webp"
       },
       {
         id: "annihilation-of-caste",
         title: "Annihilation of Caste",
         author: "B.R. Ambedkar",
-        cover: "/paper-assets/books/annihilation-of-caste.jpg",
+        cover: "/paper-assets/books/curated/annihilation-of-caste-9781781688311.webp",
         spineLabel: "Ambedkar"
       },
       {
         id: "hind-swaraj",
         title: "Hind Swaraj",
         author: "M.K. Gandhi",
-        cover: "/paper-assets/books/hind-swaraj.jpg"
+        cover: "/paper-assets/books/curated/hind-swaraj-9780521197038.webp"
       },
       {
         id: "second-sex",
         title: "The Second Sex",
         author: "Simone de Beauvoir",
-        cover: "/paper-assets/books/second-sex.jpg",
+        cover: "/paper-assets/books/curated/second-sex-9780099595731.webp",
         spineLabel: "Second Sex"
       },
       {
         id: "wretched-of-the-earth",
         title: "The Wretched of the Earth",
         author: "Frantz Fanon",
-        cover: "/paper-assets/books/wretched-of-the-earth.jpg",
+        cover: "/paper-assets/books/curated/wretched-of-the-earth-9780802158635.webp",
         spineLabel: "Fanon"
       },
       {
@@ -1309,14 +1309,14 @@ export const mindShelves: MindShelf[] = [
         id: "letter-birmingham",
         title: "Letter from Birmingham Jail",
         author: "Martin Luther King Jr.",
-        cover: "/paper-assets/books/letter-birmingham.jpg",
+        cover: "/paper-assets/books/curated/letter-birmingham-9780063425811.webp",
         spineLabel: "Birmingham Jail"
       },
       {
         id: "discipline-and-punish",
         title: "Discipline and Punish",
         author: "Michel Foucault",
-        cover: "/paper-assets/books/discipline-and-punish.jpg",
+        cover: "/paper-assets/books/curated/discipline-and-punish-9780241386019.webp",
         spineLabel: "Foucault"
       }
     ]
