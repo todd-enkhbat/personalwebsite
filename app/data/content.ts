@@ -75,6 +75,8 @@ export type PublicationPiece = {
   videoEmbed?: string;
   /** Optional full-width site preview (article, program site, etc.). */
   websiteEmbed?: string;
+  /** Named source websites shown one at a time in the compact preview. */
+  websitePreviews?: PublicationRelatedLink[];
   relatedLinks?: PublicationRelatedLink[];
   figures?: PublicationFigure[];
   /** Featured spotlight orientation; varies so soft images are never forced full-bleed. */
@@ -121,7 +123,7 @@ export const meetInvite = {
   body: "Conversation, coffee, a walk -- say hello if you're nearby.",
   window: "Especially free in New York Aug 2-8, before I head west.",
   cta: "Let's grab coffee",
-  ctaHref: "https://calendar.app.google/9MztKG4bvzgpMp6HA"
+  ctaHref: "https://calendar.app.google/3W9cPNgdQNXhHL1t7"
 };
 
 export const person = {
@@ -159,6 +161,7 @@ export const nav: LinkItem[] = [
   { label: "Nomos", href: "/nomos" },
   { label: "Publications", href: "/publications" },
   { label: "Feeding the Mind", href: "/feeding-the-mind" },
+  { label: "Philosophy / Physics", href: "/philosophy-physics" },
   { label: "Calendar", href: "/calendar" },
   { label: "Contact", href: "/contact" }
 ];
@@ -795,7 +798,7 @@ export const nomos = {
 export const publications: PublicationPiece[] = [
   {
     id: "nova-x-columbia",
-    title: "NOVA X Tour #2: Columbia",
+    title: "NOVA X Tour #2: Columbia Campus",
     titleLines: ["NOVA X Tour #2:", "Columbia Campus"],
     date: "2026-05-23",
     month: "MAY",
@@ -830,8 +833,12 @@ export const publications: PublicationPiece[] = [
       "The piece sits at the intersection of national press and hard science: how a Mongolian student ends up on a collaboration that touches NASA, MIT, Princeton, and a generation of black-hole imaging work. It ran in newsprint across the country and online for a much wider audience, a rare look at frontier astrophysics told through a day, not a press release. For readers who only know the headlines, it is the grounded version of how that work actually feels.",
     tags: ["PRESS", "JOURNAL"],
     image: "/paper-assets/pub-unread-source.png",
-    href: "https://unread.today/c/journal-tsogt",
-    websiteEmbed: "https://unread.today/c/journal-tsogt",
+    href: "https://unread.today/",
+    websiteEmbed: "https://unread.today/",
+    websitePreviews: [
+      { label: "Unread Today", href: "https://unread.today/" },
+      { label: "Unread Newspaper", href: "https://newspaper.mn/" }
+    ],
     linkLabel: "READ ON UNREAD ↗",
     reach: "10K PRINT · ~100K VIEWS",
     figures: [
@@ -891,8 +898,8 @@ export const publications: PublicationPiece[] = [
       "The conversation is about the trade-offs every political order eventually faces: conserve what works and risk stagnation, or expand and risk tearing the fabric that made expansion possible. Machiavelli sits in the middle of that tension, and the lecture treats him as a strategist of institutions rather than a cartoon of ruthlessness. It is philosophy for people who care about power as it is practiced, and about what kind of disorder a republic can survive.",
     tags: ["PHILOSOPHY", "LECTURE"],
     image: "/paper-assets/pub-1.png",
-    href: "https://www.youtube.com/watch?v=VKNrm1rvy0M",
-    videoEmbed: "https://www.youtube.com/embed/VKNrm1rvy0M",
+    href: "https://www.youtube.com/watch?v=zXUvEN-LI_M&t=1837s",
+    videoEmbed: "https://www.youtube.com/embed/zXUvEN-LI_M?start=1837&rel=0",
     linkLabel: "WATCH ON YOUTUBE ↗",
     featureLayout: "letterbox"
   },
@@ -1151,7 +1158,7 @@ export const mindShelves: MindShelf[] = [
         id: "discourse-on-method",
         title: "Discourse on Method",
         author: "Descartes",
-        cover: "/paper-assets/books/discourse-on-method.jpg",
+        cover: "/paper-assets/books/discourse-on-method-penguin.jpg",
         spineLabel: "Discourse"
       },
       {
@@ -1200,14 +1207,14 @@ export const mindShelves: MindShelf[] = [
         id: "groundwork",
         title: "Groundwork of the Metaphysics of Morals",
         author: "Immanuel Kant",
-        cover: "/paper-assets/books/groundwork.jpg",
+        cover: "/paper-assets/books/groundwork-kant.jpg",
         spineLabel: "Groundwork"
       },
       {
         id: "what-is-enlightenment",
         title: "What is Enlightenment?",
         author: "Immanuel Kant",
-        cover: "/paper-assets/books/what-is-enlightenment.jpg",
+        cover: "/paper-assets/books/what-is-enlightenment-penguin.jpg",
         spineLabel: "Enlightenment"
       },
       {
@@ -1248,7 +1255,7 @@ export const mindShelves: MindShelf[] = [
         id: "genealogy-of-morals",
         title: "On the Genealogy of Morals",
         author: "Friedrich Nietzsche",
-        cover: "/paper-assets/books/genealogy-of-morals.jpg",
+        cover: "/paper-assets/books/genealogy-of-morals-penguin.jpg",
         spineLabel: "Genealogy"
       },
       {

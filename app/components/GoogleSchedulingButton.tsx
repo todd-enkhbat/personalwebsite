@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 const SCHEDULE_URL =
-  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2YJn-_w_1k70r3ugpuNY5ZwvbCzkRPom-FjA-Hl-JL28jHWHs2ZJuxB0U4BD0wiYKQFV6dd8KA?gv=true";
+  "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1scioDBnp7wevKbeoeY1CN7rx76gBEK88EKQHvZ2NGOw5pEM0Fq6LXOJKY9zGWhDzgBn2Z4cvC?gv=true";
 
 const ACCENT = "#8b2942";
 

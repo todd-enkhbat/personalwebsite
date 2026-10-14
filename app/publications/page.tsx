@@ -6,7 +6,10 @@ import { LetterShell } from "../components/LetterShell";
 import { publications } from "../data/content";
 import { resolvePublicationEmbed, type PublicationMediaEmbed } from "../lib/publicationEmbed";
 
-const sortedPublications = [...publications].sort((a, b) => b.date.localeCompare(a.date));
+const sortedPublications = [...publications].sort((a, b) =>
+  Number(b.id === "unread-journal") - Number(a.id === "unread-journal") ||
+  b.date.localeCompare(a.date)
+);
 
 function PublicationMedia({
   embed,
@@ -59,7 +62,7 @@ function PublicationMedia({
     <div className={className}>
       <iframe
         src={embed.src}
-        title={`${title} — source site`}
+        title={`${title}: source website`}
         loading="lazy"
         referrerPolicy="strict-origin-when-cross-origin"
       />
@@ -69,17 +72,21 @@ function PublicationMedia({
 
 export default function PublicationsPage() {
   const [activeId, setActiveId] = useState(sortedPublications[0]?.id);
+  const [sourceIndex, setSourceIndex] = useState(0);
   const active =
     sortedPublications.find((item) => item.id === activeId) ?? sortedPublications[0];
   const activeIndex = sortedPublications.findIndex((item) => item.id === active.id);
   const yearRange = useMemo(() => {
-    const years = sortedPublications.map((item) => item.year);
+    const years = sortedPublications.map((item) => item.year).sort((a, b) => b.localeCompare(a));
     const newest = years[0];
     const oldest = years[years.length - 1];
     return newest === oldest ? newest : `${oldest}-${newest}`;
   }, []);
 
-  const embed = useMemo(() => resolvePublicationEmbed(active), [active]);
+  const previewSource = active.websitePreviews?.[sourceIndex] ?? active.websitePreviews?.[0];
+  const embed = useMemo(() => previewSource
+    ? { kind: "site" as const, src: previewSource.href }
+    : resolvePublicationEmbed(active), [active, previewSource]);
   const secondaryVideoEmbed =
     active.websiteEmbed && active.videoEmbed ? active.videoEmbed : undefined;
 
@@ -97,8 +104,7 @@ export default function PublicationsPage() {
       <p className="kicker">Publications</p>
       <h1 className="display pub-page-title">Writing, films, lectures, and conversations.</h1>
       <p className="body-copy pub-page-deck">
-        Select a piece from the index. Plates sit with the copy: a short lead, then the fuller
-        grounding.
+        Select a piece to read or watch.
       </p>
 
       <div className="pub-stage">
@@ -113,15 +119,14 @@ export default function PublicationsPage() {
                 key={item.id}
                 type="button"
                 className={`pub-item${item.id === active.id ? " is-active" : ""}`}
-                onClick={() => setActiveId(item.id)}
+                aria-pressed={item.id === active.id}
+                onClick={() => { setActiveId(item.id); setSourceIndex(0); }}
               >
                 <div className="pub-thumb">
                   <Image src={item.image} alt="" width={74} height={58} />
                 </div>
                 <div className="pub-item-copy">
-                  <p className="pub-item-title" style={{ whiteSpace: "pre-wrap" }}>
-                    {(item.titleLines ?? [item.title]).join("\n")}
-                  </p>
+                  <p className="pub-item-title">{item.title}</p>
                   <p className="pub-item-summary">{item.summary}</p>
                   <p className="pub-item-meta">
                     {item.month} {item.year} / {item.category}
@@ -130,22 +135,47 @@ export default function PublicationsPage() {
               </button>
             ))}
           </div>
-          <p className="pub-rail-note">Ordered by date.</p>
+          <p className="pub-rail-note">UNREAD featured first. Other pieces by date.</p>
         </aside>
 
         <section className="pub-feature">
           <div className="pub-feature-head">
-            <span>Featured / {active.title}</span>
+            <span>{active.category} / {active.year}</span>
             <span>
               0{activeIndex + 1} / 0{sortedPublications.length}
             </span>
           </div>
 
-          {embed ? <PublicationMedia embed={embed} title={active.title} /> : null}
+          <header className="pub-feature-lead">
+            <h2 className="pub-feature-title">{active.title}</h2>
+            <p className="pub-feature-meta">{active.meta}</p>
+            <div className="pub-feature-actions">
+              {active.href ? (
+                <a href={active.href} target="_blank" rel="noreferrer">{active.linkLabel ?? "OPEN SOURCE ↗"}</a>
+              ) : <span>{active.linkLabel ?? "OPEN SOURCE ↗"}</span>}
+              {active.reach ? <span>{active.reach}</span> : null}
+            </div>
+            <p className="pub-feature-intro">{active.intro}</p>
+          </header>
+
+          {embed?.kind === "site" ? (
+            <div className="pub-site-preview">
+              <div className="pub-source-bar">
+                {active.websitePreviews ? <div className="pub-source-switcher" role="group" aria-label="UNREAD websites">
+                  {active.websitePreviews.map((source, index) => (
+                    <button key={source.href} type="button" aria-pressed={index === sourceIndex}
+                      onClick={() => setSourceIndex(index)}>{source.label}</button>
+                  ))}
+                </div> : <span>Website preview</span>}
+                <a href={embed.src} target="_blank" rel="noreferrer">Open website ↗</a>
+              </div>
+              <PublicationMedia key={embed.src} embed={embed} title={previewSource?.label ?? active.title} />
+            </div>
+          ) : embed ? <PublicationMedia key={active.id} embed={embed} title={active.title} /> : null}
           {secondaryVideoEmbed ? (
             <PublicationMedia
               embed={{ kind: "youtube", src: secondaryVideoEmbed }}
-              title={`${active.title} — featured episode`}
+              title={`${active.title}: featured episode`}
             />
           ) : null}
 
@@ -174,21 +204,6 @@ export default function PublicationsPage() {
             ) : null}
 
             <div className="pub-feature-copy">
-              <h2 className="pub-feature-title" style={{ whiteSpace: "pre-wrap" }}>
-                {(active.titleLines ?? [active.title]).join("\n")}
-              </h2>
-              <p className="pub-feature-meta">{active.meta}</p>
-              <div className="pub-feature-actions">
-                {active.href ? (
-                  <a href={active.href} target="_blank" rel="noreferrer">
-                    {active.linkLabel ?? "OPEN SOURCE ↗"}
-                  </a>
-                ) : (
-                  <span>{active.linkLabel ?? "OPEN SOURCE ↗"}</span>
-                )}
-                {active.reach ? <span>{active.reach}</span> : null}
-              </div>
-              <p className="pub-feature-intro">{active.intro}</p>
               <p className="pub-feature-body">{active.body}</p>
               <div className="pub-tags">
                 {active.tags.map((tag) => (

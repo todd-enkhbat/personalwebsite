@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:physics": "node --test tests/physics.test.cjs"
   },
   "dependencies": {
     "framer-motion": "^12.12.1",
