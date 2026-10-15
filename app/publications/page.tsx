@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import { LetterShell } from "../components/LetterShell";
 import { publications } from "../data/content";
+import imageSizes from "../data/portfolioImageSizes.json";
 import { resolvePublicationEmbed, type PublicationMediaEmbed } from "../lib/publicationEmbed";
 
 const sortedPublications = [...publications].sort((a, b) =>
@@ -182,24 +183,26 @@ export default function PublicationsPage() {
           <div className={`pub-spread${embed ? " pub-spread--with-media" : ""}`}>
             {plates.length > 0 ? (
               <div className="pub-plates">
-                {plates.map((plate, index) => (
-                  <figure key={`${plate.image}-${index}`} className="pub-plate">
-                    <div className="pub-plate-frame">
+                {plates.map((plate, index) => {
+                  const size = (imageSizes as Record<string, { width: number; height: number }>)[plate.image];
+                  return <figure key={`${plate.image}-${index}`} className={`pub-plate${plate.image.endsWith('/spot-stage.jpg') ? ' pub-plate--stage' : ''}`}>
+                    <a className="pub-plate-frame" href={plate.image} target="_blank" rel="noreferrer" aria-label={`Open full image: ${plate.caption || active.title}`}>
                       <Image
                         src={plate.image}
                         alt={plate.caption || active.title}
-                        width={480}
-                        height={360}
+                        width={size?.width ?? 480}
+                        height={size?.height ?? 360}
+                        sizes="(max-width: 760px) 85vw, 35vw"
                       />
-                    </div>
+                    </a>
                     {plate.kicker || plate.caption ? (
                       <figcaption className="pub-plate-cap">
                         <span>{plate.kicker ?? `Plate 0${index + 1}`}</span>
                         {plate.caption ? <span>{plate.caption}</span> : null}
                       </figcaption>
                     ) : null}
-                  </figure>
-                ))}
+                  </figure>;
+                })}
               </div>
             ) : null}
 

@@ -1,0 +1,392 @@
+{
+  "trex": [
+    {
+      "src": "/paper-assets/trex-hero.jpg",
+      "caption": "Mission concept \u00b7 86 GHz LEO VLBI SmallSat",
+      "alt": "Mission concept \u00b7 86 GHz LEO VLBI SmallSat"
+    },
+    {
+      "src": "/paper-assets/trex-sat.jpg",
+      "caption": "Satellite study",
+      "alt": "Satellite study"
+    },
+    {
+      "src": "/paper-assets/trex-antenna.jpg",
+      "caption": "Antenna concept",
+      "alt": "Antenna concept"
+    },
+    {
+      "src": "/paper-assets/trex-diagram.jpg",
+      "caption": "Mission architecture",
+      "alt": "Mission architecture"
+    },
+    {
+      "src": "/paper-assets/trex-fig2.jpg",
+      "caption": "System evidence",
+      "alt": "System evidence"
+    },
+    {
+      "src": "/paper-assets/trexstm-000.jpg",
+      "alt": "T-REX mission study diagram",
+      "caption": "T-REX mission study diagram"
+    }
+  ],
+  "ares": [
+    {
+      "src": "/paper-assets/ares-dome.png",
+      "caption": "Plate 00 \u00b7 Autonomous shelter concept ARES / RASC-AL",
+      "alt": "Plate 00 \u00b7 Autonomous shelter concept ARES / RASC-AL"
+    },
+    {
+      "src": "/paper-assets/ares-section.jpg",
+      "alt": "ares section",
+      "caption": "ares section"
+    },
+    {
+      "src": "/paper-assets/ares-topview.jpg",
+      "alt": "ares topview",
+      "caption": "ares topview"
+    },
+    {
+      "src": "/paper-assets/ares-baseaxo.jpg",
+      "alt": "ares baseaxo",
+      "caption": "ares baseaxo"
+    },
+    {
+      "src": "/paper-assets/ares-flpl.jpg",
+      "alt": "ares flpl",
+      "caption": "ares flpl"
+    },
+    {
+      "src": "/paper-assets/ares-elevation.jpg",
+      "alt": "ares elevation",
+      "caption": "ares elevation"
+    },
+    {
+      "src": "/paper-assets/ares-outside.jpg",
+      "alt": "ares outside",
+      "caption": "ares outside"
+    }
+  ],
+  "halo": [
+    {
+      "src": "/paper-assets/halo-hero.jpg",
+      "caption": "SPACE GIMBAL V1, assembled Parallel kinematics",
+      "alt": "SPACE GIMBAL V1, assembled Parallel kinematics"
+    },
+    {
+      "src": "/paper-assets/halo-cad.jpg",
+      "caption": "Platform \u00b7 arm links \u00b7 motor base \u00b7 full assembly",
+      "alt": "Platform \u00b7 arm links \u00b7 motor base \u00b7 full assembly"
+    }
+  ],
+  "trend-mart": [
+    {
+      "src": "/paper-assets/trend-hero.jpg",
+      "caption": "Toy inventory \u2014 retail reference photograph",
+      "alt": "Toy inventory \u2014 retail reference photograph"
+    },
+    {
+      "src": "/paper-assets/trend-retail.jpg",
+      "caption": "Retail presence",
+      "alt": "Retail presence"
+    },
+    {
+      "src": "/paper-assets/trend-warehouse.jpg",
+      "caption": "Supply / ops scale",
+      "alt": "Supply / ops scale"
+    },
+    {
+      "src": "/paper-assets/trend-commerce.jpg",
+      "caption": "Omnichannel commerce",
+      "alt": "Omnichannel commerce"
+    },
+    {
+      "src": "/paper-assets/trend-store.jpg",
+      "caption": "Trend Home brand imagery",
+      "alt": "Trend Home brand imagery"
+    }
+  ],
+  "micc": [
+    {
+      "src": "/paper-assets/micc-hero.jpg",
+      "caption": "Financial district architecture \u2014 capital-markets reference photograph",
+      "alt": "Financial district architecture \u2014 capital-markets reference photograph"
+    },
+    {
+      "src": "/paper-assets/micc-trading.jpg",
+      "caption": "Trading terminals and market data",
+      "alt": "Trading terminals and market data"
+    },
+    {
+      "src": "/paper-assets/micc-exchange.jpg",
+      "caption": "Market charting reference photograph",
+      "alt": "Market charting reference photograph"
+    },
+    {
+      "src": "/paper-assets/micc-nyse.jpg",
+      "caption": "NYSE Space Summit",
+      "alt": "NYSE Space Summit"
+    },
+    {
+      "src": "/paper-assets/micc-floor.jpg",
+      "alt": "Trading-floor reference photograph",
+      "caption": "Trading-floor reference photograph"
+    },
+    {
+      "src": "/paper-assets/micc-pit.jpg",
+      "alt": "Exchange-floor reference photograph",
+      "caption": "Exchange-floor reference photograph"
+    }
+  ],
+  "mars-v": [
+    {
+      "src": "/paper-assets/marsv-hero.png",
+      "caption": "Mars-analog program MDRS \u00b7 EVA",
+      "alt": "Mars-analog program MDRS \u00b7 EVA"
+    },
+    {
+      "src": "/paper-assets/marsv-habitat-render.jpg",
+      "caption": "Habitat & EVA concept \u00b7 Mars-analog station",
+      "alt": "Habitat & EVA concept \u00b7 Mars-analog station"
+    },
+    {
+      "src": "/paper-assets/marsv-crew-field.jpg",
+      "caption": "Field EVA suits \u00b7 Mars-analog campaign",
+      "alt": "Field EVA suits \u00b7 Mars-analog campaign"
+    },
+    {
+      "src": "/paper-assets/marsv-marsa-flag.jpg",
+      "caption": "MARSA field crew \u00b7 suit prototypes",
+      "alt": "MARSA field crew \u00b7 suit prototypes"
+    },
+    {
+      "src": "/paper-assets/marsv-eva-crew.png",
+      "caption": "Crew in the EVA suit I designed \u00b7 Mars-analog field campaign",
+      "alt": "Crew in the EVA suit I designed \u00b7 Mars-analog field campaign"
+    },
+    {
+      "src": "/paper-assets/marsv-analog-terrain.jpg",
+      "caption": "Analog terrain \u00b7 Mars-like badlands",
+      "alt": "Analog terrain \u00b7 Mars-like badlands"
+    }
+  ],
+  "ondo": [
+    {
+      "src": "/paper-assets/gergrid-hero.jpg",
+      "caption": "Connectivity at planetary scale GerGrid \u00b7 coverage thinking",
+      "alt": "Connectivity at planetary scale GerGrid \u00b7 coverage thinking"
+    },
+    {
+      "src": "/paper-assets/gergrid-rf.jpg",
+      "caption": "Network infrastructure",
+      "alt": "Network infrastructure"
+    },
+    {
+      "src": "/paper-assets/gergrid-map.jpg",
+      "caption": "Geospatial coverage surface",
+      "alt": "Geospatial coverage surface"
+    },
+    {
+      "src": "/paper-assets/pub-gergrid-ui.png",
+      "caption": "GerGrid UI \u00b7 ray tracing",
+      "alt": "GerGrid UI \u00b7 ray tracing"
+    },
+    {
+      "src": "/paper-assets/pub-gergrid-before-after.png",
+      "caption": "Planning before / after",
+      "alt": "Planning before / after"
+    },
+    {
+      "src": "/paper-assets/pub-gergrid-cover.png",
+      "alt": "GerGrid network-planning presentation",
+      "caption": "GerGrid network-planning presentation"
+    },
+    {
+      "src": "/paper-assets/pub-gergrid-logo.png",
+      "alt": "GerGrid identity",
+      "caption": "GerGrid identity"
+    }
+  ],
+  "thrive": [
+    {
+      "src": "/paper-assets/thrive-hero.jpg",
+      "caption": "Horticultural lighting inside a growing facility",
+      "alt": "Horticultural lighting inside a growing facility"
+    },
+    {
+      "src": "/paper-assets/thrive-altus-hero.jpg",
+      "caption": "Altus greenhouse install",
+      "alt": "Altus greenhouse install"
+    },
+    {
+      "src": "/paper-assets/thrive-vertical.jpg",
+      "caption": "Vertical farming",
+      "alt": "Vertical farming"
+    },
+    {
+      "src": "/paper-assets/thrive-facility.jpg",
+      "caption": "CEA facility context",
+      "alt": "CEA facility context"
+    },
+    {
+      "src": "/paper-assets/thrive-boost-xe.jpg",
+      "alt": "Thrive BOOST XE lighting fixture",
+      "caption": "Thrive BOOST XE lighting fixture"
+    },
+    {
+      "src": "/paper-assets/thrive-strata-farm.jpg",
+      "alt": "Thrive lighting in a Strata growing facility",
+      "caption": "Thrive lighting in a Strata growing facility"
+    }
+  ],
+  "csi": [
+    {
+      "src": "/paper-assets/csi-hero.jpg",
+      "caption": "CSI Rockets propulsion program Hybrid \u00b7 ablatives",
+      "alt": "CSI Rockets propulsion program Hybrid \u00b7 ablatives"
+    },
+    {
+      "src": "/paper-assets/csi-workshop.jpg",
+      "caption": "Workshop, chamber hardware",
+      "alt": "Workshop, chamber hardware"
+    },
+    {
+      "src": "/paper-assets/csi-field.jpg",
+      "caption": "Field campaign",
+      "alt": "Field campaign"
+    },
+    {
+      "src": "/paper-assets/csi-mission.jpg",
+      "alt": "CSI rocketry mission reference",
+      "caption": "CSI rocketry mission reference"
+    }
+  ],
+  "hur": [
+    {
+      "src": "/paper-assets/hur-hero.jpg",
+      "caption": "HUR. Education Technology Student research hub",
+      "alt": "HUR. Education Technology Student research hub"
+    },
+    {
+      "src": "/paper-assets/hur-fb-01.jpg",
+      "caption": "Duke Kunshan \u00b7 RD acceptance",
+      "alt": "Duke Kunshan \u00b7 RD acceptance"
+    },
+    {
+      "src": "/paper-assets/hur-fb-03.jpg",
+      "caption": "University of Washington",
+      "alt": "University of Washington"
+    },
+    {
+      "src": "/paper-assets/hur-fb-05.jpg",
+      "caption": "Pace \u00b7 Syracuse",
+      "alt": "Pace \u00b7 Syracuse"
+    },
+    {
+      "src": "/paper-assets/hur-fb-02.jpg",
+      "caption": "Admit letter \u00b7 testimonial",
+      "alt": "Admit letter \u00b7 testimonial"
+    },
+    {
+      "src": "/paper-assets/hur-fb-04.jpg",
+      "alt": "HUR student admission announcement",
+      "caption": "HUR student admission announcement"
+    },
+    {
+      "src": "/paper-assets/hur-fb-06.jpg",
+      "alt": "HUR community update",
+      "caption": "HUR community update"
+    },
+    {
+      "src": "/paper-assets/hur-fb-07.jpg",
+      "alt": "HUR community update",
+      "caption": "HUR community update"
+    },
+    {
+      "src": "/paper-assets/hur-fb-08.jpg",
+      "alt": "HUR community update",
+      "caption": "HUR community update"
+    },
+    {
+      "src": "/paper-assets/hur-fb-banner.png",
+      "alt": "HUR community banner",
+      "caption": "HUR community banner"
+    },
+    {
+      "src": "/paper-assets/hur-card.jpg",
+      "alt": "HUR education program graphic",
+      "caption": "HUR education program graphic"
+    }
+  ],
+  "balloon-summit": [
+    {
+      "src": "/paper-assets/balloon-summit-launch.jpg",
+      "caption": "Day 1 \u00b7 Space balloon launch 360 Archery Range \u00b7 National Park",
+      "alt": "Day 1 \u00b7 Space balloon launch 360 Archery Range \u00b7 National Park"
+    },
+    {
+      "src": "/paper-assets/balloon-summit-poster.jpg",
+      "caption": "Summit poster \u00b7 partners and schedule",
+      "alt": "Summit poster \u00b7 partners and schedule"
+    }
+  ],
+  "starry-tours": [
+    {
+      "src": "/paper-assets/starry-tours-hero.jpg",
+      "caption": "Dark-sky country Milky Way \u00b7 Mongolia",
+      "alt": "Dark-sky country Milky Way \u00b7 Mongolia"
+    },
+    {
+      "src": "/paper-assets/starry-tours-milkyway.jpg",
+      "caption": "Milky Way \u00b7 dark-sky domain",
+      "alt": "Milky Way \u00b7 dark-sky domain"
+    },
+    {
+      "src": "/paper-assets/starry-tours-sky.jpg",
+      "caption": "Night sky \u00b7 open steppe",
+      "alt": "Night sky \u00b7 open steppe"
+    },
+    {
+      "src": "/paper-assets/starry-tours-cosmos.jpg",
+      "caption": "Deep sky \u00b7 astronomy engagement",
+      "alt": "Deep sky \u00b7 astronomy engagement"
+    }
+  ],
+  "cfa": [
+    {
+      "src": "/paper-assets/cfa-k218b.jpg",
+      "caption": "K2-18b habitability apprenticeship Exoplanet research",
+      "alt": "K2-18b habitability apprenticeship Exoplanet research"
+    }
+  ],
+  "kublai": [
+    {
+      "src": "/paper-assets/kublai-visual.jpg",
+      "caption": "Kublai Institute Astrophysics \u00b7 Planetarium",
+      "alt": "Kublai Institute Astrophysics \u00b7 Planetarium"
+    },
+    {
+      "src": "/paper-assets/kublai-planetarium.jpg",
+      "caption": "Deep-sky science context",
+      "alt": "Deep-sky science context"
+    },
+    {
+      "src": "/paper-assets/kublai-telescope.jpg",
+      "caption": "Observational platform",
+      "alt": "Observational platform"
+    },
+    {
+      "src": "/paper-assets/kublai-stars.jpg",
+      "caption": "Night sky \u00b7 research domain",
+      "alt": "Night sky \u00b7 research domain"
+    }
+  ],
+  "piano": [
+    {
+      "src": "/paper-assets/piano-hero.png",
+      "caption": "Beyond the Music Festival Concert piano",
+      "alt": "Beyond the Music Festival Concert piano"
+    }
+  ]
+}

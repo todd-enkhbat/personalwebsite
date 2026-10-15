@@ -26,17 +26,17 @@ export default function NomosPage() {
           <div className="nomos-hero__aside">
             <span />
             <p>{nomos.hero.lede}</p>
-            <a href="#continuity" className="nomos-scroll">SCROLL TO EXAMINE THE SYSTEM ↓</a>
+            <a href="#continuity" className="nomos-scroll">See the planning workflow ↓</a>
           </div>
         </div>
       </section>
 
       <section className="nomos-proof" aria-label="Nomos project numbers">
-        <div className="nomos-proof__intro"><p className="nomos-label">What exists now</p><h2>A working planner, with a clear boundary between planning and execution.</h2></div>
+        <div className="nomos-proof__intro"><p className="nomos-label">What exists now</p><h2>A live mission planner, network atlas, API, and Python SDK.</h2></div>
         <div className="nomos-proof__facts">
           <details><summary><strong>$25k</strong><span>Grant funding secured</span></summary><p>Funding supports the solo-founder research and product work.</p></details>
-          <details><summary><strong>30 pages</strong><span>Research and technology review</span></summary><p>The Columbia review set the capability boundary before product claims.</p></details>
-          <details><summary><strong>1 MVP</strong><span>Full-stack mission planner</span></summary><p>FastAPI, Next.js, Python SDK, PostGIS and SGP4/Skyfield contact windows. Provider execution remains labeled until integrated.</p></details>
+          <details><summary><strong>30 pages</strong><span>Research and technology review</span></summary><p>A Columbia review of space policy, technology, and infrastructure capabilities.</p></details>
+          <details><summary><strong>1 MVP</strong><span>Full-stack mission planner</span></summary><p>FastAPI, Next.js, Python SDK, PostGIS and SGP4/Skyfield contact windows. Service booking and mission execution require provider integrations.</p></details>
         </div>
       </section>
 
@@ -49,25 +49,25 @@ export default function NomosPage() {
         <div className="nomos-continuity__diagram">
           <div className="nomos-note nomos-note--current">
             <span />
-            <b>CURRENT STATE</b>
-            <p>One biosphere. One power grid. One communications layer.</p>
+            <b>SEPARATE INPUTS</b>
+            <p>Satellite catalogs, ground-station records, and compute services are separate sources.</p>
           </div>
-          <div className="nomos-continuity__image" role="img" aria-label="Orbital continuity illustration" />
+          <div className="nomos-continuity__image" role="img" aria-label="Concept illustration accompanying the mission-planning overview" />
           <div className="nomos-note nomos-note--desired">
             <span />
-            <b>DESIRED STATE</b>
-            <p>Independent nodes that preserve context and coordinate across delay.</p>
+            <b>COMBINED PLAN</b>
+            <p>Compare those resources in one plan, with calculated contact windows and linked sources.</p>
           </div>
         </div>
         <div className="nomos-continuity__footer">
           <div className="nomos-note">
             <span />
             <b>DESIGN REQUIREMENT 01</b>
-            <strong>Memory must survive the institution that stores it.</strong>
+            <strong>Every recommendation needs a source and a feasibility check.</strong>
           </div>
           <div className="nomos-definition">
-            <b>NOMOS / WORKING DEFINITION</b>
-            <p>A space systems company building the operational layer for long-duration intelligence: sense, retain, decide, and act.</p>
+            <b>NOMOS / PRODUCT</b>
+            <p>Mission-planning software that connects satellite access, ground contacts, and data processing.</p>
           </div>
         </div>
       </section>
@@ -97,11 +97,11 @@ export default function NomosPage() {
 
       <section className="nomos-section nomos-requirements">
         <div className="nomos-requirements__lead">
-          <p className="nomos-label">03 / PHILOSOPHY, TRANSLATED INTO REQUIREMENTS</p>
-          <h2>We are not trying to defeat impermanence. We are designing for continuity through it.</h2>
+          <p className="nomos-label">PLANNING REQUIREMENTS</p>
+          <h2>Show what is feasible, what is calculated, and what still needs confirmation.</h2>
           <div className="nomos-requirements__copy">
-            <h3>That changes the engineering question.</h3>
-            <p className="nomos-body">The objective is not permanence. It is to prevent a break in the chain of context -- from one person to another, one machine to another, and eventually one world to another.</p>
+            <h3>A plan needs more than a list of providers.</h3>
+            <p className="nomos-body">A useful plan identifies a satellite opportunity, a ground contact, and a way to process the data. Users need to see the calculations, source records, and missing integrations before committing to a mission.</p>
           </div>
         </div>
         <div className="nomos-requirements__list">
@@ -118,7 +118,7 @@ export default function NomosPage() {
       <section id="research" className="nomos-section nomos-research">
         <div className="nomos-research__head">
           <p className="nomos-label">04 / RESEARCH INDEX</p>
-          <h2>The philosophy is useful only where it changes what we build, test, or refuse.</h2>
+          <h2>Orbital calculations, infrastructure records, and longer-term research.</h2>
         </div>
         <div className="nomos-research__list">
           {nomos.research.map(([id, title, description, state]) => (
@@ -134,9 +134,9 @@ export default function NomosPage() {
         <div className="nomos-dark-section__veil" aria-hidden />
         <div className="nomos-program__content">
           <div className="nomos-intro">
-            <p className="nomos-label nomos-label--light">05 / CURRENT PROGRAM / JULY 2026</p>
-            <h2>From thesis to an operating system.</h2>
-            <p className="nomos-body">Nomos is early. The work is being reduced into components that can be tested independently before they become a mission architecture.</p>
+            <p className="nomos-label nomos-label--light">PRODUCT COMPONENTS</p>
+            <h2>What the current product includes.</h2>
+            <p className="nomos-body">I built the interface, backend, and SDK as a solo founder. The current product supports planning and comparison; booking and execution depend on provider integrations.</p>
           </div>
           <div className="nomos-program__list">
             {nomos.program.map(([title, description], index) => (
@@ -150,11 +150,11 @@ export default function NomosPage() {
 
       <footer id="contact" className="nomos-section nomos-closing">
         <div className="nomos-closing__head">
-          <p className="nomos-label">06 / OPERATING PREMISE</p>
-          <h2>Keep the chain of intelligence unbroken.</h2>
+          <p className="nomos-label">TRY THE PRODUCT</p>
+          <h2>Open the planner or inspect the network atlas.</h2>
         </div>
         <div className="nomos-closing__footer">
-          <div><h3>Nomos Orbital</h3><p>Building long-duration systems for memory, autonomy, and off-world continuity.</p></div>
+          <div><h3>Nomos Orbital</h3><p>Satellite mission planning, ground-contact calculations, and infrastructure comparison.</p></div>
           <div className="nomos-contact-links">
             <p><span>WEBSITE</span><a href="https://nomosorbital.com" target="_blank" rel="noreferrer">nomosorbital.com ↗</a></p>
             <p><span>CONTACT</span><a href="mailto:tsogt.e@columbia.edu">tsogt.e@columbia.edu ↗</a></p>

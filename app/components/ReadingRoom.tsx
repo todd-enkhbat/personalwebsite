@@ -469,8 +469,8 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
           <h1>Currently<br />reading.</h1>
         </div>
         <div className="reading-commentary">
-          <p>I&apos;m currently focusing on the Political Philosophy of the upcoming Space Civilization and the Philosophy of Science in relation to the nature of Time. Existential thought and Meaning-making projects are deeply moving to me, and this makes the world feel extremely malleable.</p>
-          <p className="reading-commentary-closing">Let&apos;s force our Virtu on the tyranny of Fortune.</p>
+          <p>I’m reading political philosophy about institutions and settlement beyond Earth, alongside philosophy of science on time and statistical mechanics. The books below include my current reading and texts from Columbia’s Contemporary Civilization courses.</p>
+
         </div>
       </header>
 
@@ -508,7 +508,7 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
           <div className="reading-archive-heading">
             <div>
               <p className="kicker">The rest of the shelf</p>
-              <h2 id="reading-archive-title">Pull out a volume.</h2>
+              <h2 id="reading-archive-title">Other books I’m reading.</h2>
             </div>
             <div className="reading-archive-controls">
               <span>{archive.length} books</span>
@@ -563,7 +563,7 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
       <section className="reading-catalog" aria-labelledby="reading-catalog-title">
         <header className="reading-catalog-header">
           <p className="kicker">The reading list · {archive.length} books</p>
-          <h2 id="reading-catalog-title">Ideas in conversation.</h2>
+          <h2 id="reading-catalog-title">Reading by subject.</h2>
         </header>
         <div className="reading-catalog-layout">
           <nav className="reading-catalog-index" role="tablist" aria-orientation="vertical"

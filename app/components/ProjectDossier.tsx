@@ -7,13 +7,14 @@ import { useRef, useState } from "react";
 import type { ProjectImage, ProjectStory } from "../data/projectStories";
 import { projectPath } from "../data/projectStories";
 import imageSizes from "../data/portfolioImageSizes.json";
+import { YCBacking } from "./YCBacking";
 
 export const ProjectModel = dynamic(() => import("./ModelViewer"), { ssr: false, loading: () => <div className="model-placeholder">Loading 3D model…</div> });
 
 export function ProjectPhoto({ image, priority = false }: { image: ProjectImage; priority?: boolean }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const size = (imageSizes as Record<string, { width: number; height: number }>)[image.src] ?? { width: 1200, height: 800 };
-  return <figure className="dossier-figure">
+  return <figure className={`dossier-figure${size.width / size.height > 1.8 ? ' dossier-figure--wide' : ''}${image.src.endsWith('spacesuit-cutout.png') ? ' dossier-figure--cutout' : ''}`}>
     <button className="dossier-photo" onClick={() => dialog.current?.showModal()} aria-label={`Enlarge: ${image.caption}`}>
       <Image src={image.src} alt={image.alt} width={size.width} height={size.height} sizes="(max-width: 760px) 92vw, 65vw" priority={priority} />
       <span className="photo-expand" aria-hidden>↗</span>
@@ -36,15 +37,34 @@ function ProjectSequence({ sequence }: { sequence: NonNullable<ProjectStory['seq
   </section>;
 }
 
+function ProjectWebsite({ story }: { story: ProjectStory }) {
+  const [live, setLive] = useState(story.website?.href.startsWith('/') ?? false);
+  if (!story.website) return null;
+  const preview = story.cover ?? story.images[0];
+  const size = preview ? (imageSizes as Record<string, { width: number; height: number }>)[preview.src] : undefined;
+  return <section className="dossier-website" aria-label={`${story.website.label} website`}>
+    <header><h3>{story.website.label} website</h3><a href={story.website.href} target="_blank" rel="noopener noreferrer">Open website ↗</a></header>
+    <div className="dossier-website-preview">
+      {live ? <iframe src={story.website.href} title={`${story.website.label} website preview`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /> : <button className="dossier-website-load" onClick={() => setLive(true)}>
+        {preview ? <Image src={preview.src} alt={preview.alt} width={size?.width ?? 1200} height={size?.height ?? 800} sizes="(max-width: 760px) 90vw, 65vw" /> : null}
+        <span>View live website ↗</span>
+      </button>}
+    </div>
+    {live ? <p className="dossier-website-fallback">You can also <a href={story.website.href} target="_blank" rel="noopener noreferrer">open the website in a new tab ↗</a>.</p> : null}
+  </section>;
+}
+
 export function ProjectDossier({ story, standalone = false }: { story: ProjectStory; standalone?: boolean }) {
-  const [showPhotos, setShowPhotos] = useState(false);
+  const [showPhotos, setShowPhotos] = useState(true);
   const used = new Set(story.chapters.map(chapter => chapter.image).filter(index => index !== undefined));
+  story.chapters.forEach(chapter => chapter.supportingImages?.forEach(index => used.add(index)));
   const extraImages = story.images.filter((_, index) => !used.has(index));
   const Heading = standalone ? 'h1' : 'h2';
   return <article className={`project-dossier${standalone ? ' project-dossier--standalone' : ''}`}>
     <aside className="dossier-rail">
       <p className="portfolio-kicker">{story.category} / {story.year}</p>
       <Heading id={`project-title-${story.id}`}>{story.title}</Heading>
+      {story.id === 'thrive' ? <div className="dossier-yc"><YCBacking linked /></div> : null}
       <p className="dossier-lead">{story.lead}</p>
       <dl className="dossier-meta"><div><dt>Role</dt><dd>{story.role}</dd></div><div><dt>Stage</dt><dd>{story.status}</dd></div></dl>
       <div className="dossier-links">{story.links.map(link => <a key={link.href} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{link.label} ↗</a>)}
@@ -57,18 +77,29 @@ export function ProjectDossier({ story, standalone = false }: { story: ProjectSt
       {story.metrics.length ? <dl className="dossier-metrics">{story.metrics.map(metric => <div key={metric.label}>
         <dd>{metric.value}</dd><dt>{metric.label}</dt>{metric.context ? <p>{metric.context}</p> : null}
       </div>)}</dl> : null}
-      {story.model ? <section className="dossier-model" aria-label={`${story.shortTitle || story.title} 3D model`}>
-        <ProjectModel kind={story.model} title={story.title} />
-        <p className="model-caption">{story.modelNote}</p>
-      </section> : null}
       <p className="dossier-introduction">{story.introduction}</p>
-      {story.chapters.map((chapter, index) => <section className="dossier-chapter" key={chapter.title}>
+      <ProjectWebsite story={story} />
+      {story.chapters.map((chapter, index) => <section className={`dossier-chapter${chapter.image !== undefined || chapter.film ? ' dossier-chapter--illustrated' : ''}`} key={chapter.title}>
         <div className="dossier-prose"><h3>{chapter.title}</h3>{chapter.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
-        {chapter.image !== undefined && story.images[chapter.image] ? <ProjectPhoto image={story.images[chapter.image]} priority={standalone && index === 0 && !story.model} /> : null}
+        {chapter.image !== undefined || chapter.film ? <div className="dossier-chapter-media">
+          {chapter.film && story.film ? <figure className="dossier-film">
+            <video controls muted playsInline preload="none" poster={story.film.poster} aria-label={`${story.title} prototype footage, silent`}>
+              <source src={story.film.src} type="video/mp4" />
+              <a href={story.film.src}>Watch the prototype footage</a>
+            </video>
+            <figcaption>{story.film.caption}</figcaption>
+          </figure> : null}
+          {chapter.image !== undefined && story.images[chapter.image] ? <ProjectPhoto image={story.images[chapter.image]} priority={standalone && index === 0} /> : null}
+        </div> : null}
+        {chapter.supportingImages?.length ? <div className="dossier-supporting-images">{chapter.supportingImages.map(imageIndex => story.images[imageIndex] ? <ProjectPhoto key={imageIndex} image={story.images[imageIndex]} /> : null)}</div> : null}
         {index === 0 && story.sequence ? <ProjectSequence sequence={story.sequence} /> : null}
       </section>)}
+      {story.model ? <details className="dossier-model">
+        <summary>Explore the {story.shortTitle || story.title} geometry in 3D <span>↗</span></summary>
+        <div><ProjectModel kind={story.model} title={story.title} /><p className="model-caption">{story.modelNote}</p></div>
+      </details> : null}
       {extraImages.length ? <section className="dossier-archive">
-        <button className="archive-toggle" aria-expanded={showPhotos} onClick={() => setShowPhotos(value => !value)}><span>More from the project <small>{extraImages.length} {extraImages.length === 1 ? 'image' : 'images'}</small></span><span>{showPhotos ? '−' : '+'}</span></button>
+        <button className="archive-toggle" aria-expanded={showPhotos} onClick={() => setShowPhotos(value => !value)}><span>Project photographs & references <small>{extraImages.length} {extraImages.length === 1 ? 'image' : 'images'}</small></span><span>{showPhotos ? '−' : '+'}</span></button>
         {showPhotos ? <div className="archive-images">{extraImages.map(image => <ProjectPhoto key={image.src} image={image} />)}</div> : null}
       </section> : null}
       {story.links.length ? <footer className="dossier-footer"><span>Continue exploring</span>{story.links.map(link => <a key={link.href} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">{link.label} ↗</a>)}</footer> : null}

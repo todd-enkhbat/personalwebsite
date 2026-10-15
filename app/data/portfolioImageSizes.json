@@ -134,5 +134,313 @@
   "/paper-assets/nomos-product.png": {
     "width": 1280,
     "height": 720
+  },
+  "/paper-assets/halo/assembly.jpg": {
+    "width": 1200,
+    "height": 1600
+  },
+  "/paper-assets/halo/presentation.jpg": {
+    "width": 1600,
+    "height": 900
+  },
+  "/paper-assets/halo/ring-gimbal.jpg": {
+    "width": 900,
+    "height": 1600
+  },
+  "/paper-assets/halo/film-poster.jpg": {
+    "width": 900,
+    "height": 1600
+  },
+  "/paper-assets/halo/electronics-photo.jpg": {
+    "width": 1200,
+    "height": 1600
+  },
+  "/paper-assets/halo/platform-photo.jpg": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/paper-assets/halo/bench-photo.jpg": {
+    "width": 899,
+    "height": 1600
+  },
+  "/paper-assets/halo/linkage-photo.jpg": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/paper-assets/csi-thermal-review.jpg": {
+    "width": 768,
+    "height": 1024
+  },
+  "/paper-assets/kublai/observatory-aerial.jpg": {
+    "width": 1664,
+    "height": 936
+  },
+  "/paper-assets/kublai/telescope-monochrome.jpg": {
+    "width": 800,
+    "height": 600
+  },
+  "/paper-assets/kublai/observatory-hillside.jpg": {
+    "width": 1750,
+    "height": 900
+  },
+  "/paper-assets/kublai/telescope-detector.jpg": {
+    "width": 1400,
+    "height": 1186
+  },
+  "/paper-assets/kublai/observatory-dome.jpg": {
+    "width": 1400,
+    "height": 1188
+  },
+  "/paper-assets/kublai/solar-sunspot.jpg": {
+    "width": 1272,
+    "height": 840
+  },
+  "/paper-assets/kublai/solar-prominence.jpg": {
+    "width": 1124,
+    "height": 796
+  },
+  "/paper-assets/kublai/solar-eclipse.jpg": {
+    "width": 1288,
+    "height": 940
+  },
+  "/paper-assets/mars-v/science-fiction-program.jpg": {
+    "width": 768,
+    "height": 1024
+  },
+  "/paper-assets/mars-v/project-office-sign.jpg": {
+    "width": 768,
+    "height": 1024
+  },
+  "/paper-assets/mars-v/spot-stage.jpg": {
+    "width": 768,
+    "height": 1024
+  },
+  "/paper-assets/mars-v/documentary-lighting.jpg": {
+    "width": 888,
+    "height": 884
+  },
+  "/paper-assets/mars-v/project-office-artwork.jpg": {
+    "width": 768,
+    "height": 1024
+  },
+  "/paper-assets/mars-v/documentary-poster.jpg": {
+    "width": 665,
+    "height": 1182
+  },
+  "/paper-assets/mars-v/space-exploration-reference.jpg": {
+    "width": 1034,
+    "height": 760
+  },
+  "/paper-assets/mars-v/spot-poster.jpg": {
+    "width": 665,
+    "height": 1182
+  },
+  "/paper-assets/mars-v/spacesuit-cutout.png": {
+    "width": 934,
+    "height": 1683
+  },
+  "/paper-assets/trex-hero.jpg": {
+    "width": 1447,
+    "height": 646
+  },
+  "/paper-assets/trexstm-000.jpg": {
+    "width": 2408,
+    "height": 1238
+  },
+  "/paper-assets/trend-hero.jpg": {
+    "width": 1800,
+    "height": 1125
+  },
+  "/paper-assets/trend-retail.jpg": {
+    "width": 1800,
+    "height": 1201
+  },
+  "/paper-assets/trend-warehouse.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/paper-assets/trend-commerce.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/paper-assets/trend-toys.jpg": {
+    "width": 1800,
+    "height": 1125
+  },
+  "/paper-assets/micc-hero.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/paper-assets/micc-trading.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/paper-assets/micc-exchange.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/paper-assets/micc-nyse.jpg": {
+    "width": 2048,
+    "height": 1536
+  },
+  "/paper-assets/micc-floor.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/paper-assets/micc-pit.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/paper-assets/micc-skyline.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/paper-assets/marsv-hero.png": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/paper-assets/marsv-marsa-flag.jpg": {
+    "width": 1024,
+    "height": 576
+  },
+  "/paper-assets/marsv-eva-crew.png": {
+    "width": 1024,
+    "height": 576
+  },
+  "/paper-assets/gergrid-hero.jpg": {
+    "width": 1800,
+    "height": 1198
+  },
+  "/paper-assets/gergrid-rf.jpg": {
+    "width": 1800,
+    "height": 1010
+  },
+  "/paper-assets/gergrid-map.jpg": {
+    "width": 1800,
+    "height": 1196
+  },
+  "/paper-assets/pub-gergrid-ui.png": {
+    "width": 1024,
+    "height": 614
+  },
+  "/paper-assets/pub-gergrid-before-after.png": {
+    "width": 1024,
+    "height": 500
+  },
+  "/paper-assets/gergrid-towers.jpg": {
+    "width": 1800,
+    "height": 1198
+  },
+  "/paper-assets/pub-gergrid-cover.png": {
+    "width": 1024,
+    "height": 546
+  },
+  "/paper-assets/pub-gergrid-logo.png": {
+    "width": 1024,
+    "height": 1024
+  },
+  "/paper-assets/thrive-hero.jpg": {
+    "width": 1600,
+    "height": 900
+  },
+  "/paper-assets/thrive-altus-hero.jpg": {
+    "width": 1800,
+    "height": 919
+  },
+  "/paper-assets/thrive-vertical.jpg": {
+    "width": 1400,
+    "height": 933
+  },
+  "/paper-assets/thrive-boost-xe.jpg": {
+    "width": 1600,
+    "height": 954
+  },
+  "/paper-assets/thrive-strata-farm.jpg": {
+    "width": 1600,
+    "height": 900
+  },
+  "/paper-assets/csi-hero.jpg": {
+    "width": 1448,
+    "height": 1086
+  },
+  "/paper-assets/csi-workshop.jpg": {
+    "width": 974,
+    "height": 440
+  },
+  "/paper-assets/csi-mission.jpg": {
+    "width": 1024,
+    "height": 768
+  },
+  "/paper-assets/hur-fb-05.jpg": {
+    "width": 414,
+    "height": 414
+  },
+  "/paper-assets/hur-fb-02.jpg": {
+    "width": 414,
+    "height": 414
+  },
+  "/paper-assets/hur-fb-04.jpg": {
+    "width": 414,
+    "height": 414
+  },
+  "/paper-assets/hur-fb-06.jpg": {
+    "width": 414,
+    "height": 414
+  },
+  "/paper-assets/hur-fb-07.jpg": {
+    "width": 414,
+    "height": 414
+  },
+  "/paper-assets/hur-fb-08.jpg": {
+    "width": 414,
+    "height": 414
+  },
+  "/paper-assets/hur-fb-banner.png": {
+    "width": 2048,
+    "height": 899
+  },
+  "/paper-assets/hur-card.jpg": {
+    "width": 782,
+    "height": 440
+  },
+  "/paper-assets/hur-hero.png": {
+    "width": 2048,
+    "height": 899
+  },
+  "/paper-assets/balloon-summit-launch.jpg": {
+    "width": 1024,
+    "height": 768
+  },
+  "/paper-assets/starry-tours-milkyway.jpg": {
+    "width": 2400,
+    "height": 1560
+  },
+  "/paper-assets/starry-tours-sky.jpg": {
+    "width": 2400,
+    "height": 1526
+  },
+  "/paper-assets/starry-tours-cosmos.jpg": {
+    "width": 2400,
+    "height": 1600
+  },
+  "/paper-assets/kublai-visual.jpg": {
+    "width": 1500,
+    "height": 1114
+  },
+  "/paper-assets/kublai-planetarium.jpg": {
+    "width": 1800,
+    "height": 2817
+  },
+  "/paper-assets/kublai-telescope.jpg": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/paper-assets/kublai-stars.jpg": {
+    "width": 1800,
+    "height": 1710
+  },
+  "/paper-assets/nomos-bg-still.png": {
+    "width": 2944,
+    "height": 1648
   }
 }

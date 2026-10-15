@@ -426,8 +426,8 @@ a {
   width: min(420px, 100%);
   height: 420px;
   min-height: 360px;
-  background: var(--slot-warm);
-  border: 1px dashed var(--slot-border);
+  background: transparent;
+  border: 0;
   overflow: hidden;
 }
 
@@ -1114,8 +1114,6 @@ a {
 }
 
 .case-hero {
-  border-top: 1px solid var(--rule-soft);
-  border-bottom: 1px solid var(--rule-soft);
   background: transparent;
 }
 
@@ -1406,8 +1404,6 @@ a {
 
 .trex-hero {
   margin: 28px 0 0;
-  border-top: 1px solid var(--rule-soft);
-  border-bottom: 1px solid var(--rule-soft);
 }
 
 .trex-hero img {
@@ -2090,8 +2086,8 @@ a.calendar-block--event:hover {
   height: 44px;
   flex-shrink: 0;
   overflow: hidden;
-  background: var(--slot);
-  border: 1px solid var(--slot-border);
+  background: transparent;
+  border: 0;
   margin-top: 2px;
 }
 
@@ -2248,7 +2244,6 @@ a.calendar-block--event:hover {
 }
 
 .pub-plate-frame {
-  border: 1px solid var(--slot-border);
   background: transparent;
   overflow: hidden;
   line-height: 0;
@@ -2880,7 +2875,7 @@ a.calendar-block--event:hover {
 
   .pub-plate-frame img {
     max-height: 160px;
-    width: 100%;
+    width: auto;
   }
 
   .pub-feature-media {
@@ -4370,3 +4365,18 @@ a.calendar-block--event:hover {
   .library-detail-model .reading-volume-object, .book-inspector-model .reading-volume-object,
   .reading-back-light, .reading-back-seal-light, .reading-book-faces button { transition: none; }
 }
+
+/* Publication images sit alongside the reporting they illustrate. */
+.pub-plates { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; align-items: start; }
+.pub-plate-frame img { max-height: 280px; max-width: 100%; width: auto; }
+.pub-spread--with-media .pub-plate-frame img { max-height: 280px; }
+.pub-spread { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 24px; }
+@media (max-width: 760px) {
+  .pub-spread { grid-template-columns: 1fr; }
+  .pub-plate-frame img, .pub-spread--with-media .pub-plate-frame img { max-height: 240px; }
+}
+.pub-plate-frame { display: block; width: fit-content; max-width: 100%; cursor: zoom-in; }
+.pub-plate-frame:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.pub-plate--stage { grid-column: 1 / -1; }
+.pub-plate--stage .pub-plate-frame { width: 100%; }
+.pub-plate--stage .pub-plate-frame img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 73%; }

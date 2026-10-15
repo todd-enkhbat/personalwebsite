@@ -131,12 +131,12 @@ export const person = {
   shortName: "Todd",
   formalName: "Tsogt Enkhbat",
   location: "New York",
-  tagline: "Physics, space systems, and building things that last",
-  opener: "Hi, I'm Todd and",
+  tagline: "Physics, spacecraft engineering, and mission planning",
+  opener: "Hi, I’m Todd. I’m building",
   openerEmphasis: "Nomos",
-  openerTail: "takes all my attention, currently",
+  openerTail: "to plan satellite missions.",
   letter:
-    "I study Philosophy and Physics at Columbia University as a John Jay Scholar, aspiring to establish intelligence in space and expand our conscious timescale in the universe. I take inspiration from Brendan Mccord's idea of a Benjamin-Franklin-like figure who is a philosopher founder. During my entrepreneurial quests, I've accumulated $1M in profits across 4–5 businesses in Central Asia as a teen founder. Previously Harvard Smithsonian and ONDO Space (Seraphim-backed) and collaborating with Princeton Space Physics, NASA JPL, and Brown.",
+    "I study Physics at Columbia University as a John Jay Scholar, with interests in philosophy and AI. I founded Nomos Orbital to plan space-data missions and work on spacecraft CAD, thermal analysis, and downlink studies for T-REX. Previously, I worked on exoplanet modeling at Harvard & Smithsonian CfA and product strategy at ONDO Space. Before Columbia, I founded Trend Mart Group in Ulaanbaatar, a self-funded retail business with four locations and more than $1 million in lifetime revenue.",
   education:
     "Education: Columbia College, B.A. Physics; minors Philosophy & AI · John Jay Scholar · Funded research: Black Hole Explorer",
   emails: {
@@ -326,7 +326,7 @@ export const work: WorkItem[] = [
       "Lighthouse customer strategy: 2-3 credible installs → validators → local partners",
       "100+ calls, primary research, and expert interview for expansion diligence"
     ],
-    tags: ["GTM", "YC S15", "Leamington", "CEA"],
+    tags: ["GTM", "YC-backed", "Leamington", "CEA"],
     href: "/work/thrive",
     externalHref: "https://www.thriveagritech.com"
   },
@@ -753,45 +753,42 @@ export const organizationLinks: LinkItem[] = [
 
 export const nomos = {
   hero: {
-    label: "NOMOS / NEW YORK / EST. 2026",
-    headline: "Intelligence should not end where Earth ends.",
-    lede:
-      "Nomos develops systems for preserving, extending, and operating intelligence beyond a single planet."
+    label: "NOMOS ORBITAL / MISSION PLANNING",
+    headline: "Plan satellite, ground, and compute access in one workflow.",
+    lede: "I founded Nomos to compare space-data mission options using satellite catalogs, ground-station locations, and calculated orbital contact windows."
   },
   continuity: {
-    label: "01 / THE CONTINUITY PROBLEM",
-    headline: "Civilization has no backup.",
-    body:
-      "Knowledge is distributed across people and machines, but all of it remains exposed to the same planetary failure modes. Preservation requires distance, redundancy, and systems that can act without waiting for Earth."
+    label: "THE PLANNING PROBLEM",
+    headline: "A satellite pass is only one part of a mission.",
+    body: "An observation also needs a ground contact to receive its data and compute resources to process it. Nomos brings these choices into one plan so users can compare feasibility and inspect the information behind a recommendation."
   },
   cortex: {
-    label: "02 / ORBITAL CORTEX / SYSTEM MODEL",
-    headline: "A three-loop architecture for independent operation.",
-    body:
-      "The system is designed around what breaks first beyond Earth: situational awareness, institutional memory, and decisions made across communications delay.",
+    label: "PRODUCT WORKFLOW",
+    headline: "From a mission objective to ranked infrastructure options.",
+    body: "The planner combines orbital calculations with sourced infrastructure records. It separates calculated contact windows from provider capabilities that still need to be confirmed.",
     loops: [
-      ["Sense", "Fuse local sensors and orbital context into a usable model of what is changing now."],
-      ["Preserve", "Keep operational context intact across custodians, tools, and time."],
-      ["Decide", "Make bounded decisions and act when communication is delayed or unavailable."]
+      ["Define the mission", "Specify the observation or space-data objective and its constraints."],
+      ["Calculate access", "Use SGP4 and Skyfield to calculate orbital passes and contact windows."],
+      ["Compare plans", "Review satellite, ground, and compute options with their sources and unresolved constraints."]
     ]
   },
   requirements: [
-    ["Preserve context", "Keep source, provenance, and relationships intact, not just files."],
-    ["Operate under delay", "Make bounded decisions without assuming continuous human supervision."],
-    ["Distribute failure", "Move critical capability beyond one organization, network, or planet."]
+    ["Traceable sources", "Keep catalog entries, station locations, and capability sources attached to the plan."],
+    ["Calculated contact windows", "Use orbital propagation to estimate when a spacecraft can communicate with a ground station."],
+    ["Explicit integration status", "Distinguish a planning recommendation from a booked service or an executed mission."]
   ],
   research: [
-    ["R-01", "Memory under entropy", "How do ideas retain provenance and structure as tools, institutions, and custodians change?", "ACTIVE / FOUNDATION"],
-    ["R-02", "Human-machine continuity", "What information must persist for a future intelligence to understand, not merely inherit, human intent?", "ACTIVE / ANALYSIS"],
-    ["R-03", "Autonomy with limits", "How should an off-world system decide when communication is delayed, ambiguous, or unavailable?", "BUILD / CORTEX"],
-    ["R-04", "Civilizational redundancy", "Which capabilities must exist beyond Earth before distance becomes resilience rather than isolation?", "SCOPING / ORBITAL"],
-    ["R-05", "Meaning as infrastructure", "Can a shared narrative coordinate long projects without claiming permanence, authority, or final truth?", "OPEN / SYMPOSIUM"]
+    ["R-01", "Space infrastructure review", "A 30-page review of policy, technology, and capabilities completed at Columbia.", "FOUNDATIONAL RESEARCH"],
+    ["R-02", "Orbital access", "SGP4 and Skyfield calculations for satellite passes and ground contact windows.", "IMPLEMENTED IN MVP"],
+    ["R-03", "Provider capabilities", "Sourced infrastructure records and explicit gaps where provider integrations are incomplete.", "PRODUCT DEVELOPMENT"],
+    ["R-04", "Autonomy during communication delays", "Longer-term research into what a spacecraft can decide locally when Earth contact is unavailable.", "RESEARCH DIRECTION"],
+    ["R-05", "Preserving mission context", "Longer-term research into retaining data provenance and decision history across tools and operators.", "RESEARCH DIRECTION"]
   ],
   program: [
-    ["Orbital Cortex MVP", "Define the minimum sensing, memory, and decision loops. Status: architecture in development."],
-    ["Mission architecture and constraints", "Map what must be independent before distance can become resilience."],
-    ["Off-world continuity research", "Test the assumptions that bind memory, autonomy, and operational context."],
-    ["External review and test partners", "Build with critique, verification, and real constraints in view."]
+    ["Mission-planning MVP", "Next.js interface, FastAPI backend, and Python SDK."],
+    ["Network atlas", "PostGIS-backed infrastructure records with ground-station locations and orbital geometry."],
+    ["Contact-window calculations", "SGP4 and Skyfield support the orbital access calculations."],
+    ["Provider integrations", "Booking and execution require provider connections beyond the current planning workflow."]
   ]
 };
 
@@ -805,11 +802,11 @@ export const publications: PublicationPiece[] = [
     year: "2026",
     category: "YOUTUBE",
     meta: "May 2026 school tour and interview.\nNOVA X SPACE · Columbia University.",
-    summary: "A Mongolian-language campus walkthrough of Columbia, and what US admissions actually weighs.",
+    summary: "A Mongolian-language Columbia campus tour and interview about US university applications.",
     intro:
-      "NOVA X SPACE invited me onto campus for a tour built for a Mongolian audience: the quads most people photograph, the dining halls and late libraries that actually set the pace of a week, and the quieter corners official tours skip. The conversation then turns to how a US application gets built, essays, recommendations, and the signals schools at this level quietly care about.",
+      "NOVA X SPACE interviewed me at Columbia University for a Mongolian-language campus tour. We discuss student life, application essays, and recommendations.",
     body:
-      "The piece is less a glossy brochure than a working map. I walk through Columbia as it is lived day to day, then unpack the admissions path that got me there without pretending there is a single hack. Viewers get orientation for life on campus and a candid read on what matters when you are applying from abroad, useful whether you are a student, a parent, or someone still deciding if this kind of school is worth the climb.",
+      "I describe my own application experience and show campus spaces used in daily student life. The video is intended for Mongolian students and families considering US universities.",
     tags: ["YOUTUBE", "INTERVIEW"],
     image: "/paper-assets/pub-nova-columbia.png",
     href: "https://youtu.be/_CKEw4vLGpM",
@@ -826,11 +823,11 @@ export const publications: PublicationPiece[] = [
     year: "2026",
     category: "PRESS",
     meta: "March 2026 profile.\nUNREAD Today · national print and digital.",
-    summary: "National profile in Mongolia’s leading newsroom, Columbia Physics, T-REX, and Sgr A*.",
+    summary: "UNREAD’s profile of my Columbia physics studies and spacecraft engineering work on T-REX.",
     intro:
-      "UNREAD Today placed me in Journal, the profile slot reserved for people shaping Mongolia’s next chapter. The feature follows a day in New York as a Columbia Physics student and T-REX teammate working toward the first recording of the Milky Way’s black hole, Sagittarius A*.",
+      "UNREAD Today’s Journal profile follows my day in New York as a Columbia physics student and T-REX team member. It introduces the proposed radio-telescope mission to study Sagittarius A*, the black hole at the center of the Milky Way.",
     body:
-      "The piece sits at the intersection of national press and hard science: how a Mongolian student ends up on a collaboration that touches NASA, MIT, Princeton, and a generation of black-hole imaging work. It ran in newsprint across the country and online for a much wider audience, a rare look at frontier astrophysics told through a day, not a press release. For readers who only know the headlines, it is the grounded version of how that work actually feels.",
+      "The profile appeared in print and online. The printed edition circulated 10,000 copies nationwide; the feature connects my studies in New York with the spacecraft engineering work described in the portfolio.",
     tags: ["PRESS", "JOURNAL"],
     image: "/paper-assets/pub-unread-source.png",
     href: "https://unread.today/",
@@ -858,12 +855,12 @@ export const publications: PublicationPiece[] = [
     month: "JANUARY",
     year: "2026",
     category: "PODCAST",
-    meta: "Founding member · ongoing series.\nStartup and frontier intelligence network.",
-    summary: "Startup and frontier intelligence network, kitchen-table talks at the deeptech edge.",
+    meta: "Founding member · ongoing series.\nInterviews with founders and researchers.",
+    summary: "A podcast, newsletter, and video series interviewing founders, researchers, and technical operators.",
     intro:
-      "Deeptech Decoded is a founding project I help run: a startup and frontier intelligence network that turns long, honest conversations with builders into a usable reasoning layer. We sit with founders, researchers, and operators who are building what does not yet have a manual, quantum, orbital infrastructure, AGI, and product taste at the frontier.",
+      "I am a founding member of Deeptech Decoded, a podcast and publication covering quantum technology, orbital infrastructure, AI, and product development. We interview founders, researchers, and operators about their work.",
     body:
-      "The series lives as podcast, newsletter, and video on purpose. Short clips travel; the long form is where the actual judgment sits. Guests are not booked for hype cycles, they are people shipping hard technical work, and the point of the room is to cancel noise between what sounds exciting and what is actually true. If you want the surface-level version of deeptech, this is the wrong feed. If you want the kitchen-table version of how frontier teams think, it is built for that.",
+      "Episodes are published as long-form conversations, videos, and newsletter articles. They cover technical decisions, research, and the practical problems teams encounter while developing a product.",
     tags: ["PODCAST", "NEWSLETTER", "FOUNDING"],
     image: "/paper-assets/pub-deeptech-decoded.png",
     href: "https://deeptech-decoded.com/",
@@ -891,11 +888,11 @@ export const publications: PublicationPiece[] = [
     year: "2025",
     category: "PHILOSOPHY",
     meta: "October 2025 lecture dialogue.\nPolitical philosophy and the history of ideas.",
-    summary: "A dialogue on Machiavelli, stability, and the politics of expansion.",
+    summary: "A recorded discussion of Machiavelli, Spartan institutions, and Roman expansion.",
     intro:
-      "A lecture dialogue with Johnathan Bi on Machiavelli and the history of political thought, less a book report than a live argument about how states hold together. We move through Spartan institutional stasis, Roman perpetual growth, and Machiavelli’s willingness to use calculated disorder as a tool of rule.",
+      "In this lecture dialogue with Johnathan Bi, we discuss Machiavelli’s political thought through Spartan institutional stability and Roman expansion. The recording examines how conflict and growth affect a republic.",
     body:
-      "The conversation is about the trade-offs every political order eventually faces: conserve what works and risk stagnation, or expand and risk tearing the fabric that made expansion possible. Machiavelli sits in the middle of that tension, and the lecture treats him as a strategist of institutions rather than a cartoon of ruthlessness. It is philosophy for people who care about power as it is practiced, and about what kind of disorder a republic can survive.",
+      "The discussion compares political institutions that preserve existing arrangements with those that accommodate expansion. It considers Machiavelli’s argument about the role of conflict in maintaining a republic.",
     tags: ["PHILOSOPHY", "LECTURE"],
     image: "/paper-assets/pub-1.png",
     href: "https://www.youtube.com/watch?v=zXUvEN-LI_M&t=1837s",
@@ -911,11 +908,11 @@ export const publications: PublicationPiece[] = [
     year: "2025",
     category: "INTERVIEWS",
     meta: "August 2025 interview series.\nColumbia Entrepreneurship media.",
-    summary: "Columbia Entrepreneurship series filming builders in motion.",
+    summary: "A Columbia Entrepreneurship interview about my projects and plans in space technology.",
     intro:
-      "Coolppldoingcoolthings is Columbia Entrepreneurship’s interview series for builders who are mid-flight, not polished after the fact. Long conversations about projects, timelines, and the rhythm of space-tech work get cut into something a social audience will actually finish.",
+      "Columbia Entrepreneurship interviewed me for Coolppldoingcoolthings, its video series about people developing new projects. My segment discusses my work and plans in space technology.",
     body:
-      "The format is deliberate: enough length to hear how someone actually thinks, enough edit to survive Instagram. My segment sits inside that larger series, future plans, the work on the table, and the less glamorous cadence of shipping under uncertainty. It is less a highlight reel than a working portrait of how early builders talk when the camera is rolling and the next milestone is still unearned.",
+      "The interview was edited for Instagram and published as part of the series. It introduces the projects I was working on and the next steps I described during filming.",
     tags: ["INTERVIEWS", "ENTREPRENEURSHIP"],
     image: "/paper-assets/pub-2.png",
     href: "https://www.instagram.com/reel/DWfFiXGChkw",
@@ -932,11 +929,11 @@ export const publications: PublicationPiece[] = [
     year: "2025",
     category: "CNN",
     meta: "February 2025 · CNN World.\nMongolia’s first commercial space startup.",
-    summary: "CNN on Mongolia’s first commercial space startup, satellites for the steppe.",
+    summary: "CNN coverage of ONDO Space, Mongolia’s commercial satellite company.",
     intro:
-      "CNN’s World desk featured ONDO Space: Mongolia’s first commercial space startup, and the bet that CubeSats can bring real connectivity to herders across the steppe. The segment follows the company from cleanroom to orbit: Mongolia’s flag on signed flight hardware, partners on Transporter rideshares, and a system meant for livestock tracking where terrestrial networks simply end.",
+      "CNN covered ONDO Space and its commercial satellite work in Mongolia. The feature introduces the company’s CubeSats and the team behind them.",
     body:
-      "ONDO Space is building affordable satellite connectivity out of Ulaanbaatar with operations that already reach the US and Japan. The company put Mongolia’s first commercial satellites on a SpaceX Falcon 9 in March 2024 and is working toward a much larger constellation, the CNN piece is the public face of that arc. Around the headline sit the partnerships that make the hardware real: Exolaunch and Spire on the launch path, plus strategic MOUs with New Space Intelligence on integrated space data and connectivity, and with ispace on future lunar collaboration from Mongolia. The materials below are for anyone who wants the press cut, the partner announcements, or the launch footage beyond the CNN frame.",
+      "The photographs show ONDO’s satellite hardware and cleanroom integration. My work at ONDO involved product strategy, telecom planning, and investor materials; the company’s satellites provide context for that placement.",
     tags: ["CNN", "SPACE", "MONGOLIA"],
     image: "/paper-assets/pub-ondo-flag.jpg",
     href: "https://edition.cnn.com/2025/02/03/world/video/mongolia-ondo-space-satellite-spc-hnk",
@@ -981,29 +978,26 @@ export const publications: PublicationPiece[] = [
     year: "2024",
     category: "LECTURE",
     meta: "June 2024 public lecture.\nGovernment of Mongolia collaboration.",
-    summary: "Public science lecture on Mars ambition: 1,000+ in the room, national TV after.",
+    summary: "A public Mars-research lecture for more than 1,000 attendees, followed by national television coverage.",
     intro:
-      "MARS V SPOT was a public scientific lecture tying research work to humanity’s longer bet on Mars. Delivered with the Government of Mongolia to an official audience of more than a thousand people, then carried further by Mongolian National Television.",
+      "At MARS V SPOT, I presented Mars analog research to more than 1,000 attendees in collaboration with the Government of Mongolia. Mongolian National Television subsequently carried the lecture.",
     body:
-      "The talk was built for a room that was not already inside the aerospace bubble: why analog programs matter, what a national audience should take from Mars as more than a slogan, and how scientific work on Earth connects to that horizon. Speaking to a thousand people under government partnership, then watching the same material travel on national broadcast, is a different kind of publication than a paper, it is science as public argument.",
+      "The lecture explains why Earth-based analog programs are used to prepare for Mars missions and introduces the MARS-V effort. It was aimed at a general audience rather than aerospace specialists.",
     tags: ["LECTURE", "MARS"],
-    image: "/paper-assets/pub-4.png",
+    image: "/paper-assets/mars-v/spot-poster.jpg",
     href: "https://www.mars-v.com",
-    videoEmbed: "https://www.youtube.com/embed/4SY2ag4kLbM",
     linkLabel: "VISIT MARS-V ↗",
     reach: "1,000+ ATTENDEES",
     relatedLinks: [
       {
-        label: "MARSA × Mars Society convention talk",
+        label: "MARSA × Mars Society convention talk (2020)",
         href: "https://www.youtube.com/watch?v=4SY2ag4kLbM"
       }
     ],
     figures: [
-      {
-        image: "/paper-assets/marsv-hero.png",
-        kicker: "Figure · Program",
-        caption: "MARS-V visual language for the public lecture."
-      }
+      { image: "/paper-assets/mars-v/spot-stage.jpg", kicker: "Event stage", caption: "Illuminated MARS-V lettering on the event stage." },
+      { image: "/paper-assets/mars-v/spot-poster.jpg", kicker: "MARS-V SPOT 2024", caption: "Event poster for MARS-V SPOT 2024." },
+      { image: "/paper-assets/mars-v/science-fiction-program.jpg", kicker: "Public program", caption: "Science-fiction screening and discussion program posters." }
     ],
     featureLayout: "inset"
   },
@@ -1016,27 +1010,18 @@ export const publications: PublicationPiece[] = [
     year: "2024",
     category: "DOCUMENTARY",
     meta: "April 2024 documentary.\nNational broadcast on 13 TV outlets.",
-    summary: "Documentary on the MARS-V analog program, aired on thirteen national outlets.",
+    summary: "A documentary about the MARS-V analog program, broadcast on thirteen national television outlets.",
     intro:
-      "Mars is not far II follows the MARS-V analog program and the people trying to turn Mars from a headline into something you can train for. The film treats the desert as a rehearsal space, logistics, stress, and the human texture of a frontier that is still mostly imagination.",
+      "Mars is not far II documents the MARS-V analog program in Mongolia. It follows the people, field setting, and preparation involved in the program.",
     body:
-      "Rather than a tech demo, the documentary stays with the crew and the country around them: why Mongolia hosts this kind of work, what an analog mission asks of people, and how a national audience meets space when it arrives as television instead of a TED talk. It aired across thirteen outlets, a wide net for a story that is usually locked inside specialist circles.",
+      "The documentary was broadcast on thirteen national television outlets. It introduces the purpose of analog missions and Mongolia’s role in the MARS-V program to a general audience.",
     tags: ["DOCUMENTARY", "MONGOLIA"],
-    image: "/paper-assets/pub-3.png",
-    href: "https://www.youtube.com/watch?v=4SY2ag4kLbM",
-    videoEmbed: "https://www.youtube.com/embed/4SY2ag4kLbM",
-    linkLabel: "WATCH PROGRAM FOOTAGE ↗",
+    image: "/paper-assets/mars-v/documentary-poster.jpg",
+    href: "/paper-assets/mars-v/documentary-poster.jpg",
+    linkLabel: "VIEW BROADCAST POSTER ↗",
     figures: [
-      {
-        image: "/paper-assets/pub-marsv-source.png",
-        kicker: "Figure · Broadcast",
-        caption: "National documentary coverage of the MARS-V analog program."
-      },
-      {
-        image: "/paper-assets/marsv-hero.png",
-        kicker: "Figure · Analog horizon",
-        caption: "Program still from the MARS-V documentary world."
-      }
+      { image: "/paper-assets/mars-v/documentary-lighting.jpg", kicker: "Behind the scenes", caption: "Lighting setup in the MARS-V interview room, with the project flag and helmet." },
+      { image: "/paper-assets/mars-v/documentary-poster.jpg", kicker: "Broadcast poster", caption: "Mars is not far II promotional poster, with broadcaster and partner credits." }
     ],
     featureLayout: "inset"
   }
@@ -1499,15 +1484,15 @@ export const trainings = [
   {
     id: "philosophy",
     title: "Philosophical Training",
-    subtitle: "Philosophy Foundation + Interest",
-    body: "Western classical thought at Columbia's Philosophy department, following the example of David Albert and the philosophical foundations of physics. Outside the syllabus, I study Buddhist philosophy with Tibetan teachers in the Nalanda lineage. Borges is the writer I keep returning to, and the work keeps circling the same three things: time, the universe, and thermodynamics.",
+    subtitle: "Classical philosophy, Buddhism, and the philosophy of physics",
+    body: "I study classical philosophy at Columbia, with a particular interest in David Albert’s work on time and statistical mechanics. Outside the syllabus, I study Buddhist philosophy with Tibetan teachers in the Nalanda lineage and read Jorge Luis Borges.",
     image: "/paper-assets/train-armillary.png"
   },
   {
     id: "physics",
     title: "Physics Training",
-    subtitle: "Physics Foundation + Interest",
-    body: "Professor Brian Greene put an eye of Horus in my hand in my first year, and Origins and Meaning did the rest: Russell, Tolstoy, and Ernest Becker read alongside cosmology. Since then, research in astrophysics, spacesuits, mission design, and black holes, collected in the portfolio. What I want now is to build the instruments these questions require.",
+    subtitle: "Columbia physics and spacecraft engineering",
+    body: "I study physics at Columbia. Brian Greene’s Origins and Meaning course connected cosmology with readings by Russell, Tolstoy, and Ernest Becker. My project work includes exoplanet modeling, EVA suit research, Mars habitat systems, and spacecraft studies for T-REX.",
     image: "/paper-assets/train-column.png"
   }
 ];
