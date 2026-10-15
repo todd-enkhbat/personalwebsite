@@ -318,3 +318,69 @@
   .ph-coda-margin { margin-bottom: 12px; }
   .ph-notebook { grid-template-columns: 1fr; gap: 20px; }
 }
+
+/* Flowing optical material, softly integrated into the printed introduction. */
+.ph-intro { position: relative; display: block; isolation: isolate; min-height: 430px; padding: 54px 0 70px; }
+.ph-intro-copy { position: relative; z-index: 2; width: 59%; max-width: 720px; }
+.ph-intro h1 { font-size: clamp(34px, 3.7vw, 52px); }
+.ph-intro-copy > p:not(.kicker) { max-width: 500px; }
+.ph-intro-art { position: absolute; z-index: 1; inset: 0 calc(-1 * var(--pad-x)) 0 37%; min-width: 0; }
+.ph-material { position: absolute; inset: 0; }
+.ph-material-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 500ms ease; }
+.ph-material[data-ready] .ph-material-canvas { opacity: 1; }
+.ph-material-fallback { position: absolute; inset: 0; background: url('/physics/burgundy-material.jpg') center / cover; mask-image: linear-gradient(90deg, transparent, #000 33%), linear-gradient(0deg, transparent, #000 27%, #000 68%, transparent); mask-composite: intersect; }
+.ph-material[data-ready] .ph-material-fallback { opacity: 0; }
+.ph-material-motion { position: absolute; left: 40%; bottom: 12px; display: inline-flex; align-items: center; gap: 7px; min-height: 32px; padding: 4px 5px; border: 0; background: transparent; color: var(--ph-soft); font: 9px/1.4 var(--font-plex-mono, ui-monospace), monospace !important; letter-spacing: .025em; }
+.ph-material-motion:hover { color: var(--accent); }
+.ph-material-motion span { font-size: 13px; }
+.ph-intro-art .ph-book { position: absolute; z-index: 1; right: 12%; top: 130px; display: block; width: 118px; margin: 0; pointer-events: none; }
+.ph-intro-art .ph-book img { width: 104px; height: 147px; transform: rotate(6deg); box-shadow: 8px 16px 20px #0b142433, 1px 2px 2px #0003; }
+.ph-intro-art .ph-book figcaption { display: block; width: 155px; margin: 22px 0 0 -25px; text-align: center; font-size: 13px; }
+.ph-intro-art .ph-book cite { font-size: 16px; }
+.ph-intro-art .ph-book figcaption span { margin-top: 3px; font-size: 11px; }
+.ph-tabs { border-top: 1px solid var(--ph-rule); }
+.ph-tabs button { transition: color 180ms ease, border-color 180ms ease; }
+@media (min-width: 768px) and (max-width: 1050px) {
+  .ph-intro { min-height: 390px; padding-top: 42px; }
+  .ph-intro h1 { font-size: 39px; }
+  .ph-intro-copy { width: 61%; }
+  .ph-intro-art { left: 38%; }
+  .ph-intro-art .ph-book { top: 120px; right: 12%; width: 95px; }
+  .ph-intro-art .ph-book img { width: 86px; height: 121px; }
+  .ph-intro-art .ph-book figcaption { width: 130px; margin-left: -22px; }
+}
+@media (max-width: 767px) {
+  .ph-intro { min-height: 0; padding: 20px 0 12px; }
+  .ph-intro h1 { font-size: clamp(34px, 6.2vw, 44px); }
+  .ph-intro-copy { width: 100%; max-width: 590px; }
+  .ph-intro-art { position: relative; inset: auto; height: 300px; width: calc(100% + 2 * var(--pad-x)); margin: -6px calc(-1 * var(--pad-x)) 0; }
+  .ph-intro-art .ph-book { display: block; top: 88px; right: 16%; width: 100px; }
+  .ph-intro-art .ph-book img { width: 92px; height: 130px; }
+  .ph-intro-art .ph-book figcaption { width: 140px; margin: 18px 0 0 -24px; font-size: 12px; }
+  .ph-intro-art .ph-book cite { font-size: 15px; }
+  .ph-intro-art .ph-book figcaption span { font-size: 10px; }
+  .ph-material-motion { bottom: 6px; left: 17%; }
+}
+@media (max-width: 420px) {
+  .ph-intro-art { height: 270px; }
+  .ph-intro-art .ph-book { top: 76px; right: 14%; width: 90px; }
+  .ph-intro-art .ph-book img { width: 80px; height: 113px; }
+  .ph-intro-art .ph-book figcaption { width: 130px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ph-material-canvas { transition: none; }
+}
+
+/* Satin burgundy controls echo the material without sacrificing the label. */
+.ph-page .ph-button-primary { position: relative; isolation: isolate; overflow: hidden; justify-content: space-between; gap: 25px; min-width: 182px; min-height: 45px; padding: 0 0 0 18px; border: 1px solid #5b1b30; border-radius: 2px; background: #4e1428; color: #fff4ed; box-shadow: inset 0 1px #fff3, inset 0 -1px #18040d77, 0 2px 3px #39101d12; transition: border-color 180ms ease, box-shadow 180ms ease; }
+.ph-button-primary::before { content: ""; position: absolute; z-index: -2; inset: 0; background: linear-gradient(90deg, #391020e8 0%, #491329ac 55%, #561a3380), url('/physics/burgundy-material.jpg') 75% 53% / 220% auto; opacity: .95; }
+.ph-button-primary::after { content: ""; position: absolute; z-index: -1; inset: 0; background: radial-gradient(ellipse 90px 65px at var(--ph-button-x, 50%) var(--ph-button-y, 50%), #f2c9c52c, transparent); opacity: 0; transition: opacity 200ms ease; pointer-events: none; }
+.ph-button-primary .ph-button-label { position: relative; font-size: 15px; letter-spacing: .005em; }
+.ph-button-primary .ph-button-symbol { position: relative; display: grid; align-self: stretch; place-items: center; flex: 0 0 43px; border-left: 1px solid #f0bfce36; background: #1e07152b; font-size: 19px; }
+.ph-button-primary .ph-button-glyphs { position: absolute; z-index: -1; right: 37px; top: 4px; font: 8px/11px var(--font-plex-mono, monospace); color: #ecc9d0; opacity: .18; letter-spacing: 2px; white-space: nowrap; mask-image: linear-gradient(90deg, transparent, #000); pointer-events: none; }
+.ph-page .ph-button-primary:hover:not(:disabled) { background: #4e1428; color: #fff4ed; border-color: #ac6c80; box-shadow: inset 0 1px #ffe3d455, inset 0 -1px #18040d77, 0 3px 8px #39101d1c; }
+.ph-button-primary:hover::after, .ph-button-primary:focus-visible::after { opacity: 1; }
+.ph-button-primary[data-running] .ph-button-symbol { background: #bf778328; }
+.ph-page .ph-button-primary:disabled { opacity: .65; }
+.ph-transport > .ph-button:not(.ph-button-primary) { min-height: 45px; border-color: #b79a9c; background: #f9f3ef4d; color: #652439; border-radius: 2px; }
+@media (prefers-reduced-motion: reduce) { .ph-button-primary::after { display: none; } }

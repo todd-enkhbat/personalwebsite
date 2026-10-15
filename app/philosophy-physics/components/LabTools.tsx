@@ -71,7 +71,11 @@ export function ModelNote({ children }: { children: ReactNode }) {
 
 export function Transport({ running, finished = false, onToggle, onReset, onStep, children }: { running: boolean; finished?: boolean; onToggle: () => void; onReset: () => void; onStep?: () => void; children?: ReactNode }) {
   return <div className="ph-transport">
-    <button type="button" className="ph-button ph-button-primary" disabled={finished} onClick={onToggle}>{finished ? "At equilibrium" : running ? "Pause" : "Run experiment"}<span aria-hidden="true">{finished ? "✓" : running ? "Ⅱ" : "▷"}</span></button>
+    <button type="button" className="ph-button ph-button-primary" data-running={running || undefined} disabled={finished} onClick={onToggle}
+      onPointerMove={(event) => { const rect = event.currentTarget.getBoundingClientRect(); event.currentTarget.style.setProperty("--ph-button-x", `${(event.clientX-rect.left)/rect.width*100}%`); event.currentTarget.style.setProperty("--ph-button-y", `${(event.clientY-rect.top)/rect.height*100}%`); }}
+      onPointerLeave={(event) => { event.currentTarget.style.removeProperty("--ph-button-x"); event.currentTarget.style.removeProperty("--ph-button-y"); }}>
+      <span className="ph-button-label">{finished ? "At equilibrium" : running ? "Pause" : "Run experiment"}</span><span className="ph-button-glyphs" aria-hidden="true">0 / : 1 / :<br />/ 1 : 0 / 1<br />: / 0 : 1 /</span><span className="ph-button-symbol" aria-hidden="true">{finished ? "✓" : running ? "Ⅱ" : "▷"}</span>
+    </button>
     {onStep ? <button type="button" className="ph-button" onClick={onStep} disabled={running}>Step +1</button> : null}
     <button type="button" className="ph-text-button" onClick={onReset}>Reset ↺</button>
     {children}
