@@ -131,12 +131,12 @@ export const person = {
   shortName: "Todd",
   formalName: "Tsogt Enkhbat",
   location: "New York",
-  tagline: "Physics, spacecraft engineering, and mission planning",
-  opener: "Hi, I’m Todd. I’m building",
+  tagline: "Physics, spacecraft engineering, and space infrastructure",
+  opener: "Hi, I’m Todd. I founded",
   openerEmphasis: "Nomos",
-  openerTail: "to plan satellite missions.",
+  openerTail: "— a space infrastructure company.",
   letter:
-    "I study Physics at Columbia University as a John Jay Scholar, with interests in philosophy and AI. I founded Nomos Orbital to plan space-data missions and work on spacecraft CAD, thermal analysis, and downlink studies for T-REX. Previously, I worked on exoplanet modeling at Harvard & Smithsonian CfA and product strategy at ONDO Space. Before Columbia, I founded Trend Mart Group in Ulaanbaatar, a self-funded retail business with four locations and more than $1 million in lifetime revenue.",
+    "I study Physics at Columbia University as a John Jay Scholar, with interests in philosophy and AI. I founded Nomos Orbital, a space infrastructure company, and work on spacecraft CAD, thermal analysis, and downlink studies for T-REX. Previously, I worked on exoplanet modeling at Harvard & Smithsonian CfA and product strategy at ONDO Space. Before Columbia, I founded Trend Mart Group in Ulaanbaatar, a self-funded retail business with four locations and more than $1 million in lifetime revenue.",
   education:
     "Education: Columbia College, B.A. Physics; minors Philosophy & AI · John Jay Scholar · Funded research: Black Hole Explorer",
   emails: {
@@ -203,9 +203,9 @@ export const work: WorkItem[] = [
     place: "New York, NY",
     dates: "June 2026-Present",
     featured: true,
-    blurb: "Solo founder: source-backed mission planning across satellite, ground & cloud",
+    blurb: "Founder of a space infrastructure company connecting satellite, ground & cloud",
     summary:
-      "Building Nomos Orbital: a source-backed mission planner that turns space-data objectives into infrastructure plans across satellite, ground, and cloud, with labeled gaps instead of false execution claims. Solo founder across research, product, and engineering.",
+      "Founded Nomos Orbital, a space infrastructure company connecting satellite, ground, and cloud capabilities. The current software compares infrastructure options and calculated orbital contact windows. Solo founder across research, product, and engineering.",
     achievements: [
       "Shipped full-stack MVP: FastAPI, Next.js, Python SDK, PostGIS; real SGP4/Skyfield contact windows",
       "Columbia 30-page policy, research, and technology review set the capability boundary before product claims",
@@ -532,7 +532,7 @@ export const portfolioRows: PortfolioRow[] = [
         role: "Founder · Mission Planning",
         label: "Nomos",
         description:
-          "Solo founder, source-backed mission planner across satellite, ground & cloud. $25k grant. FastAPI · Next.js · SGP4.",
+          "Founder of Nomos Orbital, a space infrastructure company spanning satellite, ground & cloud. $25k grant. FastAPI · Next.js · SGP4.",
         image: "/paper-assets/nomos-card-hero.png",
         href: "/nomos"
       },

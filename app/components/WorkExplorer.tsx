@@ -31,7 +31,7 @@ export function WorkExplorer() {
       <div><p className="portfolio-kicker">Tsogt (Todd) Enkhbat</p><h1>Selected <em>work.</em></h1></div>
       <div className="collection-biography">
         <p>I won an international piano Grand Prix at <strong>7</strong>, started my first business at <strong>12</strong>, and reached <strong>$1 million in revenue by 17</strong>. After <strong>five years in the space industry</strong>, my focus is now <a href="/nomos" target="_blank" rel="noopener noreferrer">Nomos ↗</a>.</p>
-        <p className="collection-nomos-note"><span lang="el">νόμος</span> <em>(nómos)</em> is Greek for “law” or “custom.” The name reflects what I’m building: a framework for bringing order to space mission planning.</p>
+        <p className="collection-nomos-note"><span lang="el">νόμος</span> <em>(nómos)</em> is Greek for “law” or “custom.” The name reflects Nomos: a space infrastructure company connecting satellite, ground, and cloud systems.</p>
       </div>
     </header>
     <div className="collection-navigation">

@@ -247,3 +247,74 @@
 @media (prefers-reduced-motion: reduce) {
   .ph-page *, .ph-page *::before, .ph-page *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Compact laboratory: select an experiment above the full-width apparatus. */
+.ph-intro { gap: 32px; padding: 12px 0 24px; }
+.ph-intro-copy { max-width: 720px; }
+.ph-intro .kicker { margin-bottom: 12px; }
+.ph-intro h1 { font-size: clamp(34px, 3.7vw, 52px); }
+.ph-intro-copy > p:not(.kicker) { max-width: 670px; margin-top: 14px; font-size: 17px; }
+.ph-intro-link { margin-top: 10px; padding-bottom: 3px; gap: 24px; font-size: 15px; }
+.ph-book { gap: 16px; margin: 0; }
+.ph-book img { width: 86px; height: 121px; }
+.ph-book figcaption { width: 115px; font-size: 13px; }
+.ph-book cite { font-size: 18px; }
+.ph-laboratory { display: block; border-top: 0; }
+.ph-lab-rail { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 16px; padding: 0; border: 0; }
+.ph-lab-rail-title { display: none; }
+.ph-tabs { flex-direction: row; gap: 20px; border-bottom: 0; }
+.ph-tabs button { width: auto; flex: 1; padding: 10px 0; gap: 9px; border-bottom: 2px solid transparent; }
+.ph-tabs strong { font-size: 19px; }
+.ph-tabs small { font-size: 11px; }
+.ph-tabs button[aria-selected="true"] { border-bottom-color: var(--accent); }
+.ph-tabs button[aria-selected="true"]::after { display: none; }
+.ph-tab-arrow { display: none; }
+.ph-rail-link { margin: 0; font-size: 13px; }
+.ph-lab-panels { padding: 18px 0 0; }
+.ph-experiment-intro h2 { font-size: 29px; }
+.ph-experiment-intro > p { margin: 6px 0 12px; max-width: none; font-size: 16px; }
+.ph-transport { padding-bottom: 12px; }
+.ph-apparatus-layout { border: 0; grid-template-columns: minmax(0, 1fr) 200px; }
+.ph-controls { border: 0; padding: 14px 16px; display: block; }
+.ph-controls .ph-control { margin-bottom: 14px; }
+.ph-controls > select { margin-bottom: 14px; }
+.ph-gas-canvas { aspect-ratio: 3.4 / 1; margin-top: 10px; }
+.ph-trace { margin-top: 14px; padding-top: 8px; border: 0; }
+.ph-trace svg { max-height: 130px; }
+.ph-metrics { padding: 12px 0; border: 0; }
+.ph-metric strong { font-size: 28px; margin-top: 2px; }
+.ph-observation { padding: 12px 16px; margin-bottom: 12px; }
+.ph-coda { grid-template-columns: 160px minmax(0, 1fr); padding: 28px 0; border-top: 0; }
+.ph-coda-copy { max-width: none; padding-left: 24px; }
+.ph-coda h2 { margin-bottom: 14px; font-size: 38px; }
+.ph-coda .ph-lead { font-size: 21px; margin-bottom: 14px; }
+.ph-coda-copy > p { font-size: 17px; }
+.ph-cosmic-sequence { margin: 18px 0; padding: 12px 0; border: 0; }
+.ph-past-hypothesis { margin-top: 14px; }
+.ph-notebook { padding: 24px 0; gap: 36px; border: 0; }
+.ph-notebook h2 { font-size: 27px; margin-bottom: 10px; }
+.ph-notebook > div > p { font-size: 16px; }
+.ph-recorded-notes { margin-top: 16px; }
+.ph-writing textarea { min-height: 130px; padding: 12px 16px; font-size: 16px; line-height: 1.5; }
+.ph-bibliography { padding-top: 16px; }
+@media(max-width: 767px) {
+  .ph-intro { gap: 16px; padding-bottom: 20px; }
+  .ph-intro h1 { font-size: clamp(31px, 6.2vw, 44px); }
+  .ph-intro-copy > p:not(.kicker) { font-size: 16px; }
+  .ph-book { margin-top: 30px; }
+  .ph-book img { width: 65px; height: 92px; }
+  .ph-lab-rail { display: block; }
+  .ph-rail-link { display: none; }
+  .ph-tabs { gap: 12px; }
+  .ph-tabs button { width: 33.333%; }
+  .ph-tabs strong { font-size: 16px; white-space: normal; }
+  .ph-tabs small { display: none; }
+  .ph-apparatus-layout { grid-template-columns: 1fr; }
+  .ph-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; }
+  .ph-controls .ph-control { margin-bottom: 0; }
+  .ph-gas-canvas { aspect-ratio: 2 / 1; }
+  .ph-coda { display: block; padding: 22px 0; }
+  .ph-coda-copy { padding: 0; }
+  .ph-coda-margin { margin-bottom: 12px; }
+  .ph-notebook { grid-template-columns: 1fr; gap: 20px; }
+}

@@ -14,7 +14,7 @@ export default function PhilosophyPhysicsPage() {
   return <LetterShell headerStamp="philosophy / physics">
     <main className="ph-page">
       <header className="ph-intro">
-        <div className="ph-intro-copy"><p className="kicker">Philosophy / Physics</p><h1>How does entropy limit<br />the work we can <em>extract?</em></h1><p>Change gas particle positions, exchange heat between two bodies, and compare how much useful work remains. Three interactive models based on David Z. Albert’s Time and Chance.</p><a className="ph-intro-link" href="#laboratory">Enter the laboratory <span aria-hidden="true">↘</span></a></div>
+        <div className="ph-intro-copy"><p className="kicker">Philosophy / Physics</p><h1>How does entropy limit<br />the work we can <em>extract?</em></h1><p>Three interactive models of gas expansion, heat exchange, and useful work, based on David Z. Albert’s Time and Chance.</p><a className="ph-intro-link" href="#laboratory">Enter the laboratory <span aria-hidden="true">↘</span></a></div>
         <figure className="ph-book"><Image src="/paper-assets/books/time-and-chance-featured.jpg" alt="Time and Chance by David Z. Albert" width={158} height={222} priority unoptimized /><figcaption>Based on<br /><cite>Time and Chance</cite><span>David Z. Albert · 2000</span></figcaption></figure>
       </header>
       <EntropyLab />

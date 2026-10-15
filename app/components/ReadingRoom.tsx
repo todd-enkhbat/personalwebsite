@@ -508,7 +508,7 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
           <div className="reading-archive-heading">
             <div>
               <p className="kicker">The rest of the shelf</p>
-              <h2 id="reading-archive-title">Other books I’m reading.</h2>
+              <h2 id="reading-archive-title">Feeding the mind</h2>
             </div>
             <div className="reading-archive-controls">
               <span>{archive.length} books</span>
@@ -560,10 +560,9 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
         </AnimatePresence>
       </section>
 
-      <section className="reading-catalog" aria-labelledby="reading-catalog-title">
+      <section className="reading-catalog" aria-label="Reading list by subject">
         <header className="reading-catalog-header">
           <p className="kicker">The reading list · {archive.length} books</p>
-          <h2 id="reading-catalog-title">Reading by subject.</h2>
         </header>
         <div className="reading-catalog-layout">
           <nav className="reading-catalog-index" role="tablist" aria-orientation="vertical"

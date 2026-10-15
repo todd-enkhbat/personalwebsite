@@ -61,7 +61,6 @@ export function EntropyLab() {
         <div className="ph-tabs" role="tablist" aria-label="Choose an experiment">
           {experiments.map((experiment, index) => <button key={experiment.number} type="button" role="tab" id={`experiment-tab-${index}`} aria-controls={`experiment-panel-${index}`} aria-selected={selected === index} tabIndex={selected === index ? 0 : -1} onKeyDown={(e) => moveTab(e, index)} onClick={() => setSelected(index)}><span className="ph-tab-number">{experiment.number}</span><span><strong>{experiment.title}</strong><small>{experiment.theme}</small></span><span className="ph-tab-arrow" aria-hidden="true">↗</span></button>)}
         </div>
-        <p className="ph-rail-note">Change a beginning.<br />Run the experiment.<br />Follow what remains.</p>
         <a className="ph-rail-link" href="#the-larger-question">And then, the universe ↘</a>
       </div>
       <div className="ph-lab-panels">

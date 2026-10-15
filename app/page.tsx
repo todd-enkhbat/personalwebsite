@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HomeIntro } from "./components/HomeIntro";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LetterShell } from "./components/LetterShell";
@@ -36,7 +37,7 @@ function linkifyText(text: string, links: LinkItem[]): ReactNode[] {
 
 export default function MainPage() {
   return (
-    <LetterShell>
+    <HomeIntro><LetterShell>
       <div className="main-split">
         <div className="main-copy">
           <p className="kicker">Main</p>
@@ -105,6 +106,6 @@ export default function MainPage() {
           ))}
         </div>
       </section>
-    </LetterShell>
+    </LetterShell></HomeIntro>
   );
 }
