@@ -1,10 +1,13 @@
 import { LetterShell } from "../components/LetterShell";
 import { ContactEmblem } from "../components/ContactEmblem";
+import { ContactStarfield } from "../components/ContactStarfield";
 import { contactMap } from "../data/content";
 
 export default function ContactPage() {
   return (
-    <LetterShell>
+    <div className="contact-page">
+      <ContactStarfield />
+      <LetterShell>
       <div className="contact-map" aria-label="Contact channels">
         <ContactEmblem />
 
@@ -63,6 +66,7 @@ export default function ContactPage() {
           ))}
         </div>
       </div>
-    </LetterShell>
+      </LetterShell>
+    </div>
   );
 }

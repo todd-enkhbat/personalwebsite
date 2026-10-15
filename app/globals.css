@@ -2958,6 +2958,7 @@ a.calendar-block--event:hover {
 
   .contact-map {
     height: auto;
+    aspect-ratio: auto;
     min-height: 0;
     max-width: none;
   }
@@ -3380,9 +3381,11 @@ a.calendar-block--event:hover {
   overflow: hidden;
   color: #f5eee3;
   background:
-    radial-gradient(ellipse at 45% 0%, #46635870, transparent 65%),
-    linear-gradient(135deg, #203c35, #112b26 80%);
-  box-shadow: 0 24px 50px rgba(37, 26, 21, 0.14);
+    radial-gradient(ellipse at 42% 0%, #c2cbb02b, transparent 65%),
+    radial-gradient(ellipse at 50% 38%, transparent 25%, #030d0970 100%),
+    url("/paper-assets/reading-green-fabric.webp") center / 720px 720px repeat;
+  background-color: #14251e;
+  box-shadow: 0 24px 50px rgba(37, 26, 21, 0.14), inset 0 1px #edf0cf26, inset 0 -18px 38px #04110d38;
 }
 
 .reading-feature::before {
@@ -3390,10 +3393,8 @@ a.calendar-block--event:hover {
   inset: 0;
   content: "";
   pointer-events: none;
-  opacity: 0.055;
-  background-image: url("/paper-assets/paper-grain.jpg");
-  background-size: 460px auto;
-  mix-blend-mode: screen;
+  background: linear-gradient(105deg, #edf0cf0d, transparent 30%, #0000001a);
+  box-shadow: inset 12px 0 28px #020c0826, inset -12px 0 28px #020c0826;
 }
 
 .reading-feature-heading,
@@ -4410,3 +4411,33 @@ a.calendar-block--event:hover {
 button:not(:disabled):active, summary:active, [role="button"]:active { filter: brightness(.85); box-shadow: inset 0 -3px 0 #8b2942; }
 a[href]:active { color: #641a30; text-shadow: 0 0 10px #8b294260; }
 @media(prefers-reduced-motion: reduce) { :where(a[href], button, summary, [role="button"]) { transition: none !important; } }
+
+/* Contact is the sole inverse treatment in the shared paper-letter pages. */
+.contact-page { position: relative; isolation: isolate; min-height: 100dvh; }
+.contact-starfield { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; opacity: .9; background: radial-gradient(ellipse at 50% 55%, #c8d5df07, transparent 65%); }
+.contact-page > .letter-page { z-index: 1; }
+body:has(.contact-page) {
+  --paper: #141414;
+  --ink: #f5f5f1;
+  --ink-body: #deded9;
+  --ink-soft: #bfbfb8;
+  --ink-faint: #a1a19a;
+  --accent: #ffffff;
+  --rule: #41413e;
+  --rule-soft: #333330;
+  color-scheme: dark;
+  background-color: #151515;
+  background-blend-mode: multiply;
+}
+.contact-page ::selection { color: #111; background: #f5f5f1; }
+.contact-page .site-icon,
+.contact-page .contact-map__emblem-ring img { filter: invert(1); }
+.contact-page .contact-map__lines { color: #d9d9d280; }
+.contact-page .site-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+.contact-page a:hover { color: #fff; text-shadow: 0 0 16px #ffffff40; }
+.contact-page a:active { color: #fff; text-shadow: 0 0 10px #ffffff60; }
+body:has(.contact-page) .ambient-score-toggle,
+body:has(.contact-page) .ambient-score-details { background: #191919e8; }
+body:has(.contact-page) .ambient-score-toggle:hover,
+body:has(.contact-page) .ambient-score-toggle:focus-visible,
+body:has(.contact-page) .ambient-score-details:hover { background: #292929f0; }
