@@ -179,10 +179,10 @@ export const projectStories: Record<string, ProjectStory> = {
   },
   "balloon-summit": {
     id: "balloon-summit", title: "International Space Balloon Summit", shortTitle: "Space Balloon Summit", year: "2024", category: "Space", role: "Organizer",
-    status: "Ulaanbaatar · March 21–22, 2024", skills: ["Event operations", "Institutional coordination", "Science outreach"],
-    lead: "A public balloon launch and scientific conference connecting space researchers, universities, and government in Ulaanbaatar, March 21–22, 2024.",
+    status: "Ulaanbaatar · March 22–23, 2024", skills: ["Event operations", "Institutional coordination", "Science outreach"],
+    lead: "A public balloon launch and scientific conference connecting space researchers, universities, and government in Ulaanbaatar, March 22–23, 2024.",
     introduction: "The International Space Balloon Summit in Mongolia brought government, universities, and space researchers together around a public launch and a scientific program. The event took place under presidential patronage with ministry and university partners.",
-    metrics: [{ value: "21–22 Mar", label: "2024 summit dates", context: "Ulaanbaatar, Mongolia" }],
+    metrics: [{ value: "22–23 Mar", label: "2024 summit dates", context: "Ulaanbaatar, Mongolia" }],
     chapters: [
       { title: "National Park launch and scientific conference", paragraphs: ["The first day centered on a public balloon launch at National Park in Ulaanbaatar; the next day brought participants into a scientific conference. Coordination linked the participants and program across those two settings.", "The work was organizational: align institutions, support a public-facing event, and give researchers and students a reason to meet around the same project."], image: 0 }
     ], images: [asset("balloon-summit-poster.jpg", "The summit program and participating organizations")], links: [{ label: "Watch the summit coverage", href: "https://www.facebook.com/marsapage/videos/646521701496242/" }]
@@ -270,5 +270,5 @@ const projectWebsites: Record<string, { href: string; label: string }> = {
 };
 for (const [id, website] of Object.entries(projectWebsites)) projectStories[id].website = website;
 
-export const projectOrder = ["trex", "ares", "halo", "nomos", "trend-mart", "micc", "mars-v", "ondo", "thrive", "csi", "hur", "balloon-summit", "starry-tours", "cfa", "kublai", "piano"];
+export const projectOrder = ["nomos", "trex", "ares", "halo", "ondo", "mars-v", "thrive", "micc", "hur", "cfa", "trend-mart", "csi", "balloon-summit", "starry-tours", "kublai", "piano"];
 export const projectPath = (id: string) => `/work/${id === "trend-mart" ? "trend" : id}`;

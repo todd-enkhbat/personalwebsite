@@ -8,6 +8,8 @@ import type { ProjectImage, ProjectStory } from "../data/projectStories";
 import { projectPath } from "../data/projectStories";
 import imageSizes from "../data/portfolioImageSizes.json";
 import { YCBacking } from "./YCBacking";
+import { projectExhibits } from "../data/projectExhibits";
+import { OrganizationMarks } from "./OrganizationMarks";
 
 export const ProjectModel = dynamic(() => import("./ModelViewer"), { ssr: false, loading: () => <div className="model-placeholder">Loading 3D model…</div> });
 
@@ -56,6 +58,9 @@ function ProjectWebsite({ story }: { story: ProjectStory }) {
 
 export function ProjectDossier({ story, standalone = false }: { story: ProjectStory; standalone?: boolean }) {
   const [showPhotos, setShowPhotos] = useState(true);
+  const [showModel, setShowModel] = useState(false);
+  const exhibit = projectExhibits[story.id];
+  const model = story.model ?? exhibit.artifact;
   const used = new Set(story.chapters.map(chapter => chapter.image).filter(index => index !== undefined));
   story.chapters.forEach(chapter => chapter.supportingImages?.forEach(index => used.add(index)));
   const extraImages = story.images.filter((_, index) => !used.has(index));
@@ -63,13 +68,16 @@ export function ProjectDossier({ story, standalone = false }: { story: ProjectSt
   return <article className={`project-dossier${standalone ? ' project-dossier--standalone' : ''}`}>
     <aside className="dossier-rail">
       <p className="portfolio-kicker">{story.category} / {story.year}</p>
-      <Heading id={`project-title-${story.id}`}>{story.title}</Heading>
+      <div className="dossier-title-row">
+        <OrganizationMarks marks={exhibit.marks} />
+        <Heading id={`project-title-${story.id}`}>{story.title}</Heading>
+      </div>
       {story.id === 'thrive' ? <div className="dossier-yc"><YCBacking linked /></div> : null}
       <p className="dossier-lead">{story.lead}</p>
       <dl className="dossier-meta"><div><dt>Role</dt><dd>{story.role}</dd></div><div><dt>Stage</dt><dd>{story.status}</dd></div></dl>
       <div className="dossier-links">{story.links.map(link => <a key={link.href} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{link.label} ↗</a>)}
         {!standalone ? <Link href={projectPath(story.id)}>Open project page ↗</Link> : null}
-        {story.model ? <a href={`/models/${story.model}.glb`} download>Download 3D model ↓</a> : null}
+        {model ? <a href={`/models/${model}.glb`} download>Download 3D model ↓</a> : null}
       </div>
       <div className="dossier-skills"><span>Practice</span><p>{story.skills.join(' · ')}</p></div>
     </aside>
@@ -78,6 +86,7 @@ export function ProjectDossier({ story, standalone = false }: { story: ProjectSt
         <dd>{metric.value}</dd><dt>{metric.label}</dt>{metric.context ? <p>{metric.context}</p> : null}
       </div>)}</dl> : null}
       <p className="dossier-introduction">{story.introduction}</p>
+      {exhibit.contextDetail ? <p className="dossier-context-detail">{exhibit.contextDetail}</p> : null}
       <ProjectWebsite story={story} />
       {story.chapters.map((chapter, index) => <section className={`dossier-chapter${chapter.image !== undefined || chapter.film ? ' dossier-chapter--illustrated' : ''}`} key={chapter.title}>
         <div className="dossier-prose"><h3>{chapter.title}</h3>{chapter.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
@@ -94,14 +103,20 @@ export function ProjectDossier({ story, standalone = false }: { story: ProjectSt
         {chapter.supportingImages?.length ? <div className="dossier-supporting-images">{chapter.supportingImages.map(imageIndex => story.images[imageIndex] ? <ProjectPhoto key={imageIndex} image={story.images[imageIndex]} /> : null)}</div> : null}
         {index === 0 && story.sequence ? <ProjectSequence sequence={story.sequence} /> : null}
       </section>)}
-      {story.model ? <details className="dossier-model">
+      {model ? <details className="dossier-model" onToggle={event => setShowModel(event.currentTarget.open)}>
         <summary>Explore the {story.shortTitle || story.title} geometry in 3D <span>↗</span></summary>
-        <div><ProjectModel kind={story.model} title={story.title} /><p className="model-caption">{story.modelNote}</p></div>
+        <div>{showModel ? <ProjectModel kind={model} title={story.title} /> : null}<p className="model-caption">{story.modelNote ?? exhibit.artifactNote}</p></div>
       </details> : null}
       {extraImages.length ? <section className="dossier-archive">
         <button className="archive-toggle" aria-expanded={showPhotos} onClick={() => setShowPhotos(value => !value)}><span>Project photographs & references <small>{extraImages.length} {extraImages.length === 1 ? 'image' : 'images'}</small></span><span>{showPhotos ? '−' : '+'}</span></button>
         {showPhotos ? <div className="archive-images">{extraImages.map(image => <ProjectPhoto key={image.src} image={image} />)}</div> : null}
       </section> : null}
+      <section className="dossier-evidence" aria-label="Project context and sources">
+        <h3>Context & sources</h3>
+        <p>{exhibit.sources.length ? "Project records and published references provide the context below." : "Original project photographs, descriptions, and records are collected in this archive."}</p>
+        {exhibit.sources.length ? <div>{exhibit.sources.map(source => <a key={source.href} href={source.href} target="_blank" rel="noopener noreferrer"><strong>{source.label} <span>{source.language.toUpperCase()} ↗</span></strong><span>{source.supports}</span></a>)}</div> : null}
+        <p className="dossier-artifact-note">3D study: {exhibit.artifactNote}</p>
+      </section>
       {story.links.length ? <footer className="dossier-footer"><span>Continue exploring</span>{story.links.map(link => <a key={link.href} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">{link.label} ↗</a>)}</footer> : null}
     </div>
   </article>;

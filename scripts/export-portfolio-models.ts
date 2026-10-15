@@ -11,7 +11,7 @@ class NodeFileReader {
 }
 Object.assign(globalThis, { FileReader: NodeFileReader });
 await mkdir('public/models', { recursive: true });
-for (const kind of ['satellite','habitat','gimbal','cubesat'] as const) {
+for (const kind of ['satellite','habitat','gimbal','cubesat','exoplanet','balloon','growlight','camp','telescope','suit','record','rocket','piano','retail','finance','learning'] as const) {
   const {root}=buildPortfolioModel(kind);
   const data=await new GLTFExporter().parseAsync(root,{binary:true,onlyVisible:true});
   await writeFile(`public/models/${kind}.glb`,Buffer.from(data as ArrayBuffer));

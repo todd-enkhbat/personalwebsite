@@ -1,11 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { projectOrder, projectStories } from "../data/projectStories";
-import { ProjectDossier, ProjectModel } from "./ProjectDossier";
-import imageSizes from "../data/portfolioImageSizes.json";
-import { YCBacking } from "./YCBacking";
+import { ProjectDossier } from "./ProjectDossier";
+import { PortfolioCard } from "./PortfolioCard";
 
 type Filter = "All work" | "Space" | "Business" | "Science" | "Culture";
 const filters: Filter[] = ["All work", "Space", "Business", "Science", "Culture"];
@@ -36,35 +34,10 @@ export function WorkExplorer() {
     </header>
     <div className="collection-navigation">
       <div className="collection-filters" role="group" aria-label="Filter projects">{filters.map(item => <button key={item} aria-pressed={filter === item} onClick={() => setFilter(item)}>{item}</button>)}</div>
-      <span className="collection-hint">Select a project to explore</span>
+      <span className="collection-hint" aria-live="polite">{visible.length} experiences</span>
     </div>
     <div className="exhibit-grid">
-      {visible.map(id => {
-        const project = projectStories[id];
-        const cover = project.cover ?? project.images[0];
-        const modelPreview = project.model;
-        const metric = project.metrics[0];
-        const size = cover ? (imageSizes as Record<string, { width: number; height: number }>)[cover.src] : undefined;
-        return <article className={`exhibit exhibit--${id}${modelPreview ? ' exhibit--object' : ''}${project.cover ? ' exhibit--photographic' : ''}`} key={id}>
-          <button className="exhibit-open" onClick={() => setSelected(id)} aria-label={`Explore ${project.title}`} aria-haspopup="dialog">
-            <div className="exhibit-stage">
-              {cover ? <Image className={modelPreview ? "exhibit-backdrop" : undefined} src={cover.src} alt={cover.alt} width={size?.width ?? 1200} height={size?.height ?? 800} sizes="(max-width: 620px) 90vw, (max-width: 980px) 45vw, 30vw" /> : <div className="exhibit-type-object" aria-hidden><span>☾</span><em>Observations<br />of the sky.</em></div>}
-              {modelPreview ? <div className="exhibit-floating-model" aria-hidden="true"><ProjectModel kind={modelPreview} title={project.title} preview /></div> : null}
-              {project.cover ? <span className="exhibit-cover-name">{project.shortTitle || project.title}</span> : null}
-              {id === 'thrive' ? <span className="exhibit-yc"><YCBacking /></span> : null}
-              <span className="exhibit-plus" aria-hidden>+</span>
-              {modelPreview ? <span className="exhibit-model-label">Explore in 3D ↗</span> : null}
-            </div>
-            <span className="exhibit-meta">{project.role.split(' · ')[0]} <span>{project.year.split(' · ')[0]}</span></span>
-            <span className="exhibit-title">{project.shortTitle || project.title}</span>
-            <span className="exhibit-description">{project.lead}</span>
-          </button>
-          <div className="exhibit-bottom">
-            {metric ? <p><strong>{metric.value}</strong><span>{metric.label}</span></p> : <p className="exhibit-discipline">{project.skills.slice(0, 2).join(' · ')}</p>}
-            {project.website ? <a href={project.website.href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.website.label} website`}>Website ↗</a> : project.links[0]?.href.startsWith('http') ? <a href={project.links[0].href} target="_blank" rel="noopener noreferrer" aria-label={project.links[0].label}>Website ↗</a> : null}
-          </div>
-        </article>;
-      })}
+      {visible.map((id, index) => <PortfolioCard key={id} story={projectStories[id]} priority={index < 4} onOpen={() => setSelected(id)} />)}
     </div>
     <p className="collection-end">Select a project for my role, technical work, photographs, and results.</p>
     <dialog ref={dialog} className="project-dialog" aria-labelledby={story ? `project-title-${story.id}` : undefined} onCancel={event => { if (event.target !== event.currentTarget) return; event.preventDefault(); setSelected(null); }} onClick={event => { if (event.target === event.currentTarget) setSelected(null); }}>
