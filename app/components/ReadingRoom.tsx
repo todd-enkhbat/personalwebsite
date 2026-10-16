@@ -615,7 +615,7 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
                 <div key={copy} className="reading-photo-set" aria-hidden={copy === 1 ? true : undefined}>
                   {row.map((photo) => (
                     <figure key={photo.src} className={`calendar-gallery__frame${photo.wide ? " calendar-gallery__frame--wide" : ""}`}>
-                      <Image src={photo.src} alt={copy === 1 ? "" : photo.alt} width={photo.width} height={photo.height}
+                      <Image quality={90} src={photo.src} alt={copy === 1 ? "" : photo.alt} width={photo.width} height={photo.height}
                         sizes={photo.wide ? "280px" : "160px"} className="calendar-gallery__image" />
                     </figure>
                   ))}

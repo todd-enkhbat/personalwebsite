@@ -104,7 +104,7 @@ a {
   align-items: center;
   column-gap: 24px;
   width: 100%;
-  padding-bottom: 28px;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -118,10 +118,10 @@ a {
 
 .brand-name {
   color: var(--ink);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.01em;
-  line-height: 28px;
+  line-height: 24px;
 }
 
 .brand-meta {
@@ -137,24 +137,24 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 84px;
-  height: 92px;
+  width: 64px;
+  height: 64px;
   margin: 0;
 }
 
 .letterhead-crest--empty {
-  width: 84px;
-  height: 92px;
+  width: 64px;
+  height: 64px;
 }
 
 .letterhead-crest img {
-  width: 84px;
-  height: 92px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
   display: block;
 }
 
-.letterhead-crest .site-icon { width: 72px; height: 72px; object-fit: contain; }
+.letterhead-crest .site-icon { width: 56px; height: 56px; object-fit: contain; }
 .nomos-proof { background: #f6f3ed; color: #221c1b; padding: clamp(35px, 6vw, 88px) var(--pad-x); display: grid; grid-template-columns: minmax(240px, 1fr) minmax(350px, 1.5fr); gap: 55px; }
 .nomos-proof h2 { font-size: clamp(32px, 4vw, 58px); line-height: 1.02; font-weight: 400; letter-spacing: -.04em; max-width: 610px; }
 .nomos-proof__facts { display: grid; gap: 0; }
@@ -172,10 +172,10 @@ a {
   align-self: center;
   max-width: 100%;
   color: var(--ink);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  line-height: 28px;
+  line-height: 24px;
   text-align: right;
   text-transform: lowercase;
   text-wrap: balance;
@@ -199,9 +199,9 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
   width: 100%;
-  padding: 18px 0 28px;
+  padding: 14px 0 24px;
 }
 
 .site-nav a {
@@ -2812,8 +2812,8 @@ a.calendar-block--event:hover {
   .letterhead-stamp {
     grid-area: stamp;
     justify-self: end;
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   .letterhead-spacer {

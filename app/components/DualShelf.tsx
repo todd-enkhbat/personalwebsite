@@ -205,7 +205,7 @@ function ShelfRow({ shelf, defaultIndex = 0 }: { shelf: MindShelf; defaultIndex?
                   exit={reduceMotion ? undefined : { opacity: 0, y: -10, scale: 0.98 }}
                   transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <Image
+                  <Image quality={90}
                     src={active.cover}
                     alt={`${active.title}${active.author ? ` by ${active.author}` : ""}`}
                     width={168}
@@ -303,7 +303,7 @@ function SpineButton({
       onClick={onSelect}
       aria-label={`Select ${book.title}${book.author ? ` by ${book.author}` : ""}`}
     >
-      <Image src={book.cover} alt="" width={120} height={240} className="shelf-spine-image" />
+      <Image quality={90} src={book.cover} alt="" width={120} height={240} className="shelf-spine-image" />
       <span className="shelf-spine-veil" aria-hidden />
       <span className="shelf-spine-label">{label}</span>
     </button>

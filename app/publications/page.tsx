@@ -124,7 +124,7 @@ export default function PublicationsPage() {
                 onClick={() => { setActiveId(item.id); setSourceIndex(0); }}
               >
                 <div className="pub-thumb">
-                  <Image src={item.image} alt="" width={74} height={58} />
+                  <Image quality={90} src={item.image} alt="" width={74} height={58} />
                 </div>
                 <div className="pub-item-copy">
                   <p className="pub-item-title">{item.title}</p>
@@ -187,7 +187,7 @@ export default function PublicationsPage() {
                   const size = (imageSizes as Record<string, { width: number; height: number }>)[plate.image];
                   return <figure key={`${plate.image}-${index}`} className={`pub-plate${plate.image.endsWith('/spot-stage.jpg') ? ' pub-plate--stage' : ''}`}>
                     <a className="pub-plate-frame" href={plate.image} target="_blank" rel="noreferrer" aria-label={`Open full image: ${plate.caption || active.title}`}>
-                      <Image
+                      <Image quality={90}
                         src={plate.image}
                         alt={plate.caption || active.title}
                         width={size?.width ?? 480}

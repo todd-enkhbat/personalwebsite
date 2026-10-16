@@ -145,7 +145,7 @@ export const person = {
     personal: "todd.enkhbat@gmail.com"
   },
   social: {
-    linkedin: "https://www.linkedin.com/in/tsogt-enkhbat",
+    linkedin: "https://www.linkedin.com/in/tsogt-enkhbat-/",
     x: "https://x.com/the_tallerpoppy",
     instagramPersonal: "https://www.instagram.com/tsokue___/?hl=en",
     instagramPro: "https://www.instagram.com/todd.enk/",
@@ -1375,7 +1375,7 @@ export const contactChannels: LinkItem[] = [
   {
     label: "LinkedIn",
     note: "Professional profile",
-    href: "https://www.linkedin.com/in/tsogt-enkhbat",
+    href: "https://www.linkedin.com/in/tsogt-enkhbat-/",
     external: true
   },
   {
@@ -1429,7 +1429,7 @@ export const contactMap: { left: ContactMapItem[]; right: ContactMapItem[] } = {
     {
       label: "LinkedIn",
       note: "Professional profile",
-      href: "https://www.linkedin.com/in/tsogt-enkhbat",
+      href: "https://www.linkedin.com/in/tsogt-enkhbat-/",
       external: true,
       glyph: "in"
     },

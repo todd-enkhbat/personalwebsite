@@ -18,13 +18,13 @@ export function ProjectPhoto({ image, priority = false }: { image: ProjectImage;
   const size = (imageSizes as Record<string, { width: number; height: number }>)[image.src] ?? { width: 1200, height: 800 };
   return <figure className={`dossier-figure${size.width / size.height > 1.8 ? ' dossier-figure--wide' : ''}${image.src.endsWith('spacesuit-cutout.png') ? ' dossier-figure--cutout' : ''}`}>
     <button className="dossier-photo" onClick={() => dialog.current?.showModal()} aria-label={`Enlarge: ${image.caption}`}>
-      <Image src={image.src} alt={image.alt} width={size.width} height={size.height} sizes="(max-width: 760px) 92vw, 65vw" priority={priority} />
+      <Image quality={90} src={image.src} alt={image.alt} width={size.width} height={size.height} sizes="(max-width: 760px) 92vw, 65vw" priority={priority} />
       <span className="photo-expand" aria-hidden>↗</span>
     </button>
     <figcaption>{image.caption}</figcaption>
     <dialog ref={dialog} className="photo-dialog" aria-label={image.caption} onCancel={event => event.stopPropagation()} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}>
       <button className="photo-close" onClick={() => dialog.current?.close()} autoFocus>Close image ×</button>
-      <Image src={image.src} alt={image.alt} width={size.width} height={size.height} sizes="95vw" />
+      <Image quality={95} src={image.src} alt={image.alt} width={size.width} height={size.height} sizes="(max-width: 1560px) 95vw, 1450px" />
       <p>{image.caption}</p>
     </dialog>
   </figure>;
@@ -48,7 +48,7 @@ function ProjectWebsite({ story }: { story: ProjectStory }) {
     <header><h3>{story.website.label} website</h3><a href={story.website.href} target="_blank" rel="noopener noreferrer">Open website ↗</a></header>
     <div className="dossier-website-preview">
       {live ? <iframe src={story.website.href} title={`${story.website.label} website preview`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" /> : <button className="dossier-website-load" onClick={() => setLive(true)}>
-        {preview ? <Image src={preview.src} alt={preview.alt} width={size?.width ?? 1200} height={size?.height ?? 800} sizes="(max-width: 760px) 90vw, 65vw" /> : null}
+        {preview ? <Image quality={90} src={preview.src} alt={preview.alt} width={size?.width ?? 1200} height={size?.height ?? 800} sizes="(max-width: 760px) 90vw, 65vw" /> : null}
         <span>View live website ↗</span>
       </button>}
     </div>

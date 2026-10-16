@@ -12,8 +12,8 @@ export function PortfolioCard({ story, onOpen, priority = false }: { story: Proj
   return <article className={`exhibit exhibit--${story.id}`}>
     <button className="exhibit-open" onClick={onOpen} aria-label={`Explore ${story.title}`} aria-haspopup="dialog">
       <span className="exhibit-stage">
-        <Image className="exhibit-hero" src={`/paper-assets/${exhibit.hero}`} alt={exhibit.heroAlt} fill sizes="(max-width: 540px) 92vw, (max-width: 980px) 45vw, 23vw" priority={priority} style={{objectPosition: exhibit.position || 'center'}} />
-        <span className="exhibit-artifact" aria-hidden="true"><Image src={modelPreviewAssets[exhibit.artifact]} alt="" width={768} height={768} sizes="(max-width: 540px) 48vw, 16vw" /></span>
+        <Image quality={90} className="exhibit-hero" src={`/paper-assets/${exhibit.hero}`} alt={exhibit.heroAlt} fill sizes="(max-width: 540px) 92vw, (max-width: 980px) 46vw, 420px" priority={priority} style={{objectPosition: exhibit.position || 'center'}} />
+        <span className="exhibit-artifact" aria-hidden="true"><Image quality={90} src={modelPreviewAssets[exhibit.artifact]} alt="" width={768} height={768} sizes="(max-width: 540px) 60vw, (max-width: 980px) 30vw, 270px" /></span>
         {exhibit.heroCredit ? <span className="exhibit-image-credit">{exhibit.heroCredit}</span> : null}
         <span className="exhibit-plus" aria-hidden="true">↗</span>
       </span>
