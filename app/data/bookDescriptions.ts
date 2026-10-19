@@ -1,5 +1,8 @@
 // Original, concise synopses for the reading room's interactive shelf.
 export const bookDescriptions: Record<string, string> = {
+  "art-of-war": "Sun Tzu examines strategy through preparation, adaptability and an understanding of both oneself and one's opponent. His compact reflections on conflict emphasize timing, terrain and the advantages of achieving an objective without battle.",
+  "i-ching": "The Book of Changes explores transformation through sixty-four hexagrams and their commentaries. A text of divination and philosophical reflection, it considers how judgment and action can respond to a world in constant change.",
+  mahabharata: "A Sanskrit epic of a dynastic conflict whose consequences reach far beyond the battlefield. Through intertwined stories of family, kingship and war, it explores duty, justice and the difficulty of acting rightly when obligations collide.",
   republic: "What makes a life, or a city, just? Through Socratic dialogue, Plato connects education, political order and the nature of knowledge, asking who should govern and what a good society is for.",
   "nicomachean-ethics": "Aristotle asks what it means to live well. His account of virtue, friendship and practical wisdom places human flourishing in the habits we cultivate and the choices we make together.",
   politics: "An inquiry into citizenship, constitutions and the purposes of political community. Aristotle compares forms of government and asks how a city can create the conditions for a good life.",

@@ -377,6 +377,34 @@ a {
   padding-top: 8px;
 }
 
+.background-details {
+  margin: -6px 0 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.background-details > div + div {
+  margin-top: 4px;
+}
+
+.background-details dt,
+.background-details dd {
+  display: inline;
+}
+
+.background-details dt {
+  font-weight: 600;
+}
+
+.background-details dt::after {
+  content: ": ";
+}
+
+.background-details dd {
+  margin: 0;
+}
+
 .portrait-stack {
   position: relative;
   flex-shrink: 0;
@@ -541,6 +569,60 @@ a {
   line-height: 22px;
 }
 
+.etymology-list {
+  border-block: 1px solid var(--rule-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.etymology-list summary {
+  padding: 13px 0;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.etymology-list summary span {
+  margin-left: 10px;
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.etymology-list summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.training-page-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-block: 1px solid var(--rule-soft);
+  color: var(--accent);
+  font-size: 15px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.training-page-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.training-page-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.etymology-list__intro {
+  margin: 0 0 16px;
+  color: var(--ink-soft);
+}
+
+.etymology-list dl { margin: 0; }
+.etymology-entry { padding: 16px 0; border-top: 1px solid var(--rule-soft); }
+.etymology-entry dt { font-size: 20px; font-weight: 500; }
+.etymology-entry dt span { margin-left: 10px; color: var(--ink-soft); font-size: 12px; font-weight: 400; }
+.etymology-entry dd { margin: 8px 0 0; }
+.etymology-entry p { margin: 6px 0; color: var(--ink-soft); }
+.etymology-entry .etymology-entry__root { color: var(--accent); font-size: 17px; }
+.etymology-entry .etymology-entry__meaning { color: var(--ink); font-style: italic; }
+.etymology-entry a { display: inline-block; margin-top: 6px; color: var(--accent); font-size: 12px; text-underline-offset: 3px; }
+
 .section-index {
   border-top: 1px solid var(--rule);
   padding-top: 28px;
@@ -668,14 +750,18 @@ a {
 }
 
 .contact-map__item:nth-child(2) {
-  top: 35.968%; /* 223/620 */
+  top: 30.685%;
 }
 
 .contact-map__item:nth-child(3) {
-  top: 56.774%; /* 352/620 */
+  top: 46.694%;
 }
 
 .contact-map__item:nth-child(4) {
+  top: 62.702%;
+}
+
+.contact-map__item:nth-child(5) {
   top: 78.71%; /* 488/620 */
 }
 

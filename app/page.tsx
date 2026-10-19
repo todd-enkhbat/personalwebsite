@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { etymologies } from "./data/etymologies";
 import { HomeIntro } from "./components/HomeIntro";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -52,6 +53,14 @@ export default function MainPage() {
             {linkifyText(person.letter, linkedReferences)}
           </p>
           <p className="education-line">{person.education}</p>
+          <dl className="background-details">
+            <div><dt>Interests</dt><dd>Political philosophy, progress studies, AI and space systems, computational physics, civic tech, and astrophysics.</dd></div>
+            <div><dt>Previous research</dt><dd>Binary black holes, quench detection in superconducting magnets, nuclear physics, planetary data, network detection, and spacesuits for extravehicular activity (EVA).</dd></div>
+            <div><dt>Technical skills</dt><dd>Python, C/C++, Java, MATLAB, R, LaTeX, MESA, STK (orbital trajectories), Fusion 360, COMSOL, Excel, Git, and Linux.</dd></div>
+            <div><dt>Fabrication &amp; prototyping</dt><dd>CNC and manual milling, lathe machining, waterjet cutting, CNC routing, laser cutting, FDM and resin 3D printing, woodworking, soldering, and electronics fabrication.</dd></div>
+            <div><dt>Lab &amp; instrumentation</dt><dd>Oscilloscopes, multimeters, waveform generators, and DC power supplies.</dd></div>
+            <div><dt>Additional craft</dt><dd>Vinyl cutting, sewing and embroidery, and stained glass.</dd></div>
+          </dl>
         </div>
 
         <div className="portrait-stack" aria-label="Portrait composition">
@@ -102,6 +111,30 @@ export default function MainPage() {
                   <p>{column.body}</p>
                 </div>
               </div>
+              {column.id === "philosophy" && (
+                <details className="etymology-list">
+                  <summary>Etymology List <span>{etymologies.length} words</span></summary>
+                  <p className="etymology-list__intro">Words I return to, and the histories they carry. A growing collection.</p>
+                  <dl>
+                    {etymologies.map((entry) => (
+                      <div className="etymology-entry" key={entry.word}>
+                        <dt>{entry.word} <span>{entry.language}</span></dt>
+                        <dd>
+                          <p className="etymology-entry__root">{entry.root}</p>
+                          <p className="etymology-entry__meaning">{entry.meaning}</p>
+                          <p>{entry.history}</p>
+                          <a href={entry.source} target="_blank" rel="noreferrer">Source ↗</a>
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </details>
+              )}
+              {column.id === "physics" && (
+                <Link href="/philosophy-physics" className="training-page-link">
+                  Philosophy/Physics <span aria-hidden="true">↗</span>
+                </Link>
+              )}
             </article>
           ))}
         </div>

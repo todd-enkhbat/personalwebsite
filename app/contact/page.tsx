@@ -17,7 +17,7 @@ export default function ContactPage() {
           fill="none"
           aria-hidden
         >
-          <path d="M201 1H0M201 133H0M201 262H0M201 398H0" stroke="currentColor" />
+          <path d="M201 1H0M201 100H0M201 200H0M201 300H0M201 398H0" stroke="currentColor" />
         </svg>
         <svg
           className="contact-map__lines contact-map__lines--right"
@@ -25,7 +25,7 @@ export default function ContactPage() {
           fill="none"
           aria-hidden
         >
-          <path d="M0 1H202M0 133H202M0 262H202M0 398H202" stroke="currentColor" />
+          <path d="M0 1H202M0 100H202M0 200H202M0 300H202M0 398H202" stroke="currentColor" />
         </svg>
 
         <div className="contact-map__col contact-map__col--left">

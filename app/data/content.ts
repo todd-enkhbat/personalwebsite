@@ -136,9 +136,9 @@ export const person = {
   openerEmphasis: "Nomos",
   openerTail: "— a space infrastructure company.",
   letter:
-    "I study Physics at Columbia University as a John Jay Scholar, with interests in philosophy and AI. I founded Nomos Orbital, a space infrastructure company, and work on spacecraft CAD, thermal analysis, and downlink studies for T-REX. Previously, I worked on exoplanet modeling at Harvard & Smithsonian CfA and product strategy at ONDO Space. Before Columbia, I founded Trend Mart Group in Ulaanbaatar, a self-funded retail business with four locations and more than $1 million in lifetime revenue.",
+    "I double major in Philosophy and Physics at Columbia University as a John Jay Scholar, with a minor in AI. I founded Nomos Orbital, a space infrastructure company, and work on spacecraft CAD, thermal analysis, and downlink studies for T-REX. Previously, I worked on exoplanet modeling at Harvard & Smithsonian CfA and product strategy at ONDO Space. Before Columbia, I founded Trend Mart Group in Ulaanbaatar, a self-funded retail business with four locations and more than $1 million in lifetime revenue.",
   education:
-    "Education: Columbia College, B.A. Physics; minors Philosophy & AI · John Jay Scholar · Funded research: Black Hole Explorer",
+    "Education: Columbia College, B.A. Philosophy & Physics (double major); minor in AI · John Jay Scholar · Funded research: Black Hole Explorer",
   emails: {
     academic: "tsogt.e@columbia.edu",
     academicAlt: "te2346@columbia.edu",
@@ -1056,6 +1056,24 @@ export const mindShelves: MindShelf[] = [
     meta: "Ancient to early modern",
     books: [
       {
+        id: "i-ching",
+        title: "I Ching",
+        author: "Anonymous · translated by John Minford",
+        cover: "/paper-assets/books/curated/i-ching-9780143106920.jpg"
+      },
+      {
+        id: "mahabharata",
+        title: "Mahabharata",
+        author: "Traditionally attributed to Vyasa · translated by John D. Smith",
+        cover: "/paper-assets/books/curated/mahabharata-9780140446814.jpg"
+      },
+      {
+        id: "art-of-war",
+        title: "The Art of War",
+        author: "Sun Tzu",
+        cover: "/paper-assets/books/curated/art-of-war-9780143105756.jpg"
+      },
+      {
         id: "republic",
         title: "Republic",
         author: "Plato",
@@ -1446,6 +1464,13 @@ export const contactMap: { left: ContactMapItem[]; right: ContactMapItem[] } = {
       href: "https://www.goodreads.com/user/show/189398350-tsogt-enkhbat",
       external: true,
       glyph: "G"
+    },
+    {
+      label: "GitHub",
+      note: "@todd-enkhbat",
+      href: "https://github.com/todd-enkhbat",
+      external: true,
+      glyph: "GH"
     }
   ],
   right: [
@@ -1476,6 +1501,13 @@ export const contactMap: { left: ContactMapItem[]; right: ContactMapItem[] } = {
       href: "https://boxd.it/m92mb",
       external: true,
       glyph: "LB"
+    },
+    {
+      label: "Substack",
+      note: "@thetallerpoppy",
+      href: "https://substack.com/@thetallerpoppy",
+      external: true,
+      glyph: "S"
     }
   ]
 };
@@ -1492,7 +1524,7 @@ export const trainings = [
     id: "physics",
     title: "Physics Training",
     subtitle: "Columbia physics and spacecraft engineering",
-    body: "I study physics at Columbia. Brian Greene’s Origins and Meaning course connected cosmology with readings by Russell, Tolstoy, and Ernest Becker. My project work includes exoplanet modeling, EVA suit research, Mars habitat systems, and spacecraft studies for T-REX.",
+    body: "I double major in philosophy and physics at Columbia, with a minor in AI. Brian Greene’s Origins and Meaning course connected cosmology with readings by Russell, Tolstoy, and Ernest Becker. My project work includes exoplanet modeling, EVA suit research, Mars habitat systems, and spacecraft studies for T-REX.",
     image: "/paper-assets/train-column.png"
   }
 ];

@@ -593,5 +593,56 @@
       "#e9dfc4",
       "#aeb392"
     ]
+  },
+  "i-ching": {
+    "cover": "/paper-assets/books/curated/i-ching-9780143106920.jpg",
+    "width": 309,
+    "height": 450,
+    "isbn": "9780143106920",
+    "publisher": "Penguin Classics",
+    "binding": "Paperback",
+    "editionTitle": "I Ching",
+    "editionNote": "Translated with an introduction and commentary by John Minford.",
+    "source": "https://www.penguinrandomhouse.com/books/294076/i-ching-by-translated-with-an-introduction-and-commentary-by-john-minford/",
+    "finish": "laminated",
+    "palette": [
+      "#b5a078",
+      "#28241e",
+      "#e7dfc6"
+    ]
+  },
+  "mahabharata": {
+    "cover": "/paper-assets/books/curated/mahabharata-9780140446814.jpg",
+    "width": 292,
+    "height": 450,
+    "isbn": "9780140446814",
+    "publisher": "Penguin Classics",
+    "binding": "Paperback",
+    "editionTitle": "The Mahabharata",
+    "editionNote": "Abridged and translated with an introduction by John D. Smith.",
+    "source": "https://www.penguinrandomhouse.com/books/305480/the-mahabharata-by-anonymous-abridged-and-translated-with-an-introduction-by-john-d-smith/",
+    "finish": "laminated",
+    "palette": [
+      "#a35e3c",
+      "#29251f",
+      "#dcb879"
+    ]
+  },
+  "art-of-war": {
+    "cover": "/paper-assets/books/curated/art-of-war-9780143105756.jpg",
+    "width": 294,
+    "height": 450,
+    "isbn": "9780143105756",
+    "publisher": "Penguin Classics",
+    "binding": "Paperback",
+    "editionTitle": "The Art of War",
+    "editionNote": "Edited, translated, and with an introduction by John Minford.",
+    "source": "https://www.penguinrandomhouse.com/books/668918/the-art-of-war-by-sun-tzu-edited-translated-and-with-an-introduction-by-john-minford/",
+    "finish": "laminated",
+    "palette": [
+      "#a64c38",
+      "#30271f",
+      "#d8bf87"
+    ]
   }
 }
