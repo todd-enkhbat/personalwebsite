@@ -1,5 +1,6 @@
 // Original, concise synopses for the reading room's interactive shelf.
 export const bookDescriptions: Record<string, string> = {
+  "what-is-art": "Tolstoy questions the idea that beauty or pleasure defines art. He argues that art communicates feeling between people, then asks what moral responsibilities follow from its power to connect us.",
   "art-of-war": "Sun Tzu examines strategy through preparation, adaptability and an understanding of both oneself and one's opponent. His compact reflections on conflict emphasize timing, terrain and the advantages of achieving an objective without battle.",
   "i-ching": "The Book of Changes explores transformation through sixty-four hexagrams and their commentaries. A text of divination and philosophical reflection, it considers how judgment and action can respond to a world in constant change.",
   mahabharata: "A Sanskrit epic of a dynastic conflict whose consequences reach far beyond the battlefield. Through intertwined stories of family, kingship and war, it explores duty, justice and the difficulty of acting rightly when obligations collide.",

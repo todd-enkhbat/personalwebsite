@@ -3,6 +3,7 @@ import { LetterShell } from "../components/LetterShell";
 import { mindShelves, person, type ShelfBook } from "../data/content";
 
 const featured: ShelfBook[] = [
+  { id: "what-is-art", title: "What Is Art?", author: "Leo Tolstoy", cover: "/paper-assets/books/curated/what-is-art-9780140446425.jpg" },
   { id: "dispossessed", title: "The Dispossessed", author: "Ursula K. Le Guin", cover: "/paper-assets/books/dispossessed-featured.jpg" },
   { id: "nomos-of-the-earth", title: "The Nomos of the Earth", author: "Carl Schmitt", cover: "/paper-assets/books/nomos-of-the-earth.jpg" },
   { id: "human-condition", title: "The Human Condition", author: "Hannah Arendt", cover: "/paper-assets/books/human-condition-featured.jpg" },

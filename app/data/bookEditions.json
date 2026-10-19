@@ -644,5 +644,22 @@
       "#30271f",
       "#d8bf87"
     ]
+  },
+  "what-is-art": {
+    "cover": "/paper-assets/books/curated/what-is-art-9780140446425.jpg",
+    "width": 293,
+    "height": 450,
+    "isbn": "9780140446425",
+    "publisher": "Penguin Classics",
+    "binding": "Paperback",
+    "editionTitle": "What Is Art?",
+    "editionNote": "Translated by Richard Pevear and Larissa Volokhonsky.",
+    "source": "https://www.penguinrandomhouseretail.com/book/?isbn=9780140446425",
+    "finish": "laminated",
+    "palette": [
+      "#634637",
+      "#ead7b9",
+      "#b58c64"
+    ]
   }
 }

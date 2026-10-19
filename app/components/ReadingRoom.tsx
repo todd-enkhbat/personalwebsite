@@ -476,7 +476,7 @@ export function ReadingRoom({ featured, archive, email, links }: ReadingRoomProp
 
       <section className="reading-feature" aria-labelledby="reading-current-title">
         <div className="reading-feature-heading">
-          <h2 id="reading-current-title">On the shelf</h2>
+          <h2 id="reading-current-title">Currently reading</h2>
           <span><span className="reading-hint-desktop">Pick up a book to open it</span><span className="reading-hint-mobile">Tap to open</span> ↗</span>
         </div>
 

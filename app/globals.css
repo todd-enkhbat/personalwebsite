@@ -4527,3 +4527,11 @@ body:has(.contact-page) .ambient-score-details { background: #191919e8; }
 body:has(.contact-page) .ambient-score-toggle:hover,
 body:has(.contact-page) .ambient-score-toggle:focus-visible,
 body:has(.contact-page) .ambient-score-details:hover { background: #292929f0; }
+
+/* The current shelf accommodates five volumes without crowding their captions. */
+@media (min-width: 1100px) {
+  .reading-feature-books { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
+}
+@media (min-width: 701px) and (max-width: 1099px) {
+  .reading-feature-books { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
