@@ -3267,7 +3267,7 @@ a.calendar-block--event:hover {
 .nomos-body--large { max-width:590px; color:#171717; font-size:20px; line-height:29px; }
 .nomos-continuity { background:var(--nomos-light); }
 .nomos-continuity__diagram { position:relative; min-height:450px; margin-top:58px; display:grid; grid-template-columns:minmax(170px,1fr) minmax(300px,754px) minmax(170px,1fr); align-items:center; gap:28px; }
-.nomos-continuity__image { height:min(33vw,450px); min-height:300px; background:url("/paper-assets/nomos-card-hero.png") center/cover; box-shadow:10px 10px 5px rgba(93,35,28,.7); }
+.nomos-continuity__image { height:min(33vw,450px); min-height:300px; background:#000 url("/paper-assets/nomos-reference/earth.webp") center/cover no-repeat; }
 .nomos-note { display:flex; flex-direction:column; gap:8px; max-width:310px; font-size:15px; line-height:21px; }
 .nomos-note>span { background:var(--nomos-ink); }
 .nomos-note--desired>span { background:var(--nomos-blue); }
@@ -3277,7 +3277,7 @@ a.calendar-block--event:hover {
 .nomos-definition { max-width:370px; border:1px solid var(--nomos-ink); padding:18px; font-size:15px; line-height:21px; }
 .nomos-definition p { margin-top:12px; }
 .nomos-dark-section { min-height:840px; color:#fff; background:var(--nomos-black); isolation:isolate; }
-.nomos-cortex__image { left:24%; background-image:url("/paper-assets/nomos-card-hero.png"); opacity:.72; }
+.nomos-cortex__image { left:24%; background-image:url("/paper-assets/nomos-reference/record.webp"); opacity:.72; }
 .nomos-dark-section__veil { z-index:-1; background:linear-gradient(90deg,#1d1d1d 0%,rgba(29,29,29,.96) 26%,rgba(29,29,29,.32) 63%,rgba(29,29,29,.72)); }
 .nomos-cortex__content,.nomos-program__content { position:relative; max-width:560px; }
 .nomos-loop-list,.nomos-program__list { margin-top:clamp(48px,7vw,180px); }
@@ -3310,7 +3310,7 @@ a.calendar-block--event:hover {
 .nomos-research-row p { color:#333; font-size:16px; line-height:23px; }
 .nomos-research-row small { color:#666; text-align:right; font-size:10px; line-height:15px; }
 .nomos-program { min-height:860px; }
-.nomos-program__image { background-image:url("/paper-assets/nomos-bg-still.png"); opacity:.68; }
+.nomos-program__image { background-image:url("/paper-assets/nomos-reference/laboratory.webp"); background-position:70% center; opacity:.68; }
 .nomos-program .nomos-dark-section__veil { background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.8) 39%,rgba(0,0,0,.16) 72%,rgba(0,0,0,.38)); }
 .nomos-program__list { margin-top:clamp(48px,8vw,190px); }
 .nomos-program-row { color:#a0a0a0; }

@@ -121,7 +121,7 @@ export const meetInvite = {
   eyebrow: "Open door",
   headline: "Very open to meeting new people.",
   body: "Conversation, coffee, a walk -- say hello if you're nearby.",
-  window: "Especially free in New York Aug 2-8, before I head west.",
+  window: "Based in New York. Check the live calendar for available times.",
   cta: "Let's grab coffee",
   ctaHref: "https://calendar.app.google/3W9cPNgdQNXhHL1t7"
 };
@@ -133,12 +133,12 @@ export const person = {
   location: "New York",
   tagline: "Physics, spacecraft engineering, and space infrastructure",
   opener: "Hi, I’m Todd. I founded",
-  openerEmphasis: "Nomos",
+  openerEmphasis: "Nomos Orbital",
   openerTail: "— a space infrastructure company.",
   letter:
     "I double major in Philosophy and Physics at Columbia University as a John Jay Scholar, with a minor in AI. I founded Nomos Orbital, a space infrastructure company, and work on spacecraft CAD, thermal analysis, and downlink studies for T-REX. Previously, I worked on exoplanet modeling at Harvard & Smithsonian CfA and product strategy at ONDO Space. Before Columbia, I founded Trend Mart Group in Ulaanbaatar, a self-funded retail business with four locations and more than $1 million in lifetime revenue.",
   education:
-    "Education: Columbia College, B.A. Philosophy & Physics (double major); minor in AI · John Jay Scholar · Funded research: Black Hole Explorer",
+    "Education: Columbia College, B.A. in progress in Philosophy & Physics (double major); minor in AI · John Jay Scholar · Research: T-REX Black Hole Explorer",
   emails: {
     academic: "tsogt.e@columbia.edu",
     academicAlt: "te2346@columbia.edu",
@@ -213,7 +213,7 @@ export const work: WorkItem[] = [
     ],
     tags: [
       "Founder · solo",
-      "Mission planning",
+      "Space infrastructure",
       "SGP4 · provenance",
       "FastAPI · Next.js · SDK",
       "$25k grant"
@@ -229,15 +229,15 @@ export const work: WorkItem[] = [
     dates: "April 2025-Present",
     featured: true,
     blurb:
-      "Founding engineer on T-REX, LEO VLBI SmallSat for the first video of a black hole. NASA NIAC final round. CAD, thermal/structural, and subsystem integration across Brown, JPL, Princeton, MIT Lincoln Lab, Columbia, and Utah State.",
+      "T-REX is a student-developed NASA Pioneers mission proposal for an 86 GHz LEO radio telescope targeting time-resolved black-hole imaging. Work includes spacecraft CAD, thermal/structural analysis, and subsystem integration.",
     summary:
-      "Helped secure $175,000 in NASA NIAC funding for T-REX (Time-Resolving Explorer): an 86 GHz LEO VLBI SmallSat mission aiming to capture time-resolved videos of Sgr A*. Collaboration spans NASA JPL, Princeton Space Physics, MIT Lincoln Lab, Brown, Columbia, and Utah State.",
+      "T-REX (Time-Resolving Explorer) is a student-developed NASA Pioneers mission proposal aiming to capture time-resolved images of Sagittarius A* at 86 GHz. Collaboration spans NASA JPL, Princeton Space Physics, MIT Lincoln Lab, Brown, Columbia, and Utah State.",
     achievements: [
       "Lead CAD modeling of subsystems from T-REX published research: thermal and structural analyses, quantum-link architectures, observation simulations, data-downlink calculations, and multi-institution integration",
       "Mission targets ≤10% spin/mass constraints on Sgr A* via ~22-minute temporal resolution at 86 GHz"
     ],
     tags: [
-      "NASA NIAC: $175k",
+      "NASA Pioneers proposal",
       "LEO VLBI · BH video",
       "CAD · thermal · structural",
       "86 GHz · ~87 kg",
@@ -378,15 +378,15 @@ export const work: WorkItem[] = [
     place: "Mongolia / MDRS Utah",
     dates: "September 2023 - February 2025",
     featured: true,
-    blurb: "EVA suit engineering for MDRS; raised $5.8M for Mars-analog infrastructure",
+    blurb: "EVA suit engineering for MDRS and public campaigns for Mars analog infrastructure",
     summary:
-      "Led EVA-suit prototyping with UCCS collaborators for Utah’s MDRS; raised $5.8M via investment proposals and in-person campaigns for a Mars-analog effort.",
+      "EVA-suit prototyping with UCCS collaborators for Utah’s MDRS, alongside investment proposals and in-person campaigns for Mars analog infrastructure.",
     achievements: [
       "Led EVA suit research and engineering with UCCS scientists for MDRS",
-      "Raised $5.8M in commitments across 4,500+ stakeholders and 8,000 km of campaigns",
+      "Campaigns reached 4,500+ stakeholders across 8,000 km of travel",
       "Public lecture (MARS-V Spot, 1,000+ attendees) and national documentary coverage"
     ],
-    tags: ["EVA", "MDRS", "Mars analog", "$5.8M"],
+    tags: ["EVA", "MDRS", "Mars analog"],
     href: "/work/mars-v",
     externalHref: "https://www.mars-v.com"
   },
@@ -395,12 +395,12 @@ export const work: WorkItem[] = [
     title: "International Space Balloon Summit",
     role: "Organizer",
     place: "Ulaanbaatar, Mongolia",
-    dates: "March 21-22, 2024",
+    dates: "March 22–23, 2024",
     featured: true,
     blurb:
       "Two-day summit under presidential patronage, public balloon launch + scientific conference",
     summary:
-      "The Mongolian Space Research and Science Agency organized the International Space Balloon Summit on March 21-22, 2024, under the patronage of the President of Mongolia. Co-organized with the Ministry of Digital Development, Innovation, and Communications, Koosen Technology College of MUST, New Mongol Technology College, Mongol Koosen, and partner institutions. Day 1: public space balloon launch at the 360 Archery Range of the National Park (10AM, March 21). Day 2: Space Balloon Scientific Conference.",
+      "The Mongolian Space Research and Science Agency organized the International Space Balloon Summit on March 22–23, 2024, under the patronage of the President of Mongolia. Co-organized with the Ministry of Digital Development, Innovation, and Communications, Koosen Technology College of MUST, New Mongol Technology College, Mongol Koosen, and partner institutions. Day 1: public space balloon launch at the 360 Archery Range of the National Park (March 22). Day 2: Space Balloon Scientific Conference.",
     achievements: [
       "Summit under patronage of the President of Mongolia",
       "Co-organized with Ministry of Digital Development, Innovation, and Communications and academic partners",
@@ -451,13 +451,13 @@ export const work: WorkItem[] = [
     place: "Massachusetts, United States",
     dates: "2022",
     featured: true,
-    blurb: "Exoplanet habitability: TESS; K2-18b; Exofast on Canon cluster",
+    blurb: "Exoplanet habitability: TESS; K2-18b; EXOFAST on Cannon cluster",
     summary:
-      "Assessed habitability of K2-18b (temperate super-Earth, 124 ly) using TESS data and Exofast modeling on Harvard’s Canon cluster; sourced NASA Exoplanet Archive and ExoFOP.",
+      "Assessed habitability of K2-18b (temperate super-Earth, 124 ly) using TESS data and EXOFAST modeling on Harvard’s Cannon cluster; sourced NASA Exoplanet Archive and ExoFOP.",
     achievements: [
-      "Analyzed K2-18b mass, orbit, and atmospheric conditions with Exofast",
+      "Analyzed K2-18b mass, orbit, and atmospheric conditions with EXOFAST",
       "Examined planetary and stellar properties of the host star",
-      "Ran computations on Harvard’s Canon cluster using NASA archive / ExoFOP data"
+      "Ran computations on Harvard’s Cannon cluster using NASA archive / ExoFOP data"
     ],
     tags: ["Exoplanets", "TESS", "CfA", "K2-18b"],
     href: "/work/cfa",
@@ -529,7 +529,7 @@ export const portfolioRows: PortfolioRow[] = [
       {
         id: "nomos",
         title: "Nomos Orbital",
-        role: "Founder · Mission Planning",
+        role: "Founder · product & engineering",
         label: "Nomos",
         description:
           "Founder of Nomos Orbital, a space infrastructure company spanning satellite, ground & cloud. $25k grant. FastAPI · Next.js · SGP4.",
@@ -542,7 +542,7 @@ export const portfolioRows: PortfolioRow[] = [
         role: "Founding Engineer",
         label: "T-REX",
         description:
-          "NASA NIAC final round; CAD, thermal/structural analysis, and subsystem integration for LEO VLBI black-hole video mission with Brown, JPL, Princeton, MIT LL, Columbia.",
+          "NASA Pioneers mission proposal; CAD, thermal/structural analysis, and subsystem integration for an 86 GHz LEO radio telescope.",
         image: "/paper-assets/trex-diagram.jpg",
         href: "/work/trex"
       },
@@ -622,7 +622,7 @@ export const portfolioRows: PortfolioRow[] = [
         role: "Design & Engineering",
         label: "MARS-V",
         description:
-          "Led EVA suit engineering for Utah’s MDRS analog station; raised $5.8M via investment proposal and 8,000 km of in-person campaigns.",
+          "EVA suit engineering for Utah’s MDRS analog station, alongside investment proposals and 8,000 km of in-person campaigns.",
         image: "/paper-assets/marsv-hero.png",
         href: "/work/mars-v"
       },
@@ -632,7 +632,7 @@ export const portfolioRows: PortfolioRow[] = [
         role: "Organizer",
         label: "Balloon Summit",
         description:
-          "March 21-22, 2024, presidential patronage; public balloon launch at National Park + scientific conference with ministry and university co-organizers.",
+          "March 22–23, 2024, presidential patronage; public balloon launch at National Park + scientific conference with ministry and university co-organizers.",
         image: "/paper-assets/balloon-summit-launch.jpg",
         href: "/work/balloon-summit"
       },
@@ -683,7 +683,7 @@ export const portfolioRows: PortfolioRow[] = [
         role: "Exoplanet Researcher",
         label: "CfA",
         description:
-          "K2-18b habitability with TESS + Exofast on Harvard’s Canon cluster; NASA Exoplanet Archive / ExoFOP data.",
+          "K2-18b habitability with TESS + EXOFAST on Harvard’s Cannon cluster; NASA Exoplanet Archive / ExoFOP data.",
         image: "/paper-assets/cfa-k218b.jpg",
         href: "/work/cfa",
         logos: [
@@ -753,9 +753,9 @@ export const organizationLinks: LinkItem[] = [
 
 export const nomos = {
   hero: {
-    label: "NOMOS ORBITAL / MISSION PLANNING",
-    headline: "Plan satellite, ground, and compute access in one workflow.",
-    lede: "I founded Nomos to compare space-data mission options using satellite catalogs, ground-station locations, and calculated orbital contact windows."
+    label: "NOMOS ORBITAL / SPACE INFRASTRUCTURE",
+    headline: "Space infrastructure connecting satellite, ground, and cloud systems.",
+    lede: "Nomos Orbital is a space infrastructure company. Its current software combines satellite catalogs, ground-station records, and calculated orbital contact windows."
   },
   continuity: {
     label: "THE PLANNING PROBLEM",
@@ -765,7 +765,7 @@ export const nomos = {
   cortex: {
     label: "PRODUCT WORKFLOW",
     headline: "From a mission objective to ranked infrastructure options.",
-    body: "The planner combines orbital calculations with sourced infrastructure records. It separates calculated contact windows from provider capabilities that still need to be confirmed.",
+    body: "The current software combines orbital calculations with sourced infrastructure records. The public demo uses real orbital mathematics over pinned public data; compute execution, detections, and confidence scores are simulated. Provider capabilities still require confirmation.",
     loops: [
       ["Define the mission", "Specify the observation or space-data objective and its constraints."],
       ["Calculate access", "Use SGP4 and Skyfield to calculate orbital passes and contact windows."],
@@ -1040,7 +1040,7 @@ export const feedingTheMind: MindColumn[] = [
   {
     label: "Projects",
     items: [
-      "Black Hole Explorer research",
+      "T-REX Black Hole Explorer research",
       "Stellarator coil experiments",
       "Music composition sketches"
     ]
@@ -1328,44 +1328,43 @@ export const mindShelves: MindShelf[] = [
 
 export const calendarLanes: CalendarLane[] = [
   {
-    label: "Now",
-    dates: "Aug 2-8",
+    label: "Based in",
     title: "New York",
     note: "Around Columbia, coffee welcome.",
     tone: "solid",
-    open: true
+    open: false
   },
   {
-    label: "Next",
+    label: "Past itinerary",
     dates: "Aug 8-20",
     title: "San Francisco",
-    note: "Bay Area, happy to meet.",
+    note: "Previous Bay Area travel plan.",
     tone: "dashed",
-    open: true
+    open: false
   },
   {
-    label: "Then",
+    label: "Past itinerary",
     dates: "Aug 20-26",
     title: "Los Angeles",
-    note: "In LA, reach out.",
+    note: "Previous Los Angeles travel plan.",
     tone: "dashed",
-    open: true
+    open: false
   },
   {
-    label: "After",
+    label: "Past itinerary",
     dates: "Aug 26 - Sep 1",
     title: "Seattle · Redmond",
-    note: "Washington area stretch.",
+    note: "Previous Washington-area travel plan.",
     tone: "dashed",
-    open: true
+    open: false
   },
   {
-    label: "Later",
+    label: "Past itinerary",
     dates: "Sep 23-24",
     title: "Houston",
     note: "Payload Off World · Space Center Houston",
     tone: "event",
-    open: true,
+    open: false,
     org: "Payload",
     href: "https://payloadspace.com/event/off-world/",
     logo: "/paper-assets/events/payload-logo-pro.svg",

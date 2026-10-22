@@ -44,7 +44,7 @@ export default function MainPage() {
           <p className="kicker">Main</p>
           <h1 className="headline-inline">
             <span>{person.opener}&nbsp;</span>
-            <Link href="/nomos" className="accent-link">
+            <Link href={person.social.nomos} className="accent-link">
               {person.openerEmphasis}
             </Link>
             <span>&nbsp;{person.openerTail}</span>

@@ -56,9 +56,9 @@
 .dossier-photo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 700px; object-fit: contain; }
 .dossier-figure figcaption { font: 10px/1.5 var(--font-mono); color: #71665e; margin-top: 10px; }
 .photo-expand { position: absolute; right: 10px; bottom: 10px; width: 28px; height: 28px; display: grid; place-items: center; background: #f5f1e9ee; color: #713449; font: 17px/1 Arial,sans-serif; }
-.photo-dialog { border: 0; background: #1c1916; padding: 52px 25px 24px; width: min(1500px, 96vw); max-width: none; max-height: 96dvh; color: #fff; }
+.photo-dialog { border: 0; background: #1c1916; padding: 52px 0 24px; width: fit-content; max-width: 96vw; max-height: 96dvh; color: #fff; }
 .photo-dialog::backdrop { background: #171512de; }
-.photo-dialog img { display: block; max-width: 100%; max-height: 78dvh; width: auto; height: auto; margin: 0 auto; object-fit: contain; }
+.photo-dialog img { display: block; width: 100%; height: auto; margin: 0; }
 .photo-dialog > p { font: 11px/1.5 var(--font-mono); text-align: center; margin: 18px 0 0; }
 .photo-close { position: absolute; right: 20px; top: 13px; background: none; color: #fff; border: 0; padding: 7px; cursor: pointer; font: 11px/1.5 var(--font-mono); }
 .dossier-archive { margin: 36px 0; border-top: 1px solid #c3b6aa; }
@@ -177,8 +177,8 @@
 .dossier-chapter--illustrated .dossier-prose { margin: 0; }
 .dossier-chapter-media { min-width: 0; }
 .dossier-chapter-media .dossier-figure { margin: 0; }
-.dossier-chapter-media .dossier-photo { margin: 0; width: 100%; }
-.dossier-chapter-media .dossier-photo img { width: 100%; max-height: 440px; object-fit: contain; object-position: top; }
+.dossier-chapter-media .dossier-photo { margin: 0; width: fit-content; }
+.dossier-chapter-media .dossier-photo img { width: auto; max-width: 100%; max-height: 440px; }
 .dossier-chapter-media .dossier-film { max-width: 260px; margin-inline: auto; }
 .dossier-supporting-images, .archive-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 24px; }
 .dossier-supporting-images { grid-column: 1 / -1; }

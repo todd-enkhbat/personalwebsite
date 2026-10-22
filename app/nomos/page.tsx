@@ -1,5 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { nomos } from "../data/content";
+import { NomosProductPreview, NomosRecordGallery, NomosSelectableRows } from "../components/NomosDetails";
+import "./enrichment.css";
 
 export default function NomosPage() {
   return (
@@ -27,6 +30,7 @@ export default function NomosPage() {
             <span />
             <p>{nomos.hero.lede}</p>
             <a href="#continuity" className="nomos-scroll">See the planning workflow ↓</a>
+            <a href="https://nomosorbital.com" className="nomos-hero__product" target="_blank" rel="noopener noreferrer">Open Nomos Orbital ↗</a>
           </div>
         </div>
       </section>
@@ -41,10 +45,13 @@ export default function NomosPage() {
       </section>
 
       <section id="continuity" className="nomos-section nomos-continuity">
-        <div className="nomos-intro">
-          <p className="nomos-label">{nomos.continuity.label}</p>
-          <h2>{nomos.continuity.headline}</h2>
-          <p className="nomos-body nomos-body--large">{nomos.continuity.body}</p>
+        <div className="nomos-continuity__intro">
+          <div className="nomos-intro">
+            <p className="nomos-label">{nomos.continuity.label}</p>
+            <h2>{nomos.continuity.headline}</h2>
+            <p className="nomos-body nomos-body--large">{nomos.continuity.body}</p>
+          </div>
+          <Image className="nomos-continuity__photo" src="/paper-assets/nomos-reference/components.webp" alt="Three technicians displaying the Voyager Golden Record and its protective assembly" width={1600} height={1131} sizes="(max-width: 900px) 92vw, 45vw" />
         </div>
         <div className="nomos-continuity__diagram">
           <div className="nomos-note nomos-note--current">
@@ -52,7 +59,7 @@ export default function NomosPage() {
             <b>SEPARATE INPUTS</b>
             <p>Satellite catalogs, ground-station records, and compute services are separate sources.</p>
           </div>
-          <div className="nomos-continuity__image" role="img" aria-label="Concept illustration accompanying the space infrastructure overview" />
+          <NomosProductPreview />
           <div className="nomos-note nomos-note--desired">
             <span />
             <b>COMBINED PLAN</b>
@@ -67,7 +74,17 @@ export default function NomosPage() {
           </div>
           <div className="nomos-definition">
             <b>NOMOS / PRODUCT</b>
-            <p>Mission-planning software that connects satellite access, ground contacts, and data processing.</p>
+            <p>Software from Nomos Orbital, a space infrastructure company, connecting satellite access, ground contacts, and data processing.</p>
+          </div>
+        </div>
+        <div id="record" className="nomos-lineage" aria-labelledby="nomos-lineage-title">
+          <NomosRecordGallery />
+          <div className="nomos-lineage__copy">
+            <p className="nomos-label">THE GOLDEN RECORD</p>
+            <h3 id="nomos-lineage-title">A message carried across distance.</h3>
+            <p>Voyager’s Golden Records carry sounds and images selected to represent life on Earth. Each spacecraft launched in 1977 with a gold-plated copper record.</p>
+            <p>The disc is a visual reference behind the Nomos mark. It also poses a question that matters to space infrastructure: what information deserves to cross a constrained link, and how do we preserve its meaning?</p>
+            <p className="nomos-lineage__credit">Historical references from the NASA archive. <a href="https://science.nasa.gov/gallery/the-making-of-the-voyager-golden-record/" target="_blank" rel="noopener noreferrer">Explore the making of the Golden Record ↗</a></p>
           </div>
         </div>
       </section>
@@ -81,17 +98,7 @@ export default function NomosPage() {
             <h2>{nomos.cortex.headline}</h2>
             <p className="nomos-body">{nomos.cortex.body}</p>
           </div>
-          <div className="nomos-loop-list">
-            {nomos.cortex.loops.map(([title, description], index) => (
-              <div className={`nomos-loop ${index === 0 ? "is-active" : ""}`} key={title}>
-                <span>0{index + 1}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <NomosSelectableRows items={nomos.cortex.loops} variant="workflow" />
         </div>
       </section>
 
@@ -136,15 +143,9 @@ export default function NomosPage() {
           <div className="nomos-intro">
             <p className="nomos-label nomos-label--light">PRODUCT COMPONENTS</p>
             <h2>What the current product includes.</h2>
-            <p className="nomos-body">I built the interface, backend, and SDK as a solo founder. The current product supports planning and comparison; booking and execution depend on provider integrations.</p>
+            <p className="nomos-body">The current product includes an interface, backend, and Python SDK developed by a solo founder. Orbital access is calculated; compute execution, detections, and confidence scores in the demo are simulated. Booking and mission execution depend on provider integrations.</p>
           </div>
-          <div className="nomos-program__list">
-            {nomos.program.map(([title, description], index) => (
-              <div className={`nomos-program-row ${index === 0 ? "is-active" : ""}`} key={title}>
-                <span>0{index + 1}</span><div><h3>{title}</h3><p>{description}</p></div>
-              </div>
-            ))}
-          </div>
+          <NomosSelectableRows items={nomos.program} variant="product" />
         </div>
       </section>
 

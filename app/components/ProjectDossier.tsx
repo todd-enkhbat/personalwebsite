@@ -22,7 +22,7 @@ export function ProjectPhoto({ image, priority = false }: { image: ProjectImage;
       <span className="photo-expand" aria-hidden>↗</span>
     </button>
     <figcaption>{image.caption}</figcaption>
-    <dialog ref={dialog} className="photo-dialog" aria-label={image.caption} onCancel={event => event.stopPropagation()} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}>
+    <dialog ref={dialog} className="photo-dialog" style={{ width: `min(96vw, ${78 * size.width / size.height}dvh)` }} aria-label={image.caption} onCancel={event => event.stopPropagation()} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}>
       <button className="photo-close" onClick={() => dialog.current?.close()} autoFocus>Close image ×</button>
       <Image quality={95} src={image.src} alt={image.alt} width={size.width} height={size.height} sizes="(max-width: 1560px) 95vw, 1450px" />
       <p>{image.caption}</p>
@@ -77,7 +77,7 @@ export function ProjectDossier({ story, standalone = false }: { story: ProjectSt
       <dl className="dossier-meta"><div><dt>Role</dt><dd>{story.role}</dd></div><div><dt>Stage</dt><dd>{story.status}</dd></div></dl>
       <div className="dossier-links">{story.links.map(link => <a key={link.href} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{link.label} ↗</a>)}
         {!standalone ? <Link href={projectPath(story.id)}>Open project page ↗</Link> : null}
-        {model ? <a href={`/models/${model}.glb`} download>Download 3D model ↓</a> : null}
+        {model ? <a href={`/models/${model}.glb`} download>Download illustrative 3D study ↓</a> : null}
       </div>
       <div className="dossier-skills"><span>Practice</span><p>{story.skills.join(' · ')}</p></div>
     </aside>
@@ -104,7 +104,7 @@ export function ProjectDossier({ story, standalone = false }: { story: ProjectSt
         {index === 0 && story.sequence ? <ProjectSequence sequence={story.sequence} /> : null}
       </section>)}
       {model ? <details className="dossier-model" onToggle={event => setShowModel(event.currentTarget.open)}>
-        <summary>Explore the {story.shortTitle || story.title} geometry in 3D <span>↗</span></summary>
+        <summary>Explore an illustrative 3D study of {story.shortTitle || story.title} <span>↗</span></summary>
         <div>{showModel ? <ProjectModel kind={model} title={story.title} /> : null}<p className="model-caption">{story.modelNote ?? exhibit.artifactNote}</p></div>
       </details> : null}
       {extraImages.length ? <section className="dossier-archive">
