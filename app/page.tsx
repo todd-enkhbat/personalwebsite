@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { etymologies } from "./data/etymologies";
 import { HomeIntro } from "./components/HomeIntro";
 import Link from "next/link";
@@ -36,7 +38,14 @@ function linkifyText(text: string, links: LinkItem[]): ReactNode[] {
   });
 }
 
-export default function MainPage() {
+export default async function MainPage() {
+  // The background document uses Markdown headings followed by plain paragraphs.
+  const background = await readFile(path.join(process.cwd(), "public/background.md"), "utf8");
+  const backgroundSections = background.split(/^## /m).filter(Boolean).map((section) => {
+    const [heading, ...body] = section.trim().split("\n");
+    return { heading, body: body.join("\n").trim() };
+  });
+
   return (
     <HomeIntro><LetterShell>
       <div className="main-split">
@@ -52,15 +61,20 @@ export default function MainPage() {
           <p className="body-copy" style={{ width: "100%", maxWidth: 720 }}>
             {linkifyText(person.letter, linkedReferences)}
           </p>
-          <p className="education-line">{person.education}</p>
-          <dl className="background-details">
-            <div><dt>Interests</dt><dd>Political philosophy, progress studies, AI and space systems, computational physics, civic tech, and astrophysics.</dd></div>
-            <div><dt>Previous research</dt><dd>Binary black holes, quench detection in superconducting magnets, nuclear physics, planetary data, network detection, and spacesuits for extravehicular activity (EVA).</dd></div>
-            <div><dt>Technical skills</dt><dd>Python, C/C++, Java, MATLAB, R, LaTeX, MESA, STK (orbital trajectories), Fusion 360, COMSOL, Excel, Git, and Linux.</dd></div>
-            <div><dt>Fabrication &amp; prototyping</dt><dd>CNC and manual milling, lathe machining, waterjet cutting, CNC routing, laser cutting, FDM and resin 3D printing, woodworking, soldering, and electronics fabrication.</dd></div>
-            <div><dt>Lab &amp; instrumentation</dt><dd>Oscilloscopes, multimeters, waveform generators, and DC power supplies.</dd></div>
-            <div><dt>Additional craft</dt><dd>Vinyl cutting, sewing and embroidery, and stained glass.</dd></div>
-          </dl>
+          <details className="background-disclosure">
+            <summary>
+              Education &amp; background
+              <span className="background-disclosure__indicator" aria-hidden="true" />
+            </summary>
+            <div className="background-markdown">
+              {backgroundSections.map(({ heading, body }) => (
+                <section key={heading}>
+                  <h2>{heading}</h2>
+                  <p>{body}</p>
+                </section>
+              ))}
+            </div>
+          </details>
         </div>
 
         <div className="portrait-stack" aria-label="Portrait composition">

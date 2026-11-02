@@ -370,40 +370,48 @@ a {
   padding-top: 8px;
 }
 
-.education-line {
-  color: var(--ink-soft);
-  font-size: 13px;
-  line-height: 16px;
-  padding-top: 8px;
-}
-
-.background-details {
-  margin: -6px 0 0;
-  color: var(--ink-soft);
-  font-size: 12px;
-  line-height: 1.45;
-}
-
-.background-details > div + div {
+.background-disclosure {
+  align-self: flex-start;
+  width: 100%;
   margin-top: 4px;
 }
 
-.background-details dt,
-.background-details dd {
-  display: inline;
+.background-disclosure > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--rule-soft);
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.4;
+  list-style: none;
+  cursor: pointer;
 }
 
-.background-details dt {
-  font-weight: 600;
+.background-disclosure > summary::-webkit-details-marker { display: none; }
+.background-disclosure > summary:hover { border-color: var(--accent); color: var(--accent); }
+.background-disclosure > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.background-disclosure__indicator::before { content: "+"; }
+.background-disclosure[open] .background-disclosure__indicator::before { content: "−"; }
+
+.background-markdown {
+  display: grid;
+  gap: 18px;
+  max-width: 65ch;
+  margin-top: 24px;
+  padding-left: 16px;
+  border-left: 1px solid var(--rule-soft);
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
-.background-details dt::after {
-  content: ": ";
-}
-
-.background-details dd {
-  margin: 0;
-}
+.background-markdown h2 { margin: 0 0 4px; color: var(--ink); font-size: inherit; font-weight: 600; }
+.background-markdown p { margin: 0; white-space: pre-line; }
 
 .portrait-stack {
   position: relative;

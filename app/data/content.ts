@@ -137,8 +137,6 @@ export const person = {
   openerTail: "— a space infrastructure company.",
   letter:
     "I double major in Philosophy and Physics at Columbia University as a John Jay Scholar, with a minor in AI. I founded Nomos Orbital, a space infrastructure company, and work on spacecraft CAD, thermal analysis, and downlink studies for T-REX. Previously, I worked on exoplanet modeling at Harvard & Smithsonian CfA and product strategy at ONDO Space. Before Columbia, I founded Trend Mart Group in Ulaanbaatar, a self-funded retail business with four locations and more than $1 million in lifetime revenue.",
-  education:
-    "Education: Columbia College, B.A. in progress in Philosophy & Physics (double major); minor in AI · John Jay Scholar · Research: T-REX Black Hole Explorer",
   emails: {
     academic: "tsogt.e@columbia.edu",
     academicAlt: "te2346@columbia.edu",
