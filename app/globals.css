@@ -3464,7 +3464,7 @@ a.calendar-block--event:hover {
 
 .reading-intro h1 {
   margin: 11px 0 0;
-  font-size: clamp(40px, 5.2vw, 66px);
+  font-size: clamp(32px, 3.5vw, 46px);
   font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 0.98;
@@ -4542,4 +4542,17 @@ body:has(.contact-page) .ambient-score-details:hover { background: #292929f0; }
 }
 @media (min-width: 701px) and (max-width: 1099px) {
   .reading-feature-books { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Keep section page titles compact across desktop and mobile layouts. */
+:root .publications-header h1,
+:root .collection-intro h1 {
+  font-size: clamp(32px, 3.5vw, 46px);
+}
+
+@media (max-width: 600px) {
+  :root .publications-header h1,
+  :root .collection-intro h1 {
+    font-size: 34px;
+  }
 }

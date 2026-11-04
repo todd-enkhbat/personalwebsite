@@ -119,9 +119,7 @@ export type CalendarLane = {
 
 export const meetInvite = {
   eyebrow: "Open door",
-  headline: "Very open to meeting new people.",
   body: "Conversation, coffee, a walk -- say hello if you're nearby.",
-  window: "Based in New York. Check the live calendar for available times.",
   cta: "Let's grab coffee",
   ctaHref: "https://calendar.app.google/3W9cPNgdQNXhHL1t7"
 };

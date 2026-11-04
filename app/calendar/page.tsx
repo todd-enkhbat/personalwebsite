@@ -60,10 +60,6 @@ export default function CalendarPage() {
       <div className="calendar-top">
         <div className="calendar-top__intro">
           <p className="kicker">Calendar</p>
-          <p className="calendar-top__line">
-            <span className="meet-invite__headline">{meetInvite.headline}</span>
-            <span className="calendar-top__aside">{meetInvite.window}</span>
-          </p>
         </div>
         {externalCta ? (
           <a {...ctaProps}>
