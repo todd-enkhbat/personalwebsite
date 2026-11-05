@@ -79,16 +79,14 @@ export const projectStories: Record<string, ProjectStory> = {
     introduction: "A satellite’s solar panel needs to face the light while the spacecraft’s orientation changes. HALO explores a compact parallel mechanism for that problem: three arms supporting a platform that can tip, tilt, and move vertically. The physical prototype combines Onshape geometry, iterated printed parts, assembled hardware, and wired motors and light sensors.",
     metrics: [{ value: "3 DOF", label: "platform motion", context: "Tip, tilt, and heave" }, { value: "3 × NEMA 17", label: "stepper-motor actuation", context: "Paired with A4988 drivers" }],
     chapters: [
-      { title: "Three-arm linkage and printed joints", paragraphs: ["Three motor-driven arms support the same platform. Moving their attachment points changes the platform’s tip, tilt, and height. The links need enough clearance to move without colliding, while the joints must fit the printed mounts and fasteners.", "The assembly was modeled in Onshape, with PLA parts iterated before assembly. The photographs show the motor mounts, paired links, and platform attachments; the CAD view shows how those components fit together."], image: 0, supportingImages: [7] },
-      { title: "Motor drivers, sensing, and bench integration", paragraphs: ["The prototype uses three NEMA 17 stepper motors, A4988 drivers, an Arduino, and light sensors. The motors and sensors are wired into the assembled mechanism; the breadboards and bench supply are shown alongside the hardware.", "Firmware remained a blocker before powered tracking. The result is an assembled and wired mechanism, with closed-loop control still to validate."], supportingImages: [2, 4, 6] }
+      { title: "Three-arm linkage and printed joints", paragraphs: ["Three motor-driven arms support the same platform. Moving their attachment points changes the platform’s tip, tilt, and height. The links need enough clearance to move without colliding, while the joints must fit the printed mounts and fasteners.", "The assembly was modeled in Onshape, with PLA parts iterated before assembly. The photographs show the motor mounts, paired links, and platform attachments; the CAD view shows how those components fit together."], image: 0, supportingImages: [5] },
+      { title: "Motor drivers, sensing, and bench integration", paragraphs: ["The prototype uses three NEMA 17 stepper motors, A4988 drivers, an Arduino, and light sensors. The motors and sensors are wired into the assembled mechanism; the breadboards and bench supply are shown alongside the hardware.", "Firmware remained a blocker before powered tracking. The result is an assembled and wired mechanism, with closed-loop control still to validate."], supportingImages: [2, 3, 4] }
     ],
     images: [
       asset("halo/linkage-photo.jpg", "HALO’s assembled three-arm mechanism — printed links, motor mounts, and moving platform"),
       asset("halo/platform-photo.jpg", "Top view of the printed platform and its three supporting arms"),
       asset("halo/electronics-photo.jpg", "Arduino, breadboard wiring, and bench power equipment used during integration"),
-      asset("halo/ring-gimbal.jpg", "The larger ring gimbal on the laboratory bench"),
       asset("halo/bench-photo.jpg", "The assembled platform alongside its bench electronics"),
-      asset("halo/presentation.jpg", "Presenting the gimbal hardware and test context in the lab"),
       asset("halo/assembly.jpg", "Assembly work: motor hardware, fasteners, and hand tools"),
       asset("halo-cad.jpg", "The CAD assembly and linkage geometry"),
       asset("halo-hero.jpg", "Original design rendering of the HALO mechanism")
