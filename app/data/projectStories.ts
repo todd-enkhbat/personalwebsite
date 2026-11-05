@@ -80,8 +80,7 @@ export const projectStories: Record<string, ProjectStory> = {
     metrics: [{ value: "3 DOF", label: "platform motion", context: "Tip, tilt, and heave" }, { value: "3 × NEMA 17", label: "stepper-motor actuation", context: "Paired with A4988 drivers" }],
     chapters: [
       { title: "Three-arm linkage and printed joints", paragraphs: ["Three motor-driven arms support the same platform. Moving their attachment points changes the platform’s tip, tilt, and height. The links need enough clearance to move without colliding, while the joints must fit the printed mounts and fasteners.", "The assembly was modeled in Onshape, with PLA parts iterated before assembly. The photographs show the motor mounts, paired links, and platform attachments; the CAD view shows how those components fit together."], image: 0, supportingImages: [7] },
-      { title: "Motor drivers, sensing, and bench integration", paragraphs: ["The prototype uses three NEMA 17 stepper motors, A4988 drivers, an Arduino, and light sensors. The motors and sensors are wired into the assembled mechanism; the breadboards and bench supply are shown alongside the hardware.", "The video records the assembled prototype on the bench. Firmware remained a blocker before powered tracking, so the documented result is an assembled and wired mechanism, with closed-loop control still to validate."], film: true, supportingImages: [2, 4, 6] },
-      { title: "Ring gimbal and lab presentation", paragraphs: ["The larger test rig suspends an assembly inside nested rings, with an aluminum frame supporting the outer axis. The lab photograph shows the rig’s physical size and mounting arrangement.", "The presentation describes an attitude-control test platform using fan actuation, an IMU, and a 12 V power supply. The proposed test sequence isolates individual axes before attempting coupled motion."], image: 3, supportingImages: [5] }
+      { title: "Motor drivers, sensing, and bench integration", paragraphs: ["The prototype uses three NEMA 17 stepper motors, A4988 drivers, an Arduino, and light sensors. The motors and sensors are wired into the assembled mechanism; the breadboards and bench supply are shown alongside the hardware.", "Firmware remained a blocker before powered tracking. The result is an assembled and wired mechanism, with closed-loop control still to validate."], supportingImages: [2, 4, 6] }
     ],
     images: [
       asset("halo/linkage-photo.jpg", "HALO’s assembled three-arm mechanism — printed links, motor mounts, and moving platform"),
@@ -94,7 +93,6 @@ export const projectStories: Record<string, ProjectStory> = {
       asset("halo-cad.jpg", "The CAD assembly and linkage geometry"),
       asset("halo-hero.jpg", "Original design rendering of the HALO mechanism")
     ],
-    film: { src: "/paper-assets/halo/bench-film.mp4", poster: "/paper-assets/halo/film-poster.jpg", caption: "On the bench — original prototype footage, with audio removed." },
     links: [], model: "gimbal", modelNote: "A reconstruction of the three-arm assembly shown in the project CAD. Separate the components to inspect the geometry; this is not a simulation of measured actuation."
   },
   "trend-mart": {
