@@ -135,6 +135,9 @@ export const person = {
   openerTail: "— a space infrastructure company.",
   letter:
     "I double major in Philosophy and Physics at Columbia University as a John Jay Scholar, with a minor in AI. I founded Nomos Orbital, a space infrastructure company, and work on spacecraft CAD, thermal analysis, and downlink studies for T-REX. Previously, I worked on exoplanet modeling at Harvard & Smithsonian CfA and product strategy at ONDO Space. Before Columbia, I founded Trend Mart Group in Ulaanbaatar, a self-funded retail business with four locations and more than $1 million in lifetime revenue.",
+  inspiration: "I take inspiration from Brendan McCord's idea of a Benjamin-Franklin-like figure who is a philosopher founder.",
+  researchInterests:
+    "I research and write about space, civilization, the political and ethical dilemmas of a life well lived, classics, Buddhism, and AI. I often think about sentient beings on cosmic timescales. In the future, I’d like to explore self-replicating robots (robonauts), machine consciousness, and psi in machines.",
   emails: {
     academic: "tsogt.e@columbia.edu",
     academicAlt: "te2346@columbia.edu",
@@ -169,7 +172,7 @@ export const linkedReferences: LinkItem[] = [
     href: "https://college.columbia.edu/alumni/jj-scholars-program",
     external: true
   },
-  { label: "Brendan Mccord", href: "https://brendanmccord.com", external: true },
+  { label: "Brendan McCord", href: "https://brendanmccord.com", external: true },
   { label: "Harvard Smithsonian", href: "https://cfa.harvard.edu", external: true },
   { label: "ONDO Space", href: "https://ondospace.com", external: true },
   { label: "Seraphim", href: "https://seraphim.vc", external: true },

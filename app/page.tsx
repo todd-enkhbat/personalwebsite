@@ -59,8 +59,9 @@ export default async function MainPage() {
             <span>&nbsp;{person.openerTail}</span>
           </h1>
           <p className="body-copy" style={{ width: "100%", maxWidth: 720 }}>
-            {linkifyText(person.letter, linkedReferences)}
+            {linkifyText(`${person.letter} ${person.inspiration}`, linkedReferences)}
           </p>
+          <p className="body-copy">{person.researchInterests}</p>
           <details className="background-disclosure">
             <summary>
               Education &amp; background

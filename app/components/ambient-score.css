@@ -1,0 +1,10 @@
+/* Optional music stays quiet until the visitor explicitly chooses to play it. */
+.ambient-score .ambient-score-toggle { min-height: 44px; letter-spacing: .045em; }
+.ambient-score .ambient-score-details { width: 36px; min-height: 44px; }
+.ambient-score .ambient-score-toggle:focus-visible,
+.ambient-score .ambient-score-details:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.ambient-score-note { width: min(320px, calc(100vw - 32px)); margin: 0; padding: 11px 12px; background: var(--paper); color: var(--ink-soft); font: 11px/1.5 var(--font-ui, sans-serif); }
+@media (max-width: 540px) {
+  .ambient-score .ambient-score-toggle { padding: 7px 9px; font-size: 9px; }
+  .ambient-score .ambient-score-details { width: 32px; }
+}
